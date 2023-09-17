@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Character } from 'src/models/character';
+import { CharactersService } from './services/characters.service';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +9,10 @@ import { Character } from 'src/models/character';
 export class AppComponent {
   title = 'roll-initiative';
 
-  characters : Character[] = [];
-
-  constructor() {
-    this.addCharacter();
+  constructor(public characters: CharactersService) {
+    for(let i = 0; i < 10; i++)
+      this.characters.addCharacter();
   }
 
-  addCharacter() {
-    this.characters.push({
-      name: '',
-      bonus: null,
-      roll: 0,
-      ally: false
-    });
-  }
+  openOptions() {}
 }

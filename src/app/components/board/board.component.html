@@ -1,1 +1,5 @@
-<character *ngFor="let character of characters" [character]="character"></character>
+<character 
+  *ngFor="let character of characters" 
+  [character]="character"
+  [position]="character.position"
+></character>

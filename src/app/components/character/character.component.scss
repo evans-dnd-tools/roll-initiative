@@ -1,22 +1,66 @@
 :host {
+  position: absolute;
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
   gap: 0.25rem;
 
-  padding-bottom: 1rem;
+  width: 100%;
+
+  padding-bottom: 0.5rem;
+
+  transition: translate 0.4s ease-in-out;
+
+  &.grabbed {
+    z-index: 9000;
+    pointer-events: none;
+    scale: 1.01;
+
+    transition: none;
+  }
+}
+
+.handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  gap: 3px;
+
+  width: 1rem;
+
+  background: rgb(20, 20, 20);
+  border-radius: 2px;
+
+  cursor: grab;
+
+  transition: background 0.1s ease-in-out;
+
+  &:is(:hover, :focus-visible) {
+    outline: none;
+    background: rgb(72, 72, 72);
+  }
+
+  & .bar {
+    pointer-events: none;
+    height: 1px;
+    width: 10px;
+
+    background: rgb(134, 134, 134);
+  }
 }
 
 .team-color {
   cursor: pointer;
 
   display: block;
-  flex: 0 0 50px;
+  flex: 0 0 64px;
 
   padding: 0;
 
-  height: 50px;
-  width: 50px;
+  height: 64px;
+  width: 64px;
 
   background: var(--primary-300);
   border-radius: 2px;
@@ -40,16 +84,16 @@
 .row {
   flex: 1 1 auto;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 
   padding: 0 1.5rem;
 
-  background: linear-gradient(90deg, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 98%);
+  background: linear-gradient(90deg, rgba(20,20,20,1) 40%, rgba(20,20,20,0) 99%);
 
   border-radius: 2px;
 }
 
-input[type="text"] {
+input:is([type="text"], [type="number"]) {
   padding: 0;
   margin: 0;
 
@@ -59,7 +103,7 @@ input[type="text"] {
   color: white;
 
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
 
@@ -68,7 +112,15 @@ input[type="text"] {
   }
 
   &.bonus {
-    width: 24px;
+    width: 30px;
     text-align: right;
   }
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
 }

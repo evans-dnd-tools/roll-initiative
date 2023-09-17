@@ -30,34 +30,20 @@ h1 {
 
   font-weight: bold;
   text-transform: uppercase;
+  font-size: 15px;
 
-  margin-bottom: 1rem;
-
-  & > * {
-    position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 100%;
-
-      display: block;
-
-      height: 60%;
-      width: 2px;
-
-      background: rgb(165, 165, 165);
-
-      translate: 0 -50%;
-    }
-  }
+  margin-bottom: 0.75rem;
 }
 
 .team-header {
-  width: 50px;
+  padding-left: 24px; 
 }
 
 .bonus-header {
-  padding-left: 1.75rem;
+  padding-left: 52px;
+  text-align: center;
+}
+
+.name-header {
+  padding-left: 34px;
 }

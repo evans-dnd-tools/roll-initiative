@@ -3,4 +3,6 @@ export interface Character {
   bonus: number;
   roll: number;
   ally: boolean;
+
+  position: number;
 }
