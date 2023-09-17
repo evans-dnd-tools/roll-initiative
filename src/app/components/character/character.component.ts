@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, OnChanges } from '@angular/core';
+import { CharactersService } from 'src/app/services/characters.service';
 import { DragAndDropService } from 'src/app/services/drag-and-drop.service';
 import { Character } from 'src/models/character';
 import { CHARACTER_SHEET_SIZE } from 'src/models/constants';
@@ -13,13 +14,7 @@ export class CharacterComponent implements OnChanges {
   ////    ATTRIBUTES    ////
 
   @Input()
-  character: Character = {
-    name: '',
-    bonus: null,
-    roll: 0,
-    ally: false,
-    position: -1
-  };
+  character: Character = null;
 
   @Input()
   position: number = 0;
@@ -28,7 +23,11 @@ export class CharacterComponent implements OnChanges {
 
   ////    LIFE CYCLE    ////
 
-  constructor(elementRef: ElementRef, private dragAndDropService: DragAndDropService) {
+  constructor(
+    elementRef: ElementRef, 
+    private dragAndDropService: DragAndDropService,
+    private characters: CharactersService
+  ) {
     this.hostElement = elementRef.nativeElement;
   }
 
@@ -44,5 +43,9 @@ export class CharacterComponent implements OnChanges {
 
   grab(event: MouseEvent) {
     this.dragAndDropService.grab(event, this);
+  }
+
+  deleteCharacter() {
+    this.characters.delete(this.character);
   }
 }

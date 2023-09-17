@@ -1,0 +1,43 @@
+:host {
+  position: sticky;
+  top: -3rem;
+  left: 0;
+
+  z-index: 10000;
+  display: block;
+
+  padding: 4rem 22rem 1rem;
+  margin-bottom: 6rem;
+
+  transition: all 0.26s ease-in-out;
+
+  &.fixed {
+    background: #282424;
+    color: white;
+
+    h1 {
+      font-size: 2.25rem;
+    }
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: 'Modesto', serif;
+  text-transform: uppercase;
+
+  transition: font-size 0.12s ease-in-out;
+}

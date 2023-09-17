@@ -31,4 +31,12 @@ export class CharactersService {
     for (const character of sortedCharacters)
       character.position = sortedCharacters.indexOf(character);
   }
+
+  delete(character: Character) {
+    this.list = this.list.filter(c => c !== character);
+
+    for (const other of this.list)
+      if (character.position < other.position)
+        other.position--;
+  }
 }

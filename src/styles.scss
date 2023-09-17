@@ -10,12 +10,7 @@
   src: url('./assets/fonts/MrsEaves.ttf');
 }
 
-* {
-  margin: 0;
-  padding: 0;
-
-  box-sizing: border-box;
-
+:root {
   --primary-200: #8C0B0B;
   --primary-300: #BC0F0F;
   --primary-400: #EB1313;
@@ -23,8 +18,17 @@
   --ally-200: #006A3C;
   --ally-300: #008042;
   --ally-400: #00A653;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
 
   font-family: 'Roboto Condensed', sans-serif;
+
+  outline-color: white;
 }
 
 body {
@@ -123,6 +127,6 @@ button {
 #dust-foreground {
   pointer-events: none;
   background-image: url('./assets/images/DUST_IMG.jpg');
-  opacity: 0.15;
+  opacity: 0.05;
   mix-blend-mode: exclusion;
 }

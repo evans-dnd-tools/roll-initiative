@@ -10,9 +10,7 @@ export class AppComponent {
   title = 'roll-initiative';
 
   constructor(public characters: CharactersService) {
-    for(let i = 0; i < 10; i++)
+    for(let i = 0; i < 4; i++)
       this.characters.addCharacter();
   }
-
-  openOptions() {}
 }
