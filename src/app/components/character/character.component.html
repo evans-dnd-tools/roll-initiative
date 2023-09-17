@@ -1,0 +1,6 @@
+
+<button type="button" class="team-color" [class.ally]="character.ally" (click)="swapTeam()"></button>
+<div class="row">
+  <input type="text" placeholder="000" [(ngModel)]="character.bonus" class="bonus" />
+  <input type="text" placeholder="Nom du personnage" [(ngModel)]="character.name" />
+</div>

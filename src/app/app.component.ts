@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Character } from 'src/models/character';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'roll-initiative';
+
+  characters : Character[] = [];
+
+  constructor() {
+    this.addCharacter();
+  }
+
+  addCharacter() {
+    this.characters.push({
+      name: '',
+      bonus: null,
+      roll: 0,
+      ally: false
+    });
+  }
 }

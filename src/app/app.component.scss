@@ -1,0 +1,63 @@
+:host {
+  display: block;
+  padding: 4rem 22rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  margin-bottom: 6rem;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: 'Modesto', serif;
+  text-transform: uppercase;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+
+  font-weight: bold;
+  text-transform: uppercase;
+
+  margin-bottom: 1rem;
+
+  & > * {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 100%;
+
+      display: block;
+
+      height: 60%;
+      width: 2px;
+
+      background: rgb(165, 165, 165);
+
+      translate: 0 -50%;
+    }
+  }
+}
+
+.team-header {
+  width: 50px;
+}
+
+.bonus-header {
+  padding-left: 1.75rem;
+}
