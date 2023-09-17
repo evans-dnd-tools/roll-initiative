@@ -14,8 +14,9 @@ export class CharactersService {
     const character : Character = {
       name: '',
       bonus: null,
-      roll: 0,
+      roll: null,
       ally: false,
+      lockedRoll: false,
       position: this.list.length
     };
 
@@ -24,7 +25,8 @@ export class CharactersService {
 
   rollForInitiative() {
     for (const character of this.list)
-      character.roll = Math.floor(Math.random() * 20) + 1 + character.bonus;
+      if (!character.lockedRoll)
+        character.roll = Math.floor(Math.random() * 20) + 1 + character.bonus;
 
     const sortedCharacters = [...this.list].sort((a, b) => b.roll - a.roll);
 

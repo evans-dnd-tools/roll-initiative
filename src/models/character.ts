@@ -5,4 +5,6 @@ export interface Character {
   ally: boolean;
 
   position: number;
+
+  lockedRoll: boolean;
 }

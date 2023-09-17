@@ -75,7 +75,7 @@ button {
   text-transform: uppercase;
   white-space: nowrap;
 
-  transition: background 0.1s ease-in-out;
+  transition: background 0.06s ease-in-out;
 
   &:is(:hover, :focus-visible) {
     background: var(--primary-400);

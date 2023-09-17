@@ -9,7 +9,7 @@
   padding: 4rem 22rem 1rem;
   margin-bottom: 6rem;
 
-  transition: all 0.26s ease-in-out;
+  // transition: all 0.26s ease-in-out;
 
   &.fixed {
     background: #282424;
@@ -18,6 +18,8 @@
     h1 {
       font-size: 2.25rem;
     }
+
+    border-bottom: 4px solid #080606;
   }
 }
 
@@ -39,5 +41,5 @@ h1 {
   font-family: 'Modesto', serif;
   text-transform: uppercase;
 
-  transition: font-size 0.12s ease-in-out;
+  // transition: font-size 0.12s ease-in-out;
 }

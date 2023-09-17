@@ -23,7 +23,7 @@ export class HeaderComponent {
   @HostListener('document:scroll', ['$event'])
   scrollEvent(event: Event) {
     
-    if (window.scrollY > 92)
+    if (window.scrollY > 124)
       this.hostElement.classList.add('fixed');
     else
     this.hostElement.classList.remove('fixed');

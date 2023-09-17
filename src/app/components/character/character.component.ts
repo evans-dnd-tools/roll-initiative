@@ -41,6 +41,10 @@ export class CharacterComponent implements OnChanges {
     this.character.ally = !this.character.ally;
   }
 
+  toggleLock() {
+    this.character.lockedRoll = !this.character.lockedRoll;
+  }
+
   grab(event: MouseEvent) {
     this.dragAndDropService.grab(event, this);
   }

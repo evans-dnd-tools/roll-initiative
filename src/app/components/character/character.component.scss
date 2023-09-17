@@ -9,7 +9,7 @@
 
   padding-bottom: 0.5rem;
 
-  transition: translate 0.24s ease-in-out;
+  transition: translate 0.32s ease-in-out;
 
   animation : pop 0.12s ease-in-out;
 
@@ -37,7 +37,7 @@
 
   cursor: grab;
 
-  transition: background 0.1s ease-in-out;
+  transition: background 0.06s ease-in-out;
 
   &:is(:hover, :focus-visible) {
     outline: none;
@@ -119,11 +119,15 @@ input:is([type="text"], [type="number"]) {
   &:is(:focus-visible) {
     outline: none;
   }
+}
 
-  &.bonus {
-    width: 30px;
-    text-align: right;
-  }
+.bonus {
+  width: 30px;
+  text-align: right;
+}
+
+.name-input {
+  width: 480px;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -147,6 +151,20 @@ input[type=number]::-webkit-outer-spin-button {
   background: none;
 
   font-size: 20px;
+  color: #868686;
+
+  transition: color 0.06s ease-in-out;
+
+  &:is(:hover, :focus-visible) {
+    color: white;
+  }
+}
+
+.lock-icon {
+  height: 18px;
+  width: 18px;
+
+  fill: white;
 }
 
 @keyframes pop {
