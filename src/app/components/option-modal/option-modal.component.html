@@ -4,7 +4,25 @@
   <h3>En combat</h3>
 
   <div class="option">
-    <label for="groupTurnByTeam">Grouper les tours par équipe</label>
+    <span class="label">
+      <label for="groupTurnByTeam">Grouper les tours par équipe</label>
+      <div 
+        class="help-icon" 
+        data-help="Lorsque cette option est cochée, les personnages d'une même équipe groupé dans l'ordre des initiatives pourront jouer en même temps."
+        tabindex="0" 
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          height="20" 
+          viewBox="0 -960 960 960" 
+          width="20"
+        >
+          <path 
+            d="M476.859-232q25.621 0 44.381-18.359T540-294.338q0-25.62-18.619-43.641Q502.762-356 477.141-356q-25.621 0-44.381 17.88Q414-320.239 414-294.62q0 25.62 18.619 44.12 18.619 18.5 44.24 18.5ZM425-390h103q0-34.394 6.5-51.697Q541-459 563-482q33-29 46-55.419 13-26.419 13-58.816Q622-657 584.516-694q-37.483-37-98.193-37Q427-731 383-697.5 339-664 322-609l95 37q9-29 26-45t36-16q15 0 27.5 10.75T519-593q0 18-14 34.5T479-531q-34 32-44 56t-10 85Zm55 340q-88.64 0-167.467-33.104-78.828-33.103-137.577-91.852-58.749-58.749-91.852-137.577Q50-391.36 50-480q0-89.896 33.162-167.949 33.163-78.053 92.175-136.942 59.011-58.889 137.575-91.999Q391.476-910 480-910q89.886 0 167.976 33.093T784.94-784.94q58.874 58.874 91.967 136.99Q910-569.833 910-479.917q0 88.917-33.11 167.243t-91.999 137.337q-58.889 59.012-136.942 92.174Q569.896-50 480-50Z"
+          />
+        </svg>
+      </div>
+    </span>
     <input type="checkbox" id="groupTurnByTeam" [(ngModel)]="groupTurnByTeam" />
     <label for="groupTurnByTeam" class="checkbox"></label>
   </div>
@@ -12,16 +30,56 @@
   <h3>Cache</h3>
   
   <div class="option">
-    <label for="saveOptions">Sauvegarder les options</label>
+    <span class="label">
+      <label for="saveOptions">Sauvegarder les options</label>
+      <div 
+        class="help-icon" 
+        data-help="Lorsque cette option est cochée, les options sélectionnées seront sauvegardées pour votre prochaine visite."
+        tabindex="0" 
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          height="20" 
+          viewBox="0 -960 960 960" 
+          width="20"
+        >
+          <path 
+            d="M476.859-232q25.621 0 44.381-18.359T540-294.338q0-25.62-18.619-43.641Q502.762-356 477.141-356q-25.621 0-44.381 17.88Q414-320.239 414-294.62q0 25.62 18.619 44.12 18.619 18.5 44.24 18.5ZM425-390h103q0-34.394 6.5-51.697Q541-459 563-482q33-29 46-55.419 13-26.419 13-58.816Q622-657 584.516-694q-37.483-37-98.193-37Q427-731 383-697.5 339-664 322-609l95 37q9-29 26-45t36-16q15 0 27.5 10.75T519-593q0 18-14 34.5T479-531q-34 32-44 56t-10 85Zm55 340q-88.64 0-167.467-33.104-78.828-33.103-137.577-91.852-58.749-58.749-91.852-137.577Q50-391.36 50-480q0-89.896 33.162-167.949 33.163-78.053 92.175-136.942 59.011-58.889 137.575-91.999Q391.476-910 480-910q89.886 0 167.976 33.093T784.94-784.94q58.874 58.874 91.967 136.99Q910-569.833 910-479.917q0 88.917-33.11 167.243t-91.999 137.337q-58.889 59.012-136.942 92.174Q569.896-50 480-50Z"
+          />
+        </svg>
+      </div>
+    </span>
     <input type="checkbox" id="saveOptions" [(ngModel)]="saveOptions" />
     <label for="saveOptions" class="checkbox"></label>
   </div>
 
   <div class="option">
-    <label for="saveTeams">Sauvegarder les alliés</label>
+    <span class="label">
+      <label for="saveTeam">Sauvegarder les alliés</label>
+      <div 
+        class="help-icon top" 
+        data-help="Lorsque cette option est cochée, les personnages de l'équipe verte seront sauvegardés pour votre prochaine visite."
+        tabindex="0" 
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          height="20" 
+          viewBox="0 -960 960 960" 
+          width="20"
+        >
+          <path 
+            d="M476.859-232q25.621 0 44.381-18.359T540-294.338q0-25.62-18.619-43.641Q502.762-356 477.141-356q-25.621 0-44.381 17.88Q414-320.239 414-294.62q0 25.62 18.619 44.12 18.619 18.5 44.24 18.5ZM425-390h103q0-34.394 6.5-51.697Q541-459 563-482q33-29 46-55.419 13-26.419 13-58.816Q622-657 584.516-694q-37.483-37-98.193-37Q427-731 383-697.5 339-664 322-609l95 37q9-29 26-45t36-16q15 0 27.5 10.75T519-593q0 18-14 34.5T479-531q-34 32-44 56t-10 85Zm55 340q-88.64 0-167.467-33.104-78.828-33.103-137.577-91.852-58.749-58.749-91.852-137.577Q50-391.36 50-480q0-89.896 33.162-167.949 33.163-78.053 92.175-136.942 59.011-58.889 137.575-91.999Q391.476-910 480-910q89.886 0 167.976 33.093T784.94-784.94q58.874 58.874 91.967 136.99Q910-569.833 910-479.917q0 88.917-33.11 167.243t-91.999 137.337q-58.889 59.012-136.942 92.174Q569.896-50 480-50Z"
+          />
+        </svg>
+      </div>
+    </span>
     <input type="checkbox" id="saveTeam" [(ngModel)]="saveTeam" />
     <label for="saveTeam" class="checkbox"></label>
   </div>
 
-  <button type="button" class="close" (click)="close.emit()">🞬</button>
+  <div class="buttons">
+    <button type="button" (click)="emptyCache()">Vider le cache</button>
+  </div>
+
+  <button type="button" class="close" (click)="saveAndClose()">🞬</button>
 </div>

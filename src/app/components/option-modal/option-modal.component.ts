@@ -28,6 +28,19 @@ export class OptionModalComponent implements OnChanges {
     this.hostElement = elementRef.nativeElement;
   }
 
+  ngOnInit(): void {
+    const options = localStorage.getItem('options');
+
+    if (options == null) return; // No options saved
+    if (options === "👎") {
+      this.saveOptions = false;
+      return;
+    }
+
+    this.saveTeam = options.includes('saveTeam');
+    this.groupTurnByTeam = options.includes('groupTurnByTeam');
+  }
+
   ngOnChanges() {
     if (!this.open)
       this.hostElement.classList.add('hidden');
@@ -39,13 +52,31 @@ export class OptionModalComponent implements OnChanges {
 
   @HostListener('window:keydown', ['$event'])
   keyEvent(event: KeyboardEvent) {
-    if (event.key === 'Escape' && this.open)
-      this.close.emit();
+    if (event.key === 'Escape' && this.open) 
+      this.saveAndClose();
   }
 
   @HostListener('click', ['$event'])
   closeFromBlur(event: MouseEvent) {
-    if (event.target === event.currentTarget && this.open)
-      this.close.emit();
+    if (event.target === event.currentTarget && this.open) 
+      this.saveAndClose();
+  }
+
+  emptyCache() {
+    localStorage.clear();
+  }
+
+  saveAndClose() {
+    let options = "👎";
+
+    if (this.saveOptions) {
+      options = "";
+      if (this.saveTeam) options += "saveTeam";
+      if (this.groupTurnByTeam) options += "groupTurnByTeam";
+    }
+
+    localStorage.setItem('options', options);
+
+    this.close.emit();
   }
 }
