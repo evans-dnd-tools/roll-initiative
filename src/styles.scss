@@ -32,6 +32,10 @@
 }
 
 body {
+  position: absolute;
+  top: 0;
+  left: 0;
+
   height: 100vh;
   width: 100vw;
 
@@ -105,6 +109,16 @@ button {
 
     padding: 0;
   }
+
+  &.icon-text-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 1rem;
+
+    padding: 0 3rem 0 1.25rem;
+  }
 }
 
 .icon {
@@ -112,6 +126,9 @@ button {
   width: 28px;
 
   fill: white;
+}
+
+.cog {
   rotate: 45deg;
 }
 

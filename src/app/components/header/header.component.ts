@@ -8,21 +8,13 @@ import { CharactersService } from 'src/app/services/characters.service';
 })
 export class HeaderComponent {
 
+  fixed: boolean = false;
   showOptions: boolean = false;
 
-  private hostElement: HTMLElement;
-
-  constructor(public characters: CharactersService, elementRef: ElementRef) {
-    this.hostElement = elementRef.nativeElement;
-  }
+  constructor(public characters: CharactersService) {}
 
   @HostListener('document:scroll', ['$event'])
   scrollEvent(event: Event) {
-    
-    if (window.scrollY > 124)
-      this.hostElement.classList.add('fixed');
-    else
-    this.hostElement.classList.remove('fixed');
-  
+    this.fixed = window.scrollY > 148;
   }
 }

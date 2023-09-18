@@ -1,36 +1,39 @@
 :host {
-  position: sticky;
-  top: -3rem;
-  left: 0;
+  display: unset;
+}
 
-  z-index: 10000;
-  display: block;
-
-  padding: 4rem 22rem 1rem;
-  margin-bottom: 6rem;
-
-  // transition: all 0.26s ease-in-out;
+h1 {
+  padding: 4rem 22rem 0;
 
   &.fixed {
     background: #282424;
     color: white;
+  }
+}
 
-    h1 {
-      font-size: 2.25rem;
-    }
+.buttons {
+  position: sticky;
+  top: 0;
+  left: 0;
 
+  z-index: 10000;
+
+  padding: 1rem 22rem;
+
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &.fixed {
+    background: #282424;
     border-bottom: 4px solid #080606;
   }
 }
 
-.title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.buttons {
+.left-buttons, .right-buttons {
   display: flex;
   align-items: center;
   gap: 1rem;
