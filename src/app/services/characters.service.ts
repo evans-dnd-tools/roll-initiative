@@ -36,6 +36,12 @@ export class CharactersService {
     for (const other of this.list)
       if (character.position < other.position)
         other.position--;
+
+    if (this.inCombat && this.currentlyPlaying.includes(character)) {
+      this.currentlyPlaying = this.currentlyPlaying.filter(c => c !== character);
+      if (this.currentlyPlaying.length === 0)
+        this.findPlayingCharacters(character.position);
+    }
   }
 
   rollForInitiative() {
@@ -74,6 +80,8 @@ export class CharactersService {
       this.nextRound();
       return;
     }
+
+    if (!localStorage.getItem('options').includes('groupTurnByTeam')) return;
 
     const ally = this.currentlyPlaying[0].ally;
     
