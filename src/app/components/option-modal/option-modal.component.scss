@@ -21,6 +21,11 @@
   &.hidden {
     pointer-events: none;
     opacity: 0;
+
+    & > .modal {
+      translate: 0 1rem;
+      scale: 0.96;
+    }
   }
 }
 
@@ -36,6 +41,8 @@
   border-radius: 10px;
 
   overflow: hidden;
+
+  transition: translate 0.10s ease-in-out, scale 0.10s ease-in-out;
 }
 
 .close {
