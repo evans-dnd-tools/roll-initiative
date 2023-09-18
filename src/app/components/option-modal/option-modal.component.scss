@@ -136,14 +136,6 @@ input[type="checkbox"] {
   }
 }
 
-.buttons {
-  margin-top: 2rem;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .help-icon {
   pointer-events: fill;
   position: relative;
@@ -187,4 +179,48 @@ input[type="checkbox"] {
       bottom: calc(100% + 0.5rem);
     }
   }
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 2rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.credit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 0.5rem;
+
+  color: #868686;
+}
+
+.credit-button {
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: none;
+}
+
+.credit-button > * {
+  fill: #868686;
+  transition: fill 0.2s ease;
+}
+
+.credit-button:is(:focus, :active, :hover) > * {
+  fill: #181212;
 }
