@@ -10,7 +10,7 @@
     <input type="number" placeholder="000" [(ngModel)]="character.bonus" class="bonus" />
     <input type="text" placeholder="Nom du personnage" [(ngModel)]="character.name" class="name-input" />
     <input type="number" placeholder="000" [(ngModel)]="character.roll" class="bonus" />
-    <button type="button" class="row-button" (click)="toggleLock()">
+    <button type="button" class="row-button" (click)="toggleLock()" [class.open]="!character.lockedRoll">
         <svg 
           *ngIf="character.lockedRoll"
           xmlns="http://www.w3.org/2000/svg" 
