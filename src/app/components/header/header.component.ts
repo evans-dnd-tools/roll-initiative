@@ -8,16 +8,12 @@ import { CharactersService } from 'src/app/services/characters.service';
 })
 export class HeaderComponent {
 
+  showOptions: boolean = false;
+
   private hostElement: HTMLElement;
 
   constructor(public characters: CharactersService, elementRef: ElementRef) {
     this.hostElement = elementRef.nativeElement;
-  }
-
-  @HostListener('window:keydown', ['$event'])
-  keyEvent(event: KeyboardEvent) {
-    if (event.key === 'Escape')
-      this.closeOptions();
   }
 
   @HostListener('document:scroll', ['$event'])
@@ -29,8 +25,4 @@ export class HeaderComponent {
     this.hostElement.classList.remove('fixed');
   
   }
-
-  openOptions() {}
-
-  closeOptions() {}
 }

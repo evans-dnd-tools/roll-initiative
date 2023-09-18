@@ -6,6 +6,8 @@ import { BoardComponent } from './components/board/board.component';
 import { CharacterComponent } from './components/character/character.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
+import { OptionModalComponent } from './components/option-modal/option-modal.component';
+
 
 @NgModule({
   declarations: [
@@ -13,6 +15,7 @@ import { HeaderComponent } from './components/header/header.component';
     BoardComponent,
     CharacterComponent,
     HeaderComponent,
+    OptionModalComponent,
   ],
   imports: [
     BrowserModule,

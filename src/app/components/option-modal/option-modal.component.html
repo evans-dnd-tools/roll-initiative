@@ -1,0 +1,27 @@
+<div class="modal">
+  <h2>Options</h2>
+
+  <h3>En combat</h3>
+
+  <div class="option">
+    <label for="groupTurnByTeam">Grouper les tours par équipe</label>
+    <input type="checkbox" id="groupTurnByTeam" [(ngModel)]="groupTurnByTeam" />
+    <label for="groupTurnByTeam" class="checkbox"></label>
+  </div>
+
+  <h3>Cache</h3>
+  
+  <div class="option">
+    <label for="saveOptions">Sauvegarder les options</label>
+    <input type="checkbox" id="saveOptions" [(ngModel)]="saveOptions" />
+    <label for="saveOptions" class="checkbox"></label>
+  </div>
+
+  <div class="option">
+    <label for="saveTeams">Sauvegarder les alliés</label>
+    <input type="checkbox" id="saveTeam" [(ngModel)]="saveTeam" />
+    <label for="saveTeam" class="checkbox"></label>
+  </div>
+
+  <button type="button" class="close" (click)="close.emit()">🞬</button>
+</div>
