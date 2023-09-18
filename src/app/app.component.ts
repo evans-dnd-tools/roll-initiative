@@ -15,6 +15,11 @@ export class AppComponent {
     if (characterList && characterList.length > 0)
       this.characters.list = characterList;
 
+    for (let i = 0; i < this.characters.list.length; i++) {
+      this.characters.list[i].position = i;
+      this.characters.list[i].roll = null;
+    }
+
     while(this.characters.list.length < DEFAULT_CHARACTER_LIST_SIZE)
       this.characters.addCharacter();
   }
