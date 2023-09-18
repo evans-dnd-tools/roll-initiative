@@ -1,4 +1,4 @@
-<div class="handle" (mousedown)="grab($event)">
+<div class="handle" [class.disabled]="characters.inCombat" (mousedown)="grab($event)">
   <div class="bar"></div>
   <div class="bar"></div>
   <div class="bar"></div>

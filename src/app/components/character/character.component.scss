@@ -20,6 +20,15 @@
 
     transition: none;
   }
+
+  &.playing {
+    scale: 1.01;
+  }
+
+  &.waiting {
+    opacity: 0.5;
+    scale: 0.98;
+  }
 }
 
 .handle {
@@ -39,7 +48,12 @@
 
   transition: background 0.06s ease-in-out;
 
-  &:is(:hover, :focus-visible) {
+  &.disabled {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  &:not(.disabled):is(:hover, :focus-visible) {
     outline: none;
     background: rgb(72, 72, 72);
   }
