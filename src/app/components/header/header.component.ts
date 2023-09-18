@@ -17,4 +17,11 @@ export class HeaderComponent {
   scrollEvent(event: Event) {
     this.fixed = window.scrollY > 148;
   }
+
+  toggleCombat() {
+    if (this.characters.inCombat)
+      this.characters.endCombat();
+    else
+      this.characters.startCombat();
+  }
 }

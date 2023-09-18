@@ -6,9 +6,13 @@ import { Character } from 'src/models/character';
 })
 export class CharactersService {
 
+  ////    ATTRIBUTES    ////
+
   list : Character[] = [];
 
-  constructor() { }
+  round : number = 0;
+
+  ////    FUNCTIONS    ////
 
   addCharacter() {
     const character : Character = {
@@ -23,6 +27,14 @@ export class CharactersService {
     this.list = [...this.list, character];
   }
 
+  delete(character: Character) {
+    this.list = this.list.filter(c => c !== character);
+
+    for (const other of this.list)
+      if (character.position < other.position)
+        other.position--;
+  }
+
   rollForInitiative() {
     for (const character of this.list)
       if (!character.lockedRoll)
@@ -34,11 +46,15 @@ export class CharactersService {
       character.position = sortedCharacters.indexOf(character);
   }
 
-  delete(character: Character) {
-    this.list = this.list.filter(c => c !== character);
+  startCombat() {
+    this.round = 1;
+  }
 
-    for (const other of this.list)
-      if (character.position < other.position)
-        other.position--;
+  endCombat() {
+    this.round = 0;
+  }
+
+  get inCombat() {
+    return this.round > 0;
   }
 }

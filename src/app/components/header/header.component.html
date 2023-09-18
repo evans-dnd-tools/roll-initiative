@@ -1,10 +1,12 @@
 <h1 [class.fixed]="fixed">Traqueur d'initiative</h1>
 <div class="buttons" [class.fixed]="fixed">
   <div class="left-buttons">
-    <button type="button" class="icon-text-button" (click)="characters.addCharacter()">
-      <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M304.087-178.5v-609L783.218-483 304.087-178.5Z"/></svg>
-      <span>Démarrer le combat</span>
+    <button type="button" class="icon-text-button" (click)="toggleCombat()">
+      <svg *ngIf="!characters.inCombat" class="icon" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M304.087-178.5v-609L783.218-483 304.087-178.5Z"/></svg>
+      <svg *ngIf="characters.inCombat" class="icon" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M226.37-226.37v-507.5h507.5v507.5h-507.5Z"/></svg>
+      <span>{{ characters.inCombat ? "Stopper le combat" : "Démarrer le combat" }}</span>
     </button>
+    <button *ngIf="characters.inCombat" type="button" (click)="undefined">Tour suivant</button>
   </div>
   <div class="right-buttons">
     <button type="button" (click)="characters.addCharacter()">Ajouter un personnage</button>

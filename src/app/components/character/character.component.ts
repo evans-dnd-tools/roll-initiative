@@ -26,7 +26,7 @@ export class CharacterComponent implements OnChanges {
   constructor(
     elementRef: ElementRef, 
     private dragAndDropService: DragAndDropService,
-    private characters: CharactersService
+    public characters: CharactersService
   ) {
     this.hostElement = elementRef.nativeElement;
   }
