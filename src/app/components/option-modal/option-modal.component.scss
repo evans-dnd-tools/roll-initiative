@@ -205,6 +205,10 @@ input[type="checkbox"] {
   color: #868686;
 }
 
+#tag {
+  margin-right: 0.5rem;
+}
+
 .credit-button {
   cursor: pointer;
   height: 24px;
@@ -223,4 +227,8 @@ input[type="checkbox"] {
 
 .credit-button:is(:focus, :active, :hover) > * {
   fill: #181212;
+}
+
+.please {
+  font-size: 12px;
 }
