@@ -136,6 +136,8 @@ input:is([type="text"], [type="number"]) {
 }
 
 input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
   width: 30px;
   text-align: right;
 }
