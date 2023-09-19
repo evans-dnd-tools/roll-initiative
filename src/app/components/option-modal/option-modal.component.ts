@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, HostListener, Input, OnChanges, Output } from '@angular/core';
+import { OptionsService } from 'src/app/services/options.service';
 
 @Component({
   selector: 'option-modal',
@@ -24,21 +25,8 @@ export class OptionModalComponent implements OnChanges {
 
   ////    LIFE CYCLE    ////
 
-  constructor(elementRef: ElementRef) {
+  constructor(elementRef: ElementRef, public options: OptionsService) {
     this.hostElement = elementRef.nativeElement;
-  }
-
-  ngOnInit(): void {
-    const options = localStorage.getItem('options');
-
-    if (options == null) return; // No options saved
-    if (options === "👎") {
-      this.saveOptions = false;
-      return;
-    }
-
-    this.saveTeam = options.includes('saveTeam');
-    this.groupTurnByTeam = options.includes('groupTurnByTeam');
   }
 
   ngOnChanges() {
@@ -62,21 +50,8 @@ export class OptionModalComponent implements OnChanges {
       this.saveAndClose();
   }
 
-  emptyCache() {
-    localStorage.clear();
-  }
-
   saveAndClose() {
-    let options = "👎";
-
-    if (this.saveOptions) {
-      options = "";
-      if (this.saveTeam) options += "saveTeam";
-      if (this.groupTurnByTeam) options += "groupTurnByTeam";
-    }
-
-    localStorage.setItem('options', options);
-
+    this.options.save(this.saveOptions, this.saveTeam, this.groupTurnByTeam);
     this.close.emit();
   }
 }

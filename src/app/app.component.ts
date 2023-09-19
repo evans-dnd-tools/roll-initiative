@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { CharactersService } from './services/characters.service';
 import { DEFAULT_CHARACTER_LIST_SIZE } from 'src/models/constants';
+import { OptionsService } from './services/options.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { DEFAULT_CHARACTER_LIST_SIZE } from 'src/models/constants';
 })
 export class AppComponent {
 
-  constructor(public characters: CharactersService) {
+  constructor(public characters: CharactersService, public options: OptionsService) {
     const characterList = JSON.parse(localStorage.getItem('characters'));
 
     if (characterList && characterList.length > 0)
@@ -25,10 +26,8 @@ export class AppComponent {
   }
 
   @HostListener('window:unload', ['$event'])
-  unloadHandler(event: Event) {
-    const shouldSaveCharacters = localStorage.getItem('options').includes('saveTeam');
-    
-    if(shouldSaveCharacters) {
+  unloadHandler(event: Event) {    
+    if(this.options.saveTeam) {
       const savedCharacters = this.characters.list.filter(character => character.ally);
       localStorage.setItem('characters', JSON.stringify(savedCharacters));
     }

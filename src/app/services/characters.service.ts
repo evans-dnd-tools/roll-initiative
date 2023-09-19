@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { find, max } from 'rxjs';
 import { Character } from 'src/models/character';
+import { OptionsService } from './options.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,10 @@ export class CharactersService {
   round : number = 0;
 
   currentlyPlaying : Character[] = [];
+
+  ////    LIFE CYCLE    ////
+
+  constructor(private options: OptionsService) {}
 
   ////    FUNCTIONS    ////
 
@@ -81,7 +85,7 @@ export class CharactersService {
       return;
     }
 
-    if (!localStorage.getItem('options').includes('groupTurnByTeam')) return;
+    if (this.options.groupTurnByTeam) return;
 
     const ally = this.currentlyPlaying[0].ally;
     
