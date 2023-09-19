@@ -7,6 +7,7 @@ import { CharacterComponent } from './components/character/character.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { OptionModalComponent } from './components/option-modal/option-modal.component';
+import { Scene3dComponent } from './components/scene3d/scene3d.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { OptionModalComponent } from './components/option-modal/option-modal.com
     CharacterComponent,
     HeaderComponent,
     OptionModalComponent,
+    Scene3dComponent,
   ],
   imports: [
     BrowserModule,
