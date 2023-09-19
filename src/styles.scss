@@ -18,6 +18,8 @@
   --ally-200: #006A3C;
   --ally-300: #008042;
   --ally-400: #00A653;
+
+  --padding: 22rem;
 }
 
 * {
@@ -69,6 +71,7 @@ h1, h2 {
   font-family: 'Modesto', serif;
   text-transform: uppercase;
   white-space: nowrap;
+  font-weight: normal;
 }
 
 h2 {
@@ -165,4 +168,18 @@ button {
   background-image: url('./assets/images/DUST_IMG.jpg');
   opacity: 0.025;
   mix-blend-mode: exclusion;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --padding: 1rem;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
 }

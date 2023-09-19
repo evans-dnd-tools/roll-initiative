@@ -1,5 +1,10 @@
 :host {
   display: block;
+
+  height: 100vh;
+  width: 100vw;
+
+  overflow-x: hidden;
 }
 
 .header {
@@ -31,5 +36,5 @@
 }
 
 .board {
-  padding: 0 22rem 8rem;
+  padding: 0 var(--padding) 8rem;
 }
