@@ -34,13 +34,6 @@ h1 {
   }
 }
 
-.left-buttons, .right-buttons {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-
 @media (max-width: 768px) {
   h1 {
     padding: 2rem var(--padding) 0;

@@ -7,6 +7,10 @@ import { CharacterComponent } from './components/character/character.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { OptionModalComponent } from './components/option-modal/option-modal.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RollInitiativeComponent } from './pages/roll-initiative/roll-initiative.component';
+import { WorldIndexComponent } from './pages/world-index/world-index.component';
+import { InitiativeHeaderComponent } from './components/initiative-header/initiative-header.component';
 
 
 @NgModule({
@@ -16,10 +20,14 @@ import { OptionModalComponent } from './components/option-modal/option-modal.com
     CharacterComponent,
     HeaderComponent,
     OptionModalComponent,
+    RollInitiativeComponent,
+    WorldIndexComponent,
+    InitiativeHeaderComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

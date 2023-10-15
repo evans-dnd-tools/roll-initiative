@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  align-items: center;
+
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 15px;
+
+  margin-bottom: 0.75rem;
+}
+
+.team-header {
+  padding-left: 24px; 
+}
+
+.bonus-header {
+  padding-left: 52px;
+  text-align: center;
+}
+
+.name-header {
+  padding-left: 34px;
+}
+
+.roll-header {
+  padding-left: 376px;
+}
+
+.board {
+  padding: 0 var(--padding) 8rem;
+}
