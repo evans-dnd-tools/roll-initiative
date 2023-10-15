@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RollInitiativeComponent } from './pages/roll-initiative/roll-initiative.component';
 import { WorldIndexComponent } from './pages/world-index/world-index.component';
 import { InitiativeHeaderComponent } from './components/initiative-header/initiative-header.component';
+import { IndexHeaderComponent } from './components/index-header/index-header.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { InitiativeHeaderComponent } from './components/initiative-header/initia
     RollInitiativeComponent,
     WorldIndexComponent,
     InitiativeHeaderComponent,
+    IndexHeaderComponent,
   ],
   imports: [
     BrowserModule,

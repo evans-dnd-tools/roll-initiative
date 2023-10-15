@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, OnChanges } from '@angular/core';
 import { CharactersService } from 'src/app/services/characters.service';
-import { Character } from 'src/models/character';
+import { TrackerCharacter } from 'src/models/tracker-character';
 import { CHARACTER_SHEET_PADDING, CHARACTER_SHEET_SIZE } from 'src/models/constants';
 
 @Component({
@@ -13,7 +13,7 @@ export class BoardComponent implements OnChanges {
   ////    ATTRIBUTES    ////
 
   @Input()
-  characters: Character[] = [];
+  characters: TrackerCharacter[] = [];
 
   private hostElement: HTMLElement;
 

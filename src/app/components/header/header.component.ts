@@ -7,7 +7,7 @@ import { Component, HostListener, Input } from '@angular/core';
 })
 export class HeaderComponent {
 
-  @Input() title: string = '';
+  @Input() pageTitle: string = '';
 
   fixed: boolean = false;
 

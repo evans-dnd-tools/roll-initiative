@@ -1,0 +1,8 @@
+<header pageTitle="Index">
+  <div class="filters">
+    <label class="pill" *ngFor="let filter of filters">
+      <input type="checkbox" [(ngModel)]="filter.active" />
+      <span>{{ filter.name }}</span>
+    </label>
+  </div>
+</header>

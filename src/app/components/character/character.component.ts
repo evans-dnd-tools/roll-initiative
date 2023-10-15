@@ -1,7 +1,7 @@
 import { Component, ElementRef, Input, OnChanges } from '@angular/core';
 import { CharactersService } from 'src/app/services/characters.service';
 import { DragAndDropService } from 'src/app/services/drag-and-drop.service';
-import { Character } from 'src/models/character';
+import { TrackerCharacter } from 'src/models/tracker-character';
 import { CHARACTER_SHEET_SIZE } from 'src/models/constants';
 
 @Component({
@@ -14,7 +14,7 @@ export class CharacterComponent implements OnChanges {
   ////    ATTRIBUTES    ////
 
   @Input()
-  character: Character = null;
+  character: TrackerCharacter = null;
 
   @Input()
   position: number = 0;

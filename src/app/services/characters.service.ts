@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Character } from 'src/models/character';
+import { TrackerCharacter } from 'src/models/tracker-character';
 import { OptionsService } from './options.service';
 
 @Injectable({
@@ -9,11 +9,11 @@ export class CharactersService {
 
   ////    ATTRIBUTES    ////
 
-  list : Character[] = [];
+  list : TrackerCharacter[] = [];
 
   round : number = 0;
 
-  currentlyPlaying : Character[] = [];
+  currentlyPlaying : TrackerCharacter[] = [];
 
   ////    LIFE CYCLE    ////
 
@@ -22,7 +22,7 @@ export class CharactersService {
   ////    FUNCTIONS    ////
 
   addCharacter() {
-    const character : Character = {
+    const character : TrackerCharacter = {
       name: '',
       bonus: null,
       roll: null,
@@ -34,7 +34,7 @@ export class CharactersService {
     this.list = [...this.list, character];
   }
 
-  delete(character: Character) {
+  delete(character: TrackerCharacter) {
     this.list = this.list.filter(c => c !== character);
 
     for (const other of this.list)
@@ -105,7 +105,7 @@ export class CharactersService {
     this.round = 0;
   }
 
-  isPlaying(character: Character) {
+  isPlaying(character: TrackerCharacter) {
     return this.currentlyPlaying.includes(character);
   }
 
