@@ -2,6 +2,7 @@ import { SpellSchool } from 'src/models/enums/spell-school';
 import { Spell } from '../../models/spell';
 
 export const ENLARGE_REDUCE: Spell = {
+  id: "enlarge-reduce",
   name: "Agrandissement & Rapetissement",
   level: 2,
   school: SpellSchool.Transmutation,

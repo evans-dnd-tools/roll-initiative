@@ -1,5 +1,16 @@
 <index-header></index-header>
 
 <div class="list">
-  <spell-card *ngFor="let spell of spells" [spell]="spell"></spell-card>
+  <ng-container *ngFor="let spell of spells">
+    <!-- <a [routerLink]="['/spell', spell.id]"> -->
+      <div class="list-element" (click)="open(spell)">
+        <div class="elem-title">
+          {{ spell.name }}
+        </div>
+        <div class="elem-subtext">
+          {{ formatSubtext(spell) }}
+        </div>
+      </div>
+    <!-- </a> -->
+  </ng-container>
 </div>

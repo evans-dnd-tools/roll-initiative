@@ -14,11 +14,11 @@ export class SpellCardComponent {
   anim = true;
 
   formatSchool(school: string): string {
-    const firstLetter = school[0].toLowerCase()
-    const voyels = ['a', 'e', 'i', 'o', 'u', 'y']
+    const firstLetter = school[0].toLowerCase();
+    const voyels = ['a', 'e', 'i', 'o', 'u', 'y'];
 
-    const article = voyels.includes(firstLetter) ? 'd\'' : 'de '
-    return article + school
+    const article = voyels.includes(firstLetter) ? 'd\'' : 'de ';
+    return article + school;
   }
 
   onEnter() {

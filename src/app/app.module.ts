@@ -13,6 +13,7 @@ import { WorldIndexComponent } from './pages/world-index/world-index.component';
 import { InitiativeHeaderComponent } from './components/initiative-header/initiative-header.component';
 import { IndexHeaderComponent } from './components/index-header/index-header.component';
 import { SpellCardComponent } from './components/spell-card/spell-card.component';
+import { BaseModalComponent } from './components/base-modal/base-modal.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { SpellCardComponent } from './components/spell-card/spell-card.component
     InitiativeHeaderComponent,
     IndexHeaderComponent,
     SpellCardComponent,
+    BaseModalComponent,
   ],
   imports: [
     BrowserModule,
