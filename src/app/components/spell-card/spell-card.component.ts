@@ -31,7 +31,9 @@ export class SpellCardComponent {
     this.card.nativeElement.style.filter = '';
   }
 
-  onMove(event: MouseEvent) {
+  onMove(event: PointerEvent) {
+    if (event.pointerType === 'touch') return;
+
     const card = this.card.nativeElement;
     const cardRect = card.getBoundingClientRect();
 
