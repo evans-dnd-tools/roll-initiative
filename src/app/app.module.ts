@@ -12,6 +12,7 @@ import { RollInitiativeComponent } from './pages/roll-initiative/roll-initiative
 import { WorldIndexComponent } from './pages/world-index/world-index.component';
 import { InitiativeHeaderComponent } from './components/initiative-header/initiative-header.component';
 import { IndexHeaderComponent } from './components/index-header/index-header.component';
+import { SpellCardComponent } from './components/spell-card/spell-card.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { IndexHeaderComponent } from './components/index-header/index-header.com
     WorldIndexComponent,
     InitiativeHeaderComponent,
     IndexHeaderComponent,
+    SpellCardComponent,
   ],
   imports: [
     BrowserModule,

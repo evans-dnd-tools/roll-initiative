@@ -16,6 +16,6 @@ export class IndexHeaderComponent {
     { name: 'Tous', active: false },
     { name: 'Joueurs', active: false },
     { name: 'PNJs', active: false },
-    { name: 'Sorts', active: true },
+    { name: 'Sorts', active: true }
   ]
 }

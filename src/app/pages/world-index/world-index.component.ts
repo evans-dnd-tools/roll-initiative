@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SPELLS } from 'src/app/lists/spells';
 
 @Component({
   selector: 'app-world-index',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class WorldIndexComponent {
 
+  spells = SPELLS
 }

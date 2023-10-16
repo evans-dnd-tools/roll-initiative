@@ -1,0 +1,127 @@
+:host {
+  display: block;
+  box-sizing: border-box;
+  perspective: 6000px;
+  perspective-origin: center;
+}
+
+.spell {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  will-change: transform;
+
+  border-radius: 11px;
+  padding: 42px;
+  width: 460px;
+  height: 640px;
+
+  overflow: hidden;
+
+  box-shadow: 0 4px 32px 1px rgba(0,0,0,0.12);
+
+  transition: transform 0.2s ease-out, 
+    filter 0.2s ease-out, 
+    scale 0.2s ease-out;
+
+  scale: 1.02;
+
+  &.anim {
+    scale: none;
+  }
+}
+
+.spell__header {
+  background: rgba(172, 143, 70, 0.4);
+  padding: 0.5rem 1.5rem;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+
+  text-align: center;
+  color: #2E0909;
+  line-height: 0.8;
+
+  border-bottom: 2px solid rgba(130, 105, 44, 0.75);
+}
+
+.spell__title {
+  font-family: 'Mrs Eaves';
+  font-weight: normal;
+  text-align: center;
+  font-size: 28px;
+  letter-spacing: -0.8px;
+}
+
+.spell__level-school {
+  font-family: 'Bookmania';
+  font-style: italic;
+  font-size: 17px;
+  letter-spacing: -0.44px;
+
+  margin-bottom: 0.25rem;
+}
+
+.spell__body {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+
+  font-size: 14px;
+  font-family: 'Bookmania' !important;
+  line-height: 1.35;
+
+  overflow: hidden auto;
+
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0.4rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 10rem;
+  }
+}
+
+.spell__meta {
+  margin-bottom: 1rem;
+}
+
+.spell_description {
+  white-space: pre-wrap;
+
+  &:after {
+    content: '';
+    display: block;
+    height: 0.5rem;
+  }
+}
+
+.marble {
+  position: absolute;
+  z-index: -1;
+  top: -1501px;
+  left: -623px;
+  width: 4096px;
+  height: 2731px;
+
+  background: #FFF;
+
+  &:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    background: url('../../../assets/images/MARBLE_IMG.png'), lightgray 50% / cover no-repeat;
+  }
+}
