@@ -14,7 +14,7 @@ export class SpellCardComponent {
   anim = true;
 
   formatSchool(school: string): string {
-    const firstLetter = school[0].toLowerCase();
+    const firstLetter = school.normalize('NFD').replace(/[\u0300-\u036f]/g, '')[0].toLowerCase();
     const voyels = ['a', 'e', 'i', 'o', 'u', 'y'];
 
     const article = voyels.includes(firstLetter) ? 'd\'' : 'de ';

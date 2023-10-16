@@ -18,7 +18,7 @@ export class WorldIndexComponent {
   formatSubtext(spell: Spell) {
     let value = 'Sort ';
 
-    const firstLetter = spell.school[0].toLowerCase();
+    const firstLetter = spell.school.normalize('NFD').replace(/[\u0300-\u036f]/g, '')[0].toLowerCase();
     const voyels = ['a', 'e', 'i', 'o', 'u', 'y'];
 
     const article = voyels.includes(firstLetter) ? 'd\'' : 'de ';
