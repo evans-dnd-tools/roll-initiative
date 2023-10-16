@@ -26,6 +26,11 @@
 }
 
 label.pill {
+
+  --primary: var(--text);
+  --secondary: #FFF8E8;
+
+
   display: block;
   user-select: none;
   cursor: pointer;
@@ -35,10 +40,10 @@ label.pill {
   border-radius: 10rem;
   
   font-weight: 600;
-  color: var(--text);
+  color: var(--primary);
   white-space: nowrap;
 
-  border: 2px solid var(--text);
+  border: 2px solid var(--primary);
 
   background-color: transparent;  
 
@@ -53,7 +58,12 @@ label.pill {
   }
 
   &:has(:checked) {
-    background-color: var(--text);
-    color: #FFF8E8;
+    background: var(--primary);
+    color: var(--secondary);
+  }
+
+  ::ng-deep .fixed & {
+    --primary: #FFF8E8;
+    --secondary: var(--text);
   }
 }
