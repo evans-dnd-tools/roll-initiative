@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Character } from 'src/models/character';
 
 @Component({
   selector: 'character-sheet',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class CharacterSheetComponent {
 
+  @Input() character: Character;
 }
