@@ -1,16 +1,29 @@
 <index-header></index-header>
 
+<div class="list-header">
+  <input class="searchbar" type="text" placeholder="Rechercher un sort, personnage..." [(ngModel)]="filter" />
+  <div class="right-side">
+    <button type="button">Créer un personnage</button>
+  </div>  
+</div>
+
+<!-- A SUPPRIMER UNE FOIS TOUS LES SPELLS AJOUTÉ -->
+<div class="subtext">{{ spells.length }} spells</div>
+
 <div class="list">
-  <ng-container *ngFor="let spell of spells">
+  <ng-container *ngFor="let element of completeList">
     <!-- <a [routerLink]="['/spell', spell.id]"> -->
-      <div class="list-element" (click)="open(spell)">
-        <div class="elem-title">
-          {{ spell.name }}
+
+      <ng-container *ngIf="element.type === IndexElementType.Spell">
+        <div class="list-element" (click)="open(asSpell(element))">
+          <div class="elem-title">
+            {{ element.name }}
+          </div>
+          <div class="elem-subtext">
+            {{ formatSubtext(asSpell(element)) }}
+          </div>
         </div>
-        <div class="elem-subtext">
-          {{ formatSubtext(spell) }}
-        </div>
-      </div>
+      </ng-container>
     <!-- </a> -->
   </ng-container>
 </div>

@@ -1,8 +1,12 @@
 import { Class } from "./enums/class";
+import { IndexElementType } from "./enums/index-element-type";
 import { Race } from "./enums/race";
 import { Sex } from "./enums/sex";
+import { IndexElement } from "./index-element";
 
-export class Character {
+export class Character implements IndexElement {
+
+  type = IndexElementType.Character;
 
   name: string;
   lastName: string;

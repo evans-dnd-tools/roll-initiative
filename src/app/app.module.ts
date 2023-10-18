@@ -14,6 +14,7 @@ import { InitiativeHeaderComponent } from './components/initiative-header/initia
 import { IndexHeaderComponent } from './components/index-header/index-header.component';
 import { SpellCardComponent } from './components/spell-card/spell-card.component';
 import { BaseModalComponent } from './components/base-modal/base-modal.component';
+import { CharacterSheetComponent } from './components/character-sheet/character-sheet.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { BaseModalComponent } from './components/base-modal/base-modal.component
     IndexHeaderComponent,
     SpellCardComponent,
     BaseModalComponent,
+    CharacterSheetComponent,
   ],
   imports: [
     BrowserModule,

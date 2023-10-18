@@ -1,7 +1,9 @@
 import { SpellSchool } from 'src/models/enums/spell-school';
 import { Spell } from '../../models/spell';
+import { IndexElementType } from 'src/models/enums/index-element-type';
 
 export const ENLARGE_REDUCE: Spell = {
+  type: IndexElementType.Spell,
   id: "enlarge-reduce",
   name: "Agrandissement & Rapetissement",
   level: 2,
@@ -19,6 +21,7 @@ export const ENLARGE_REDUCE: Spell = {
 };
 
 export const HELP: Spell = {
+  type: IndexElementType.Spell,
   id: "help",
   name: "Aide",
   level: 2,
@@ -33,6 +36,7 @@ export const HELP: Spell = {
 };
 
 export const ALARM: Spell = {
+  type: IndexElementType.Spell,
   id: "alarm",
   name: "Alarme",
   level: 1,
@@ -48,6 +52,7 @@ export const ALARM: Spell = {
 };
 
 export const PLANAR_ALLY: Spell = {
+  type: IndexElementType.Spell,
   id: "planar-ally",
   name: "Allié planaire",
   level: 6,
@@ -69,6 +74,7 @@ export const PLANAR_ALLY: Spell = {
 };
 
 export const ENHANCE_ABILITY: Spell = {
+  type: IndexElementType.Spell,
   id: "enhance-ability",
   name: "Amélioration de caractéristique",
   level: 2,
@@ -95,6 +101,7 @@ export const ENHANCE_ABILITY: Spell = {
 };
 
 export const ANIMAL_FRIENDSHIP: Spell = {
+  type: IndexElementType.Spell,
   id: "animal-friendship",
   name: "Amitié avec les animaux",
   level: 1,
@@ -109,6 +116,7 @@ export const ANIMAL_FRIENDSHIP: Spell = {
 };
 
 export const ANIMATE_DEAD: Spell = {
+  type: IndexElementType.Spell,
   id: "animate-dead",
   name: "Animation des morts",
   level: 3,
@@ -127,6 +135,7 @@ export const ANIMATE_DEAD: Spell = {
 };
 
 export const ANIMATE_OBJECTS: Spell = {
+  type: IndexElementType.Spell,
   id: "animate-objects",
   name: "Animation des objets",
   level: 5,
@@ -139,6 +148,7 @@ export const ANIMATE_OBJECTS: Spell = {
 };
 
 export const CONTIGENCY: Spell = {
+  type: IndexElementType.Spell,
   id: "contingency",
   name: "Anticipation",
   level: 6,
@@ -151,6 +161,7 @@ export const CONTIGENCY: Spell = {
 };
 
 export const NONDETECTION: Spell = {
+  type: IndexElementType.Spell,
   id: "nondetection",
   name: "Antidétéction",
   level: 3,
@@ -163,6 +174,7 @@ export const NONDETECTION: Spell = {
 };
 
 export const CALM_EMOTIONS: Spell = {
+  type: IndexElementType.Spell,
   id: "calm-emotions",
   name: "Apaisement des émotions",
   level: 2,
@@ -175,6 +187,7 @@ export const CALM_EMOTIONS: Spell = {
 };
 
 export const SEEMING: Spell = {
+  type: IndexElementType.Spell,
   id: "seeming",
   name: "Apparence trompeuse",
   level: 5,
@@ -187,6 +200,7 @@ export const SEEMING: Spell = {
 };
 
 export const FIND_STEED: Spell = {
+  type: IndexElementType.Spell,
   id: "find-steed",
   name: "Appel de destrier",
   level: 2,
@@ -199,6 +213,7 @@ export const FIND_STEED: Spell = {
 };
 
 export const FIND_FAMILIAR: Spell = {
+  type: IndexElementType.Spell,
   id: "find-familiar",
   name: "Appel de familier",
   level: 1,
@@ -211,6 +226,7 @@ export const FIND_FAMILIAR: Spell = {
 };
 
 export const CALL_LIGHTNING: Spell = {
+  type: IndexElementType.Spell,
   id: "call-lightning",
   name: "Appel de la foudre",
   level: 3,
@@ -223,6 +239,7 @@ export const CALL_LIGHTNING: Spell = {
 };
 
 export const ELEMENTAL_WEAPON: Spell = {
+  type: IndexElementType.Spell,
   id: "elemental-weapon",
   name: "Arme élémentaire",
   level: 3,
@@ -235,6 +252,7 @@ export const ELEMENTAL_WEAPON: Spell = {
 };
 
 export const MAGIC_WEAPON: Spell = {
+  type: IndexElementType.Spell,
   id: "magic-weapon",
   name: "Arme magique",
   level: 2,
@@ -247,6 +265,7 @@ export const MAGIC_WEAPON: Spell = {
 };
 
 export const SPIRITUAL_WEAPON: Spell = {
+  type: IndexElementType.Spell,
   id: "spiritual-weapon",
   name: "Arme spirituelle",
   level: 2,
@@ -259,6 +278,7 @@ export const SPIRITUAL_WEAPON: Spell = {
 };
 
 export const ARMOR_OF_AGATHYS: Spell = {
+  type: IndexElementType.Spell,
   id: "armor-of-agathys",
   name: "Armure d'Agathys",
   level: 1,
@@ -271,6 +291,7 @@ export const ARMOR_OF_AGATHYS: Spell = {
 };
 
 export const MAGE_ARMOR: Spell = {
+  type: IndexElementType.Spell,
   id: "mage-armor",
   name: "Armure de mage",
   level: 1,
@@ -283,6 +304,7 @@ export const MAGE_ARMOR: Spell = {
 };
 
 export const TIME_STOP: Spell = {
+  type: IndexElementType.Spell,
   id: "time-stop",
   name: "Arrêt du temps",
   level: 9,
@@ -295,6 +317,7 @@ export const TIME_STOP: Spell = {
 };
 
 export const ACID_SPLASH: Spell = {
+  type: IndexElementType.Spell,
   id: "acid-splash",
   name: "Aspersion acide",
   level: 0,
@@ -307,6 +330,7 @@ export const ACID_SPLASH: Spell = {
 };
 
 export const PHANTASMAL_KILLER: Spell = {
+  type: IndexElementType.Spell,
   id: "phantasmal-killer",
   name: "Assassin imaginaire",
   level: 4,
@@ -319,6 +343,7 @@ export const PHANTASMAL_KILLER: Spell = {
 };
 
 export const GUIDANCE: Spell = {
+  type: IndexElementType.Spell,
   id: "guidance",
   name: "Assistance",
   level: 0,
@@ -331,6 +356,7 @@ export const GUIDANCE: Spell = {
 };
 
 export const AUGURY: Spell = {
+  type: IndexElementType.Spell,
   id: "augury",
   name: "Augure",
   level: 2,
@@ -343,6 +369,7 @@ export const AUGURY: Spell = {
 };
 
 export const AURA_OF_PURITY: Spell = {
+  type: IndexElementType.Spell,
   id: "aura-of-purity",
   name: "Aura de pureté",
   level: 4,
@@ -355,6 +382,7 @@ export const AURA_OF_PURITY: Spell = {
 };
 
 export const AURA_OF_LIFE: Spell = {
+  type: IndexElementType.Spell,
   id: "aura-of-life",
   name: "Aura de vie",
   level: 4,
@@ -367,6 +395,7 @@ export const AURA_OF_LIFE: Spell = {
 };
 
 export const AURA_OF_VITALITY: Spell = {
+  type: IndexElementType.Spell,
   id: "aura-of-vitality",
   name: "Aura de vitalité",
   level: 3,
@@ -379,6 +408,7 @@ export const AURA_OF_VITALITY: Spell = {
 };
 
 export const CRUSADERS_MANTLE: Spell = {
+  type: IndexElementType.Spell,
   id: "crusaders-mantle",
   name: "Aura du croisé",
   level: 3,
@@ -391,6 +421,7 @@ export const CRUSADERS_MANTLE: Spell = {
 };
 
 export const NYSTULS_MAGIC_AURA: Spell = {
+  type: IndexElementType.Spell,
   id: "nystuls-magic-aura",
   name: "Aura magique de Nystul",
   level: 2,
@@ -403,6 +434,7 @@ export const NYSTULS_MAGIC_AURA: Spell = {
 };
 
 export const HOLY_AURA: Spell = {
+  type: IndexElementType.Spell,
   id: "holy-aura",
   name: "Aura sacrée",
   level: 8,
@@ -415,6 +447,7 @@ export const HOLY_AURA: Spell = {
 };
 
 export const ANTIPATHY_SYMPATHY: Spell = {
+  type: IndexElementType.Spell,
   id: "antipathy-sympathy",
   name: "Aversion & attirance",
   level: 8,
