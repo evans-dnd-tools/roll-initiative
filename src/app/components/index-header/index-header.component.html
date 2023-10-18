@@ -1,7 +1,11 @@
 <header pageTitle="Index">
   <div class="filters">
+    <label class="pill">
+      <input type="checkbox" (change)="toggleAll()" [ngModel]="allActive" />
+      <span>Tous</span>
+    </label>
     <label class="pill" *ngFor="let filter of filters">
-      <input type="checkbox" [(ngModel)]="filter.active" />
+      <input type="checkbox" (change)="onFilterChange()" [(ngModel)]="filter.active" />
       <span>{{ filter.name }}</span>
     </label>
   </div>

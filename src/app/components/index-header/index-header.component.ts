@@ -1,9 +1,5 @@
-import { Component } from '@angular/core';
-
-type Filter = {
-  name: string,
-  active: boolean
-};
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Filter } from 'src/models/filter';
 
 @Component({
   selector: 'index-header',
@@ -12,10 +8,28 @@ type Filter = {
 })
 export class IndexHeaderComponent {
 
-  filters: Filter[] = [
-    { name: 'Tous', active: false },
-    { name: 'Joueurs', active: false },
-    { name: 'PNJs', active: false },
-    { name: 'Sorts', active: true }
-  ]
+  @Input()
+  filters: Filter[];
+
+  @Output()
+  filtersChange: EventEmitter<Filter[]> = new EventEmitter<Filter[]>();
+
+  constructor() {}
+
+  toggleAll() {
+    if (this.allActive) this.filters.forEach(f => f.active = false);
+    else this.filters.forEach(f => f.active = true);
+
+    this.onFilterChange();
+  }
+
+  onFilterChange() {
+    this.filtersChange.emit(this.filters);
+  }
+
+  ////    SPECIAL GETTERS    ////
+
+  get allActive() {
+    return this.filters.every(f => f.active);
+  }
 }

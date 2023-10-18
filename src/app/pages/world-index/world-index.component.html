@@ -1,4 +1,4 @@
-<index-header></index-header>
+<index-header [(filters)]="filters"></index-header>
 
 <div class="list-header">
   <input class="searchbar" type="text" placeholder="Rechercher un sort, personnage..." [(ngModel)]="filter" />
@@ -12,8 +12,6 @@
 
 <div class="list">
   <ng-container *ngFor="let element of completeList">
-    <!-- <a [routerLink]="['/spell', spell.id]"> -->
-
       <div class="list-element" (click)="open(element)">
         <div class="elem-title">
           {{ element.name }}
@@ -22,6 +20,5 @@
           {{ formatSubtext(element) }}
         </div>
       </div>
-    <!-- </a> -->
   </ng-container>
 </div>
