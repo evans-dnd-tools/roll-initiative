@@ -1,4 +1,4 @@
 export enum IndexElementType {
-    Spell,
-    Character
+    Spell = "Sorts",
+    Character = "Personnages",
 }

@@ -8,7 +8,7 @@ export class Character implements IndexElement {
 
   type = IndexElementType.Character;
 
-  name: string;
+  firstName: string;
   lastName: string;
 
   sex: Sex;
@@ -33,11 +33,13 @@ export class Character implements IndexElement {
   wisdom: number;
   charisma: number;
 
-  constructor() {}
+  public constructor(init?:Partial<Character>) {
+    Object.assign(this, init);
+}
 
 
-  get fullName(): string {
-    return `${this.name} ${this.lastName}`;
+  get name(): string {
+    return `${this.firstName} ${this.lastName}`;
   }
 
   get strengthModifier(): number {

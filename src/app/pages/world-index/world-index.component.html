@@ -14,16 +14,14 @@
   <ng-container *ngFor="let element of completeList">
     <!-- <a [routerLink]="['/spell', spell.id]"> -->
 
-      <ng-container *ngIf="element.type === IndexElementType.Spell">
-        <div class="list-element" (click)="open(asSpell(element))">
-          <div class="elem-title">
-            {{ element.name }}
-          </div>
-          <div class="elem-subtext">
-            {{ formatSubtext(asSpell(element)) }}
-          </div>
+      <div class="list-element" (click)="open(element)">
+        <div class="elem-title">
+          {{ element.name }}
         </div>
-      </ng-container>
+        <div class="elem-subtext">
+          {{ formatSubtext(element) }}
+        </div>
+      </div>
     <!-- </a> -->
   </ng-container>
 </div>
