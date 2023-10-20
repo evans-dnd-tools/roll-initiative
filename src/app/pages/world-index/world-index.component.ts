@@ -28,11 +28,11 @@ export class WorldIndexComponent {
 
   pnjs : Character[] = [
     new Character({
-      firstName: "ARalph",
+      firstName: "Ralph",
       lastName: "Hadley",
       sex: Sex.Male,
       race: Race.Human,
-      height: 1.98,
+      height: 198,
       alignment: "Loyal Neutre",
       class: Class.Fighter,
       level: 3,
@@ -40,12 +40,7 @@ export class WorldIndexComponent {
       hitPoints: 21,
       speed: 9,
       description: "Un homme grand et musclé, avec une barbe et des cheveux bruns.",
-      strength: 15,
-      dexterity: 10,
-      constitution: 12,
-      intelligence: 7,
-      wisdom: 10,
-      charisma: 6
+      stats: [15, 10, 12, 7, 10, 6]
     })
   ];
 

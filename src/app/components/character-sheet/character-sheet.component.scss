@@ -21,8 +21,98 @@
 .character__name {
   font-family: 'Mrs Eaves';
   font-weight: normal;
-  text-align: center;
   font-size: 28px;
   letter-spacing: -0.8px;
-  color: #2E0909;
+  color: var(--special-text);
+}
+
+.character__subtext {
+  font-family: 'Bookmania';
+  font-style: italic;
+  font-size: 17px;
+  letter-spacing: -0.44px;
+  color: var(--special-text);
+
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--gold-accent);
+
+  margin-top: -6px;
+  margin-bottom: 1rem;
+}
+
+.character__armor {
+  padding-left: 3px;
+  margin-bottom: 1rem;
+}
+
+.character__stats {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  gap: 1rem;
+
+  margin-bottom: 1.5rem;
+}
+
+.character__stat {
+  position: relative;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  width: 5rem;
+  padding: 0.5rem 0rem 1.5rem;
+
+  box-sizing: content-box;
+
+  font-family: 'Roboto Condensed';
+  font-size: 11px;
+
+  border: 2px solid var(--gold-accent);
+}
+
+.character__stat-name {
+  text-transform: uppercase;
+  color: var(--subtext);
+}
+
+.character__stat-modifier {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.character__stat-value {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  translate: -50% -50%;
+
+  width: 65%;
+
+  padding: 0.3rem;
+
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+
+  background: white;
+
+  border: 2px solid var(--gold-accent);
+  border-radius: 50%;
+
+  
+  overflow: hidden;
+}
+
+.character__description-title {
+  font-family: 'Mrs Eaves';
+  font-weight: normal;
+  font-size: 24px;
+  letter-spacing: -0.8px;
+  color: var(--special-text);
 }

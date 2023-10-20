@@ -26,43 +26,37 @@ export class Character implements IndexElement {
 
   description: string;
 
-  strength: number;
-  dexterity: number;
-  constitution: number;
-  intelligence: number;
-  wisdom: number;
-  charisma: number;
+  stats: [number, number, number, number, number, number];
 
   public constructor(init?:Partial<Character>) {
     Object.assign(this, init);
-}
-
+  }
 
   get name(): string {
     return `${this.firstName} ${this.lastName}`;
   }
 
-  get strengthModifier(): number {
-    return Math.floor((this.strength - 10) / 2);
+  get strength(): number {
+    return this.stats[0];
   }
 
-  get dexterityModifier(): number {
-    return Math.floor((this.dexterity - 10) / 2);
+  get dexterity(): number {
+    return this.stats[1];
   }
 
-  get constitutionModifier(): number {
-    return Math.floor((this.constitution - 10) / 2);
+  get constitution(): number {
+    return this.stats[2];
   }
 
-  get intelligenceModifier(): number {
-    return Math.floor((this.intelligence - 10) / 2);
+  get intelligence(): number {
+    return this.stats[3];
   }
 
-  get wisdomModifier(): number {
-    return Math.floor((this.wisdom - 10) / 2);
+  get wisdom(): number {
+    return this.stats[4];
   }
 
-  get charismaModifier(): number {
-    return Math.floor((this.charisma - 10) / 2);
+  get charisma(): number {
+    return this.stats[5];
   }
 }

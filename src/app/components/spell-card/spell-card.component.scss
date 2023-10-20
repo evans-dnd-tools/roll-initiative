@@ -45,10 +45,10 @@
   gap: 0.25rem;
 
   text-align: center;
-  color: #2E0909;
+  color: var(--special-text);
   line-height: 0.8;
 
-  border-bottom: 2px solid rgba(130, 105, 44, 0.75);
+  border-bottom: 2px solid var(--gold-accent);
 }
 
 .spell__title {

@@ -55,7 +55,7 @@
 
   & .elem-subtext {
     font-size: 14px;
-    color: #666666;
+    color: var(--subtext);
   }
 
   &:is(:hover, :focus-visible) {
