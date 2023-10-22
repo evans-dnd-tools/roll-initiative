@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { MarkdownService } from 'src/app/services/markdown.service';
 import { Character } from 'src/models/character';
 import { classBySex } from 'src/models/enums/class';
 import { raceBySex } from 'src/models/enums/race';
@@ -9,17 +10,31 @@ import { Stat } from 'src/models/enums/stat';
   templateUrl: './character-sheet.component.html',
   styleUrls: ['./character-sheet.component.scss']
 })
-export class CharacterSheetComponent {
+export class CharacterSheetComponent implements OnInit, OnChanges {
 
   ////    READONLY    ////
 
   Stat = Stat;
 
+  description = "";
+
   ////    INPUTS    ////
 
   @Input() character: Character;
 
+  ////    CONSTRUCTOR    ////
+
+  constructor(private markdownService: MarkdownService) {}
+
   ////    METHODS    ////
+
+  ngOnInit() {
+    this.description = this.markdownService.markdownToHtml(this.character.description);
+  }
+
+  ngOnChanges() {
+    this.description = this.markdownService.markdownToHtml(this.character.description);
+  }
 
   statModifier(stat: number): string {
     return (stat > 10 ? "+":"") + Math.floor((stat - 10) / 2);

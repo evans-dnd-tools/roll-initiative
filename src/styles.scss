@@ -192,6 +192,39 @@ button {
   mix-blend-mode: exclusion;
 }
 
+////    MARKDOWN STYLES    ////
+
+.mh1, .mh2, .mh3 {
+  font-family: 'Mrs Eaves';
+  font-weight: normal;
+  color: var(--special-text);
+}
+
+.mh1 {
+  font-size: 24px;
+  letter-spacing: -0.8px;
+}
+
+.mh2 {
+  font-size: 20px;
+  letter-spacing: -0.6px;
+}
+
+hr.mhr {
+  height: 2px;
+  width: 100%;
+
+  border: none;
+  background: var(--gold-accent);
+}
+
+li.mli {
+  padding-left: 0.5rem;
+  & span {
+    margin-left: -0.25rem;
+  }
+}
+
 @media (max-width: 768px) {
   :root {
     --padding: 1rem;

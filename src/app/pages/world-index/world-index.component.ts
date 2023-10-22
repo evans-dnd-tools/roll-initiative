@@ -39,7 +39,7 @@ export class WorldIndexComponent {
       armorClass: 12,
       hitPoints: 21,
       speed: 9,
-      description: "Un homme grand et musclé, avec une barbe et des cheveux bruns.",
+      description: ``,
       stats: [15, 10, 12, 7, 10, 6]
     })
   ];

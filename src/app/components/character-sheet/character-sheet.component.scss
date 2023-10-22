@@ -52,7 +52,7 @@
 
   gap: 1rem;
 
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .character__stat {
@@ -109,10 +109,6 @@
   overflow: hidden;
 }
 
-.character__description-title {
-  font-family: 'Mrs Eaves';
-  font-weight: normal;
-  font-size: 24px;
-  letter-spacing: -0.8px;
-  color: var(--special-text);
+.character__description {
+
 }
