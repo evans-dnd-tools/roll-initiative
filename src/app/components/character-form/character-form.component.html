@@ -1,0 +1,79 @@
+<div class="character__name">
+  <span 
+    class="character__first-name" 
+    placeholder="Prénom" 
+    [textContent]="character.firstName" 
+    (input)="updateFirstName($event)"
+    (beforeinput)="checkInput($event)"
+    contenteditable
+  ></span>
+  <span 
+    class="character__last-name" 
+    placeholder="Nom" 
+    [textContent]="character.lastName" 
+    (input)="updateLastName($event)"
+    (beforeinput)="checkInput($event)"
+    contenteditable
+    ></span>
+</div>
+
+<div class="character__armor">
+  <div class="character__armor-class">
+    <b>Classe d'armure : </b>
+    <span
+      placeholder="0" 
+      [textContent]="character.armorClass" 
+      (input)="updateArmorClass($event)"
+      (beforeinput)="checkNumberInput($event)"
+      contenteditable
+    ></span>
+  </div>
+  <div class="character__hit-points">
+    <b>Points de vie : </b>
+    <span
+      placeholder="0" 
+      [textContent]="character.hitPoints" 
+      (input)="updateHitPoints($event)"
+      (beforeinput)="checkNumberInput($event)"
+      contenteditable
+    ></span>
+  </div>
+  <div class="character__speed">
+    <b>Vitesse : </b>
+    <span
+      placeholder="0" 
+      [textContent]="character.speed" 
+      (input)="updateSpeed($event)"
+      (beforeinput)="checkNumberInput($event)"
+      contenteditable
+    ></span>
+    mètres
+  </div>
+</div>
+
+
+
+<div class="character__stats">
+  <div class="character__stat" *ngFor="let stat of character.stats; index as i; trackBy: trackBy">
+    <div class="character__stat-name">{{ statNames[i] }}</div>
+    <div class="character__stat-modifier">{{ statModifier(stat) }}</div>
+    <div class="character__stat-value">
+      <input 
+        placeholder="0"
+        [(ngModel)]="character.stats[i]"
+        (beforeinput)="checkNumberInput($event)"
+      />
+    </div>
+  </div>
+</div>
+
+<label class="character__description">
+  <div class="description-html" [innerHTML]="description"></div>
+  <textarea 
+    placeholder="Description" 
+    [(ngModel)]="character.description"
+    (blur)="updateDescription()"
+  ></textarea>
+</label>
+
+<!-- <div class="character__subtext">{{ subtext }} -->

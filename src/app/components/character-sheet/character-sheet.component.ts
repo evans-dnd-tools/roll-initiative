@@ -14,8 +14,6 @@ export class CharacterSheetComponent implements OnInit, OnChanges {
 
   ////    READONLY    ////
 
-  Stat = Stat;
-
   description = "";
 
   ////    INPUTS    ////

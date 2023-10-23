@@ -26,7 +26,14 @@ export class Character implements IndexElement {
 
   description: string;
 
-  stats: [number, number, number, number, number, number];
+  stats: [number, number, number, number, number, number] = [
+    undefined, 
+    undefined, 
+    undefined, 
+    undefined, 
+    undefined, 
+    undefined
+  ];
 
   public constructor(init?:Partial<Character>) {
     Object.assign(this, init);
@@ -40,23 +47,47 @@ export class Character implements IndexElement {
     return this.stats[0];
   }
 
+  set strength(value: number) {
+    this.stats[0] = value;
+  }
+
   get dexterity(): number {
     return this.stats[1];
+  }
+
+  set dexterity(value: number) {
+    this.stats[1] = value;
   }
 
   get constitution(): number {
     return this.stats[2];
   }
 
+  set constitution(value: number) {
+    this.stats[2] = value;
+  }
+
   get intelligence(): number {
     return this.stats[3];
+  }
+
+  set intelligence(value: number) {
+    this.stats[3] = value;
   }
 
   get wisdom(): number {
     return this.stats[4];
   }
 
+  set wisdom(value: number) {
+    this.stats[4] = value;
+  }
+
   get charisma(): number {
     return this.stats[5];
+  }
+
+  set charisma(value: number) {
+    this.stats[5] = value;
   }
 }

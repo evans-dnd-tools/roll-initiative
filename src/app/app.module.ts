@@ -15,6 +15,7 @@ import { IndexHeaderComponent } from './components/index-header/index-header.com
 import { SpellCardComponent } from './components/spell-card/spell-card.component';
 import { BaseModalComponent } from './components/base-modal/base-modal.component';
 import { CharacterSheetComponent } from './components/character-sheet/character-sheet.component';
+import { CharacterFormComponent } from './components/character-form/character-form.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { CharacterSheetComponent } from './components/character-sheet/character-
     SpellCardComponent,
     BaseModalComponent,
     CharacterSheetComponent,
+    CharacterFormComponent,
   ],
   imports: [
     BrowserModule,
