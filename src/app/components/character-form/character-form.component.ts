@@ -77,6 +77,11 @@ export class CharacterFormComponent {
     this.description = this.markdownService.markdownToHtml(this.character.description);
   }
 
+  createCharacter() {
+    // this.character.description = this.markdownService.htmlToMarkdown(this.description);
+    console.log(this.character);
+  }
+
   ////    METHODS    ////
 
   statModifier(stat: number): string {

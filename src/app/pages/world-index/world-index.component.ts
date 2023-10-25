@@ -12,6 +12,8 @@ import { Class, classBySex } from 'src/models/enums/class';
 import { CharacterSheetComponent } from 'src/app/components/character-sheet/character-sheet.component';
 import { Filter } from 'src/models/filter';
 import { CharacterFormComponent } from 'src/app/components/character-form/character-form.component';
+import { CharacterImportComponent } from 'src/app/components/character-import/character-import.component';
+import { CharacterExportComponent } from 'src/app/components/character-export/character-export.component';
 
 @Component({
   selector: 'app-world-index',
@@ -66,6 +68,14 @@ export class WorldIndexComponent {
 
   openCreationModal() {
     this.modalService.open(CharacterFormComponent, {});
+  }
+
+  openImportModal() {
+    this.modalService.open(CharacterImportComponent, {});
+  }
+
+  openExportModal() {
+    this.modalService.open(CharacterExportComponent, {});
   }
 
   // FILTER

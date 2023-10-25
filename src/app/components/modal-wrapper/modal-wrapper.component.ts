@@ -1,12 +1,12 @@
 import { Component, ElementRef, HostListener, Injector, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { ModalService } from './../../services/modal.service';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
-  selector: 'app-base-modal',
-  templateUrl: './base-modal.component.html',
-  styleUrls: ['./base-modal.component.scss']
+  selector: 'modal-wrapper',
+  templateUrl: './modal-wrapper.component.html',
+  styleUrls: ['./modal-wrapper.component.scss']
 })
-export class BaseModalComponent implements OnInit {
+export class ModalWrapperComponent implements OnInit {
 
   hostElement: HTMLElement;
   modalService: ModalService;

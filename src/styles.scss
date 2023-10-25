@@ -192,6 +192,29 @@ button {
   mix-blend-mode: exclusion;
 }
 
+////   MODAL    ////
+
+[modal] {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  border-radius: 3px;
+  padding: 42px;
+
+  max-width: 90dvw;
+  max-height: 90dvh;
+
+  overflow: hidden;
+
+  background: #FFFFFF;
+
+  box-shadow: 0 4px 32px 1px rgba(0,0,0,0.3);
+}
+
+
 ////    MARKDOWN STYLES    ////
 
 .mh1, .mh2, .mh3 {

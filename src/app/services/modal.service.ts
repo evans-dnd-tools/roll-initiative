@@ -1,5 +1,5 @@
 import { Injectable, ApplicationRef } from '@angular/core';
-import { BaseModalComponent } from '../components/base-modal/base-modal.component';
+import { ModalWrapperComponent } from '../components/modal-wrapper/modal-wrapper.component';
 import { AppComponent } from '../app.component';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { AppComponent } from '../app.component';
 })
 export class ModalService {
 
-  private modalComponent: BaseModalComponent;
+  private modalComponent: ModalWrapperComponent;
 
   constructor(
     private appRef: ApplicationRef
@@ -17,7 +17,7 @@ export class ModalService {
 
   appendBaseModalToRoot() {
     const rootViewRef = (this.appRef.components[0].instance as AppComponent).viewContainerRef;    
-    this.modalComponent = rootViewRef.createComponent(BaseModalComponent).instance;
+    this.modalComponent = rootViewRef.createComponent(ModalWrapperComponent).instance;
   }
 
   open(component: any, input: any) {

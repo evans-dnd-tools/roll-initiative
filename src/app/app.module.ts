@@ -13,9 +13,11 @@ import { WorldIndexComponent } from './pages/world-index/world-index.component';
 import { InitiativeHeaderComponent } from './components/initiative-header/initiative-header.component';
 import { IndexHeaderComponent } from './components/index-header/index-header.component';
 import { SpellCardComponent } from './components/spell-card/spell-card.component';
-import { BaseModalComponent } from './components/base-modal/base-modal.component';
+import { ModalWrapperComponent } from './components/modal-wrapper/modal-wrapper.component';
 import { CharacterSheetComponent } from './components/character-sheet/character-sheet.component';
 import { CharacterFormComponent } from './components/character-form/character-form.component';
+import { CharacterExportComponent } from './components/character-export/character-export.component';
+import { CharacterImportComponent } from './components/character-import/character-import.component';
 
 
 @NgModule({
@@ -30,9 +32,11 @@ import { CharacterFormComponent } from './components/character-form/character-fo
     InitiativeHeaderComponent,
     IndexHeaderComponent,
     SpellCardComponent,
-    BaseModalComponent,
+    ModalWrapperComponent,
     CharacterSheetComponent,
     CharacterFormComponent,
+    CharacterExportComponent,
+    CharacterImportComponent,
   ],
   imports: [
     BrowserModule,
