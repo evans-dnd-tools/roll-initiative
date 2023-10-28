@@ -1,20 +1,19 @@
 import { Sex } from "./sex";
 
 export enum Class {
-  Barbarian,
-  Bard,
-  Cleric,
-  Druid,
-  Fighter,
-  Monk,
-  Paladin,
-  Ranger,
-  Rogue,
-  Sorcerer,
-  Warlock,
-  Wizard,
+  Barbarian = "Barbare",
+  Bard = "Barde",
+  Cleric = "Clerc",
+  Druid = "Druide",
+  Fighter = "Guerrier",
+  Monk = "Moine",
+  Paladin = "Paladin",
+  Ranger = "Rôdeur",
+  Rogue = "Roublard",
+  Sorcerer = "Ensorceleur",
+  Warlock = "Occultiste",
+  Wizard = "Mage",
 }
-
 
 const ClassBySex = new Map<Class, Map<Sex, string>>([
   [Class.Barbarian, new Map<Sex, string>([
@@ -68,5 +67,6 @@ const ClassBySex = new Map<Class, Map<Sex, string>>([
 ]);
 
 export function classBySex(charClass: Class, sex: Sex): string {
-  return ClassBySex.get(charClass).get(sex);
+  if (sex === Sex.Other || sex == null) return charClass;
+  return ClassBySex.get(charClass)?.get(sex);
 }

@@ -30,4 +30,8 @@ export class ModalService {
     
     this.modalComponent.open();
   }
+
+  close() {
+    this.modalComponent.saveAndClose();
+  }
 }

@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import { Character } from 'src/models/character';
 import { Stat } from 'src/models/enums/stat';
 import { MarkdownService } from './../../services/markdown.service';
+import { CharactersSheetService } from 'src/app/services/characters-sheet.service';
+import { ModalService } from 'src/app/services/modal.service';
+import { Class, classBySex } from 'src/models/enums/class';
+import { Race, raceBySex } from 'src/models/enums/race';
+import { Sex } from 'src/models/enums/sex';
 
 const NUMBER_REGEX = /^\d+$/;
 
@@ -11,7 +16,16 @@ const NUMBER_REGEX = /^\d+$/;
   styleUrls: ['./character-form.component.scss']
 })
 export class CharacterFormComponent {
-  
+
+  ////    READ-ONLY    ////
+
+  readonly CLASSES = Class;
+  readonly RACES = Race;
+  readonly SEX = Sex;
+
+  readonly classBySex = classBySex;
+  readonly raceBySex = raceBySex;
+
   ////    ATTRIBUTES    ////
 
   character = new Character();
@@ -20,7 +34,13 @@ export class CharacterFormComponent {
 
   ////    CONSTRUCTOR    ////
 
-  constructor(private markdownService: MarkdownService) {}
+  constructor(
+    private markdownService: MarkdownService, 
+    private charactersService: CharactersSheetService,
+    private modalService: ModalService
+  ) {
+
+  }
 
   ////    INPUT EVENTS    ////
 
@@ -78,8 +98,8 @@ export class CharacterFormComponent {
   }
 
   createCharacter() {
-    // this.character.description = this.markdownService.htmlToMarkdown(this.description);
-    console.log(this.character);
+    this.charactersService.addCharacter(this.character);
+    this.modalService.close();
   }
 
   ////    METHODS    ////

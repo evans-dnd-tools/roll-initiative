@@ -3,23 +3,23 @@ import { Sex } from "./sex"
 export enum Race {
   // Player races
   
-  Elf,
-  Halfling,
-  Human,
-  Dwarf,
-  HalfOrc,
-  HalfElf,
-  Dragonborn,  
-  Gnome,
-  Tiefling,
+  Elf = "Elfe",
+  Halfling = "Halfelin",
+  Human = "Humain",
+  Dwarf = "Nain",
+  HalfOrc = "Demi-orc",
+  HalfElf = "Demi-elfe",
+  Dragonborn = "Drakéide",  
+  Gnome = "Gnome",
+  Tiefling = "Tieffelin",
 
   // Common races
-  Aasimar,
-  Bugbear,
-  Goblin,
-  Kenku,
-  Kobold,
-  Tabaxi,
+  // Aasimar,
+  // Bugbear,
+  // Goblin,
+  // Kenku,
+  // Kobold,
+  // Tabaxi,
 }
 
 const RaceBySex = new Map<Race, Map<Sex, string>>([
@@ -62,5 +62,6 @@ const RaceBySex = new Map<Race, Map<Sex, string>>([
 ]);
 
 export function raceBySex(race: Race, sex: Sex) {
-  return RaceBySex.get(race).get(sex);
+  if (sex === Sex.Other || sex == null) return race;
+  return RaceBySex.get(race)?.get(sex);
 }

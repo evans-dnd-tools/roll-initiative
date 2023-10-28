@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 export class MarkdownService {
 
   markdownToHtml(markdown: string): string {
-    console.log(markdown)
-
+    if (markdown === undefined) return "";
+    
     let html = "";
 
     // for each line of the markdown
@@ -29,8 +29,6 @@ export class MarkdownService {
       .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
       .replace(/\*(.*?)\*/g, "<em>$1</em>")
       .replace(/\[(.*?)\]\((.*?)\)/g, "<a href='$2'>$1</a>")
-
-    console.log(html)
 
     return html;
   }

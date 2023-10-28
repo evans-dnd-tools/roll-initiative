@@ -1,3 +1,7 @@
+:host {
+  --background: #FFFBF8;
+}
+
 .filters {
   display: flex;
   gap: 0.5rem;
@@ -26,7 +30,7 @@
 label.pill {
 
   --primary: var(--text);
-  --secondary: #FFF8E8;
+  --secondary: var(--background);
 
 
   display: block;
@@ -61,7 +65,7 @@ label.pill {
   }
 
   ::ng-deep .fixed & {
-    --primary: #FFF8E8;
+    --primary: var(--background);
     --secondary: var(--text);
   }
 }

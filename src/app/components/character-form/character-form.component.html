@@ -16,6 +16,31 @@
     contenteditable
     ></span>
 </div>
+<div class="character__subtext">
+  <div placeholder="Sexe" [class.visible]="character.sex">
+    <select [(ngModel)]="character.sex">
+      <ng-container *ngFor="let sex of SEX | keyvalue">
+        <option [value]="sex.value">{{ sex.value }}</option>
+      </ng-container>
+    </select>
+  </div>
+
+  <div placeholder="Race" [class.visible]="character.race">
+    <select [(ngModel)]="character.race">
+      <ng-container *ngFor="let race of RACES | keyvalue">
+        <option [value]="race.value">{{ raceBySex(race.value, character.sex) }}</option>
+      </ng-container>
+    </select>
+  </div>
+
+  <div placeholder="Classe" [class.visible]="character.class">
+    <select [(ngModel)]="character.class">
+      <ng-container *ngFor="let class of CLASSES | keyvalue">
+        <option [value]="class.value">{{ classBySex(class.value, character.sex) }}</option>
+      </ng-container>
+    </select>
+  </div>
+</div>
 
 <div class="character__armor">
   <div class="character__armor-class">

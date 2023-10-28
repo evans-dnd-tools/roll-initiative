@@ -6,14 +6,14 @@ import { SpellCardComponent } from 'src/app/components/spell-card/spell-card.com
 import { Character } from 'src/models/character';
 import { IndexElement } from 'src/models/index-element';
 import { IndexElementType } from 'src/models/enums/index-element-type';
-import { Sex } from 'src/models/enums/sex';
-import { Race, raceBySex } from 'src/models/enums/race';
-import { Class, classBySex } from 'src/models/enums/class';
+import { classBySex } from 'src/models/enums/class';
+import { raceBySex } from 'src/models/enums/race';
 import { CharacterSheetComponent } from 'src/app/components/character-sheet/character-sheet.component';
 import { Filter } from 'src/models/filter';
 import { CharacterFormComponent } from 'src/app/components/character-form/character-form.component';
 import { CharacterImportComponent } from 'src/app/components/character-import/character-import.component';
 import { CharacterExportComponent } from 'src/app/components/character-export/character-export.component';
+import { CharactersSheetService } from 'src/app/services/characters-sheet.service';
 
 @Component({
   selector: 'app-world-index',
@@ -29,24 +29,6 @@ export class WorldIndexComponent {
 
   ////    VARIABLES    ////
 
-  pnjs : Character[] = [
-    new Character({
-      firstName: "Ralph",
-      lastName: "Hadley",
-      sex: Sex.Male,
-      race: Race.Human,
-      height: 198,
-      alignment: "Loyal Neutre",
-      class: Class.Fighter,
-      level: 3,
-      armorClass: 12,
-      hitPoints: 21,
-      speed: 9,
-      description: ``,
-      stats: [15, 10, 12, 7, 10, 6]
-    })
-  ];
-
   filter: string = '';
   filters : Filter[]
 
@@ -54,7 +36,7 @@ export class WorldIndexComponent {
 
   ////    CONSTRUCTOR    ////
 
-  constructor(private modalService: ModalService) {
+  constructor(private modalService: ModalService, private charactersService: CharactersSheetService) {
     this.filters = [];
 
     for (let type of Object.values(IndexElementType)) {
@@ -159,7 +141,7 @@ export class WorldIndexComponent {
       list = list.concat(this.spells);
 
     if (this.filters.find(f => f.name === IndexElementType.Character && f.active))
-      list = list.concat(this.pnjs);
+      list = list.concat(this.charactersService.getCharacters());
 
     // Filter by name
 
