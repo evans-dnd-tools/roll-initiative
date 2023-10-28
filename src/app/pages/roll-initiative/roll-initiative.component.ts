@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { CharactersService } from 'src/app/services/characters.service';
+import { CharactersInitiativeService } from 'src/app/services/characters-initiative.service';
 import { OptionsService } from 'src/app/services/options.service';
 import { DEFAULT_CHARACTER_LIST_SIZE } from 'src/models/constants';
 
@@ -10,7 +10,7 @@ import { DEFAULT_CHARACTER_LIST_SIZE } from 'src/models/constants';
 })
 export class RollInitiativeComponent {
 
-  constructor(public characters: CharactersService, public options: OptionsService) {
+  constructor(public characters: CharactersInitiativeService, public options: OptionsService) {
     const characterList = JSON.parse(localStorage.getItem('characters'));
 
     if (characterList && characterList.length > 0)

@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnChanges } from '@angular/core';
-import { CharactersService } from 'src/app/services/characters.service';
+import { CharactersInitiativeService } from 'src/app/services/characters-initiative.service';
 import { TrackerCharacter } from 'src/models/tracker-character';
 import { CHARACTER_SHEET_PADDING, CHARACTER_SHEET_SIZE } from 'src/models/constants';
 
@@ -19,7 +19,7 @@ export class BoardComponent implements OnChanges {
 
   ////    LIFE CYCLE    ////
 
-  constructor(elementRef: ElementRef, public charactersService: CharactersService) {
+  constructor(elementRef: ElementRef, public charactersService: CharactersInitiativeService) {
     this.hostElement = elementRef.nativeElement;
   }
 

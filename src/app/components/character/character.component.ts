@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnChanges } from '@angular/core';
-import { CharactersService } from 'src/app/services/characters.service';
+import { CharactersInitiativeService } from 'src/app/services/characters-initiative.service';
 import { DragAndDropService } from 'src/app/services/drag-and-drop.service';
 import { TrackerCharacter } from 'src/models/tracker-character';
 import { CHARACTER_SHEET_SIZE } from 'src/models/constants';
@@ -26,7 +26,7 @@ export class CharacterComponent implements OnChanges {
   constructor(
     elementRef: ElementRef, 
     private dragAndDropService: DragAndDropService,
-    public characters: CharactersService
+    public characters: CharactersInitiativeService
   ) {
     this.hostElement = elementRef.nativeElement;
   }

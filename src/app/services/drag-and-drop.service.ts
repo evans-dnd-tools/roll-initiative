@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subscription, fromEvent } from 'rxjs';
 import { CHARACTER_SHEET_PADDING, CHARACTER_SHEET_SIZE } from 'src/models/constants';
 import { CharacterComponent } from '../components/character/character.component';
-import { CharactersService } from './characters.service';
+import { CharactersInitiativeService } from './characters-initiative.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +22,7 @@ export class DragAndDropService {
 
   ////    LIFE CYCLE    ////
 
-  constructor(private characters: CharactersService) { }
+  constructor(private characters: CharactersInitiativeService) { }
 
   ////    FUNCTIONS    ////
 

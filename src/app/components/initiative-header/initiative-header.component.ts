@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CharactersService } from 'src/app/services/characters.service';
+import { CharactersInitiativeService } from 'src/app/services/characters-initiative.service';
 
 @Component({
   selector: 'initiative-header',
@@ -10,7 +10,7 @@ export class InitiativeHeaderComponent {
 
   showOptions: boolean = false;
 
-  constructor(public characters: CharactersService) {}
+  constructor(public characters: CharactersInitiativeService) {}
 
   toggleCombat() {
     if (this.characters.inCombat)
