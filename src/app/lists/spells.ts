@@ -918,7 +918,7 @@ export const CHATIMENT_TONITRUANT : Spell = {
 export const CHIEN_DE_GARDE_DE_MORDENKAINEN : Spell = {
   type: IndexElementType.Spell,
   id: "chien-de-garde-de-mordenkainen",
-  name: "Chien de garde de mordenkainen",
+  name: "Chien de garde de Mordenkainen",
   level: 4,
   school: SpellSchool.Conjuration,
   castingTime: "1 action",
@@ -1150,6 +1150,1098 @@ export const CONFUSION : Spell = {
   </table><br/>
   <p>Une créature affectée peut faire un jet de sauvegarde de Sagesse à la fin de chacun de ses tours. En cas de succès, l'effet se termine pour elle.</p><br/>
   <p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 5 ou plus, le rayon de la sphère augmente de 1,50 mètre par niveau au-delà du 4ème.</p>`
+};
+
+export const CONTACT_AVEC_LES_PLANS: Spell = {
+  type: IndexElementType.Spell,
+  id: "contact-avec-les-plans",
+  name: "Contact avec les plans",
+  level: null,
+  school: SpellSchool.Divination,
+  castingTime: "1 minute / Rituel",
+  range: "Personnelle",
+  components: "V",
+  duration: "1 minute",
+  description: "<p>Vous contactez mentalement un demi-dieu, l'esprit d'un sage décédé il y a longtemps, ou une autre entité mystérieuse issue d'un autre plan. Le contact avec cette intelligence extraplanaire met votre esprit à rude épreuve et risque même de le briser.</p><br/><p>Quand vous lancez ce sort, vous devez faire un jet de sauvegarde d'Intelligence DD 15. En cas d'échec, vous recevez 6d6 dégâts psychiques et vous devenez fou jusqu'à ce que vous ayez bénéficié d'un repos long. Tant que vous êtes fou, vous ne pouvez pas entreprendre la moindre action, vous ne comprenez pas ce que disent les autres créatures, vous êtes incapable de lire et vous ne bredouillez que des paroles insensées.</p><br/><p>Une tierce personne peut mettre un terme à cet effet en vous lançant le sort de restauration suprême.</p><br/><p>Si vous réussissez votre jet de sauvegarde, vous pouvez poser jusqu'à cinq questions à l'entité. Vous devez les poser avant la fin du sort. C'est le MD qui répond à chacune d'entre elles avec un mot, comme « oui », « non », « peut-être », « jamais », « hors sujet » ou « obscur » (si l'entité ignore la réponse à votre question). Si une réponse limitée à un seul mot risque de se révéler trompeuse, le MD peut la remplacer par une courte phrase.</p><br/>"
+};
+
+export  const CONTACT_GLACIAL: Spell = {
+  type: IndexElementType.Spell,
+  id: "contact-glacial",
+  name: "Contact glacial",
+  level: 0,
+  school: SpellSchool.Necromancy,
+  castingTime: "1 action",
+  range: "36 mètres",
+  components: "V, S",
+  duration: "1 round",
+  description: "<p>Vous faites apparaître une main fantomatique et squelettique dans l'espace d'une créature située à portée.</p><br/><p>Faites un jet d'attaque de sort à distance contre la créature pour la transir de froid. Si l'attaque touche, la victime reçoit 1d8 dégâts nécrotiques et ne peut pas récupérer de point de vie avant le début de votre prochain tour. Jusque-là, la main s'accroche à elle.</p><br/><p>Si votre cible est un mort-vivant, il est en plus désavantagé lors des jets d'attaque effectués contre vous jusqu'à la fin de votre prochain tour.</p><br/><p>Les dégâts du sort augmentent de 1d8 quand vous atteignez le niveau 5 (2d8), le niveau 11 (3d8) et le niveau 17 (4d8).</p><br/>"
+};
+
+export  const CONTAGION: Spell = {
+  type: IndexElementType.Spell,
+  id: "contagion",
+  name: "Contagion",
+  level: 5,
+  school: SpellSchool.Necromancy,
+  castingTime: "1 action",
+  range: "Contact",
+  components: "V,S",
+  duration: "7 jours",
+  description: "<p>Votre simple contact transmet des maladies. Faites une attaque de sort au corps à corps contre une créature à portée.</p><br/><p>Si vous touchez, la cible est empoisonnée.</p><br/><p>À la fin de chaque tour de la cible empoisonnée, elle doit effectuer un jet de sauvegarde de Constitution. Si elle réussit trois de ces JS, la cible n'est plus empoisonnée et le sott prend fin. Si elle rate trois de ces JS, la cible n'est plus empoisonnée, mais vous choisissez l'une des maladies ci-après. La cible en souffre alors pour toute la durée du sort.</p><br/><p>Comme le sort déclenche une maladie naturelle chez. la cible, tout effet qui guérit une maladie ou améliore ses symptômes s y applique.</p><br/><p>Mal aveuglant. La créature est en proie à de violentes douleurs cérébrales et ses yeux deviennent d'un blanc laiteux.</p><br/><p>Elle est désavantagée lors des tests de Sagesse et des jets de sauvegarde de Sagesse et elle est aveugle.</p><br/><p>Fièvre répugnante. Une forte fièvre s'empare de la créature qui est désavantagée lors des tests de Force, des jets de sauvegarde de Force et des jets d'attaque basés sur la Force.</p><br/><p>Pourriture. La chair de la créature se met à pourrir.</p><br/><p>Elle est désavantagée lors des tests de Charisme et devient vulnérable à tous les dégâts.</p><br/><p>Bouille-crâne. La créature a soudain l'esprit enfiévré. Elle est désavantagée lors des tests d'Intelligence et des jets de sauvegarde d'Intelligence. De plus, au combat, elle se comporte comme si elle était sous l'effet d'un sort de confusion.</p><br/><p>Convulsions. La créature est agitée de tremblements. Elle est désavantagée lors des tests de Dextérité, des jets de sauvegarde de Dextérité et des jets d'attaque basés sur la Dextérité.</p><br/><p>Mort poisseuse. La créature est affligée de saignements incontrôlables. Elle est désavantagée lors des tests de Constitution et des jets de sauvegarde de Constitution. De plus, elle est étourdie jusqu'à la fin de son prochain tour à chaque fois qu'elle subit des dégâts.</p><br/>"
+};
+
+export  const CONTAMINATION: Spell = {
+  type: IndexElementType.Spell,
+  id: "contamination",
+  name: "Contamination",
+  level: 6,
+  school: SpellSchool.Necromancy,
+  castingTime: "1 action",
+  range: "18 mètres",
+  components: "V, S",
+  duration: "Instantanée",
+  description: "<p>Vous transmettez une maladie virulente à une créature située à portée dans votre champ de vision. La cible doit faire un jet de sauvegarde de Constitution. Si elle échoue, elle subit 14d6 dégâts nécrotiques, la moitié seulement si elle réussit.</p><br/><p>Ces ne peuvent pas faire passer les points de vie de la cible au-dessous de 1. Si la cible rate son jet de sauvegarde, son total de points de vie maximum est réduit, pendant 1 heure, d'un montant égal aux dégâts nécrotiques reçus. Tout effet qui guérit les maladies ramène le maximum de points de vie de la cible à la normale sans avoir besoin d'attendre une heure.</p><br/>"
+};
+
+export  const CONTRESORT: Spell = {
+  type: IndexElementType.Spell,
+  id: "contresort",
+  name: "Contresort",
+  level: 3,
+  school: SpellSchool.Abjuration,
+  castingTime: "1 réaction à utiliser quand vous voyez une créature située dans un rayon de 18 mètres autour de vous lancer un sort",
+  range: "18 mètres",
+  components: "S",
+  duration: "Instantanée",
+  description: "<p>Vous tentez d'interrompre une créature en pleine incantation. Si elle essayait de lancer un sort de niveau 3 ou moins, il échoue et reste sans effet. Si le sort est de niveau 4 ou plus, faites un test de caractéristique en utilisant votre caractéristique d'incantation. Le DD est de 10 + niveau du sort. Si vous réussissez, le sort de la créature échoue et reste sans effet.</p><br/><p>Au moment de l'incantation, vous pouvez désigner plusieurs créatures de votre choix que le sort ignorera.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 4 ou plus, le sort à interrompre est automatiquement sans effet s'il est d'un niveau égal ou inférieur à celui de l'emplacement de sort utilisé.</p><br/>"
+};
+
+export  const CONTROLE_DE_LEAU: Spell = {
+  type: IndexElementType.Spell,
+  id: "contrôle-de-l'eau",
+  name: "Contrôle de l'eau",
+  level: 4,
+  school: SpellSchool.Transmutation,
+  castingTime: "1 action",
+  range: "90 mètres",
+  components: "V, S, M (une goutte d'eau et une pincée de poussière)",
+  duration: "Concentration, jusqu'à 10 minutes",
+  description: "<p>Jusqu'à la fin du sort, vous contrôlez toute étendue d'eau indépendante située dans la zone de votre choix, cette dernière devant tenir dans un cube d'au maximum 30 mètres d'arête.</p><br/><p>Quand vous lancez ce sort, vous pouvez choisir l'un des effets suivants. À votre tour, vous pouvez utiliser une action pour répéter l'effet ou en appliquer un nouveau.</p><br/><p>Inondation. Vous faites monter le niveau d'une étendue d'eau isolée d'un maximum de 6 mètres. Si la zone comprend une rive, l'eau déborde et se répand sur la terre ferme.</p><br/><p>Si vous avez lancé le sort sur une grande étendue d'eau, vous créez une vague de 6 mètres de haut qui traverse la zone affectée d'un bout à l'autre pour se briser une fois arrivée à la fin de la zone. Tous les véhicules de taille Très Grande ou inférieure qui se trouvent sur le chemin de la vague sont emportés jusqu'au bout de la zone. Tous ces véhicules ont 25% de chances de chavirer.</p><br/><p>Le niveau de l'eau reste plus élevé jusqu'à la fin du sort ou jusqu'à ce que vous choisissiez un autre effet. Si l'effet d'inondation produit une vague, elle se reforme au début de votre prochain tour tant que vous gardez cet effet actif.</p><br/><p>Écarter les eaux. Vous écartez les eaux de la zone pour y créer un passage. Il traverse toute la zone, les eaux formant une muraille de chaque côté. Le passage demeure jusqu'à la fin du sort ou jusqu'à ce que vous optiez pour un effet différent. Dans ces deux cas, l'eau remplit alors progressivement le passage, au fil du round suivant, jusqu'à ce que le niveau de l'eau revienne à la normale.</p><br/><p>Modifier le cours de l'eau. Vous changez l'itinéraire de l'eau courante qui traverse la zone et l'envoyez dans la direction de votre choix, même si elle doit pour cela franchir des obstacles comme passer par-dessus un mur ou couler dans une direction improbable.</p><br/><p>L'eau suit vos instructions dans la zone affectée, mais dès qu'elle en sort, elle reprend un cours normal défini par le terrain qu'elle parcourt. L'eau continue de couler là où vous l'avez choisi jusqu'à la fin du sort ou jusqu'à ce que vous décidiez d'un autre effet.</p><br/><p>Tourbillon. Cet effet nécessite une étendue d'eau d'au moins 15 mètres carrés pour 7,50 mètres de fond et se traduit par la formation d'un tourbillon au centre de la zone. Il se présente sous forme d'un vortex de 1,50 mètre de large à sa base pour un maximum de 15 mètres de large au sommet et une hauteur de 7,50 mètres. Toutes les créatures et tous les objets qui se trouvent dans l'eau et dans un rayon de 7,50 mètres autour du tourbillon sont entraînés vers lui sur 3 mètres. Une créature peut s'éloigner à la nage si elle réussit un test de Force (Athlétisme) contre le DD du jet de sauvegarde de votre sort.</p><br/><p>Quand une créature entre dans le vortex pour la première fois de son tour ou qu'elle y commence son tour, elle doit faire un jet de sauvegarde de Force. Si elle échoue, elle reçoit 2d8 dégâts contondants et se fait emporter par le vortex jusqu'à la fin du sort. Si elle réussit son jet, elle subit seulement la moitié des dégâts et n'est pas prise dans le vortex. Une créature emportée par le vortex peut utiliser une action pour tenter de s'en éloigner comme décrit plus haut, mais elle est désavantagée lors de son test de Force (Athlétisme). À chaque tour, la première fois qu'un objet entre dans le vortex, il subit 2d8 dégâts contondants. Ces dégâts se répètent à chaque round passé dans le vortex.</p><br/>"
+};
+
+export  const CONVOCATIONS_INSTANTANEES_DE_DRAWMIJ: Spell = {
+  type: IndexElementType.Spell,
+  id: "convocations-instantanées-de-drawmij",
+  name: "Convocations instantanées de Drawmij",
+  level: null,
+  school: SpellSchool.Conjuration,
+  castingTime: "1 minute / Rituel",
+  range: "Contact",
+  components: "V, S, M (un saphir d'une valeur de 1 000 po)",
+  duration: "Jusqu'à dissipation",
+  description: "<p>Vous touchez un objet pesant 5 kilos ou moins et dont la dimension la plus longue est de 1,80 mètre ou moins. Le sort laisse une marque invisible sur la surface de l'objet et inscrit le nom de l'objet sur le saphir que vous utilisez comme composante matérielle. Chaque fois que vous lancez ce sort, vous devez utiliser un saphir différent.</p><br/><p>Ensuite, vous pouvez utiliser une action quand vous le désirez pour prononcer le nom de l'objet et broyer le saphir.</p><br/><p>L'objet apparaît immédiatement dans votre main, en dépit des distances physiques et planaires, et le sort se termine.</p><br/><p>Si l'objet est actuellement porté ou transporté par quelqu'un d'autre, il n'arrive pas jusqu'à vous quand vous broyez le saphir, mais vous apprenez qui est la creature qui détient lobjet et vous savez à peu près où elle se trouve à ce moment-là.</p><br/><p>Dissipation de la magie ou un effet similaire appliqué sur le saphir met un terme à l'effet du sort.</p><br/>"
+};
+
+export  const CONQUILLE_ANTIVIE: Spell = {
+  type: IndexElementType.Spell,
+  id: "coquille-antivie",
+  name: "Coquille antivie",
+  level: 5,
+  school: SpellSchool.Abjuration,
+  castingTime: "1 action",
+  range: "Personnelle (3 mètres de rayon)",
+  components: "V, S",
+  duration: "Concentration, jusqu'à 1 heure",
+  description: "<p>Une barrière scintillante se déploie depuis votre personne jusqu'à englober une zone d'un rayon de 3 mètres. Elle se déplace avec vous, reste centrée sur vous et repousse les créatures autres que les morts-vivants et les artificiels. Cette barrière persiste pendant toute la durée du sort.</p><br/><p>La barrière empêche les créatures affectées de la franchir ou de passer un membre au travers. Une créature affectée peut lancer des sorts ou porter des attaques à distance ou via une arme à allonge, tout cela franchissant la barrière.</p><br/><p>Si vous vous déplacez de telle manière qu'une créature affectée est contrainte de traverser la barrière, le sort se termine.</p><br/>"
+};
+
+export  const CORDE_ENCHANTEE: Spell = {
+  type: IndexElementType.Spell,
+  id: "corde-enchantée",
+  name: "Corde enchantée",
+  level: 2,
+  school: SpellSchool.Transmutation,
+  castingTime: "1 action",
+  range: "Contact",
+  components: "V, S, M (extrait de maïs en poudre et boucle de parchemin torsade)",
+  duration: "1 heure",
+  description: "<p>Vous touchez une longueur de corde d'au maximum</p><br/><p>18 mètres. L'une de ses extrémités s'élève alors dans les airs, jusqu'à ce que toute la corde se dresse perpendiculairement au sol. Une entrée invisible s'ouvre à l'extrémité supérieure de la corde et débouche sur un espace extradimensionnel qui persiste jusqu'à la fin du sort.</p><br/><p>On peut atteindre cet espace extradimensionnel en grimpan:</p><br/><p>jusqu'au sommet de la corde. Il peut accueillir un maximum de huit créatures de taille Moyenne ou inférieure. On peut ensuite tirer la corde dans l'espace extradimensionnel, afin que personne ne la voie en dehors de l'abri.</p><br/><p>Les attaques et les sorts ne peuvent pas traverser l'entrée de l'espace extradimensionnel, ni depuis l'intérieur ni depuis l'extérieur. En revanche, les créatures qui se trouvent à l'intérieur peuvent regarder dehors grâce à une fenêtre de 90 centimètres sur 1,50 mètre centrée sur la corde.</p><br/><p>Tout ce qui se trouve dans l'espace extradimensionnel tombe à l'extérieur quand le sort se termine.</p><br/>"
+};
+
+export  const CORDON_DE_FLECHES: Spell = {
+  type: IndexElementType.Spell,
+  id: "cordon-de-flèches",
+  name: "Cordon de flèches",
+  level: 2,
+  school: SpellSchool.Transmutation,
+  castingTime: "1 action",
+  range: "1,50 mètre",
+  components: "V, S, M (quatre flèches ou carreaux ou plus)",
+  duration: "8 heures",
+  description: "<p>Vous fichez quatre projectiles (flèches ou carreaux) non magiques en terre, à portée, et les imprégnez de magie afin de protéger une zone. Jusqu'à la fin du sort, dès qu'une créature autre que vous approche dans un rayon de 9 mètres autour des projectiles pour la première fois de son tour ou finit son tour à un tel endroit, une munition s'envole pour la frapper.</p><br/><p>La créature doit réussir un jet de sauvegarde de Dextérité, sans quoi elle subit 1d6 dégâts perforants. Le projectile est ensuite détruit. Le sort se termine s'il ne reste plus de projectiles.</p><br/><p>Au moment de l'incantation, vous pouvez désigner plusieurs créatures de votre choix que le sort ignorera.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 3 ou plus, vous pouvez enchanter deux projectiles de plus par niveau au-delà du 2ème.</p><br/>"
+};
+
+export  const COULEURS_DANSANTES: Spell = {
+  type: IndexElementType.Spell,
+  id: "couleurs-dansantes",
+  name: "Couleurs dansantes",
+  level: 1,
+  school: SpellSchool.Illusion,
+  castingTime: "1 action",
+  range: "Personnelle (cône de 4,50 mètres)",
+  components: "V, S, M (une poignée de poudre ou de sable, colorée en rouge, jaune et bleu)",
+  duration: "1 round",
+  description: "<p>Un éventail de lumières colorées éblouissantes jaillit de votre main. Lancez 6d10. Le total représente le nombre de points de vie de créatures que le sort affecte. Les créatures situées dans un cône de 4,50 mètres, prenant votre personne comme point d'origine, sont affectées dans l'ordre croissant de leurs points de vie actuels (en ignorant les créatures inconscientes et les créatures aveugles).</p><br/><p>Chaque créature affectée, en commençant par celle qui possède actuellement le moins de points de vie, est aveuglée jusqu'à la fin de votre prochain tour. Soustrayez du total obtenu le nombre de points de vie actuel de chaque créature affectée avant de passer à la suivante, en choisissant chaque fois celle qui possède le moins de points de vie. Pour qu'une créature soit affectée, elle doit posséder un nombre de points de vie actuel inférieur ou égal au total restant.</p><br/><p>A plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 2 ou plus, lancez 2d10 supplémentaires par niveau au-delà du 1er.</p><br/>"
+};
+
+export  const COUP_AU_BUT: Spell = {
+  type: IndexElementType.Spell,
+  id: "coup-au-but",
+  name: "Coup au but",
+  level: 0,
+  school: SpellSchool.Divination,
+  castingTime: "1 action",
+  range: "9 mètres",
+  components: "S",
+  duration: "Concentration, jusqu'à 1 round",
+  description: "<p>Vous tendez la main et pointez du doigt une cible à portée.</p><br/><p>Votre magie vous donne un bref aperçu de ses défenses.</p><br/><p>À votre prochain tour, vous êtes avantagé lors de votre premier jet d'attaque contre elle, à condition que le sort ne se soit pas terminé avant.</p><br/>"
+};
+
+export  const COURONNE_DU_DEMENT: Spell = {
+  type: IndexElementType.Spell,
+  id: "couronne-du-dement",
+  name: "Couronne du dement",
+  level: 2,
+  school: SpellSchool.Enchantment,
+  castingTime: "1 action",
+  range: "36 mètres",
+  components: "V, S",
+  duration: "Concentration, jusqu'à 1 minute",
+  description: "<p>Choisissez un humanoïde situé à portée dans votre champ de vision. Il doit réussir un jet de sauvegarde de Sagesse, sans quoi vous le charmez pendant toute la durée du sort. Tant que la cible est sous votre charme, une couronne tordue en acier dentelé apparaît sur sa tête et une lueur démente brille dans son regard.</p><br/><p>À chacun de ses tours, avant de se déplacer, la cible doit utiliser son action pour porter une attaque armée contre une créature (autre qu'elle-même) que vous choisissez mentalement. Si vous ne choisissez pas de créature ou qu'il n'y en a pas à portée, la cible agit normalement.</p><br/><p>Lors de vos tours suivants, vous devez utiliser votre action pour garder le contrôle de la cible, sinon le sort se termine.</p><br/><p>La cible peut faire un jet de sauvegarde de Sagesse à la fin de chacun de ses tours. Si elle réussit, le sort se termine.</p><br/>"
+};
+
+export  const CREATION_DE_MORT_VIVANT: Spell = {
+  type: IndexElementType.Spell,
+  id: "création-de-mort-vivant",
+  name: "Création de mort-vivant",
+  level: 6,
+  school: SpellSchool.Necromancy,
+  castingTime: "1 minute",
+  range: "3 mètres",
+  components: "V, S, M (un pot d'argile rempli de poussière tombale, un pot d'argile rempli d'eau saumâtre et un onyx noir d'une valeur de 150 po par cadavre)",
+  duration: "Instantanée",
+  description: "<p>Ce sort se lance uniquement de nuit. Choisissez jusqu'à trois cadavres de créatures humanoïdes de taille Moyenne ou Petite situés à portée. Chacun se change en goule placée sous votre contrôle. (Le MD dispose des statistiques de ces créatures).</p><br/><p>À chacun de vos tours, vous pouvez utiliser une action bonus pour contrôler mentalement les créatures que vous avez animées avec ce sort si elles se trouvent dans un rayon de 36 mètres (Si vous en contrôlez plusieurs, vous pouvez en commander une ou plusieurs à la fois, à condition de donner le même ordre à toutes). Vous pouvez décider de l'action que la créature va entreprendre et de l'endroit où elle va se rendre lors de son prochain tour, ou donner des consignes plus génériques, comme de garder une salle ou un couloir.</p><br/><p>En l'absence d'ordre de votre part, la créature se contente de se défendre contre les créatures hostiles. Dès qu'une créature a reçu un ordre, elle s'y conforme jusqu'à avoir accompli sa tâche.</p><br/><p>La créature reste sous votre contrôle pendant 24 heures, après quoi elle cesse d'obéir aux ordres que vous lui avez donnés. Pour la maintenir sous votre contrôle pendant 24 heures de plus, vous devez lui relancer ce sort avant que les 24 heures de contrôle en cours ne se soient écoulées.</p><br/><p>Cette nouvelle utilisation du sort vous permet de réaffirmer votre contrôle sur un maximum de trois créatures que vous avez déjà animées via ce sort au lieu d'en animer de nouvelles.</p><br/><p>A plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 7 ou plus, vous pouvez animer ou maintenir votre contrôle sur quatre goules. Quand vous le lancez à partir d'un emplacement de niveau 8, vous pouvez animer ou maintenir votre contrôle sur cinq goules ou deux blêmes ou deux nécrophages. Quand vous le lancez à partir d'un emplacement de niveau 9, vous pouvez animer ou maintenir votre contrôle sur six goules ou trois blêmes ou trois nécrophages ou deux momies.</p><br/>"
+};
+
+export  const CREATION_DE_NOURRITURE_ET_DEAU: Spell = {
+  type: IndexElementType.Spell,
+  id: "création-de-nourriture-et-d'eau",
+  name: "Création de nourriture et d'eau",
+  level: 3,
+  school: SpellSchool.Conjuration,
+  castingTime: "1 action",
+  range: "9 mètres",
+  components: "V, S",
+  duration: "Instantanée",
+  description: "<p>Vous créez 22,5 kilos de nourriture et 120 litres d'eau, soit par terre, soit dans des récipients installés à portée.</p><br/><p>Cela suffit à nourrir et abreuver un maximum de quinze humanoïdes ou de cinq montures pendant 24 heures. Les vivres sont fades mais nourrissants. Ils se gâtent si personne ne les a mangés dans les 24 heures suivant leur création. L'eau est claire et ne croupit pas.</p><br/>"
+};
+
+export  const CREATION_OU_DESTRUCTION_DEAU: Spell = {
+  type: IndexElementType.Spell,
+  id: "création-ou-destruction-d'eau",
+  name: "Création ou destruction d'eau",
+  level: 1,
+  school: SpellSchool.Transmutation,
+  castingTime: "1 action",
+  range: "9 mètres",
+  components: "V, S, M (une goutte d'eau pour créer de l'eau ou quelques grains de sable pour en détruire)",
+  duration: "Instantanée",
+  description: "<p>Vous créez ou détruisez de l'eau.</p><br/><p>Création d'eau. Vous créez jusqu'à 40 litres d'eau potable qui apparaissent à portée, dans un récipient ouvert.</p><br/><p>Sinon, l'eau peut tomber en pluie dans un cube de 9 mètres d'arête à portée, éteignant toutes les flammes à nu dans la zone.</p><br/><p>Destruction d'eau. Vous détruisez jusqu'à 40 litres d'eau situés à portée dans un récipient ouvert.</p><br/><p>Sinon, vous pouvez détruire le brouillard dans un cube de 9 mètres d'arête situé à portée.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 2 ou plus, vous créez ou détruisez 40 litres d'eau de plus par niveau au-delà du 1* ou bien l'arête du cube affecté augmente de 1,50 mètre par niveau au-delà du 1er.</p><br/>"
+};
+
+export  const CROISSANCE_DEPINES: Spell = {
+  type: IndexElementType.Spell,
+  id: "croissance-d'épines",
+  name: "Croissance d'épines",
+  level: 2,
+  school: SpellSchool.Transmutation,
+  castingTime: "1 action",
+  range: "45 mètres",
+  components: "V, S, M (sept épines acérées ou sept brindilles taillées en pointe)",
+  duration: "Concentration, jusqu'à 10 minutes",
+  description: "<p>Dans une zone de 6 mètres de rayon centrée sur un point à portée, le sol se met à se déformer et donne naissance à un tapis de pointes et d'épines. La zone se mue en terrain difficile pendant toute la durée du sort. Quand une créature entre dans la zone ou s'y déplace, elle reçoit 2d4 dégâts perforants par tranche de 1,50 mètre parcouru.</p><br/><p>La transformation du sol est camouflée, de manière à ce que le terrain ait l'air naturel. Une créature dans l'incapacité de voir la zone au moment de l'incantation doit faire un test de Sagesse (Perception) contre le DD du jet de sauvegarde de votre sort.</p><br/><p>Si elle le réussit, elle remarque que le terrain est dangereux avant d'y entrer.</p><br/>"
+};
+
+export  const CROISSANGE_VEGETALE: Spell = {
+  type: IndexElementType.Spell,
+  id: "croissance-végétale",
+  name: "Croissance végétale",
+  level: 3,
+  school: SpellSchool.Transmutation,
+  castingTime: "1 action ou 8 heures",
+  range: "45 mètres",
+  components: "V, S",
+  duration: "Instantanée",
+  description: "<p>Ce sort décuple la vitalité des plantes d'une zone donnée.</p><br/><p>Le sort a deux modes d'utilisation, l'un apportant des avantages immédiats, l'autre sur le long terme.</p><br/><p>Si vous lancez ce sort en une action, choisissez un point à portée. Toutes les plantes ordinaires situées dans un rayon de 30 mètres autour de ce point deviennent particulièrement touffues et la végétation s'épaissit. Une créature qui se déplace dans cette zone doit dépenser 1,20 mètre de déplacement pour parcourir 30 centimètres.</p><br/><p>Vous pouvez exclure une ou plusieurs portions, de n'importe quelle taille, de la zone affectée par le sort.</p><br/><p>Si vous lancez le sort sur une période de huit heures, vous enrichissez la terre. Toute la végétation dans un rayon de 800 mètres autour d'un point de votre choix situé à portée devient luxuriante pendant un an. Elle donne deux fois plus de nourriture que la normale lors de la récolte.</p><br/>"
+};
+
+export  const CROSSE_DES_DRUIDES: Spell = {
+  type: IndexElementType.Spell,
+  id: "crosse-des-druides",
+  name: "Crosse des druides",
+  level: 0,
+  school: SpellSchool.Transmutation,
+  castingTime: "1 action bonus",
+  range: "Contact",
+  components: "V, S, M (du gui, une feuille de trèfle et un bâton ou un gourdin)",
+  duration: "1 minute",
+  description: "<p>La puissance du monde naturel imprègne le bois du bâton ou du gourdin que vous tenez. Pendant toute la durée du sort, vous pouvez utiliser votre caractéristique d'incantation au lieu de votre Force pour effectuer les jets d'attaque et de dégâts au corps à corps avec cette arme. Le dé de dégâts de l'arme devient un d8. L'arme devient magique si elle ne l'était pas déjà. Le sort se termine si vous le lancez de nouveau ou si vous lâchez votre arme.</p><br/>"
+};
+
+export  const DANSES_IRRESISTIBLE_DOTTO: Spell = {
+  type: IndexElementType.Spell,
+  id: "danse-irrésistible-d'otto",
+  name: "Danse irrésistible d'otto",
+  level: 6,
+  school: SpellSchool.Enchantment,
+  castingTime: "1 action",
+  range: "9 mètres",
+  components: "V",
+  duration: "Concentration, jusqu'à 1 minute",
+  description: "<p>Choisissez une créature située à portée dans votre champ de vision. La cible entame une danse comique, se mettant à taper du pied et à caracoler sur place.</p><br/><p>Les créatures insensibles au charme sont immunisées contre ce sort.</p><br/><p>Une fois que la créature s'est mise à danser, elle doit dépenser la totalité de son déplacement pour danser sans quitter son espace. De plus, elle est désavantagée lors des jets de sauvegarde de Dextérité et des jets d'attaque. Tant que la cible est affectée par ce sort, les autres créatures sont avantagees par rapport à elle lors des jets d'attaque. Une créature en train de danser peut utiliser son action pour faire un jet de sauvegarde de Sagesse et reprendre le contrôle de son corps. Si elle réussit, le sort se termine.</p><br/>"
+};
+
+export  const DEBLOCAGE: Spell = {
+  type: IndexElementType.Spell,
+  id: "déblocage",
+  name: "Déblocage",
+  level: 2,
+  school: SpellSchool.Transmutation,
+  castingTime: "1 action",
+  range: "18 mètres",
+  components: "V",
+  duration: "Instantanée",
+  description: "<p>Choisissez un objet situé à portée et dans votre champ de vision. Ce peut être une porte, une boîte, un coffre, des menottes, un cadenas ou un autre objet disposant d'un système de fermeture ordinaire ou magique.</p><br/><p>Une cible fermée par une serrure ordinaire, coincée ou bloquée par une barre se déverrouille ou se débloque. Si l'objet a plusieurs serrures, le sort en ouvre une seule.</p><br/><p>Si vous visez une cible fermée par un verrou magique, ce dernier est supprimé pendant 10 minutes, au cours desquelles on peut ouvrir et fermer la cible normalement.</p><br/><p>Quand vous lancez le sort, un cliquetis émane de l'objet et retentit si fort qu'on l'entend dans un rayon de 90 mètres.</p><br/>"
+};
+
+export  const DECHARGE_OCCULTE: Spell = {
+  type: IndexElementType.Spell,
+  id: "décharge-occulte",
+  name: "Décharge occulte",
+  level: 0,
+  school: SpellSchool.Evocation,
+  castingTime: "1 action",
+  range: "36 mètres",
+  components: "V,S",
+  duration: "Instantanée",
+  description: "<p>Un éclair d'énergie crépitante file vers une créature à portée.</p><br/><p>Faites un jet d'attaque de sort à distance contre la cible. Si vous réussissez, elle subit 1d10 dégâts de force.</p><br/><p>Le sort crée des rayons supplémentaires quand vous atteignez certains niveaux: il lance deux rayons au niveau 5, trois au niveau 11 et quatre au niveau 17. Vous pouvez diriger tous les rayons sur une même cible ou les répartir entre plusieurs. Faites un jet d'attaque distinct pour chaque rayon.</p><br/>"
+};
+
+export  const DEDALE: Spell = {
+  type: IndexElementType.Spell,
+  id: "dédale",
+  name: "Dédale",
+  level: 8,
+  school: SpellSchool.Conjuration,
+  castingTime: "1 action",
+  range: "18 mètres",
+  components: "V, S",
+  duration: "Concentration, jusqu'à 10 minutes",
+  description: "<p>Vous bannissez une créature située à portée dans votre champ de vision dans un demi-plan labyrinthique. La cible y reste pendant toute la durée du sort ou jusqu'à ce qu'elle s'échappe du dédale.</p><br/><p>Elle peut utiliser une action pour tenter de s'évader.</p><br/><p>Pour cela, elle effectue un test d'Intelligence DD 20.</p><br/><p>Si elle le réussit, elle s'échappe et le sort se termine (les minotaures et les démons goristros réussissent automatiquement).</p><br/><p>Quand le sort se termine, la cible réapparaît à l'emplacement qu'elle a quitté ou, s'il est occupé, dans l'emplacement libre le plus proche.</p><br/>"
+};
+
+export  const DEGUISEMENT: Spell = {
+  type: IndexElementType.Spell,
+  id: "déguisement",
+  name: "Déguisement",
+  level: 1,
+  school: SpellSchool.Illusion,
+  castingTime: "1 action",
+  range: "Personnelle",
+  components: "V, S",
+  duration: "1 heure",
+  description: "<p>Vous faites en sorte que votre personne (y compris vos vêtements, votre armure, vos armes et les autres objets en votre possession) prenne une apparence différente jusqu'à la fin du sort ou jusqu'à ce que vous utilisiez une action pour y mettre un terme. Vous pouvez passer pour une personne de trente centimètres de plus ou de moins, sembler gros, maigre ou entre les deux. Vous ne pouvez pas changer le type de votre corps, vous devez choisir une forme possédant la même conformation que vous au niveau des membres. En dehors de cela, les détails de l'illusion sont laissés à votre imagination.</p><br/><p>Les changements qu'apporte le sort ne résistent pas à un examen physique. Par exemple, si vous l'utilisez pour ajouter un chapeau à votre tenue, les objets passent au travers et toute personne qui essaie de le toucher ne sentira que de l'air, ou des cheveux et un crâne. Si vous utilisez le sort pour paraître plus mince qu'en réalité, la main de quelqu'un qui tente de vous toucher se heurtera à vous alors que, visuellement, elle semble encore dans le vide.</p><br/><p>Pour percer votre déguisement à jour, une créature peut dépenser une action pour vous examiner. Elle doit alors réussir un test d'Intelligence (Investigation) contre le DD du jet de sauvegarde du sort.</p><br/>"
+};
+
+export  const DELIVRANCE_DES_MALEDICTIONS: Spell = {
+  type: IndexElementType.Spell,
+  id: "délivrance-des-malédictions",
+  name: "Délivrance des malédictions",
+  level: 3,
+  school: SpellSchool.Abjuration,
+  castingTime: "1 action",
+  range: "Contact",
+  components: "V, S",
+  duration: "Instantanée",
+  description: "<p>À votre contact, toutes les malédictions qui affectent une créature ou un objet disparaissent. Si l'objet est un objet magique maudit, la malédiction persiste, mais le sort rompt l'harmonisation entre l'objet et son détenteur, ce qui permet à ce dernier de l'ôter ou de s'en débarrasser.</p><br/>"
+};
+
+export  const DEMI_PLAN: Spell = {
+  type: IndexElementType.Spell,
+  id: "demi-plan",
+  name: "Demi-plan",
+  level: 8,
+  school: SpellSchool.Conjuration,
+  castingTime: "1 action",
+  range: "18 mètres",
+  components: "S",
+  duration: "1 heure",
+  description: "<p>Vous créez une porte floue sur une surface plate et solide située à portée dans votre champ de vision. Elle est assez large pour laisser passer sans mal des créatures de taille Moyenne.</p><br/><p>Quand quelqu'un ouvre la porte, elle donne sur un demi-plan ressemblant à une pièce vide de 9 mètres de côté (dans toutes les dimensions) faite de bois ou de pierre. La porte disparaît quand le sort se termine et les créatures et les objets encore dans le demi-plan y restent piégés, car elle sefface aussi de leur côté.</p><br/><p>Vous pouvez créer un nouveau demi-plan pour chaque incantation du sort ou relier la porte à un demi-plan que vous avez précédemment créé via ce sort. De plus, si vous connaissez la nature et le contenu d'un demi-plan qu'une autre créature a créé grâce à ce sort, vous pouvez lui relier votre propre porte.</p><br/>"
+};
+
+export  const DESINTEGRATION: Spell = {
+  type: IndexElementType.Spell,
+  id: "désintégration",
+  name: "Désintégration",
+  level: 6,
+  school: SpellSchool.Transmutation,
+  castingTime: "1 action",
+  range: "18 mètres",
+  components: "V, S, M (de la magnétite et une pincee de poussière)",
+  duration: "Instantanée",
+  description: "<p>Un mince rayon de lumière verte jaillit de votre doigt pointé vers une cible située à portée dans votre champ de vision.</p><br/><p>La cible peut être une créature, un objet ou une création de force magique, comme un mur issu d'un mur de force.</p><br/><p>Une créature visée par ce sort doit faire un jet de sauvegarde de Dextérité. Si elle le rate, elle subit 10d6+40 dégâts de force.</p><br/><p>La cible est désintégrée si ces dégâts la laissent à 0 point de vie.</p><br/><p>Une créature désintégrée est réduite à l'état de fine poussière grise, tout comme tous les objets qu'elle porte et transporte, à l'exception des objets magiques. Pour ressusciter une créature ainsi désintégrée, il faut impérativement recourir à une résurrection suprême ou un souhait.</p><br/><p>Ce sort désintègre automatiquement les objets non magiques de taille Grande ou inférieure et les créations de force magique.</p><br/><p>Si la cible est un objet de Très Grande taille ou plus, le sort désintègre un cube de 3 mètres d'arête au sein de l'objet.</p><br/><p>Ce sort reste sans effet sur les objets magiques.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 7 ou plus, les dégâts augmentent de 3d6 par niveau au-delà du 6.</p><br/>"
+};
+
+export  const DETECTION_DE_LA_MAGIE: Spell = {
+  type: IndexElementType.Spell,
+  id: "détection-de-la-magie",
+  name: "Détection de la magie",
+  level: null,
+  school: SpellSchool.Divination,
+  castingTime: "1 action / Rituel",
+  range: "Personnelle",
+  components: "V, S",
+  duration: "Concentration, jusqu'à 10 minutes",
+  description: "<p>Pendant toute la durée du sort, vous percevez la présence de magie dans un rayon de 9 mètres. Si vous percevez ainsi une magie, vous pouvez dépenser votre action pour discerner une faible aura autour d'une créature ou d'un objet visible dans la zone et imprégné de magie. Vous découvrez aussi à quelle école appartient cette magie, le cas échéant.</p><br/><p>Le sort ignore la plupart des obstacles, mais il ne peut pas franchir 30 centimètres de pierre, 2,5 centimètres de metal ordinaire, une mince feuille de plomb, ni 1 mètre de bois ou de terre.</p><br/>"
+};
+
+export  const DETECTION_DE_LINVISIBILITE: Spell = {
+  type: IndexElementType.Spell,
+  id: "détection-de-l'invisibilité",
+  name: "Détection de l'invisibilité",
+  level: 2,
+  school: SpellSchool.Divination,
+  castingTime: "1 action",
+  range: "Personnelle",
+  components: "V, S, M (une pincée de tale et un saupoudrage de poudre d'argent)",
+  duration: "1 heure",
+  description: "<p>Pendant toute la durée du sort, vous voyez les créatures et les objets invisibles comme s'ils étaient bien visibles et vous pouvez aussi observer le plan éthéré. Les créatures et les objets éthérés vous apparaissent comme des silhouettes translucides et fantomatiques.</p><br/>"
+};
+
+export  const DETECTION_DES_PENSEES: Spell = {
+  type: IndexElementType.Spell,
+  id: "détection-des-pensées",
+  name: "Détection des pensées",
+  level: 2,
+  school: SpellSchool.Divination,
+  castingTime: "1 action",
+  range: "Personnelle",
+  components: "V, S, M (une pièce de cuivre)",
+  duration: "Concentration, jusqu'à 1 minute",
+  description: "<p>Pendant toute la durée du sort, vous parvenez à lire les pensées de certaines créatures. Quand vous lancez ce sort, puis en tant qu'action à votre tour jusquà la fin du sort, vous pouvez focaliser vos pensées sur une créature située dans votre champ de vision et dans un rayon de 9 mètres. Si elle dispose d'une Intelligence de 3 ou moins ou ne parle aucune langue, elle n'est pas affectée.</p><br/><p>Au départ, vous découvrez les pensées de surface de la créature, c'est-à-dire ce qu'elle a à l'esprit à ce moment-là.</p><br/><p>Par une action, vous pouvez tourner votre attention vers les pensées d'une autre créature ou tenter de vous enfoncer plus profondément dans l'esprit de celle que vous sondez actuellement. Dans ce cas, cette créature doit faire un jet de sauvegarde de Sagesse. Si elle échoue, vous avez un aperçu de son mode de raisonnement (le cas échéant), de son état émotionnel ou de ce qui occupe une place importante dans son esprit (par exemple quelque chose qui l'inquiète fortement, qu'elle aime, qu'elle détest..). Si elle réussit, le sort se termine.</p><br/><p>Dans les deux cas, la cible sait que vous sondez son esprit et, à moins que vous ne tourniez votre attention vers une autre créature, votre cible peut utiliser son action à son tour pour faire un test d'Intelligence opposé au vôtre. Si elle réussit, le sort se termine.</p><br/><p>Les questions directement posées à l'oral à une cible orientent naturellement le cours de ses pensées, ce sort est donc particulièrement utile lors d'un interrogatoire.</p><br/><p>Vous pouvez aussi utiliser ce sort pour détecter la présence de créatures intelligentes que vous ne voyez pas. Vous pouvez chercher les pensées qui se trouvent dans un rayon de 9 mètres autour de vous au moment où vous lancez ce sort ou bien par une action tandis que le sort est actif. Le sort peut franchir des obstacles, mais il est arrêté par soixante centimètres de roche, 2,5 centimètres de métal autre que le plomb ou une mince feuille de plomb. Vous ne pouvez pas repérer les créatures dotées d'une Intelligence de 3 ou moins, ni celles qui ne parlent aucune langue.</p><br/><p>Une fois que vous avez ainsi détecté la présence d'une créature, vous pouvez lire ses pensées pendant le reste de la durée du sort, comme expliqué plus haut, même si vous ne la voyez pas, mais elle doit tout de même se trouver à portée.</p><br/>"
+};
+
+export  const DETECTION_DES_PIEGES: Spell = {
+  type: IndexElementType.Spell,
+  id: "détection-des-pièges",
+  name: "Détection des pièges",
+  level: 2,
+  school: SpellSchool.Divination,
+  castingTime: "1 action",
+  range: "36 mètres",
+  components: "V, S",
+  duration: "Instantanée",
+  description: "<p>Vous percevez la présence de tout piège se trouvant à portée et dans votre champ de vision. Concernant ce sort, le terme de piège désigne toute chose qui inflige soudainement ou de façon inattendue un effet considéré comme néfaste ou indésirable et que son créateur a conçue dans ce but. Ainsi, le sort prévient si une zone est affectée par une alarme, un glyphe de garde ou une fosse piégée mécanique, mais il ne révèle pas une faiblesse naturelle dans un plancher, un plafond instable ou une doline cachée.</p><br/><p>Le sort indique simplement qu'il y a un piège; il ne précise pas où, mais vous donne une idée générale de la nature du danger qu'il représente.</p><br/>"
+};
+
+export  const DETECTION_DU_MAL_ET_DU_BIEN: Spell = {
+  type: IndexElementType.Spell,
+  id: "detection-du-mal-et-du-bien",
+  name: "Detection du mal et du bien",
+  level: 1,
+  school: SpellSchool.Divination,
+  castingTime: "1 action",
+  range: "Personnelle",
+  components: "V, S",
+  duration: "Concentration, jusqu'à 10 minutes",
+  description: "<p>Pendant toute la durée du sort, vous savez s'il y a une aberration, un céleste, un élémentaire, une fée, un fiélon ou un mort-vivant dans un rayon de 9 mètres autour de vous et vous savez précisément où il se trouve. De même, vous savez. si un lieu ou un objet situé dans un rayon de 9 mètres a été consacré ou profané.</p><br/><p>Le sort ignore la plupart des obstacles, mais il ne peut pas franchir 30 centimètres de pierre, 2,5 centimètres de métal ordinaire, une mince feuille de plomb, ni 1 mètre de bois ou de terre.</p><br/>"
+};
+
+export  const DETECTION_DU_POISON_ET_DES_MALADIES: Spell = {
+  type: IndexElementType.Spell,
+  id: "détection-du-poison-et-des-maladies",
+  name: "Détection du poison et des maladies",
+  level: null,
+  school: SpellSchool.Divination,
+  castingTime: "1 action / Rituel",
+  range: "Personnelle",
+  components: "V, S, M (un brin d'if)",
+  duration: "Concentration, jusqu'à 10 minutes",
+  description: "<p>Pendant toute la durée du sort, vous percevez la présence de poisons, de créatures venimeuses et de maladies dans un rayon de 9 mètres autour de vous. Vous déterminez également leur position et identifiez à chaque fois le type de poison, de creature ou de maladie concerné.</p><br/><p>Le sort ignore la plupart des obstacles, mais il ne peut pas franchir 30 centimètres de pierre, 2,5 centimètres de métal ordinaire, une mince feuille de plomb, ni 1 mètre de bois ou de terre.</p><br/>"
+};
+
+export  const DISCOURS_CAPTIVANT: Spell = {
+  type: IndexElementType.Spell,
+  id: "discours-captivant",
+  name: "Discours captivant",
+  level: 2,
+  school: SpellSchool.Enchantment,
+  castingTime: "1 action",
+  range: "18 mètres",
+  components: "V,S",
+  duration: "1 minute",
+  description: "<p>Vous entonnez une suite de paroles envoûtantes qui obligent les créatures de votre choix qui vous entendent et sont situées à portée et dans votre champ de vision à faire un jet de sauvegarde de Sagesse. Une créature qui ne peut pas être charmée réussit automatiquement ce jet de sauvegarde.</p><br/><p>Si vous ou vos compagnons vous battez contre une de ces créatures, elle est avantagée lors du jet de sauvegarde. Si la créature rate son jet, elle est désavantagée lors des tests de Sagesse (Perception) destinés à percevoir une créature autre que vous jusqu'à ce que le sort se termine ou jusqu'à ce qu'elle ne puisse plus vous entendre. Le sort se termine si vous êtes neutralisé ou dans l'incapacité de parler.</p><br/>"
+};
+
+export  const DISQUE_FLOTTANT_DE_TENSER: Spell = {
+  type: IndexElementType.Spell,
+  id: "disque-flottant-de-tenser",
+  name: "Disque flottant de tenser",
+  level: null,
+  school: SpellSchool.Conjuration,
+  castingTime: "1 action / Rituel",
+  range: "9 mètres",
+  components: "V, S, M (une goutte de mercure)",
+  duration: "1 heure",
+  description: "<p>Ce sort crée un plan de force circulaire horizontal d'un mètre de diamètre pour 2,5 centimètres d'épaisseur. 11 fotte à un mètre du sol dans un espace inoccupé de votre choix situé à portée et dans votre champ de vision. Le disque persiste pendant toute la durée du sort et peut accueillir jusqu'à 250 kilos. Si on pose plus de poids dessus, le sort se termine et tout ce qui se trouvait sur le disque tombe à terre.</p><br/><p>Le disque reste immobile tant que vous vous tenez dans un rayon de 6 mètres. Si vous vous en éloignez plus que cela, il vous suit de manière à rester dans les 6 mètres autour de vous. Il peut se déplacer sur un terrain irrégulier, monter ou descendre des escaliers, des pentes, etc. Mais il ne peut pas franchir une différence de niveau de trois mètres ou plus.</p><br/><p>Par exemple, il ne peut pas passer au-dessus d'une fosse de 3 mètres de profondeur ni la quitter s'il a été formé au fond.</p><br/><p>Si vous vous éloignez à plus de 30 mètres du disque (typiquement parce qu'il ne peut pas contourner un obstacle pour vous suivre), le sort se termine.</p><br/>"
+};
+
+export  const DISSIMULATION_SUPREME: Spell = {
+  type: IndexElementType.Spell,
+  id: "dissimulation-suprême",
+  name: "Dissimulation suprême",
+  level: 7,
+  school: SpellSchool.Transmutation,
+  castingTime: "1 action",
+  range: "Contact",
+  components: "V, S, M (une poudre de diamant, d'émeraude, de rubis et de saphir d'une valeur minimum de 5 000 po, que le sort consume)",
+  duration: "Jusqu'à dissipation",
+  description: "<p>Grâce à ce sort, vous pouvez dissimuler une créature consentante ou un objet qui sera invisible à tout moyen de détection pendant toute la durée du sort. Quand vous lancez le sort et touchez la cible, elle devient invisible et ne peut plus être la cible de sorts de divination. De plus, les organes sensoriels de scrutation issus d'un sort de divination ne la perçoivent plus.</p><br/><p>Si la cible est une créature, elle entre en état d'animation suspendue. Le temps ne s'écoule plus pour elle et elle ne vieillit plus.</p><br/><p>Vous pouvez décider d'une condition qui mettra un terme prématuré au sort. Ce peut être ce que vous voulez, mais ce doit être visible ou se produire dans un rayon de 1,5 kilomètre autour de la cible. Par exemple, « au bout de</p><br/><p>1 000 ans » ou « quand la tarasque se réveillera ». Ce sort se termine également si la cible subit le moindre dégât.</p><br/>"
+};
+
+export  const DISSIPATION_DE_LA_MAGIE: Spell = {
+  type: IndexElementType.Spell,
+  id: "dissipation-de-la-magie",
+  name: "Dissipation de la magie",
+  level: 3,
+  school: SpellSchool.Abjuration,
+  castingTime: "1 action",
+  range: "36 mètres",
+  components: "V, S",
+  duration: "Instantanée",
+  description: "<p>Choisissez une créature, un objet ou un effet magique à portée.</p><br/><p>Tout sort de niveau 3 ou inférieur qui l'affecte se termine.</p><br/><p>Si la cible est affectée par un sort de niveau 4 ou plus, faites un test de caractéristique en utilisant votre caractéristique d'incantation. Le DD est de 10 + niveau du sort. Ce dernier se termine si vous réussissez votre test.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 4 ou plus, vous mettez automatiquement un terme à un sort affectant la cible quand le niveau de ce sort est égal ou inférieur au niveau de l'emplacement de sort que vous utilisez.</p><br/>"
+};
+
+export  const DISSIPATION_DU_BIEN_ET_DU_MAL: Spell = {
+  type: IndexElementType.Spell,
+  id: "dissipation-du-mal-et-du-bien",
+  name: "Dissipation du mal et du bien",
+  level: 5,
+  school: SpellSchool.Abjuration,
+  castingTime: "1 action",
+  range: "Personnelle",
+  components: "V, S, M (eau bénite ou poudre d'argent et de fer)",
+  duration: "Concentration, jusqu'à 1 minute",
+  description: "<p>Une énergie scintillante vous entoure et vous protège contre les fées, les morts-vivants et les créatures originaires d'au-delà du plan matériel. Pendant toute la durée du sort, les célestes, les élémentaires, les fées, les fiélons et les morts-vivants sont désavantagés lors de leurs jets d'attaque contre vous.</p><br/><p>Vous pouvez terminer le sort plus tôt en utilisant l'une des fonctions spéciales suivantes.</p><br/><p>Annulation d'enchantement. Vous utilisez votre action pour toucher une créature à votre portée qui se trouve charmée, effrayée ou possédée par un céleste, un élémentaire, une fée, un fiélon ou un mort-vivant. Cette créature n'est alors plus charmée, effrayée ou possédée par ces créatures.</p><br/><p>Renvoi. Vous utilisez votre action pour faire une attaque de sort au corps à corps contre un céleste, un élémentaire, une fée, un fiélon ou un mort-vivant situé à une distance inférieure ou égale à votre allonge. Si vous touchez la créature, vous tentez de la renvoyer sur son plan natal. Elle doit réussir un jet de sauvegarde de Charisme ou retourner sur son plan natal (si elle ne sy trouve pas déja). Si un mort-vivant ne se trouve pas sur son plan natal, il est renvoyé en Gisombre tandis qu'une fée sera expulsée en Féerie.</p><br/>"
+};
+
+export  const DIVINATION: Spell = {
+  type: IndexElementType.Spell,
+  id: "divination",
+  name: "Divination",
+  level: null,
+  school: SpellSchool.Divination,
+  castingTime: "1 action / Rituel",
+  range: "Personnelle",
+  components: "V, S, M (de l'encens et une offrande sacrificielle adaptée à votre religion, l'ensemble valant au moins 25 po, et que le sort consume)",
+  duration: "Instantanée",
+  description: "<p>Grâce à votre magie et à une offrande, vous entrez en contact avec un dieu ou l'un de ses serviteurs. Vous lui posez une unique question à propos d'un objectif, d'un événement ou d'une activité qui doit se dérouler dans les sept jours à venir. Le MD vous donne une réponse sincère, pouvant être une courte phrase, des vers cryptiques ou un présage.</p><br/><p>Le sort ne tient pas compte d'une éventuelle modification des circonstances susceptible de bouleverser l'issue des événements, comme l'incantation de sorts supplémentaires ou la perte ou l'arrivée d'un compagnon.</p><br/><p>Si vous lancez ce sort à deux reprises ou plus avant un repos long, il y a 25% de chances par incantation en sus de la première que vous obteniez une prémonition aléatoire au lieu d'une prémonition fiable. C'est au MD de faire ce jet en secret.</p><br/>"
+};
+
+export  const DOIGT_DE_MORT: Spell = {
+  type: IndexElementType.Spell,
+  id: "doigt-de-mort",
+  name: "Doigt de mort",
+  level: 7,
+  school: SpellSchool.Necromancy,
+  castingTime: "1 action",
+  range: "18 mètres",
+  components: "V, S",
+  duration: "Instantanée",
+  description: "<p>Vous envoyez de l'énergie négative dans le corps d'une créature située à portée dans votre champ de vision, ce qui lui inflige des douleurs déchirantes. La cible doit faire un jet de sauvegarde de Constitution. Si elle échoue, elle subit 7d8+30 dégâts nécrotiques, la moitié seulement si elle réussit.</p><br/><p>Si ce sort achève un humanoïde, ce dernier se relève au début de votre prochain tour sous forme de zombi à jamais sous votre contrôle. Il suit vos ordres verbaux au mieux de ses capacités.</p><br/>"
+};
+
+export  const DOMINATION_DANIMAL: Spell = {
+  type: IndexElementType.Spell,
+  id: "domination-d'animal",
+  name: "Domination d'animal",
+  level: 4,
+  school: SpellSchool.Enchantment,
+  castingTime: "1 action",
+  range: "18 mètres",
+  components: "V,S",
+  duration: "Concentration, jusqu'à 1 minute",
+  description: "<p>Vous tentez d'envoûter une bête située à portée dans votre champ de vision. Elle doit réussir un jet de sauvegarde de Sagesse, sans quoi vous la charmez pendant toute la durée du sort. Elle est avantagée lors du jet de sauvegarde si vous ou des créatures amicales envers vous êtes en train de la combattre.</p><br/><p>Tant que la bête est charmée, vous entretenez un lien télépathique avec elle, qui persiste tant que vous vous trouvez sur le même plan d'existence. Vous pouvez utiliser ce lien télépathique pour donner des ordres à cette créature tant que vous êtes conscient (ce qui ne vous demande pas d'action). Elle fait de son mieux pour vous obéir. Vous pouvez lui donner un ordre simple et générique, comme « attaque cette créature », « cours jusque là-bas » ou « va chercher cet objet ». Si elle ne reçoit pas de nouvelles instructions de votre part une fois l'ordre exécuté, elle se contente de se défendre et de se préserver au mieux.</p><br/><p>Vous pouvez utiliser votre action pour prendre le contrôle total de votre cible et la diriger de façon précise. Jusqu'à la fin de votre prochain tour, elle exécute seulement les actions que vous choisissez et ne fait rien que vous ne lui ayez autorisé.</p><br/><p>Pendant cette période, vous pouvez aussi lui faire exécuter une réaction, mais pour cela, vous devez également dépenser votre propre réaction.</p><br/><p>Chaque fois que la cible subit des dégâts, elle a droit à un nouveau jet de sauvegarde de Sagesse contre le sort. Si elle le réussit, le sort prend fin.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 5, la durée devient « concentration, jusqu'à 10 minutes ». Si vous lancez ce sort en utilisant un emplacement de niveau 6, la durée devient « concentration, jusqu'à 1 heure ». Si vous lancez ce sort en utilisant un emplacement de niveau 7, la durée devient « concentration, jusqu'à 8 heures».</p><br/>"
+};
+
+export  const DOMINATION_DE_MONSTRE: Spell = {
+  type: IndexElementType.Spell,
+  id: "domination-de-monstre",
+  name: "Domination de monstre",
+  level: 8,
+  school: SpellSchool.Enchantment,
+  castingTime: "1 action",
+  range: "18 mètres",
+  components: "V, S",
+  duration: "Concentration, jusqu'à 1 heure",
+  description: "<p>Vous tentez d'envoûter une créature située à portée dans votre champ de vision. Elle doit réussir un jet de sauvegarde de Sagesse, sans quoi vous la charmez pendant toute la durée du sort. Elle est avantagée lors du jet de sauvegarde si vous ou des créatures amicales envers vous êtes en train de la combattre.</p><br/><p>Tant que la créature est charmée, vous entretenez un lien télépathique avec elle qui persiste tant que vous vous trouvez sur le même plan d'existence. Vous pouvez utiliser ce lien télépathique pour donner des ordres à cette créature tant que vous êtes conscient (ce qui ne vous demande pas d'action). Elle fait de son mieux pour vous obéir. Vous pouvez lui donner un ordre simple et générique, comme « attaque cette créature », « cours jusque là-bas » ou « va chercher cet objet ». Si elle ne reçoit pas de nouvelles instructions de votre part une fois l'ordre exécuté, elle se contente de se défendre et de se préserver au mieux.</p><br/><p>Vous pouvez utiliser votre action pour prendre le contrôle total de votre cible et la diriger de façon précise. Jusqu'à la fin de votre prochain tour, elle exécute seulement les actions que vous choisissez et ne fait rien que vous ne lui ayez autorisé</p><br/><p>Pendant cette période, vous pouvez aussi lui faire exécuter une réaction, mais pour cela, vous devez également dépenser votre propre réaction.</p><br/><p>Chaque fois que la cible subit des dégâts, elle a droit à un nouveau jet de sauvegarde de Sagesse contre le sort. Si elle le réussit, le sort prend fin.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 9, la durée devient « concentration, jusqu'à 8 heures ».</p><br/>"
+};
+
+export  const DOMINATION_DE_PERSONNE: Spell = {
+  type: IndexElementType.Spell,
+  id: "domination-de-personne",
+  name: "Domination de personne",
+  level: 5,
+  school: SpellSchool.Enchantment,
+  castingTime: "1 action",
+  range: "18 mètres",
+  components: "V, S",
+  duration: "Concentration, jusqu'à 1 minute",
+  description: "<p>Vous tentez d'envoûter un humanoïde situé à portée et dans votre champ de vision. Il doit réussir un jet de sauvegarde de Sagesse, sans quoi vous le charmez pendant toute la durée du sort. Il est avantagé lors du jet de sauvegarde si vous ou des créatures amicales envers vous êtes en train de le combattre.</p><br/><p>Tant que l'humanoïde est charmé, vous entretenez un lien télépathique avec lui qui persiste tant que vous vous trouvez sur le même plan d'existence. Vous pouvez utiliser ce lien télépathique pour donner des ordres à cette créature tant que vous êtes conscient (ce qui ne vous demande pas d'action). Elle fait de son mieux pour vous obéir. Vous pouvez lui donner un ordre simple et générique, comme « attaque cette créature », « cours jusque là-bas » ou « va chercher cet objet ». Si elle ne reçoit pas de nouvelles instructions de votre part une fois l'ordre exécuté, elle se contente de se défendre et de se préserver au mieux.</p><br/><p>Vous pouvez utiliser votre action pour prendre le contrôle total de votre cible et la diriger de façon précise. Jusqu'à la fin de votre prochain tour, elle exécute seulement les actions que vous choisissez et ne fait rien que vous ne lui ayez autorisé.</p><br/><p>Pendant cette période, vous pouvez aussi lui faire exécuter une reaction, mais pour cela, vous devez également dépenser votre propre réaction.</p><br/><p>Chaque fois que la cible subit des dégâts, elle a droit à un nouveau jet de sauvegarde de Sagesse contre le sort. Si elle le réussit, le sort prend fin.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 6, la durée devient « concentration, jusqu'à 10 minutes ». Si vous lancez ce sort en utilisant un emplacement de niveau 7, la durée devient « concentration, jusqu'à 1 heure ». Si vous lancez ce sort en utilisant un emplacement de niveau 8 ou plus, la durée devient « concentration, jusqu'à 8 heures ».</p><br/>"
+};
+
+export  const DON_DES_LANGUES: Spell = {
+  type: IndexElementType.Spell,
+  id: "don-des-langues",
+  name: "Don des langues",
+  level: 3,
+  school: SpellSchool.Divination,
+  castingTime: "1 action",
+  range: "Contact",
+  components: "V, M (un modèle réduit de ziggourat en argile)",
+  duration: "1 heure",
+  description: "<p>Ce sort permet à la créature que vous touchez de comprendre toutes les langues parlées qu'elle entend. De plus, quand elle parle, toute créature qui maîtrise au moins une langue et l'entend comprend ce qu'elle dit.</p><br/>"
+};
+
+export  const DOUBLE_ILLUSOIRE: Spell = {
+  type: IndexElementType.Spell,
+  id: "double-illusoire",
+  name: "Double illusoire",
+  level: 5,
+  school: SpellSchool.Illusion,
+  castingTime: "1 action",
+  range: "Personnelle",
+  components: "S",
+  duration: "Concentration, jusqu'à 1 heure",
+  description: "<p>Vous devenez invisible à l'instant même où un double illusoire de votre personne apparaît là où vous vous trouvez. Ce double persiste pendant toute la durée du sort, mais votre invisibilité se termine dès que vous lancez un sort ou attaquez.</p><br/><p>Vous pouvez utiliser votre action pour déplacer votre double d'un maximum de deux fois votre vitesse et le faire bouger, parler et se comporter comme bon vous semble.</p><br/><p>Vous pouvez voir par les yeux et entendre par les oreilles de votre double comme si vous vous trouviez à son emplacement. À chacun de vos tours, vous pouvez utiliser une action bonus pour passer d'une perception via ses sens à une perception via les vôtres ou inversement. Tant que vous utilisez les sens de votre double, vous êtes sourd et aveugle à ce qui se passe directement autour de vous.</p><br/>"
+};
+
+export  const DOUX_REPOS: Spell = {
+  type: IndexElementType.Spell,
+  id: "doux-repos",
+  name: "Doux repos",
+  level: null,
+  school: SpellSchool.Necromancy,
+  castingTime: "1 action / Rituel",
+  range: "Contact",
+  components: "V, S, M (une pincée de sel et une pièce de cuivre à poser sur chaque œil du cadavre et qui doivent rester en place pendant toute la durée du sort)",
+  duration: "10 jours",
+  description: "<p>Vous touchez un cadavre ou assimilé. Pendant toute la durée du sort, la cible est protégée contre la décomposition et ne peut pas se transformer en mort-vivant.</p><br/><p>Le sort rallonge aussi la période pendant laquelle on peut rappeler la cible d'entre les morts, car les jours passés sous l'influence de ce sort ne sont pas décomptés de la période pendant laquelle on peut utiliser des sorts comme rappel à la vie.</p><br/>"
+};
+
+export  const DRUIDISME: Spell = {
+  type: IndexElementType.Spell,
+  id: "druidisme",
+  name: "Druidisme",
+  level: 0,
+  school: SpellSchool.Transmutation,
+  castingTime: "1 action",
+  range: "9 mètres",
+  components: "V, S",
+  duration: "Instantanée",
+  description: "<p>Vous créez l'un des effets suivants à portée après quelques murmures adressés aux esprits de la nature.</p><br/><p>Vous créez un effet sensoriel minuscule et inoffensif qui annonce le temps qu'il fera là où vous vous trouvez pendant les 24 heures à venir. Cet effet peut prendre la forme d'un orbe doré si le temps va rester dégagé, d'un nuage s'il va pleuvoir, de flocons s'il va neiger, etc. L'effet persiste pendant 1 round.</p><br/><p>Vous faites instantanément éclore une fleur ou un bourgeon ou germer une graine.</p><br/><p>Vous créez un effet sensoriel instantané inoffensif, comme des feuilles qui tombent, un coup de vent, le bruit que ferait un petit animal ou une légère odeur de moufette. L'effet doit être contenu dans un cube d'au maximum 1,50 mètre d'arête.</p><br/><p>Vous allumez ou éteignez instantanément une chandelle, une torche ou un petit feu de camp.</p><br/>"
+};
+
+export  const DUEL_FORCE: Spell = {
+  type: IndexElementType.Spell,
+  id: "duel-forcé",
+  name: "Duel forcé",
+  level: 1,
+  school: SpellSchool.Enchantment,
+  castingTime: "1 action bonus",
+  range: "9 mètres",
+  components: "V",
+  duration: "Concentration, jusqu'a 1 minute",
+  description: "<p>Vous poussez une créature à vous affronter en duel. Une créature située à portée dans votre champ de vision doit faire un jet de sauvegarde de Sagesse. Si elle le rate, vous l'obnubilez et elle ne peut résister à votre injonction divine. Pendant toute la durée du sort, elle est désavantagée lors des jets d'attaque effectués contre toute créature autre que vous et doit faire un jet de sauvegarde de Sagesse chaque fois qu'elle tente de s'éloigner à plus de 9 mètres de vous. Si elle réussit ce jet de sauvegarde, le sort ne gêne pas ses mouvements pour ce tour.</p><br/><p>Le sort se termine si vous attaquez une créature autre que celle visée par ce sort, si vous lancez un sort sur une créature hostile autre qu'elle, si une créature amicale envers vous la blesse ou lui lance un sort néfaste ou si vous terminez votre tour à plus de 9 mètres d'elle.</p><br/>"
+};
+
+export  const ECLAIR: Spell = {
+  type: IndexElementType.Spell,
+  id: "éclair",
+  name: "Éclair",
+  level: 3,
+  school: SpellSchool.Evocation,
+  castingTime: "1 action",
+  range: "Personnelle (ligne de 30 mètres)",
+  components: "V, S, M (un peu de fourrure et une baguette en ambre, en cristal ou en verre)",
+  duration: "Instantanée",
+  description: "<p>Un éclair formant une ligne de 30 mètres de long pour 1,50 mètre de large jaillit de votre personne et file dans la direction de votre choix. Chaque créature située sur la ligne doit faire un jet de sauvegarde de Dextérité. Celles qui échouent subissent 8d6 dégâts de foudre, les autres la moitié seulement.</p><br/><p>La foudre embrase les objets inflammables de la zone qui ne sont ni portés ni transportés par une créature.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 4 ou plus, les dégâts augmentent de 1d6 par niveau au-delà du 3.</p><br/>"
+};
+
+export  const ECLAT_DU_SOLEIL: Spell = {
+  type: IndexElementType.Spell,
+  id: "eclat-du-soleil",
+  name: "Eclat du soleil",
+  level: 8,
+  school: SpellSchool.Evocation,
+  castingTime: "1 action",
+  range: "45 mètres",
+  components: "V, S, M (du feu et un éclat d'héliotrope)",
+  duration: "Instantanée",
+  description: "<p>La chaude lumière du soleil illumine une zone de 18 mètres de rayon centrée sur un point de votre choix situé à portée.</p><br/><p>Chaque créature présente dans cette lumière doit faire un jet de sauvegarde de Constitution. Celles qui échouent subissent 12d6 dégâts radiants et sont aveuglées pendant 1 minute. Les autres subissent seulement la moitié des dégâts et ne sont pas aveuglées par le sort. Les vases et les morts-vivants sont désavantagés lors de ce jet de sauvegarde.</p><br/><p>Une créature aveuglée par le sort fait un autre jet de</p><br/><p>Constitution à la fin de chacun de ses tours. Dès qu'elle réussit, sa cécité disparaît.</p><br/><p>Ce sort dissipe toutes les ténèbres présentes dans la zone qui sont issues d'un sort.</p><br/>"
+};
+
+export  const EMBRUNS_PRISMATIQUES: Spell = {
+  type: IndexElementType.Spell,
+  id: "embruns-prismatiques",
+  name: "Embruns prismatiques",
+  level: 7,
+  school: SpellSchool.Evocation,
+  castingTime: "1 action",
+  range: "Personnelle (cône de 18 mètres)",
+  components: "V, S",
+  duration: "Instantanée",
+  description: "<p>Huit rayons de lumière multicolores jaillissent de votre main.</p><br/><p>Chacun a une couleur différente et possède des pouvoirs et objectifs distincts. Chaque créature présente dans un cône de 18 mètres doit faire un jet de sauvegarde de Dextérité. Lancez</p><br/><p>1d8 par cible pour savoir quelle couleur l'affecte.</p><br/><p>1. <b>Rouge :</b> La cible subit 10d6 dégâts de feu si elle rate son jet de sauvegarde, la moitié seulement si elle le réussit.</p><br/><p>2. <b>Orange :</b> La cible subit 10d6 dégâts d'acide si elle rate son jet de sauvegarde, la moitié seulement si elle le réussit.</p><br/><p>3. <b>Jaune :</b> La cible subit 10d6 dégâts de foudre si elle rate son jet de sauvegarde, la moitié seulement si elle le réussit.</p><br/><p>4. <b>Vert :</b> La cible subit 10d6 dégâts de poison si elle rate son jet de sauvegarde, la moitié seulement si elle le réussit.</p><br/><p>5. <b>Bleu :</b> La cible subit 10d6 dégâts de froid si elle rate son jet de sauvegarde, la moitié seulement si elle le réussit.</p><br/><p>6. <b>Indigo :</b> Si la cible rate son jet de sauvegarde, elle est entravée et doit alors faire un jet de sauvegarde de Constitution à la fin de chacun de ses tours. Si elle en réussit trois, le sort se termine, si elle en rate trois, elle se change définitivement en pierre et elle est en proie à l'état pétrifié. Les succès et les échecs n'ont pas à être consécutifs: tenez le compte dans chaque catégorie jusqu'à ce que l'une d'elles arrive à trois.</p><br/><p>7. <b>Violet :</b> La cible est aveugle si elle rate son jet de sauvegarde. Elle doit alors faire un jet de sauvegarde de Sagesse au début de votre prochain tour. Si elle le réussit, elle recouvre la vue; si elle le rate, elle est emportée sur un autre plan d'existence choisi par le MD et recouvre aussi la vue. (En général, une créature qui ne se trouve pas sur son propre plan d'existence est bannie là-bas tandis que les autres créatures sont envoyées sur le plan astral ou éthéré).</p><br/><p>8. <b>Spécial :</b> Deux rayons viennent frapper la cible. Relancez deux fois le dé en le relançant chaque fois que vous sortez un 8.</p><br/>"
+};
+
+export  const EMPRISONNEMENT: Spell = {
+  type: IndexElementType.Spell,
+  id: "emprisonnement",
+  name: "Emprisonnement",
+  level: 9,
+  school: SpellSchool.Abjuration,
+  castingTime: "1 minute",
+  range: "9 mètres",
+  components: "V, S, M (un portrait sur un vélin ou une statuette sculptée à l'effigie de la cible et une composante spéciale qui varie en fonction de la version du sort choisie et vaut au moins 500 po par dé de vie de la cible)",
+  duration: "Jusqu'à dissipation",
+  description: "<p>Vous créez des entraves magiques pour immobiliser une créature située à portée dans votre champ de vision. La cible doit réussir un jet de sauvegarde de Sagesse ou se retrouver emprisonnée par le sort. Si elle réussit, elle est immunisée contre ce sort si vous le lancez de nouveau. Tant que la créature est affectée par le sort, elle n'a pas besoin de respirer, de manger, ni de boire et ne vieillit plus. Les sorts de divination ne parviennent plus à la localiser ni à la percevoir.</p><br/><p>Vous devez opter pour l'une des formes d'emprisonnement suivantes quand vous lancez le sort.</p><br/><p>Enseveli. La cible est ensevelie dans les profondeurs de la terre, dans une sphère de force magique tout juste assez grande pour la contenir. Rien ne peut traverser cette sphère et les créatures ne peuvent pas recourir au voyage planaire pour y entrer ou en sortir.</p><br/><p>La composante spéciale de cette version du sort est un petit orbe en mithral.</p><br/><p>Enchaine. La cible est retenue par de lourdes chaines fermement ancrées au sol. Elle est entravée jusqu'à ce que le sort se termine et, Jusque la, elle ne peut pas se déplacer ni être déplacée, par quelque moyen que ce soit.</p><br/><p>La composante spéciale de cette version du sort est une</p><br/><p>fine chaîne faite de métal précieux.</p><br/><p>Prison isolée. Le sort transporte la cible dans un minuscule demi-plan protégé contre la téléportation et les voyages planaires. Ce demi-plan peut être un labyrinthe, une cage, une tour ou une structure confinée similaire de votre choix.</p><br/><p>La composante spéciale de cette version du sort est une représentation miniature de la prison, faite de jade.</p><br/><p>Confinement minimal. La cible rétrécit jusqu'à ne plus faire que 2,5 centimètres de haut et se retrouve emprisonnée dans une gemme ou un objet similaire. La lumière traverse la gemme normalement (ce qui permet à la cible de voir l'extérieur et aux autres créatures de regarder dedans) mais rien d'autre ne peut traverser sa paroi, pas même les méthodes de téléportation ni les voyages planaires. Il est impossible de tailler la gemme ou de la briser tant que le sort fait effet.</p><br/><p>La composante spéciale de cette version du sort est une grande gemme transparente comme un corindon, un diamant ou un rubis.</p><br/><p>Sommeil. La cible s'endort et il est impossible de la réveiller. La composante spéciale de cette version du sort est un bouquet d'herbes soporifiques très rares.</p><br/><p>Mettre fin au sort. Lors de l'incantation et quelle que soit la version du sort, vous pouvez préciser une condition spéciale qui met fin au sort et libère la cible. Cette condition peut être aussi spécifique ou aussi élaborée que vous le désirez, mais le MD doit confirmer que cette condition est réalisable et a une chance d'être remplie. Elle peut se baser sur le nom de la créature, son identité ou sa divinité, mais sinon elle doit reposer sur des actions ou des qualités observables et non sur des éléments intangibles comme le niveau, la classe ou les points de vie.</p><br/><p>Dissipation de la magie peut mettre fin au sort à condition d'être lancée depuis un emplacement de sort de niveau 9 en visant la prison ou la composante matérielle spéciale utilisée pour lancer le sort.</p><br/><p>Vous pouvez utiliser une composante spéciale pour créer une prison à la fois seulement. Si vous relancez ce sort en utilisant la même composante, la cible de la première incantation est libérée sur-le-champ.</p><br/>"
+};
+
+export  const ENCHEVETREMENT: Spell = {
+  type: IndexElementType.Spell,
+  id: "enchevêtrement",
+  name: "Enchevêtrement",
+  level: 1,
+  school: SpellSchool.Conjuration,
+  castingTime: "1 action",
+  range: "27 mètres",
+  components: "V, S",
+  duration: "Concentration, jusqu'à 1 minute",
+  description: "<p>Des herbes et des lianes entremêlées jaillissent du sol dans un carré de 6 mètres de côté centré sur un point à portée. Pendant toute la durée du sort, les végétaux transforment la zone en terrain difficile.</p><br/><p>Une créature qui se trouve dans la zone affectée lorsque vous lancez le sort doit réussir un jet de sauvegarde de Force, sans quoi elle reste entravée dans les plantes jusqu'à ce que le sort se termine. Une créature entravée peut utiliser une action pour faire un test de Force contre le DD du sort. Si elle réussit, elle se libère.</p><br/><p>Quand le sort se termine, les plantes invoquées se flétrissent.</p><br/>"
+};
+
+export  const ENNEMI_SUBCONSCIENT: Spell = {
+  type: IndexElementType.Spell,
+  id: "ennemi-subconscient",
+  name: "Ennemi subconscient",
+  level: 9,
+  school: SpellSchool.Illusion,
+  castingTime: "1 action",
+  range: "36 mètres",
+  components: "V, S",
+  duration: "Concentration, jusqu'à 1 minute",
+  description: "<p>Vous puisez dans les peurs les plus profondes d'un groupe de créatures et créez des êtres illusoires dans leur esprit, qu'elles sont les seules à voir. Chaque créature située dans une sphère de 9 mètres de rayon centrée sur un point de votre choix situé à portée doit faire un jet de sauvegarde de Sagesse. Celles qui ratent leur jet sont effrayées pendant toute la durée. Les illusions se basent sur les peurs enfouies en chaque cible et transforment leurs pires cauchemars en menace implacable. À la fin de chacun de ses tours, une créature effrayée doit faire un jet de sauvegarde de Sagesse.</p><br/><p>Si elle échoue, elle subit 4d10 dégâts psychiques; si elle réussit, le sort se termine pour elle.</p><br/>"
+};
+
+export  const ENTRAVE_PLANAIRE: Spell = {
+  type: IndexElementType.Spell,
+  id: "entrave-planaire",
+  name: "Entrave planaire",
+  level: 5,
+  school: SpellSchool.Abjuration,
+  castingTime: "1 heure",
+  range: "18 mètres",
+  components: "V, S, M (un bijou d'une valeur minimale de 1 000 po, que le sort consume)",
+  duration: "24 heures",
+  description: "<p>Grâce à ce sort, vous vous attachez de force les services d'un céleste, d'un élémentaire, d'une fée ou d'un fiélon. La créature doit se trouver à portée pendant toute la durée du sort. (En général, elle est d'abord invoquée au centre d'un cercle magique inversé où elle reste piégée le temps de l'incantation.) La cible doit faire un jet de sauvegarde de Charisme à la fin de l'incantation. Si elle échoue, elle est contrainte de vous servir pendant toute la durée du sort. Si elle a été invoquée ou créée via un autre sort, la durée de ce dernier se prolonge jusqu'à égaler celle de l'entrave planaire.</p><br/><p>La créature liée doit suivre vos instructions au mieux de ses capacités. Vous pouvez lui demander de vous accompagner lors d'une aventure, de protéger un lieu ou de transmettre un message. La créature obéit à vos instructions à la lettre, mais si elle est hostile envers vous, elle peut tout à fait interpréter vos paroles de manière à satisfaire ses propres objectifs. Si la créature a exécuté vos instructions avant la fin du sort, elle revient vers vous pour vous en informer si elle se trouve sur le même plan d'existence que vous. Si vous êtes sur un autre plan, elle se rend là où vous l'avez liée et y reste jusqu'à la fin du sort.</p><br/><p>A plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau supérieur, la durée augmente:</p><br/><p>10 jours au niveau 6, 30 au niveau 7, 180 au niveau 8 et un an et un jour au niveau 9.</p><br/>"
+};
+
+export  const EPEE_DE_MORDENKAINEN: Spell = {
+  type: IndexElementType.Spell,
+  id: "épée-de-mordenkainen",
+  name: "Épée de Mordenkainen",
+  level: 7,
+  school: SpellSchool.Evocation,
+  castingTime: "1 action",
+  range: "18 mètres",
+  components: "V, S, M (une épée en platine miniature avec le pommeau et la poignée en cuivre et zinc, d'une valeur de 250 po)",
+  duration: "Concentration, jusqu'à 1 minute",
+  description: "<p>Vous créez un plan de force en forme d'épée qui plane à portée et persiste pendant toute la durée du sort.</p><br/><p>Dès que l'épée apparaît, vous faites une attaque de sort au corps à corps contre une cible de votre choix située dans un rayon de 1,50 mètre autour de l'épée. Si l'épée touche, la cible subit 3d10 dégâts de force. Tant que le sort n'est pas terminé, vous pouvez dépenser une action bonus à chacun de vos tours pour déplacer l'épée d'un maximum de 6 mètres afin de la conduire à un endroit situé dans votre champ de vision, puis répéter l'attaque contre la même cible ou une autre.</p><br/>"
+};
+
+export  const ESPRIT_FAIBLE: Spell = {
+  type: IndexElementType.Spell,
+  id: "esprit-faible",
+  name: "Esprit faible",
+  level: 8,
+  school: SpellSchool.Enchantment,
+  castingTime: "1 action",
+  range: "45 mètres",
+  components: "V, S, M (une poignée de sphères en argile, en cristal, en verre ou minérales)",
+  duration: "Instantanée",
+  description: "<p>Vous vous attaquez à l'esprit d'une créature située à portée dans votre champ de vision en essayant de briser son intellect et sa personnalité. La cible subit 4d6 dégâts psychiques et doit faire un jet de sauvegarde d'Intelligence.</p><br/><p>Si la cible rate son jet, son Intelligence et son Charisme tombent à 1. Elle ne peut plus lancer de sorts, activer d'objet magique, comprendre une langue, ni communiquer de manière intelligible. En revanche, elle est toujours capable de reconnaître ses amis, de les suivre et même de les protéger.</p><br/><p>La créature peut refaire un jet de sauvegarde tous les</p><br/><p>30 jours. Le sort se termine dès qu'elle réussit.</p><br/><p>On peut mettre un terme à ce sort avec restauration suprême, guérison ou souhait.</p><br/>"
+};
+
+export  const ESPRIT_IMPENETRABLE: Spell = {
+  type: IndexElementType.Spell,
+  id: "esprit-impénétrable",
+  name: "Esprit impénétrable",
+  level: 8,
+  school: SpellSchool.Abjuration,
+  castingTime: "1 action",
+  range: "Contact",
+  components: "V, S",
+  duration: "24 heures",
+  description: "<p>Vous touchez une créature consentante et, jusqu'à la fin du sort, vous l'immunisez contre les dégâts psychiques, les effets percevant les émotions ou révélant les pensées, les sorts de divination et l'état charmé. Ce sort déjoue même les souhaits et les sorts et effets de même puissance qui cherchent à affecter l'esprit de la cible ou à obtenir des informations sur elle.</p><br/>"
+};
+
+export  const ESPRITS_GARDIENS: Spell = {
+  type: IndexElementType.Spell,
+  id: "esprits-gardiens",
+  name: "Esprits gardiens",
+  level: 3,
+  school: SpellSchool.Conjuration,
+  castingTime: "1 action",
+  range: "Personnelle (4,50 mètres de rayon)",
+  components: "V, S M (un symbole sacré)",
+  duration: "Concentration, jusqu'à 10 minutes",
+  description: "<p>Vous appelez des esprits qui vous protègent. Ils volètent autour de vous dans un rayon de 4,50 mètres pendant toute la durée du sort. Si vous êtes Bon ou Neutre, ils ont une apparence angélique ou féerique (à vous de choisir). Si vous êtes Mauvais, ils ont une apparence fiélone.</p><br/><p>Quand vous lancez le sort, vous pouvez désigner autant de créatures que vous le voulez afin qu'il ne les affecte pas.</p><br/><p>Une créature affectée voit sa vitesse réduite de moitié dans la zone et, quand elle y entre pour la première fois de son tour ou quand elle y commence son tour, elle doit faire un jet de sauvegarde de Sagesse. Si elle échoue, elle subit 3d8 dégâts radiants (si vous êtes Bon ou Neutre) ou 3d8 dégâts nécrotiques (si vous êtes Mauvais). Si elle réussit son jet de sauvegarde, elle subit seulement la moitié de ces dégâts.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 4 ou plus, les dégâts augmentent de 1d8 par niveau au-delà du 3ème.</p><br/>"
+};
+
+export  const ETAT_CADAVERIQUE: Spell = {
+  type: IndexElementType.Spell,
+  id: "état-cadavérique",
+  name: "État cadavérique",
+  level: null,
+  school: SpellSchool.Necromancy,
+  castingTime: "1 action / Rituel",
+  range: "Contact",
+  components: "V, S, M (une pincée de poussière tombale)",
+  duration: "1 heure",
+  description: "<p>Vous touchez une créature consentante et la plongez dans un état cataleptique si profond qu'elle semble morte.</p><br/><p>Pendant toute la durée du sort ou jusqua ce que vous utilisiez une action pour toucher la cible et révoquer le sort, la cible paraît morte, même suite à un examen externe ou après utilisation d'un sort visant à déterminer son statut. Elle est aveuglée et neutralisée et sa vitesse passe à 0. Elle est résistante à tous les types de dégâts hormis les dégâts psychiques. Si elle est empoisonnée ou malade au moment où vous lancez le sort ou si elle le devient pendant la durée du sort, la maladie ou le poison na aucun effet tant que ce sort n'est pas terminé.</p><br/>"
+};
+
+export  const EVEIL: Spell = {
+  type: IndexElementType.Spell,
+  id: "éveil",
+  name: "Éveil",
+  level: 5,
+  school: SpellSchool.Transmutation,
+  castingTime: "8 heures",
+  range: "Contact",
+  components: "V, S, M (une agate d'une valeur minimale de 1 000 po, que le sort consomme)",
+  duration: "Instantanée",
+  description: "<p>Une fois que vous avez passé la durée de l'incantation à tracer des sentiers magiques dans une pierre précieuse, vous touchez un animal ou une plante de taille Très Grande ou inférieure qui doivent être dépourvus de toute valeur d'Intelligence ou posséder une Intelligence de 3 ou moins. La cible reçoit alors une Intelligence de 10 et la possibilité de parler un langage de votre connaissance. Si la cible est une plante, elle peut se déplacer à l'aide de ses branches, de ses racines, de ses lianes, de ses vrilles ou autre et gagne des sens similaires à ceux d'un humain. C'est au MD de choisir les statistiques appropriées à la plante éveillée, en lui appliquant par exemple le profil d'un buisson ou d'un arbre éveillé.</p><br/><p>La bête ou la plante éveillée est sous votre charme pendant</p><br/><p>30 jours ou jusqu'à ce que vous ou l'un de vos compagnons la blessiez. Une fois que l'effet de charme se termine, la créature éveillée décide seule si elle reste amicale envers vous, selon la façon dont vous l'avez traitée lorsqu'elle était charmée.</p><br/>"
+};
+
+export  const FABRICATION: Spell = {
+  type: IndexElementType.Spell,
+  id: "fabrication",
+  name: "Fabrication",
+  level: 4,
+  school: SpellSchool.Transmutation,
+  castingTime: "10 minutes",
+  range: "36 mètres",
+  components: "V, S",
+  duration: "Instantanée",
+  description: "<p>Vous convertissez des matériaux bruts en produits finis faits de la même matière. Par exemple, vous pouvez fabriquer un pont de bois à partir de souches d'arbres, une corde à base d'un tas de chanvre, et des habits à partir de lin ou de laine.</p><br/><p>Choisissez des matériaux bruts situés à portée et dans votre champ de vision. Vous pouvez fabriquer un objet de taille Grande ou inférieure (contenu dans un cube de 3 mètres de côté ou dans huit cubes reliés de 1,50 mètre de côté) à condition d'avoir assez de matière première. Toutefois, si vous travaillez avec du métal, de la pierre ou une autre substance minérale, l'objet fabriqué ne doit pas dépasser la taille Moyenne (donc tenir dans un cube de 1,50 mètre de côte). La qualite de lobjet fabriqué dépend de celle des matières premières.</p><br/><p>Il est impossible de créer ou de transmuter des créatures ou des objets magiques à l'aide de ce sort. Vous ne pouvez pas non plus y recourir pour fabriquer des objets demandant un haut degré d'expertise, comme des bijoux, des armes, du verre ou une armure, à moins que vous ne soyez formé à l'utilisation des outils d'artisanat nécessaires à l'élaboration de tels objets.</p><br/>"
+};
+
+export  const FACONNAGE_DE_LA_PIERRE: Spell = {
+  type: IndexElementType.Spell,
+  id: "façonnage-de-la-pierre",
+  name: "Façonnage de la pierre",
+  level: 4,
+  school: SpellSchool.Transmutation,
+  castingTime: "1 action",
+  range: "Contact",
+  components: "V, S, M (argile molle, à façonner pour lui donner approximativement la forme de l'objet de pierre désiré",
+  duration: "Instantanée",
+  description: "<p>Vous touchez un objet de pierre de taille Moyenne ou inférieure ou une section de pierre d'un maximum de 1,50 mètre dans toutes les dimensions et lui donnez la forme que vous désirez.</p><br/><p>Vous pouvez, par exemple, façonner un gros caillou de manière à en faire une arme, une idole ou un coffre, ou bien creuser un étroit passage dans un mur, à condition que ce dernier ne fasse pas plus de 1,50 mètre d'épaisseur. Vous pouvez façonner une porte de pierre ou son chambranle pour la sceller. L'objet créé peut avoir au maximum deux charnières et un loquet, mais il est impossible de créer des mécanismes plus complexes.</p><br/>"
+};
+
+export  const FAUX_AMIS: Spell = {
+  type: IndexElementType.Spell,
+  id: "faux-amis",
+  name: "Faux amis",
+  level: 0,
+  school: SpellSchool.Enchantment,
+  castingTime: "1 action",
+  range: "Personnelle",
+  components: "V, M (un peu de maquillage à s'appliquer sur le visage lors de l'incantation)",
+  duration: "Concentration, jusqu'à 1 minute",
+  description: "<p>Pendant toute la durée du sort, vous êtes avantagé sur tous les tests de Charisme à l'encontre d'une créature de votre choix qui ne vous est pas hostile. Quand le sort se termine, cette créature se rend compte que vous avez usé de magie pour l'influencer et elle devient hostile. Si elle est encline à la violence, elle peut très bien vous attaquer. Une autre peut chercher à se venger autrement (au choix du MD), selon la manière dont vous avez interagi avec elle.</p><br/>"
+};
+
+export  const FAVEUR_DIVINE: Spell = {
+  type: IndexElementType.Spell,
+  id: "faveur-divine",
+  name: "Faveur divine",
+  level: 1,
+  school: SpellSchool.Evocation,
+  castingTime: "1 action bonus",
+  range: "Personnelle",
+  components: "V, S",
+  duration: "Concentration, jusqu'à 1 minute",
+  description: "<p>Vos prières vous imprègnent d'une aura radieuse. Jusqu'à la fin du sort, les attaques que vous portez avec une arme infligent 1d4 dégâts radiants supplémentaires en cas de coup au but.</p><br/>"
+};
+
+export  const FESTIN_DES_HEROS: Spell = {
+  type: IndexElementType.Spell,
+  id: "festin-des-héros",
+  name: "Festin des héros",
+  level: 6,
+  school: SpellSchool.Conjuration,
+  castingTime: "10 minutes",
+  range: "9 mètres",
+  components: "V, S, M (un bol incrusté de gemmes d'une valeur minimale de 1 000 po, que le sort consume)",
+  duration: "Instantanée",
+  description: "<p>Vous matérialisez un grand festin, comprenant des boissons et des mets de grande qualité. Il faut une heure pour terminer le festin qui disparaît au bout de cette durée. Ses effets bénéfiques se manifestent uniquement une fois cette heure écoulée. Douze créatures au</p><br/><p>maximum peuvent beneficier de ce repas.</p><br/><p>Une créature qui participe au festin bénéficie de plusieurs avantages. Elle est guérie de toutes les maladies et de tous les poisons qui l'affectaient, elle est immunisée contre le poison et l'état effrayé, et elle est avantagée lors de tous ses jets de sauvegarde de Sagesse. Son maximum de points de vie augmente de 2d10 et elle gagne le même nombre de points de vie. Ces avantages persistent pendant 24 heures.</p><br/>"
+};
+
+export  const FEUILLE_MORTE: Spell = {
+  type: IndexElementType.Spell,
+  id: "feuille-morte",
+  name: "Feuille morte",
+  level: 1,
+  school: SpellSchool.Transmutation,
+  castingTime: "1 réaction, que vous effectuez quand vous-même ou une créature située dans un rayon de 18 mètres tombe soudain",
+  range: "18 mètres",
+  components: "V, M (une petite plume ou un peu de duvet)",
+  duration: "1 minute",
+  description: "<p>Choisissez jusqu'à cinq créatures en train de tomber à portée. La vitesse de chute de chacune passe à 18 mètres par round jusqu'à la fin du sort. Si une créature atterrit avant la fin du sort, elle ne subit pas de dégâts de chute et se reçoit sur ses pieds, le sort se terminant alors pour elle.</p><br/>"
+};
+
+export  const FLAMME_ETERNELLE: Spell = {
+  type: IndexElementType.Spell,
+  id: "flamme-éternelle",
+  name: "Flamme éternelle",
+  level: 2,
+  school: SpellSchool.Evocation,
+  castingTime: "1 action",
+  range: "Contact",
+  components: "V, S, M (poussière de rubis d'une valeur de 50 po, que le sort consume)",
+  duration: "Jusqu'à dissipation",
+  description: "<p>Une flamme à la luminosité égale à celle d'une torche embrase soudain l'objet que vous touchez. L'effet du sort ressemble à une flamme ordinaire, mais ne dégage pas de chaleur et ne consomme pas d'oxygène. On peut couvrir ou cacher la flamme éternelle, mais pas l'étouffer ni l'éteindre avec de l'eau.</p><br/>"
+};
+
+export  const FLAMME_SACREE: Spell = {
+  type: IndexElementType.Spell,
+  id: "flamme-sacrée",
+  name: "Flamme sacrée",
+  level: 0,
+  school: SpellSchool.Evocation,
+  castingTime: "1 action",
+  range: "18 mètres",
+  components: "V, S",
+  duration: "Instantanée",
+  description: "<p>Un flamboiement digne d'une flamme s'abat sur une créature située à portée dans votre champ de vision. La cible doit réussir un jet de Dextérité ou subir 1d8 dégâts radiants. Même si elle se trouve derrière un abri, la cible n'est pas avantagée lors du jet de sauvegarde.</p><br/><p>Les dégâts du sort augmentent de 1d8 quand vous atteignez le niveau 5 (2d8), le niveau 11 (3d8) et le niveau 17 (4d8).</p><br/>"
+};
+
+export  const FLAMMES: Spell = {
+  type: IndexElementType.Spell,
+  id: "flammes",
+  name: "Flammes",
+  level: 0,
+  school: SpellSchool.Conjuration,
+  castingTime: "1 action",
+  range: "Personnelle",
+  components: "V, S",
+  duration: "10 minutes",
+  description: "<p>Une flamme vacillante apparaît dans votre main. Elle y reste pendant toute la durée du sort et ne vous blesse pas, pas plus qu'elle n'endommage votre équipement. La flamme émet une lumière vive dans un rayon de 3 mètres et une lumière faible dans un rayon de 3 mètres de plus. Le sort se termine si vous le révoquez par une action ou si vous le lancez de nouveau.</p><br/><p>Vous pouvez attaquer avec la flamme, mais cela met fin au sort. Pour cela, quand vous lancez le sort, ou par une action lors d'un tour ultérieur, vous lancez la flamme sur une créature située dans un rayon de 9 mètres. Faites une attaque de sort à distance. Si vous touchez, la cible subit 1d8 dégâts de feu.</p><br/><p>Les dégâts de ce sort augmentent de 1d8 quand vous atteignez le niveau 5 (2d8), le niveau 11 (3d8) et le niveau 17 (4d8).</p><br/>"
+};
+
+export  const FLEAU_DINSECTES: Spell = {
+  type: IndexElementType.Spell,
+  id: "fléau-d'insectes",
+  name: "Fléau d'insectes",
+  level: 5,
+  school: SpellSchool.Conjuration,
+  castingTime: "1 action",
+  range: "90 mètres",
+  components: "V, S, M (un peu de sucre en poudre, quelques graines de céréales et une tache de graisse)",
+  duration: "Concentration, jusqu'à 10 minutes",
+  description: "<p>Un essaim de sauterelles grouillantes remplit une sphère de 6 mètres de rayon centrée sur un point de votre choix situé à portée. La sphère s'étend en contournant les angles et persiste pendant toute la durée du sort. La visibilité est réduite dans la zone affectée. L'intérieur de la sphère devient un terrain difficile.</p><br/><p>Quand la sphère d'insectes apparaît, chaque créature prise à l'intérieur doit faire un jet de sauvegarde de Constitution.</p><br/><p>Une créature subit 4d10 dégâts perforants si elle rate son jet, la moitié seulement si elle le réussit. Une créature doit faire le même jet quand elle entre dans la sphère pour la première fois de son tour ou quand elle y termine son tour.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 6 ou plus, les dégâts augmentent de 1d10 par niveau au-delà du 5ème.</p><br/>"
+};
+
+export  const FLECHE_ACIDE_DE_MELF: Spell = {
+  type: IndexElementType.Spell,
+  id: "flèche-acide-de-melf",
+  name: "Flèche acide de Melf",
+  level: 2,
+  school: SpellSchool.Evocation,
+  castingTime: "1 action",
+  range: "27 mètres",
+  components: "V, S, M (poudre de feuille de rhubarbe et estomac de vipère)",
+  duration: "Instantanée",
+  description: "<p>Une flèche d'un vert chatoyant file vers une cible située à portée et explose en une gerbe d'acide. Faites une attaque de sort à distance contre la cible. Si vous touchez, la cible reçoit 4d4 dégâts d'acide immédiatement et 2d4 dégâts d'acide à la fin de son prochain tour. Si vous ne touchez pas, l'acide éclabousse la cible et lui inflige la moitié des dégâts initiaux, mais aucun à la fin de son prochain tour.</p><br/><p>A plus haut niveau. Quand vous utilisez ce sort via un emplacement de niveau 3 ou plus, les dégâts initiaux et secondaires augmentent de 1d4 par niveau au-delà du 2ème.</p><br/>"
+};
+
+export  const FLECHE_DE_FOUDRE: Spell = {
+  type: IndexElementType.Spell,
+  id: "flèche-de-foudre",
+  name: "Flèche de foudre",
+  level: 3,
+  school: SpellSchool.Transmutation,
+  castingTime: "1 action bonus",
+  range: "Personnelle",
+  components: "V, S",
+  duration: "Concentration, jusqu'à 1 minute",
+  description: "<p>Lors de la prochaine attaque que vous effectuez avec une arme à distance pendant que ce sort est actif, la munition (ou l'arme s'il s'agit d'une arme de jet) se change en éclair. Faites un jet d'attaque ordinaire. Si vous touchez, la cible subit 4d8 dégâts de foudre au lieu des dégâts normaux, la moitié si vous la ratez.</p><br/><p>Que vous touchiez ou ratiez votre cible, toutes les créatures situées dans un rayon de 3 mètres autour d'elle doivent faire un jet de sauvegarde de Dextérité. Celles qui échouent subissent 2d8 dégâts de foudre, les autres la moitié seulement.</p><br/><p>La munition ou l'arme de jet reprend ensuite sa forme normale.</p><br/><p>A plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 4 ou plus, les dégâts dus à chacun des deux effets du sort augmentent de 1d8 par emplacement de sort au-delà du 3ème.</p><br/>"
+};
+
+export  const FLETRISSEMENT: Spell = {
+  type: IndexElementType.Spell,
+  id: "flétrissement",
+  name: "Flétrissement",
+  level: 4,
+  school: SpellSchool.Necromancy,
+  castingTime: "1 action",
+  range: "9 mètres",
+  components: "V, S",
+  duration: "Instantanée",
+  description: "<p>L'énergie nécromantique inonde une créature de votre choix située à portée dans votre champ de vision, et draine ses fluides corporels et sa vitalité. La cible doit faire un jet de sauvegarde de Constitution. Si elle échoue, elle reçoit 8d8 dégâts nécrotiques, la moitié seulement si elle réussit son jet. Ce sort n'a aucun effet sur les morts-vivants ou les artificiels.</p><br/><p>Si vous visez une créature végétale ou une plante magique, elle est désavantagée lors du jet de sauvegarde et le sort lui inflige le maximum de dégâts possible.</p><br/><p>Si vous visez une plante non magique qui n'est pas une créature, comme un arbre ou un buisson, elle n'a pas droit au moindre jet de sauvegarde, mais se flétrit et meurt.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 5 ou plus, les dégâts augmentent de 1d8 par niveau au-delà du 4ème.</p><br/>"
+};
+
+export  const FLOU: Spell = {
+  type: IndexElementType.Spell,
+  id: "flou",
+  name: "Flou",
+  level: 2,
+  school: SpellSchool.Illusion,
+  castingTime: "1 action",
+  range: "Personnelle",
+  components: "V",
+  duration: "Concentration, jusqu'à 1 minute",
+  description: "<p>Votre corps devient flou, il ondule et vacille comme une flamme aux yeux d'autrui. Pendant toute la durée du sort, les créatures sont désavantagées lorsqu'elles font un jet d'attaque contre vous. Un attaquant est immunisé contre cet effet s'il ne se repose pas sur sa vue, s'il dispose de vision aveugle par exemple, ou s'il peut percer les illusions à jour, avec vision lucide.</p><br/>"
+};
+
+export  const FORCE_FANTASMAGORIQUE: Spell = {
+  type: IndexElementType.Spell,
+  id: "force-fantasmagorique",
+  name: "Force fantasmagorique",
+  level: 2,
+  school: SpellSchool.Illusion,
+  castingTime: "1 action",
+  range: "18 mètres",
+  components: "V, S, M (un peu de laine)",
+  duration: "Concentration, jusqu'à 1 minute",
+  description: "<p>Vous façonnez une illusion et l'implantez dans l'esprit d'une créature située à portée dans votre champ de vision.</p><br/><p>Elle doit faire un jet de sauvegarde d'Intelligence. Si elle échoue, vous créez un objet, une créature ou un phénomène visible fantasmagorique de votre choix. L'illusion doit tenir dans un cube de 3 mètres d'arête. La cible est seule à la percevoir, et ce pendant toute la durée du sort. Ce dernier ne fonctionne pas contre les morts-vivants ni les artificiels.</p><br/><p>L'illusion comprend des bruits, une température et d'autres stimuli, mais, de même, la cible du sort est la seule à les percevoir.</p><br/><p>La cible peut utiliser une action pour examiner l'illusion avec un test d'Intelligence (Investigation) contre le DD du jet de sauvegarde de votre sort. Si elle réussit son test, elle comprend qu'elle a affaire à une simple illusion et le sort se termine.</p><br/><p>Tant que la cible est sous l'effet du sort, elle traite l'illusion comme un élément réel et invente une explication rationnelle aux résultats illogiques issus de ses interactions avec elle. Par exemple, si elle tente de traverser un pont fantasmagorique enjambant un ravin et tombe dès qu'elle pose le pied sur ce pont, si elle survit à la chute, elle croit toujours que le pont est réel et trouve une explication logique à sa chute : on l'a poussée, elle a glissé, une forte bourrasque l'a fait basculer...</p><br/><p>Une cible affectée croit si fort à la réalité de l'illusion que cette dernière peut même la blesser. Une illusion créée à l'image d'une créature peut attaquer la cible. De même, une illusion représentant du feu, un bassin d'acide ou une nappe de lave peut brûler la cible. À chaque round, à votre tour, votre illusion inflige 1d6 dégâts psychiques à la cible si elle se trouve au sein de l'illusion ou dans un rayon de 1,50 mètre autour d'elle et que cette illusion représente une créature ou un danger qui devrait logiquement la blesser, en l'attaquant par exemple. La cible perçoit les dégâts comme étant d'un type approprié à l'illusion qu'elle voit.</p><br/>"
+};
+
+export  const FORME_ETHEREE: Spell = {
+  type: IndexElementType.Spell,
+  id: "forme-éthérée",
+  name: "Forme éthérée",
+  level: 7,
+  school: SpellSchool.Transmutation,
+  castingTime: "1 action",
+  range: "Personnelle",
+  components: "V, S",
+  duration: "Jusqu'à 8 heures",
+  description: "<p>Vous pénétrez dans la région frontalière du plan éthéré, dans une zone où il chevauche votre plan actuel. Vous restez sur la Frontière éthérée pendant toute la durée du sort ou jusqu'à ce que vous utilisiez une action pour y mettre fin. Pendant cette période, vous pouvez vous déplacer dans n'importe quelle direction. Si vous optez pour un déplacement vers le haut ou le bas, le prix du mouvement est doublé, chaque mètre de déplacement vous coûtant un mètre supplémentaire. Vous voyez et entendez ce qui se passe sur le plan d'où vous venez, mais tout y est gris et vous ne voyez plus rien au-delà de 18 mètres.</p><br/><p>Une fois sur le plan éthéré, vous pouvez affecter uniquement des créatures situées sur ce plan et elles sont les seules à pouvoir vous affecter. Celles qui ne se trouvent pas sur ce plan ne vous perçoivent pas et sont incapables d'interagir avec vous, à moins qu'un pouvoir spécial ou magique ne le leur permette.</p><br/><p>Les objets et effets qui ne se trouvent pas sur le plan ethéré n'ont aucune incidence sur vous, ce qui vous permet de traverser des objets que vous apercevez sur le plan d'où vous venez.</p><br/><p>Quand le sort se termine, vous retournez immédiatement sur le plan d'où vous venez, à l'endroit que vous occupez actuellement. Si vous occupez le même espace qu'un objet solide ou une créature lorsque cela se produit, vous êtes immédiatement projeté dans l'espace inoccupé le plus proche susceptible de vous accueillir et subissez un montant de dégâts de force égal à 6,5 × le nombre de mètres sur lesquels vous avez été projeté.</p><br/><p>Ce sort n'a aucun effet si vous le lancez alors que vous vous trouvez sur le plan éthéré ou sur un plan non limitrophe, comme les plans extérieurs.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 8 ou plus, vous pouvez affecter jusqu'à trois créatures consentantes (vous y compris) par niveau au-delà du 7ème. Toutes ces créatures doivent se trouver dans un rayon de 3 mètres autour de vous quand vous lancez le sort.</p><br/>"
+};
+
+export  const FORME_GAZEUSE: Spell = {
+  type: IndexElementType.Spell,
+  id: "forme-gazeuse",
+  name: "Forme gazeuse",
+  level: 3,
+  school: SpellSchool.Transmutation,
+  castingTime: "1 action",
+  range: "Contact",
+  components: "V, S, M (un morceau de gaze et une volute de fumée)",
+  duration: "Concentration, jusqu'à 1 heure",
+  description: "<p>Vous touchez une créature consentante et la transformez, ainsi que tous les objets qu'elle porte et qu'elle transporte, en nuage brumeux pour toute la durée du sort. Ce dernier se termine si la créature tombe à 0 point de vie. Le sort n'affecte pas les créatures intangibles.</p><br/><p>Sous cette forme, la cible n'a plus qu'un seul mode de déplacement : le vol, à une vitesse de 3 mètres. Elle peut entrer dans l'espace d'une autre créature et l'occuper. Elle est résistante aux dégâts non magiques et elle est avantagée lors des jets de sauvegarde de Force, de Dextérité et de Constitution. Elle peut passer à travers de petits trous, de minces ouvertures et même de simples fissures; en revanche, les liquides équivalent pour elle à des surfaces solides. Elle ne peut pas tomber et continue de flotter dans les airs même si elle est étourdie ou neutralisée.</p><br/><p>Sous forme de nuage brumeux, la cible ne peut pas parler ni manipuler d'objet. Il lui est impossible de lâcher les objets qu'elle portait et qu'elle transportait et personne ne peut les utiliser ni interagir avec eux. Elle ne peut pas attaquer ni lancer de sort.</p><br/>"
+};
+
+export  const FOU_RIRE_DE_TASHA: Spell = {
+  type: IndexElementType.Spell,
+  id: "fou-rire-de-tasha",
+  name: "Fou rire de Tasha",
+  level: 1,
+  school: SpellSchool.Enchantment,
+  castingTime: "1 action",
+  range: "9 mètres",
+  components: "V, S, M (de minuscules tartes et une plume à agiter dans les airs)",
+  duration: "Concentration, jusqu'à 1 minute",
+  description: "<p>Une créature de votre choix située à portée dans votre champ de vision trouve soudain tout ce qui l'entoure d'une drôlerie hilarante et succombe à un fou rire irrépressible dès que ce sort l'affecte. Elle doit réussir un jet de sauvegarde de Sagesse ou se retrouver à terre, neutralisée et incapable de se relever pendant toute la durée du sort.</p><br/><p>Ce sort n'affecte pas les créatures dotées d'une Intelligence de 4 ou moins.</p><br/><p>À la fin de chacun de ses tours et chaque fois qu'elle subit des dégâts, la cible a droit à un nouveau jet de sauvegarde de Sagesse. Elle est avantagée lors de ce jet si ce sont des dégâts qui l'ont provoqué. Si la cible le réussit, le sort se termine.</p><br/>"
+};
+
+export  const FOUET_EPINEUX: Spell = {
+  type: IndexElementType.Spell,
+  id: "fouet-épineux",
+  name: "Fouet épineux",
+  level: 0,
+  school: SpellSchool.Transmutation,
+  castingTime: "1 action",
+  range: "9 mètres",
+  components: "V, S, M (une tige de plante épineuse)",
+  duration: "Instantanée",
+  description: "<p>Vous créez un long fouet semblable à une liane couverte d'épines. Sur votre ordre, il frappe une créature à portée.</p><br/><p>Faites une attaque de sort au corps à corps contre la cible.</p><br/><p>Si vous touchez, la créature subit 1d6 dégâts perforants et, si la créature est de taille Grande ou inférieure, vous l'attirez sur 3 mètres dans votre direction.</p><br/><p>Les dégâts du sort augmentent de 1d6 quand vous atteignez le niveau 5 (2d6), le niveau 11 (3d6) et le niveau 17 (4d6).</p><br/>"
+};
+
+export  const FOULEE_BRUMEUSE: Spell = {
+  type: IndexElementType.Spell,
+  id: "foulée-brumeuse",
+  name: "Foulée brumeuse",
+  level: 2,
+  school: SpellSchool.Conjuration,
+  castingTime: "1 action bonus",
+  range: "Personnelle",
+  components: "V",
+  duration: "Instantanée",
+  description: "<p>Vous êtes brièvement entouré d'une brume argentée et vous vous téléportez sur un maximum de 9 mètres jusqu'à un espace inoccupé situé dans votre champ de vision.</p><br/>"
+};
+
+export  const FRACASSEMENT: Spell = {
+  type: IndexElementType.Spell,
+  id: "fracassement",
+  name: "Fracassement",
+  level: 2,
+  school: SpellSchool.Evocation,
+  castingTime: "1 action",
+  range: "18 mètres",
+  components: "V, S, M (un éclat de mica)",
+  duration: "Instantanée",
+  description: "<p>Un bruit retentit soudain avec une intensité douloureuse, à partir d'un point situé à portée. Chaque créature située dans une sphère de 3 mètres de rayon centrée sur ce point doit faire un jet de sauvegarde de Constitution. Les créatures qui le ratent subissent 3d8 dégâts de tonnerre, les autres la moitié seulement. Une créature faite de matière inorganique, comme de la pierre, du cristal ou du métal est désavantagée sur ce jet de sauvegarde.</p><br/><p>Un objet non magique que personne ne porte ni ne transporte subit aussi ces dégâts s'il se trouve dans la zone du sort.</p><br/><p>A plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 3 ou plus, les dégâts augmentent de 1d8 par niveau au-delà du 2ème.</p><br/>"
+};
+
+export  const FRAPPE_PIEGEUSE: Spell = {
+  type: IndexElementType.Spell,
+  id: "frappe-piégeuse",
+  name: "Frappe piégeuse",
+  level: 1,
+  school: SpellSchool.Conjuration,
+  castingTime: "1 action bonus",
+  range: "Personnelle",
+  components: "V",
+  duration: "Concentration, jusqu'à 1 minute",
+  description: "<p>La prochaine attaque armée, faite avant la fin de ce sort, qui vous permet de toucher une créature fait jaillir une masse grouillante de lianes épineuses au point d'impact.</p><br/><p>La cible doit réussir un jet de sauvegarde de Force, sans quoi elle est entravée jusqu'à la fin du sort. Une créature de taille Grande ou supérieure est avantagée sur ce jet de sauvegarde. Si la cible réussit son jet de sauvegarde, les lianes se flétrissent.</p><br/><p>Tant que la cible est entravée par le sort, elle subit 1d6 dégâts perforants au début de chacun de ses tours. Une créature entravée par les lianes peut utiliser son action pour faire un jet de sauvegarde de Force contre le DD du jet de sauvegarde de votre sort. Une créature suffisamment proche de la cible pour la toucher peut aussi effectuer ce jet.</p><br/><p>Si le jet est réussi, la cible est libérée.</p><br/><p>A plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 2 ou plus, les dégâts augmentent de 1d6 par emplacement de sort au-delà du 1er.</p><br/>"
+};
+
+export  const FUSION_DANS_LA_PIERRE: Spell = {
+  type: IndexElementType.Spell,
+  id: "fusion-dans-la-pierre",
+  name: "Fusion dans la pierre",
+  level: null,
+  school: SpellSchool.Transmutation,
+  castingTime: "1 action / Rituel",
+  range: "Contact",
+  components: "V, S",
+  duration: "8 heures",
+  description: "<p>Vous entrez dans un objet ou une surface de pierre assez grande pour contenir entièrement votre corps, votre personne et votre équipement fusionnant avec la pierre pendant toute la durée du sort. Vous utilisez votre déplacement pour entrer dans la pierre en un point que vous êtes en mesure de toucher. Il ne reste alors rien de visible ni de détectable indiquant votre présence pour des sens non magiques.</p><br/><p>Tant que vous êtes fusionné avec la pierre, vous ne voyez pas ce qui se passe à l'extérieur et vous êtes désavantagé lors des tests de Sagesse (Perception) destinés à entendre les sons qui retentissent à l'extérieur de la pierre. Vous restez conscient du temps qui passe et vous pouvez lancer des sorts sur votre propre personne. Vous pouvez utiliser votre déplacement pour quitter la pierre par l'endroit par ou vous y êtes entré, ce qui met fin au sort. En dehors de cela, vous êtes dans l'incapacité de vous déplacer.</p><br/><p>Vous n'êtes pas blessé si la pierre subit des dégâts mineurs, mais si elle est partiellement détruite ou change de forme (au point que vous ne tenez plus entièrement à l'intérieur), elle vous expulse et vous subissez 6d6 dégâts contondants. Si la pierre est complètement détruite (ou transmutée en une substance différente), elle vous expulse et vous subissez 50 dégâts contondants. Si vous vous faites expulser de la pierre, vous vous retrouvez à terre dans l'espace inoccupé le plus proche de celui par lequel vous etes entré dans la roche.</p><br/>"
 }
 
 /* ================================================= */
@@ -1236,5 +2328,89 @@ export const SPELLS: Spell[] = [
   COMPREHENSION_DES_LANGUES,
   COMPULSION,
   CONE_DE_FROID,
-  CONFUSION
+  CONFUSION,
+  CONTACT_AVEC_LES_PLANS,
+  CONTACT_GLACIAL,
+  CONTAGION,
+  CONTAMINATION,
+  CONTRESORT,
+  CONTROLE_DE_LEAU,
+  CONVOCATIONS_INSTANTANEES_DE_DRAWMIJ,
+  CONQUILLE_ANTIVIE,
+  CORDE_ENCHANTEE,
+  CORDON_DE_FLECHES,
+  COULEURS_DANSANTES,
+  COUP_AU_BUT,
+  COURONNE_DU_DEMENT,
+  CREATION_DE_MORT_VIVANT,
+  CREATION_DE_NOURRITURE_ET_DEAU,
+  CREATION_OU_DESTRUCTION_DEAU,
+  CROISSANCE_DEPINES,
+  CROISSANGE_VEGETALE,
+  CROSSE_DES_DRUIDES,
+  DANSES_IRRESISTIBLE_DOTTO,
+  DEBLOCAGE,
+  DECHARGE_OCCULTE,
+  DEDALE,
+  DEGUISEMENT,
+  DELIVRANCE_DES_MALEDICTIONS,
+  DEMI_PLAN,
+  DESINTEGRATION,
+  DETECTION_DE_LA_MAGIE,
+  DETECTION_DE_LINVISIBILITE,
+  DETECTION_DES_PENSEES,
+  DETECTION_DES_PIEGES,
+  DETECTION_DU_MAL_ET_DU_BIEN,
+  DETECTION_DU_POISON_ET_DES_MALADIES,
+  DISCOURS_CAPTIVANT,
+  DISQUE_FLOTTANT_DE_TENSER,
+  DISSIMULATION_SUPREME,
+  DISSIPATION_DE_LA_MAGIE,
+  DISSIPATION_DU_BIEN_ET_DU_MAL,
+  DIVINATION,
+  DOIGT_DE_MORT,
+  DOMINATION_DANIMAL,
+  DOMINATION_DE_MONSTRE,
+  DOMINATION_DE_PERSONNE,
+  DON_DES_LANGUES,
+  DOUBLE_ILLUSOIRE,
+  DOUX_REPOS,
+  DRUIDISME,
+  DUEL_FORCE,
+  ECLAIR,
+  ECLAT_DU_SOLEIL,
+  EMBRUNS_PRISMATIQUES,
+  EMPRISONNEMENT,
+  ENCHEVETREMENT,
+  ENNEMI_SUBCONSCIENT,
+  ENTRAVE_PLANAIRE,
+  EPEE_DE_MORDENKAINEN,
+  ESPRIT_FAIBLE,
+  ESPRIT_IMPENETRABLE,
+  ESPRITS_GARDIENS,
+  ETAT_CADAVERIQUE,
+  EVEIL,
+  FABRICATION,
+  FACONNAGE_DE_LA_PIERRE,
+  FAUX_AMIS,
+  FAVEUR_DIVINE,
+  FESTIN_DES_HEROS,
+  FEUILLE_MORTE,
+  FLAMME_ETERNELLE,
+  FLAMME_SACREE,
+  FLAMMES,
+  FLEAU_DINSECTES,
+  FLECHE_ACIDE_DE_MELF,
+  FLECHE_DE_FOUDRE,
+  FLETRISSEMENT,
+  FLOU,
+  FORCE_FANTASMAGORIQUE,
+  FORME_ETHEREE,
+  FORME_GAZEUSE,
+  FOU_RIRE_DE_TASHA,
+  FOUET_EPINEUX,
+  FOULEE_BRUMEUSE,
+  FRACASSEMENT,
+  FRAPPE_PIEGEUSE,
+  FUSION_DANS_LA_PIERRE
 ];
