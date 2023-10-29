@@ -16,7 +16,7 @@
 
   border-radius: 11px;
   padding: 42px;
-  width: 480px;
+  width: 500px;
   height: 640px;
 
   overflow: hidden;
@@ -95,13 +95,33 @@
   margin-bottom: 1rem;
 }
 
-.spell_description {
-  white-space: pre-wrap;
-
+.spell__description {
   &:after {
     content: '';
     display: block;
     height: 0.5rem;
+  }
+
+  & ::ng-deep table {
+    font-family: 'Roboto Condensed' !important;
+
+    border-collapse: collapse;
+
+    tbody > tr:nth-child(odd) {
+      background: rgb(235,235,255);
+    }
+
+    & th {
+      text-align: left;
+    }
+
+    td:first-child {
+      white-space: nowrap;
+    }
+
+    th + th, td + td {
+      padding-left: 0.75rem;
+    }
   }
 }
 

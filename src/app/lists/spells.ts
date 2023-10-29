@@ -505,7 +505,7 @@ export const BANISSEMENT : Spell = {
   range: "18 mètres",
   components: "V, S, M (un objet qui répugne à la cible)",
   duration: "Concentration, jusqu'à 1 minute",
-  description: "<p>Vous tentez d'envoyer une créature située dans votre champ de vision dans un autre plan d'existence. Elle doit réussir un jet de sauvegarde de Charisme ou se faire bannir.</p><br/><p>Si la cible est native du plan d'existence sur lequel vous vous trouvez, vous l'exilez dans un demi-plan inoffensif.</p><br/><p>Elle est neutralisée tant qu'elle se trouve là-bas et y reste jusqu'à la fin du sort. À ce moment, elle réapparaît à l'endroit qu'elle a quitté ou dans l'espace inoccupé le plus proche si son espace de départ est occupé.</p><br/><p>Si la cible est originaire d'un plan d'existence autre que celui sur lequel vous vous trouvez, une légère détonation accompagne son retour de force sur son plan d'origine.</p><br/><p>Si le sort se termine avant qu'une minute ne se soit écoulée. la cible réapparaît à l'endroit qu'elle a quitté ou dans lespace inoccupé le plus proche si son espace de départ est occupé. Sinon, elle ne revient pas.</p><br/><p>À plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 5 ou plus, vous pouvez viser une créature de plus par niveau au-delà du 4ème.</p><br/>"
+  description: "<p>Vous tentez d'envoyer une créature située dans votre champ de vision dans un autre plan d'existence. Elle doit réussir un jet de sauvegarde de Charisme ou se faire bannir.</p><br/><p>Si la cible est native du plan d'existence sur lequel vous vous trouvez, vous l'exilez dans un demi-plan inoffensif.</p><br/><p>Elle est neutralisée tant qu'elle se trouve là-bas et y reste jusqu'à la fin du sort. À ce moment, elle réapparaît à l'endroit qu'elle a quitté ou dans l'espace inoccupé le plus proche si son espace de départ est occupé.</p><br/><p>Si la cible est originaire d'un plan d'existence autre que celui sur lequel vous vous trouvez, une légère détonation accompagne son retour de force sur son plan d'origine.</p><br/><p>Si le sort se termine avant qu'une minute ne se soit écoulée. la cible réapparaît à l'endroit qu'elle a quitté ou dans lespace inoccupé le plus proche si son espace de départ est occupé. Sinon, elle ne revient pas.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 5 ou plus, vous pouvez viser une créature de plus par niveau au-delà du 4ème.</p><br/>"
 };
 
 export const BARRIERE_DE_LAMES : Spell = {
@@ -531,7 +531,7 @@ export const BENEDICTION : Spell = {
   range: "9 mètres",
   components: "V, S, M (un peu d'eau bénite à asperger)",
   duration: "Concentration, jusqu'à 1 minute",
-  description: "<p>Vous bénissez jusqu'à trois créatures de votre choix situées à portée. Quand une cible fait un jet d'attaque ou de sauvegarde avant la fin du sort, elle lance 1d4 et ajoute le montant obtenu au jet d'attaque ou de sauvegarde.</p><br/><p>À plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 2 ou plus, vous pouvez affecter une créature de plus par niveau au-delà du 1.</p><br/>"
+  description: "<p>Vous bénissez jusqu'à trois créatures de votre choix situées à portée. Quand une cible fait un jet d'attaque ou de sauvegarde avant la fin du sort, elle lance 1d4 et ajoute le montant obtenu au jet d'attaque ou de sauvegarde.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 2 ou plus, vous pouvez affecter une créature de plus par niveau au-delà du 1.</p><br/>"
 };
 
 export const BLESSURE : Spell = {
@@ -544,7 +544,7 @@ export const BLESSURE : Spell = {
   range: "Contact",
   components: "V, S",
   duration: "Instantanée",
-  description: "<p>Faites une attaque de sort au corps à corps contre une créature située à une distance inférieure ou égale à votre allonge. Si vous la touchez, elle subit 3d10 dégâts nécrotiques.</p><br/><p>À plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 2 ou plus, les dégâts augmentent de 1d10 par niveau au-delà du 1*.</p><br/>"
+  description: "<p>Faites une attaque de sort au corps à corps contre une créature située à une distance inférieure ou égale à votre allonge. Si vous la touchez, elle subit 3d10 dégâts nécrotiques.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 2 ou plus, les dégâts augmentent de 1d10 par niveau au-delà du 1*.</p><br/>"
 };
 
 export const BOUCHE_MAGIQUE : Spell = {
@@ -622,7 +622,7 @@ export const BOULE_DE_FEU : Spell = {
   range: "45 mètres",
   components: "V, S, M (une petite boule de guano de chauvesouris et du soufre)",
   duration: "Instantanée",
-  description: "<p>Une traînée luisante part de votre doigt tendu et file vers un point de votre choix situé à portée et dans votre champ de vision, où elle explose dans une gerbe de flammes grondantes.</p><br/><p>Chaque créature située dans une sphère de 6 mètres de rayon centrée sur ce point doit faire un jet de sauvegarde de Dextérité.</p><br/><p>Celles qui échouent subissent 8d6 dégâts de feu, les autres la moitié seulement.</p><br/><p>Le feu s'étend en contournant les angles. Il embrase les objets inflammables de la zone, à moins que quelqu'un ne les porte ou ne les transporte.</p><br/><p>À plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 4 ou plus, les dégâts augmentent de 1d6 par niveau au-delà du 3ème.</p><br/>"
+  description: "<p>Une traînée luisante part de votre doigt tendu et file vers un point de votre choix situé à portée et dans votre champ de vision, où elle explose dans une gerbe de flammes grondantes.</p><br/><p>Chaque créature située dans une sphère de 6 mètres de rayon centrée sur ce point doit faire un jet de sauvegarde de Dextérité.</p><br/><p>Celles qui échouent subissent 8d6 dégâts de feu, les autres la moitié seulement.</p><br/><p>Le feu s'étend en contournant les angles. Il embrase les objets inflammables de la zone, à moins que quelqu'un ne les porte ou ne les transporte.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 4 ou plus, les dégâts augmentent de 1d6 par niveau au-delà du 3ème.</p><br/>"
 };
 
 export const BOULE_DE_FEU_A_RETARDEMENT : Spell = {
@@ -661,7 +661,7 @@ export const BRUME_MORTELLE : Spell = {
   range: "36 mètres",
   components: "V, S",
   duration: "Concentration, jusqu'à 10 minutes",
-  description: "<p>Vous créez une sphère de 6 mètres de rayon faite d'un brouillard vert jaunâtre empoisonné. Il est centré sur un point de votre choix situé à portée. Le brouillard s'étend en contournant les coins au besoin. Il persiste pendant toute la durée du sort ou jusqu'à ce qu'un vent fort le disperse el mette un terme au sort. La visibilité est lourdement obstruée dans sa zone d'effet.</p><br/><p>Quand une créature entre dans la zone du sort pour la première fois de son tour ou qu'elle y démarre son tour, elle doit faire un jet de sauvegarde de Constitution. Elle subit 5d5</p><br/><p>ciele de poisons le rac de de Const ulion. El moit sd ete le réussit. Le brouillard affecte même les créatures qui retiennent leur souffle ou qui n'ont pas besoin de respirer.</p><br/><p>Le brouillard s'éloigne de vous sur une distance de 3 mètres au début de chacun de vos tours, rampant à la surface du sol.</p><br/><p>Comme ses vapeurs sont plus lourdes que l'air, il s'enfonce dans les replis du terrain et s'infiltre même dans les ouvertures.</p><br/><p>À plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 6 ou plus, les dégâts augmentent de 1d8 par niveau au-delà du 5ème.</p><br/>"
+  description: "<p>Vous créez une sphère de 6 mètres de rayon faite d'un brouillard vert jaunâtre empoisonné. Il est centré sur un point de votre choix situé à portée. Le brouillard s'étend en contournant les coins au besoin. Il persiste pendant toute la durée du sort ou jusqu'à ce qu'un vent fort le disperse el mette un terme au sort. La visibilité est lourdement obstruée dans sa zone d'effet.</p><br/><p>Quand une créature entre dans la zone du sort pour la première fois de son tour ou qu'elle y démarre son tour, elle doit faire un jet de sauvegarde de Constitution. Elle subit 5d5</p><br/><p>ciele de poisons le rac de de Const ulion. El moit sd ete le réussit. Le brouillard affecte même les créatures qui retiennent leur souffle ou qui n'ont pas besoin de respirer.</p><br/><p>Le brouillard s'éloigne de vous sur une distance de 3 mètres au début de chacun de vos tours, rampant à la surface du sol.</p><br/><p>Comme ses vapeurs sont plus lourdes que l'air, il s'enfonce dans les replis du terrain et s'infiltre même dans les ouvertures.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 6 ou plus, les dégâts augmentent de 1d8 par niveau au-delà du 5ème.</p><br/>"
 };
 
 /* ================================================= */
@@ -691,7 +691,7 @@ export const CARESSE_DU_VAMPIRE : Spell = {
   range: "Personnelle",
   components: "V, S",
   duration: "Concentration, jusqu'à 1 minute",
-  description: "<p>Le simple contact de votre main enveloppée d'ombres peut siphonner la force vitale d'autrui pour soigner vos propres plaies. Faites une attaque de sort au corps à corps contre une créature située à une distance inférieure ou égale à votre allonge. Si vous touchez, elle subit 3d6 dégâts nécrotiques et vous récupérez un montant de points de vie égal à la moitié des dégâts infligés. Vous pouvez dépenser voire action à chacun de vos tours pour répéter cette attaque jusqu'à la fin du sort.</p><br/><p>À plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 4 ou plus, les dégâts augmentent de 1d6 par niveau au-delà du 3ème.</p><br/>"
+  description: "<p>Le simple contact de votre main enveloppée d'ombres peut siphonner la force vitale d'autrui pour soigner vos propres plaies. Faites une attaque de sort au corps à corps contre une créature située à une distance inférieure ou égale à votre allonge. Si vous touchez, elle subit 3d6 dégâts nécrotiques et vous récupérez un montant de points de vie égal à la moitié des dégâts infligés. Vous pouvez dépenser voire action à chacun de vos tours pour répéter cette attaque jusqu'à la fin du sort.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 4 ou plus, les dégâts augmentent de 1d6 par niveau au-delà du 3ème.</p><br/>"
 };
 
 export const CECITE_SURDITE : Spell = {
@@ -704,7 +704,7 @@ export const CECITE_SURDITE : Spell = {
   range: "9 mètres",
   components: "V",
   duration: "1 minute",
-  description: "<p>Vous pouvez rendre un ennemi sourd ou aveugle.</p><br/><p>Choisissez une créature autre que vous qui se situe à portée et dans votre champ de vision. Elle doit faire un jet de sauvegarde de Constitution. Si elle échoue, elle est soit aveugle, soit sourde (à vous de choisir) pendant toute la durée du sort. Elle a droit à un nouveau jet de sauvegarde de Constitution à la fin de chacun de ses tours, le sort se terminant si elle le réussit.</p><br/><p>À plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 3 ou plus, vous pouvez viser une créature de plus par niveau au-delà du 2ème.</p><br/>"
+  description: "<p>Vous pouvez rendre un ennemi sourd ou aveugle.</p><br/><p>Choisissez une créature autre que vous qui se situe à portée et dans votre champ de vision. Elle doit faire un jet de sauvegarde de Constitution. Si elle échoue, elle est soit aveugle, soit sourde (à vous de choisir) pendant toute la durée du sort. Elle a droit à un nouveau jet de sauvegarde de Constitution à la fin de chacun de ses tours, le sort se terminant si elle le réussit.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 3 ou plus, vous pouvez viser une créature de plus par niveau au-delà du 2ème.</p><br/>"
 };
 
 export const CERCLE_DE_MORT : Spell = {
@@ -717,7 +717,7 @@ export const CERCLE_DE_MORT : Spell = {
   range: "45 mètres",
   components: "V, S, M (la poudre d'une perle noire broyée d'une valeur minimale de 500 po)",
   duration: "Instantanée",
-  description: "<p>Une sphère d'énergie négative s'étend dans un rayon de 18 mètres à partir d'un point situé à portée. Chaque créature située dans la sphère doit faire un jet de sauvegarde de Constitution. Celles qui échouent subissent 8d6 dégâts nécrotiques, les autres la moitié seulement.</p><br/><p>À plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 7 ou plus, les dégâts augmentent de 2d6 par niveau au-delà du 6ème.</p><br/>"
+  description: "<p>Une sphère d'énergie négative s'étend dans un rayon de 18 mètres à partir d'un point situé à portée. Chaque créature située dans la sphère doit faire un jet de sauvegarde de Constitution. Celles qui échouent subissent 8d6 dégâts nécrotiques, les autres la moitié seulement.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 7 ou plus, les dégâts augmentent de 2d6 par niveau au-delà du 6ème.</p><br/>"
 };
 
 export const CERCLE_DE_POUVOIR : Spell = {
@@ -769,7 +769,7 @@ export const CHAINE_D_ECLAIRS : Spell = {
   range: "45 mètres",
   components: "V, S, M ( un éclat d'ambre, de verre ou de cristal, trois épingles en argent et un morceau de fourrure)",
   duration: "Instantanée",
-  description: "<p>Vous créez un are électrique qui file vers une cible de votre choix, située à portée dans votre champ de vision. Trois éclairs bondissent ensuite de cette cible sur un maximum de trois autres cibles qui doivent toutes se trouver dans un rayon de 9 mètres autour de la première. Une cible peut être une créature ou un objet et ne peut recevoir qu'un seul éclair.</p><br/><p>Chaque cible doit faire un jet de sauvegarde de Dextérité et subit 10d8 dégâts de foudre en cas d'échec, la moitié en cas de réussite.</p><br/><p>À plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 7 ou plus, un éclair de plus bondit de la première cible vers une autre pour chaque niveau au-delà du 6ème.</p><br/>"
+  description: "<p>Vous créez un are électrique qui file vers une cible de votre choix, située à portée dans votre champ de vision. Trois éclairs bondissent ensuite de cette cible sur un maximum de trois autres cibles qui doivent toutes se trouver dans un rayon de 9 mètres autour de la première. Une cible peut être une créature ou un objet et ne peut recevoir qu'un seul éclair.</p><br/><p>Chaque cible doit faire un jet de sauvegarde de Dextérité et subit 10d8 dégâts de foudre en cas d'échec, la moitié en cas de réussite.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 7 ou plus, un éclair de plus bondit de la première cible vers une autre pour chaque niveau au-delà du 6ème.</p><br/>"
 };
 
 export const CHAMP_ANTIMAGIE : Spell = {
@@ -821,7 +821,7 @@ export const CHARME_PERSONNE : Spell = {
   range: "9 mètres",
   components: "V, S",
   duration: "1 heure",
-  description: "<p>Vous tentez de charmer un humanoïde se trouvant à portée et dans votre champ de vision. Il doit faire un jet de sauvegarde de Sagesse, pour lequel il est avantagé si vous ou vos compagnons êtes actuellement en train de le combattre.</p><br/><p>S'il rate son test, vous le charmez jusqu'à la fin du sort ou jusqu'à ce que vous ou vos compagnons lui fassiez du mal.</p><br/><p>La créature charmée vous considère comme un ami. Quand le sort se termine, elle sait que vous l'avez charmée.</p><br/><p>À plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 2 ou plus, vous pouvez charmer une créature de plus par niveau au-delà du 1\". Toutes les cibles doivent se trouver à 9 mètres ou moins les unes des autres lorsque vous lancez le sort.</p><br/>"
+  description: "<p>Vous tentez de charmer un humanoïde se trouvant à portée et dans votre champ de vision. Il doit faire un jet de sauvegarde de Sagesse, pour lequel il est avantagé si vous ou vos compagnons êtes actuellement en train de le combattre.</p><br/><p>S'il rate son test, vous le charmez jusqu'à la fin du sort ou jusqu'à ce que vous ou vos compagnons lui fassiez du mal.</p><br/><p>La créature charmée vous considère comme un ami. Quand le sort se termine, elle sait que vous l'avez charmée.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 2 ou plus, vous pouvez charmer une créature de plus par niveau au-delà du 1\". Toutes les cibles doivent se trouver à 9 mètres ou moins les unes des autres lorsque vous lancez le sort.</p><br/>"
 };
 
 export const CHATIMENT_AVEUGLANT : Spell = {
@@ -847,7 +847,7 @@ export const CHATIMENT_CALCINANT : Spell = {
   range: "Personnelle",
   components: "V",
   duration: "Concentration, jusqu'à 1 minute",
-  description: "<p>Lors de la prochaine attaque armée au corps à corps qui vous permet de toucher une créature pendant la durée du sort, votre arme flamboie, comme chauffée à blanc, et l'attaque inflige 1d6 dégâts de feu supplémentaires. Elle embrase également la cible qui doit faire un jet de sauvegarde de Constitution au début de chacun de ses tours jusqu'à la fin du sort. Si elle échoue, elle subit 1d6 dégâts de feu, si elle réussit le sort se termine. Si la cible ou une créature située dans un rayon de 1,50 mètre autour d'elle utilise une action pour éteindre les flammes ou si un effet les étouffe (si la cible est plongée dans l'eau par exemple), le sort se termine.</p><br/><p>À plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 2 ou plus, les dégâts initiaux augmentent de 1d6 par emplacement de sort au-delà du 1er.</p><br/>"
+  description: "<p>Lors de la prochaine attaque armée au corps à corps qui vous permet de toucher une créature pendant la durée du sort, votre arme flamboie, comme chauffée à blanc, et l'attaque inflige 1d6 dégâts de feu supplémentaires. Elle embrase également la cible qui doit faire un jet de sauvegarde de Constitution au début de chacun de ses tours jusqu'à la fin du sort. Si elle échoue, elle subit 1d6 dégâts de feu, si elle réussit le sort se termine. Si la cible ou une créature située dans un rayon de 1,50 mètre autour d'elle utilise une action pour éteindre les flammes ou si un effet les étouffe (si la cible est plongée dans l'eau par exemple), le sort se termine.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 2 ou plus, les dégâts initiaux augmentent de 1d6 par emplacement de sort au-delà du 1er.</p><br/>"
 };
 
 export const CHATIMENT_COURROUCE : Spell = {
@@ -899,7 +899,7 @@ export const CHATIMENT_REVELATEUR : Spell = {
   range: "Personnelle",
   components: "V",
   duration: "Concentration, jusqu'à 1 minute",
-  description: "<p>La prochaine attaque armée qui vous permet de toucher une créature avant la fin de ce sort voit votre arme briller d'une lumière astrale et inflige 2d6 dégâts radiants de plus à votre cible, qui devient visible si elle était invisible et émet une lumière faible dans un rayon de 1,50 mètre jusqu'à la fin du sort. Elle ne peut plus devenir invisible pendant toute cette durée.</p><br/><p>À plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 3 ou plus, les dégâts supplémentaires augmentent de 1d6 par emplacement de sort au-delà du 2ème.</p><br/>"
+  description: "<p>La prochaine attaque armée qui vous permet de toucher une créature avant la fin de ce sort voit votre arme briller d'une lumière astrale et inflige 2d6 dégâts radiants de plus à votre cible, qui devient visible si elle était invisible et émet une lumière faible dans un rayon de 1,50 mètre jusqu'à la fin du sort. Elle ne peut plus devenir invisible pendant toute cette durée.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 3 ou plus, les dégâts supplémentaires augmentent de 1d6 par emplacement de sort au-delà du 2ème.</p><br/>"
 };
 
 export const CHATIMENT_TONITRUANT : Spell = {
@@ -990,7 +990,7 @@ export const COLONNE_DE_FLAMME : Spell = {
   range: "18 mètres",
   components: "V. S, M (une pincée de soufre)",
   duration: "Instantanée",
-  description: "<p>Une colonne verticale de feu divin rugissant surgit des cieux et s'abat à l'endroit de votre choix. Toute créature située dans un cylindre de 3 mètres de rayon et 12 mètres de haut centré sur le point à portée de votre choix doit faire un jet de sauvegarde de Dextérité. Celles qui échouent subissent 4d6 dégâts de feu et 4d6 dégâts radiants, les autres la moitié seulement.</p><br/><p>À plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 6 ou plus, les dégâts de feu ou les dégâts radiants (à vous de choisir) augmentent de 1d6 par niveau au-delà du 5ème.</p><br/>"
+  description: "<p>Une colonne verticale de feu divin rugissant surgit des cieux et s'abat à l'endroit de votre choix. Toute créature située dans un cylindre de 3 mètres de rayon et 12 mètres de haut centré sur le point à portée de votre choix doit faire un jet de sauvegarde de Dextérité. Celles qui échouent subissent 4d6 dégâts de feu et 4d6 dégâts radiants, les autres la moitié seulement.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 6 ou plus, les dégâts de feu ou les dégâts radiants (à vous de choisir) augmentent de 1d6 par niveau au-delà du 5ème.</p><br/>"
 };
 
 export const COMMUNICATION_A_DISTANCE : Spell = {
@@ -1107,7 +1107,7 @@ export const CONE_DE_FROID : Spell = {
   range: "Personnelle (cône de 18 mètres)",
   components: "V, S, M (un petit cône de cristal ou de verre)",
   duration: "Instantanée",
-  description: "<p>Une bouffée d'air froid jaillit de vos mains. Toutes les créatures présentes dans un cône de 18 mètres doivent faire un jet de sauvegarde de Constitution. Celles qui le ratent subissent 8d8 dégâts de froid, les autres la moitié seulement.</p><br/><p>Une créature qui succombe suite à ce sort se transforme en statue de glace jusqu'à ce qu'elle fonde.</p><br/><p>À plus haut niveau. Si vous lancez ce sort en utilisant un emplacement de niveau 6 ou plus, les dégâts augmentent de 1d8 par niveau au-delà du 5ème.</p><br/>"
+  description: "<p>Une bouffée d'air froid jaillit de vos mains. Toutes les créatures présentes dans un cône de 18 mètres doivent faire un jet de sauvegarde de Constitution. Celles qui le ratent subissent 8d8 dégâts de froid, les autres la moitié seulement.</p><br/><p>Une créature qui succombe suite à ce sort se transforme en statue de glace jusqu'à ce qu'elle fonde.</p><br/><p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 6 ou plus, les dégâts augmentent de 1d8 par niveau au-delà du 5ème.</p><br/>"
 };
 
 export const CONFUSION : Spell = {
@@ -1149,7 +1149,7 @@ export const CONFUSION : Spell = {
     </tbody>
   </table><br/>
   <p>Une créature affectée peut faire un jet de sauvegarde de Sagesse à la fin de chacun de ses tours. En cas de succès, l'effet se termine pour elle.</p><br/>
-  <p><b>À plus haut niveau.</b> Si vous lancez ce sort en utilisant un emplacement de niveau 5 ou plus, le rayon de la sphère augmente de 1,50 mètre par niveau au-delà du 4ème.</p>`
+  <p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 5 ou plus, le rayon de la sphère augmente de 1,50 mètre par niveau au-delà du 4ème.</p>`
 }
 
 /* ================================================= */
