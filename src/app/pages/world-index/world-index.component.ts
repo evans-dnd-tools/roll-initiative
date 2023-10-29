@@ -74,6 +74,8 @@ export class WorldIndexComponent {
         return this.formatSpellSubtext(element as Spell);
       case IndexElementType.Character:
         return this.formatCharacterSubtext(element as Character);
+      default:
+        return '';
     }
   }
 
