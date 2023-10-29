@@ -1230,6 +1230,119 @@ export  const CONTROLE_DE_LEAU: Spell = {
   description: "<p>Jusqu'à la fin du sort, vous contrôlez toute étendue d'eau indépendante située dans la zone de votre choix, cette dernière devant tenir dans un cube d'au maximum 30 mètres d'arête.</p><br/><p>Quand vous lancez ce sort, vous pouvez choisir l'un des effets suivants. À votre tour, vous pouvez utiliser une action pour répéter l'effet ou en appliquer un nouveau.</p><br/><p>Inondation. Vous faites monter le niveau d'une étendue d'eau isolée d'un maximum de 6 mètres. Si la zone comprend une rive, l'eau déborde et se répand sur la terre ferme.</p><br/><p>Si vous avez lancé le sort sur une grande étendue d'eau, vous créez une vague de 6 mètres de haut qui traverse la zone affectée d'un bout à l'autre pour se briser une fois arrivée à la fin de la zone. Tous les véhicules de taille Très Grande ou inférieure qui se trouvent sur le chemin de la vague sont emportés jusqu'au bout de la zone. Tous ces véhicules ont 25% de chances de chavirer.</p><br/><p>Le niveau de l'eau reste plus élevé jusqu'à la fin du sort ou jusqu'à ce que vous choisissiez un autre effet. Si l'effet d'inondation produit une vague, elle se reforme au début de votre prochain tour tant que vous gardez cet effet actif.</p><br/><p>Écarter les eaux. Vous écartez les eaux de la zone pour y créer un passage. Il traverse toute la zone, les eaux formant une muraille de chaque côté. Le passage demeure jusqu'à la fin du sort ou jusqu'à ce que vous optiez pour un effet différent. Dans ces deux cas, l'eau remplit alors progressivement le passage, au fil du round suivant, jusqu'à ce que le niveau de l'eau revienne à la normale.</p><br/><p>Modifier le cours de l'eau. Vous changez l'itinéraire de l'eau courante qui traverse la zone et l'envoyez dans la direction de votre choix, même si elle doit pour cela franchir des obstacles comme passer par-dessus un mur ou couler dans une direction improbable.</p><br/><p>L'eau suit vos instructions dans la zone affectée, mais dès qu'elle en sort, elle reprend un cours normal défini par le terrain qu'elle parcourt. L'eau continue de couler là où vous l'avez choisi jusqu'à la fin du sort ou jusqu'à ce que vous décidiez d'un autre effet.</p><br/><p>Tourbillon. Cet effet nécessite une étendue d'eau d'au moins 15 mètres carrés pour 7,50 mètres de fond et se traduit par la formation d'un tourbillon au centre de la zone. Il se présente sous forme d'un vortex de 1,50 mètre de large à sa base pour un maximum de 15 mètres de large au sommet et une hauteur de 7,50 mètres. Toutes les créatures et tous les objets qui se trouvent dans l'eau et dans un rayon de 7,50 mètres autour du tourbillon sont entraînés vers lui sur 3 mètres. Une créature peut s'éloigner à la nage si elle réussit un test de Force (Athlétisme) contre le DD du jet de sauvegarde de votre sort.</p><br/><p>Quand une créature entre dans le vortex pour la première fois de son tour ou qu'elle y commence son tour, elle doit faire un jet de sauvegarde de Force. Si elle échoue, elle reçoit 2d8 dégâts contondants et se fait emporter par le vortex jusqu'à la fin du sort. Si elle réussit son jet, elle subit seulement la moitié des dégâts et n'est pas prise dans le vortex. Une créature emportée par le vortex peut utiliser une action pour tenter de s'en éloigner comme décrit plus haut, mais elle est désavantagée lors de son test de Force (Athlétisme). À chaque tour, la première fois qu'un objet entre dans le vortex, il subit 2d8 dégâts contondants. Ces dégâts se répètent à chaque round passé dans le vortex.</p><br/>"
 };
 
+export const CONTROLE_DU_CLIMAT : Spell = {
+  type: IndexElementType.Spell,
+  id: "contrôle-du-climat",
+  name: "Contrôle du climat",
+  level: 8,
+  school: SpellSchool.Transmutation,
+  castingTime: "10 minutes",
+  range: "Personnelle (rayon de 7.5 km)",
+  components: "V, S, M (encens incandescent et un peu de bois et de terre mélangés dans de l'eau)",
+  duration: "Concentration, jusqu'à 8 heures",  
+  description: `<p>Vous prenez le contrôle de la météo dans un rayon de 7,5 kilomètres autour de vous pendant toute la durée du sort. Vous devez être en extérieur au moment de l'incantation<p></br>
+  <p>Si vous vous rendez dans un endroit d'où vous ne voyez pas le ciel, le sort se termine prématurément.</p></br>
+  <p>Au moment de l'incantation, vous changez les conditions météorologiques actuelles déterminées par le MD en fonction du climat de la saison. Vous pouvez modifier les précipitations, la température et le vent. Il faut 1d4 x 10 minutes pour que les nouvelles conditions s'installent. Vous pouvez ensuite les modifier à nouveau. Le temps retourne progressivement à la normale une fois le sort terminé.</p></br>
+  <p> Quand vous modifiez les conditions météorologiques, cherchez les conditions actuelles dans les tables suivantes ; vous pouvez les décaler d'un cran vers le haut ou le bas. Quans vous modifiez le vent, vous pouvez changer sa direction.</p></br>
+  <p><b>Précipitations</b></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Étape</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Ciel dégagé</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Quelques nuages</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Ciel couvert ou brume au sol</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Pluie, grêle ou neige</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Pluie torrentielles, forte grêle ou blizzard</td>
+      </tr>
+    </tbody>
+    </table></br>
+    <p><b>Température</b></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Étape</th>
+          <th>Condition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Chaleur insoutenable</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Forte chaleur</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Tiède</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Frais</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Grand froid</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Froid polaire</td>
+        </tr>
+      </tbody>
+    </table></br>
+    <p><b>Vent</b></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Étape</th>
+          <th>Condition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Temps calme</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Vent modéré</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Vent fort</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Grand vent</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Tempête</td>
+        </tr>
+      </tbody>
+    </table>`
+};
+
 export  const CONVOCATIONS_INSTANTANEES_DE_DRAWMIJ: Spell = {
   type: IndexElementType.Spell,
   id: "convocations-instantanées-de-drawmij",
@@ -1311,7 +1424,7 @@ export  const COUP_AU_BUT: Spell = {
 export  const COURONNE_DU_DEMENT: Spell = {
   type: IndexElementType.Spell,
   id: "couronne-du-dement",
-  name: "Couronne du dement",
+  name: "Couronne du dément",
   level: 2,
   school: SpellSchool.Enchantment,
   castingTime: "1 action",
@@ -1320,6 +1433,52 @@ export  const COURONNE_DU_DEMENT: Spell = {
   duration: "Concentration, jusqu'à 1 minute",
   description: "<p>Choisissez un humanoïde situé à portée dans votre champ de vision. Il doit réussir un jet de sauvegarde de Sagesse, sans quoi vous le charmez pendant toute la durée du sort. Tant que la cible est sous votre charme, une couronne tordue en acier dentelé apparaît sur sa tête et une lueur démente brille dans son regard.</p><br/><p>À chacun de ses tours, avant de se déplacer, la cible doit utiliser son action pour porter une attaque armée contre une créature (autre qu'elle-même) que vous choisissez mentalement. Si vous ne choisissez pas de créature ou qu'il n'y en a pas à portée, la cible agit normalement.</p><br/><p>Lors de vos tours suivants, vous devez utiliser votre action pour garder le contrôle de la cible, sinon le sort se termine.</p><br/><p>La cible peut faire un jet de sauvegarde de Sagesse à la fin de chacun de ses tours. Si elle réussit, le sort se termine.</p><br/>"
 };
+
+export const CREATION: Spell = {
+  type: IndexElementType.Spell,
+  id: "creation",
+  name: "Création",
+  level: 5,
+  school: SpellSchool.Illusion,
+  castingTime: "1 minute",
+  range: "9 mètres",
+  components: "V, S, M (un petit bout de matière du type de l'objet que vous créez)",
+  duration: "Spéciale",
+  description: `<p>Vous tirez des bribes de matière ombreuse de la Gisombre pour créer à portée des objets inertes en matière végétale : du tissu, de la corde, du bois ou des objets similaires. Ce sort permet aussi de créer des objets minéraux comme de la pierre, du cristal ou du métal. L'objet créé ne doit pas être plus grand qu'un cube de 1,50 mètre d'arête et doit impérativement être d'une forme et d'un matériau que vous avez déjà vus.<p><br/>
+  <p>La durée du sort dépend du matériau choisi pour façonner l'objet. S'il est fait de plusieurs matières, c'est la durée la plus courte qui s'applique.<p><br/>
+  <table>
+    <thead>
+      <tr>
+        <th>Matériau</th>
+        <th>Durée</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Matière végétale</td>
+        <td>1 jour</td>
+      </tr>
+      <tr>
+        <td>Pierre ou cristal</td>
+        <td>12 heures</td>
+      </tr>
+      <tr>
+        <td>Métaux précieux</td>
+        <td>1 heure</td>
+      </tr>
+      <tr>
+        <td>Gemmes</td>
+        <td>10 minutes</td>
+      </tr>
+      <tr>
+        <td>Adamantium ou mithral</td>
+        <td>1 minute</td>
+      </tr>
+    </tbody>
+  </table></br>
+  <p>Si vous utilisez les matériaux créés via ce sort comme composantes matérielles pour un autre sort, ce dernier échoue.</p><br/>
+  <p><b>À plus haut niveau :</b> Si vous lancez ce sort en utilisant un emplacement de niveau 6 ou plus, l'arête du cube augmente de 1,50 mètre par niveau au-delà du 5ème</p><br/>`
+}
 
 export  const CREATION_DE_MORT_VIVANT: Spell = {
   type: IndexElementType.Spell,
@@ -1812,7 +1971,7 @@ export  const EMBRUNS_PRISMATIQUES: Spell = {
   range: "Personnelle (cône de 18 mètres)",
   components: "V, S",
   duration: "Instantanée",
-  description: "<p>Huit rayons de lumière multicolores jaillissent de votre main.</p><br/><p>Chacun a une couleur différente et possède des pouvoirs et objectifs distincts. Chaque créature présente dans un cône de 18 mètres doit faire un jet de sauvegarde de Dextérité. Lancez</p><br/><p>1d8 par cible pour savoir quelle couleur l'affecte.</p><br/><p>1. <b>Rouge :</b> La cible subit 10d6 dégâts de feu si elle rate son jet de sauvegarde, la moitié seulement si elle le réussit.</p><br/><p>2. <b>Orange :</b> La cible subit 10d6 dégâts d'acide si elle rate son jet de sauvegarde, la moitié seulement si elle le réussit.</p><br/><p>3. <b>Jaune :</b> La cible subit 10d6 dégâts de foudre si elle rate son jet de sauvegarde, la moitié seulement si elle le réussit.</p><br/><p>4. <b>Vert :</b> La cible subit 10d6 dégâts de poison si elle rate son jet de sauvegarde, la moitié seulement si elle le réussit.</p><br/><p>5. <b>Bleu :</b> La cible subit 10d6 dégâts de froid si elle rate son jet de sauvegarde, la moitié seulement si elle le réussit.</p><br/><p>6. <b>Indigo :</b> Si la cible rate son jet de sauvegarde, elle est entravée et doit alors faire un jet de sauvegarde de Constitution à la fin de chacun de ses tours. Si elle en réussit trois, le sort se termine, si elle en rate trois, elle se change définitivement en pierre et elle est en proie à l'état pétrifié. Les succès et les échecs n'ont pas à être consécutifs: tenez le compte dans chaque catégorie jusqu'à ce que l'une d'elles arrive à trois.</p><br/><p>7. <b>Violet :</b> La cible est aveugle si elle rate son jet de sauvegarde. Elle doit alors faire un jet de sauvegarde de Sagesse au début de votre prochain tour. Si elle le réussit, elle recouvre la vue; si elle le rate, elle est emportée sur un autre plan d'existence choisi par le MD et recouvre aussi la vue. (En général, une créature qui ne se trouve pas sur son propre plan d'existence est bannie là-bas tandis que les autres créatures sont envoyées sur le plan astral ou éthéré).</p><br/><p>8. <b>Spécial :</b> Deux rayons viennent frapper la cible. Relancez deux fois le dé en le relançant chaque fois que vous sortez un 8.</p><br/>"
+  description: "<p>Huit rayons de lumière multicolores jaillissent de votre main.</p><br/><p>Chacun a une couleur différente et possède des pouvoirs et objectifs distincts. Chaque créature présente dans un cône de 18 mètres doit faire un jet de sauvegarde de Dextérité. Lancez</p><br/><p>1d8 par cible pour savoir quelle couleur l'affecte.</p><br/><p><b>Rouge :</b> La cible subit 10d6 dégâts de feu si elle rate son jet de sauvegarde, la moitié seulement si elle le réussit.</p><br/><p><b>Orange :</b> La cible subit 10d6 dégâts d'acide si elle rate son jet de sauvegarde, la moitié seulement si elle le réussit.</p><br/><p><b>Jaune :</b> La cible subit 10d6 dégâts de foudre si elle rate son jet de sauvegarde, la moitié seulement si elle le réussit.</p><br/><p><b>Vert :</b> La cible subit 10d6 dégâts de poison si elle rate son jet de sauvegarde, la moitié seulement si elle le réussit.</p><br/><p><b>Bleu :</b> La cible subit 10d6 dégâts de froid si elle rate son jet de sauvegarde, la moitié seulement si elle le réussit.</p><br/><p><b>Indigo :</b> Si la cible rate son jet de sauvegarde, elle est entravée et doit alors faire un jet de sauvegarde de Constitution à la fin de chacun de ses tours. Si elle en réussit trois, le sort se termine, si elle en rate trois, elle se change définitivement en pierre et elle est en proie à l'état pétrifié. Les succès et les échecs n'ont pas à être consécutifs: tenez le compte dans chaque catégorie jusqu'à ce que l'une d'elles arrive à trois.</p><br/><p><b>Violet :</b> La cible est aveugle si elle rate son jet de sauvegarde. Elle doit alors faire un jet de sauvegarde de Sagesse au début de votre prochain tour. Si elle le réussit, elle recouvre la vue; si elle le rate, elle est emportée sur un autre plan d'existence choisi par le MD et recouvre aussi la vue. (En général, une créature qui ne se trouve pas sur son propre plan d'existence est bannie là-bas tandis que les autres créatures sont envoyées sur le plan astral ou éthéré).</p><br/><p><b>Spécial :</b> Deux rayons viennent frapper la cible. Relancez deux fois le dé en le relançant chaque fois que vous sortez un 8.</p><br/>"
 };
 
 export  const EMPRISONNEMENT: Spell = {
@@ -2335,6 +2494,7 @@ export const SPELLS: Spell[] = [
   CONTAMINATION,
   CONTRESORT,
   CONTROLE_DE_LEAU,
+  CONTROLE_DU_CLIMAT,
   CONVOCATIONS_INSTANTANEES_DE_DRAWMIJ,
   CONQUILLE_ANTIVIE,
   CORDE_ENCHANTEE,
