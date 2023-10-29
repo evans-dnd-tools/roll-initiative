@@ -37,8 +37,8 @@ export class SpellCardComponent {
     const card = this.card.nativeElement;
     const cardRect = card.getBoundingClientRect();
 
-    const posX = event.pageX - cardRect.left;
-    const posY = event.pageY - cardRect.top;
+    const posX = event.screenX - cardRect.left;
+    const posY = event.screenY - cardRect.top;
     
     const rotateY = -((posX - card.clientWidth/2)*32/card.clientWidth);
     const rotateX = (posY - card.clientHeight/2)*24/card.clientHeight;
