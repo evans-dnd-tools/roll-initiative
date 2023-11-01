@@ -73,6 +73,21 @@ export class CharacterFormComponent {
     this.character.lastName = lastName;
   }
 
+  updateLevel(event: Event) {
+    const level = parseInt((event.target as HTMLElement).innerText);
+    this.character.level = isNaN(level) ? undefined : level;
+  }
+
+  updateHeight(event: Event) {
+    const height = parseInt((event.target as HTMLElement).innerText);
+    this.character.height = isNaN(height) ? undefined : height;
+  }
+
+  updateAlignment(event: Event) {
+    const alignment = (event.target as HTMLElement).innerText;
+    this.character.alignment = alignment;
+  }
+
   updateArmorClass(event: Event) {
     const armorClass = parseInt((event.target as HTMLElement).innerText);
     this.character.armorClass = isNaN(armorClass) ? undefined : armorClass;

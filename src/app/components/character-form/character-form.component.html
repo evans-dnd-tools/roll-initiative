@@ -42,6 +42,40 @@
   </div>
 </div>
 
+<div class="character__subtext2">
+  <div class="character__level">
+    <b>Niveau : </b>
+    <span
+      placeholder="0" 
+      [textContent]="character.level" 
+      (input)="updateLevel($event)"
+      (beforeinput)="checkNumberInput($event)"
+      contenteditable
+    ></span>
+  </div>
+  <div class="character__height">
+    <b>Taille : </b>
+    <span
+      placeholder="0" 
+      [textContent]="character.height" 
+      (input)="updateHeight($event)"
+      (beforeinput)="checkNumberInput($event)"
+      contenteditable
+    ></span>
+    cm
+  </div>
+  <div class="character__alignment">
+    <b>Alignement : </b>
+    <span
+      placeholder="Loyal Bon" 
+      [textContent]="character.alignment" 
+      (input)="updateAlignment($event)"
+      (beforeinput)="checkInput($event)"
+      contenteditable
+    ></span>
+  </div>
+</div>
+
 <div class="character__armor">
   <div class="character__armor-class">
     <b>Classe d'armure : </b>
@@ -104,5 +138,3 @@
 <div class="buttons">
   <button class="add-button" (click)="createCharacter()">Créer</button>
 </div>
-
-<!-- <div class="character__subtext">{{ subtext }} -->

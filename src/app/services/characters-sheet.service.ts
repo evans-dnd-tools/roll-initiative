@@ -10,21 +10,21 @@ import { Sex } from 'src/models/enums/sex';
 export class CharactersSheetService {
 
   private characters : Character[] = [
-    // new Character({
-    //   firstName: "Ralph",
-    //   lastName: "Hadley",
-    //   sex: Sex.Male,
-    //   race: Race.Human,
-    //   height: 198,
-    //   alignment: "Loyal Neutre",
-    //   class: Class.Fighter,
-    //   level: 3,
-    //   armorClass: 12,
-    //   hitPoints: 21,
-    //   speed: 9,
-    //   description: ``,
-    //   stats: [15, 10, 12, 7, 10, 6]
-    // })
+    new Character({
+      firstName: "Ralph",
+      lastName: "Hadley",
+      sex: Sex.Male,
+      race: Race.Human,
+      height: 198,
+      alignment: "Loyal Neutre",
+      class: Class.Fighter,
+      level: 3,
+      armorClass: 12,
+      hitPoints: 21,
+      speed: 9,
+      description: ``,
+      stats: [15, 10, 12, 7, 10, 6]
+    })
   ];
 
   constructor() { }

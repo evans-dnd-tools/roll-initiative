@@ -31,14 +31,20 @@
   margin-bottom: 0.5rem;
 }
 
+.character__subtext, .character__subtext2 {
+  border-bottom: 2px solid var(--gold-accent);
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .character__subtext {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
 
-  border-bottom: 2px solid var(--gold-accent);
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
+.character__subtext2 {
+  padding-left: 4px;
 }
 
 select {
@@ -51,9 +57,19 @@ select {
   font-family: 'Roboto Condensed';
   font-size: 16px;
 
+  transition: background 0.12s ease-in-out;
+
   &:is(:focus, :active) {
     outline: none;
   }
+
+  &:focus-visible {
+    background: rgba(0,0,0,0.08);
+  }
+}
+
+option {
+  background: white;
 }
 
 div[placeholder] {
@@ -90,7 +106,6 @@ div[placeholder] {
 
   &::after {
     content: '';
-    pointer-events: none;
     
     position: absolute;
     z-index: 0;
