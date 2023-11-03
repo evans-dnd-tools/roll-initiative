@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CharactersSheetService } from 'src/app/services/characters-sheet.service';
+import { ModalService } from './../../services/modal.service';
 
 @Component({
   selector: 'app-character-export',
@@ -8,7 +9,7 @@ import { CharactersSheetService } from 'src/app/services/characters-sheet.servic
 })
 export class CharacterExportComponent {
 
-  constructor(private charactersService: CharactersSheetService) { }
+  constructor(private charactersService: CharactersSheetService, private modalService: ModalService) { }
 
   exportCharacters() {
     const json = JSON.stringify(this.charactersService.getCharacters(), null, 2);
@@ -22,5 +23,9 @@ export class CharacterExportComponent {
     a.click();
 
     window.URL.revokeObjectURL(url);
+
+    setTimeout(() => {
+      this.modalService.close();
+    }, 80);
   }
 }
