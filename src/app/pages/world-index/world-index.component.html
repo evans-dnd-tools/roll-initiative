@@ -51,6 +51,12 @@
 <div class="list">
   <ng-container *ngFor="let element of completeList">
       <div class="list-element" (click)="open(element)">
+        <div 
+          class="bookmark"
+          [class.spell]="element.type === IndexElementType.Spell"
+          [class.character]="element.type === IndexElementType.Character"
+          [class.place]="element.type === IndexElementType.Place"
+        ></div>
         <div class="elem-title">
           {{ element.name }}
         </div>

@@ -39,6 +39,8 @@
 .list-element {
   cursor: pointer;
 
+  position: relative;
+
   flex: 1 1 auto;
   padding: 0.75rem 1.25rem;
   
@@ -46,7 +48,26 @@
 
   border-radius: 2px;
 
+  overflow: hidden;
+
   transition: all 0.12s ease-in-out;
+
+  & .bookmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 0.375rem;
+
+    &.spell {
+      background: var(--spell);
+    }
+
+    &.character {
+      background: var(--character);
+    }
+  }
 
   & .elem-title {
     font-size: 20px;
@@ -73,6 +94,7 @@
     position: absolute;
     top: calc(100% + 0.5rem);
     right: 0;
+    z-index: 100;
 
     background: white;
 
@@ -82,14 +104,13 @@
 
     opacity: 0;
   
-    transition: all 0.12s ease-in-out;
+    transition: all 0.1s ease-in-out;
   }
 
   &:focus-within {
     & .menu-dropdown-content {
       pointer-events: auto;
       opacity: 1;
-      z-index: 1000;
     }
   }
 }

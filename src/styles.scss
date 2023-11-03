@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
 
 @font-face {
-  font-family: 'Modesto';
-  src: url('./assets/fonts/Modesto.ttf');
+  font-family: 'Tiamat SC';
+  src: url('./assets/fonts/tiamat-sc-condensed-regular.otf');
 }
 
 @font-face {
@@ -37,6 +37,10 @@
   --ally-400: #00A653;
 
   --gold-accent: #978963;
+
+  --spell: #882ABA;
+  --character: #E78300;
+  --place: #029254;
 
   --padding: 22rem;
 
@@ -89,15 +93,15 @@ body {
 }
 
 h1, h2 {
-  font-size: 3rem;
-  font-family: 'Modesto', serif;
+  font-size: 2.75rem;
+  font-family: 'Tiamat SC', serif;
   text-transform: uppercase;
   white-space: nowrap;
   font-weight: normal;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
 }
 
 button {
