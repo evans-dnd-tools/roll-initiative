@@ -40,8 +40,8 @@ export class SpellCardComponent {
     const posX = event.screenX - cardRect.left;
     const posY = event.screenY - cardRect.top;
     
-    const rotateY = -((posX - card.clientWidth/2)*32/card.clientWidth);
-    const rotateX = (posY - card.clientHeight/2)*24/card.clientHeight;
+    const rotateY = -((posX - card.clientWidth/2)*16/card.clientWidth);
+    const rotateX = (posY - card.clientHeight/2)*14/card.clientHeight;
 
     const brightness = 0.94 + ((posY/cardRect.height)/100)*12;
 
