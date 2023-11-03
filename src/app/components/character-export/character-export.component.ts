@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Character } from 'src/models/character';
+import { CharactersSheetService } from 'src/app/services/characters-sheet.service';
 
 @Component({
   selector: 'app-character-export',
@@ -8,10 +8,10 @@ import { Character } from 'src/models/character';
 })
 export class CharacterExportComponent {
 
-  characters : Character[] = [new Character()];
+  constructor(private charactersService: CharactersSheetService) { }
 
   exportCharacters() {
-    const json = JSON.stringify(this.characters);
+    const json = JSON.stringify(this.charactersService.getCharacters(), null, 2);
 
     const blob = new Blob([json], {type: 'application/json'});
     const url = window.URL.createObjectURL(blob);
