@@ -1,18 +1,20 @@
-<div class="character__name">{{ character.name }}</div>
-<div class="character__subtext">{{ subtext }}</div>
-
-<div class="character__armor">
-  <div class="character__armor-class"><b>Classe d'armure : </b>{{ character.armorClass }}</div>
-  <div class="character__hit-points"><b>Points de vie : </b>{{ character.hitPoints }}</div>
-  <div class="character__speed"><b>Vitesse : </b>{{ character.speed }} mètres</div>
-</div>
-
-<div class="character__stats">
-  <div class="character__stat" *ngFor="let stat of character.stats; index as i">
-    <div class="character__stat-name">{{ statNames[i] }}</div>
-    <div class="character__stat-modifier">{{ statModifier(stat) }}</div>
-    <div class="character__stat-value">{{ stat }}</div>
+<div modal>
+  <div class="character__name">{{ character.name }}</div>
+  <div class="character__subtext">{{ subtext }}</div>
+  
+  <div class="character__armor">
+    <div class="character__armor-class"><b>Classe d'armure : </b>{{ character.armorClass }}</div>
+    <div class="character__hit-points"><b>Points de vie : </b>{{ character.hitPoints }}</div>
+    <div class="character__speed"><b>Vitesse : </b>{{ character.speed }} mètres</div>
   </div>
+  
+  <div class="character__stats">
+    <div class="character__stat" *ngFor="let stat of character.stats; index as i">
+      <div class="character__stat-name">{{ statNames[i] }}</div>
+      <div class="character__stat-modifier">{{ statModifier(stat) }}</div>
+      <div class="character__stat-value">{{ stat }}</div>
+    </div>
+  </div>
+  
+  <div class="character__description" [innerHTML]="description"></div>
 </div>
-
-<div class="character__description" [innerHTML]="description"></div>
