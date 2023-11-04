@@ -3,6 +3,7 @@ import { MarkdownService } from 'src/app/services/markdown.service';
 import { ModalService } from 'src/app/services/modal.service';
 import { PlacesService } from 'src/app/services/places.service';
 import { IndexElementType } from 'src/models/enums/index-element-type';
+import { PlaceType } from 'src/models/enums/place-type';
 import { Place } from 'src/models/place';
 
 @Component({
@@ -12,11 +13,16 @@ import { Place } from 'src/models/place';
 })
 export class PlaceFormComponent {
 
+  ////    READ-ONLY    ////
+
+  readonly PLACE_TYPES = PlaceType;
+
   ////    ATTRIBUTES    ////
 
   place: Place = {
     type: IndexElementType.Place,
     name: "",
+    placeType: null,
     description: ""
   };
 

@@ -1,3 +1,9 @@
+[modal] {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .place__name {
   font-family: 'Mrs Eaves';
   font-size: 28px;
@@ -14,6 +20,10 @@ hr {
   border: none;
   background: var(--gold-accent);
 
+  margin-bottom: 0.5rem;
+}
+
+.place__type {
   margin-bottom: 0.5rem;
 }
 

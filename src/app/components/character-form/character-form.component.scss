@@ -27,31 +27,6 @@
   padding-left: 4px;
 }
 
-select {
-  width: 120px;
-  padding: 0.25rem 0.25rem;
-  
-  border-radius: 0;
-  border: 2px solid var(--gold-accent);
-
-  font-family: 'Roboto Condensed';
-  font-size: 16px;
-
-  transition: background 0.12s ease-in-out;
-
-  &:is(:focus, :active) {
-    outline: none;
-  }
-
-  &:focus-visible {
-    background: rgba(0,0,0,0.08);
-  }
-}
-
-option {
-  background: white;
-}
-
 .character__description {
   position: relative;
   cursor: text;

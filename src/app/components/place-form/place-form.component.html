@@ -10,6 +10,14 @@
   
   <hr />
 
+  <div placeholder="Type de lieu" [class.visible]="place.placeType" class="place__type">
+    <select [(ngModel)]="place.placeType">
+      <ng-container *ngFor="let type of PLACE_TYPES | keyvalue">
+        <option [value]="type.value">{{ type.value }}</option>
+      </ng-container>
+    </select>
+  </div>
+
   <label class="place__description">
     <div class="description-html" [innerHTML]="description"></div>
     <textarea 
