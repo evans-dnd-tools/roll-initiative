@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { SPELLS } from 'src/app/lists/spells';
 import { Spell } from 'src/models/spell';
 import { ModalService } from '../../services/modal.service';
@@ -38,6 +38,8 @@ export class WorldIndexComponent {
 
   filteredList: IndexElement[] = [];
 
+  @ViewChild('searchbar') searchBar: ElementRef;
+
   ////    CONSTRUCTOR    ////
 
   constructor(
@@ -53,6 +55,14 @@ export class WorldIndexComponent {
    }
 
   ////    METHODS    ////
+
+  // SEARCH SHORTCUT EVENT
+
+  @HostListener('window:keydown.control.f', ['$event'])
+  onKeydownHandler(event: KeyboardEvent) {
+    event.preventDefault();
+    this.searchBar.nativeElement.focus();
+  }
 
   // CREATION MODAL
 

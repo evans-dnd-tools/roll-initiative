@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnDestroy, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, Renderer2 } from '@angular/core';
 import { IndexElementType } from 'src/models/enums/index-element-type';
 import { SpellCardComponent } from '../spell-card/spell-card.component';
 import { CharacterSheetComponent } from '../character-sheet/character-sheet.component';
