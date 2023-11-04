@@ -114,7 +114,10 @@ export class CharacterFormComponent {
 
   createCharacter() {
     this.charactersService.addCharacter(this.character);
-    this.modalService.close();
+
+    setTimeout(() => {
+      this.modalService.close();
+    }, 80);
   }
 
   ////    METHODS    ////

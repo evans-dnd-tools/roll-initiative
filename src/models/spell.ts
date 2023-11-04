@@ -1,4 +1,3 @@
-import { IndexElementType } from "./enums/index-element-type";
 import { SpellSchool } from "./enums/spell-school";
 import { IndexElement } from "./index-element";
 

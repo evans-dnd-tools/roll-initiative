@@ -1,140 +1,140 @@
-<div class="character__name">
-  <span 
-    class="character__first-name" 
-    placeholder="Prénom" 
-    [textContent]="character.firstName" 
-    (input)="updateFirstName($event)"
-    (beforeinput)="checkInput($event)"
-    contenteditable
-  ></span>
-  <span 
-    class="character__last-name" 
-    placeholder="Nom" 
-    [textContent]="character.lastName" 
-    (input)="updateLastName($event)"
-    (beforeinput)="checkInput($event)"
-    contenteditable
-    ></span>
-</div>
-<div class="character__subtext">
-  <div placeholder="Sexe" [class.visible]="character.sex">
-    <select [(ngModel)]="character.sex">
-      <ng-container *ngFor="let sex of SEX | keyvalue">
-        <option [value]="sex.value">{{ sex.value }}</option>
-      </ng-container>
-    </select>
-  </div>
-
-  <div placeholder="Race" [class.visible]="character.race">
-    <select [(ngModel)]="character.race">
-      <ng-container *ngFor="let race of RACES | keyvalue">
-        <option [value]="race.value">{{ raceBySex(race.value, character.sex) }}</option>
-      </ng-container>
-    </select>
-  </div>
-
-  <div placeholder="Classe" [class.visible]="character.class">
-    <select [(ngModel)]="character.class">
-      <ng-container *ngFor="let class of CLASSES | keyvalue">
-        <option [value]="class.value">{{ classBySex(class.value, character.sex) }}</option>
-      </ng-container>
-    </select>
-  </div>
-</div>
-
-<div class="character__subtext2">
-  <div class="character__level">
-    <b>Niveau : </b>
-    <span
-      placeholder="0" 
-      [textContent]="character.level" 
-      (input)="updateLevel($event)"
-      (beforeinput)="checkNumberInput($event)"
-      contenteditable
-    ></span>
-  </div>
-  <div class="character__height">
-    <b>Taille : </b>
-    <span
-      placeholder="0" 
-      [textContent]="character.height" 
-      (input)="updateHeight($event)"
-      (beforeinput)="checkNumberInput($event)"
-      contenteditable
-    ></span>
-    cm
-  </div>
-  <div class="character__alignment">
-    <b>Alignement : </b>
-    <span
-      placeholder="Loyal Bon" 
-      [textContent]="character.alignment" 
-      (input)="updateAlignment($event)"
+<div modal>
+  <div class="character__name">
+    <span 
+      class="character__first-name" 
+      placeholder="Prénom" 
+      [textContent]="character.firstName" 
+      (input)="updateFirstName($event)"
       (beforeinput)="checkInput($event)"
       contenteditable
     ></span>
-  </div>
-</div>
-
-<div class="character__armor">
-  <div class="character__armor-class">
-    <b>Classe d'armure : </b>
-    <span
-      placeholder="0" 
-      [textContent]="character.armorClass" 
-      (input)="updateArmorClass($event)"
-      (beforeinput)="checkNumberInput($event)"
+    <span 
+      class="character__last-name" 
+      placeholder="Nom" 
+      [textContent]="character.lastName" 
+      (input)="updateLastName($event)"
+      (beforeinput)="checkInput($event)"
       contenteditable
-    ></span>
+      ></span>
   </div>
-  <div class="character__hit-points">
-    <b>Points de vie : </b>
-    <span
-      placeholder="0" 
-      [textContent]="character.hitPoints" 
-      (input)="updateHitPoints($event)"
-      (beforeinput)="checkNumberInput($event)"
-      contenteditable
-    ></span>
-  </div>
-  <div class="character__speed">
-    <b>Vitesse : </b>
-    <span
-      placeholder="0" 
-      [textContent]="character.speed" 
-      (input)="updateSpeed($event)"
-      (beforeinput)="checkNumberInput($event)"
-      contenteditable
-    ></span>
-    mètres
-  </div>
-</div>
-
-
-
-<div class="character__stats">
-  <div class="character__stat" *ngFor="let stat of character.stats; index as i; trackBy: trackBy">
-    <div class="character__stat-name">{{ statNames[i] }}</div>
-    <div class="character__stat-modifier">{{ statModifier(stat) }}</div>
-    <div class="character__stat-value">
-      <input 
-        placeholder="0"
-        [(ngModel)]="character.stats[i]"
-        (beforeinput)="checkNumberInput($event)"
-      />
+  <div class="character__subtext">
+    <div placeholder="Sexe" [class.visible]="character.sex">
+      <select [(ngModel)]="character.sex">
+        <ng-container *ngFor="let sex of SEX | keyvalue">
+          <option [value]="sex.value">{{ sex.value }}</option>
+        </ng-container>
+      </select>
+    </div>
+  
+    <div placeholder="Race" [class.visible]="character.race">
+      <select [(ngModel)]="character.race">
+        <ng-container *ngFor="let race of RACES | keyvalue">
+          <option [value]="race.value">{{ raceBySex(race.value, character.sex) }}</option>
+        </ng-container>
+      </select>
+    </div>
+  
+    <div placeholder="Classe" [class.visible]="character.class">
+      <select [(ngModel)]="character.class">
+        <ng-container *ngFor="let class of CLASSES | keyvalue">
+          <option [value]="class.value">{{ classBySex(class.value, character.sex) }}</option>
+        </ng-container>
+      </select>
     </div>
   </div>
-</div>
-
-<label class="character__description">
-  <div class="description-html" [innerHTML]="description"></div>
-  <textarea 
-    placeholder="Description" 
-    [(ngModel)]="character.description"
-    (blur)="updateDescription()"
-  ></textarea>
-</label>
-
-<div class="buttons">
-  <button class="add-button" (click)="createCharacter()">Créer</button>
+  
+  <div class="character__subtext2">
+    <div class="character__level">
+      <b>Niveau : </b>
+      <span
+        placeholder="0" 
+        [textContent]="character.level" 
+        (input)="updateLevel($event)"
+        (beforeinput)="checkNumberInput($event)"
+        contenteditable
+      ></span>
+    </div>
+    <div class="character__height">
+      <b>Taille : </b>
+      <span
+        placeholder="0" 
+        [textContent]="character.height" 
+        (input)="updateHeight($event)"
+        (beforeinput)="checkNumberInput($event)"
+        contenteditable
+      ></span>
+      cm
+    </div>
+    <div class="character__alignment">
+      <b>Alignement : </b>
+      <span
+        placeholder="Loyal Bon" 
+        [textContent]="character.alignment" 
+        (input)="updateAlignment($event)"
+        (beforeinput)="checkInput($event)"
+        contenteditable
+      ></span>
+    </div>
+  </div>
+  
+  <div class="character__armor">
+    <div class="character__armor-class">
+      <b>Classe d'armure : </b>
+      <span
+        placeholder="0" 
+        [textContent]="character.armorClass" 
+        (input)="updateArmorClass($event)"
+        (beforeinput)="checkNumberInput($event)"
+        contenteditable
+      ></span>
+    </div>
+    <div class="character__hit-points">
+      <b>Points de vie : </b>
+      <span
+        placeholder="0" 
+        [textContent]="character.hitPoints" 
+        (input)="updateHitPoints($event)"
+        (beforeinput)="checkNumberInput($event)"
+        contenteditable
+      ></span>
+    </div>
+    <div class="character__speed">
+      <b>Vitesse : </b>
+      <span
+        placeholder="0" 
+        [textContent]="character.speed" 
+        (input)="updateSpeed($event)"
+        (beforeinput)="checkNumberInput($event)"
+        contenteditable
+      ></span>
+      mètres
+    </div>
+  </div>
+  
+  <div class="character__stats">
+    <div class="character__stat" *ngFor="let stat of character.stats; index as i; trackBy: trackBy">
+      <div class="character__stat-name">{{ statNames[i] }}</div>
+      <div class="character__stat-modifier">{{ statModifier(stat) }}</div>
+      <div class="character__stat-value">
+        <input 
+          placeholder="0"
+          [(ngModel)]="character.stats[i]"
+          (beforeinput)="checkNumberInput($event)"
+        />
+      </div>
+    </div>
+  </div>
+  
+  <label class="character__description">
+    <div class="description-html" [innerHTML]="description"></div>
+    <textarea 
+      placeholder="Description" 
+      [(ngModel)]="character.description"
+      (blur)="updateDescription()"
+    ></textarea>
+  </label>
+  
+  <div class="buttons">
+    <button class="add-button" (click)="createCharacter()">Créer</button>
+  </div>
 </div>

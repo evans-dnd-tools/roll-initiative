@@ -67,6 +67,10 @@
     &.character {
       background: var(--character);
     }
+
+    &.place {
+      background: var(--place);
+    }
   }
 
   & .elem-title {

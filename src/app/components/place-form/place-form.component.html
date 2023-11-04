@@ -1,0 +1,25 @@
+<div modal>
+  <span 
+    class="place__name" 
+    placeholder="Nom du lieu" 
+    [textContent]="place.name"
+    (input)="updateName($event)"
+    (beforeinput)="checkInput($event)"
+    contenteditable
+  ></span>
+  
+  <hr />
+
+  <label class="place__description">
+    <div class="description-html" [innerHTML]="description"></div>
+    <textarea 
+      placeholder="Description" 
+      [(ngModel)]="place.description"
+      (blur)="updateDescription()"
+    ></textarea>
+  </label>
+  
+  <div class="buttons">
+    <button class="add-button" (click)="submit()">Créer</button>
+  </div>
+</div>

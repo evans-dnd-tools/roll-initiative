@@ -14,6 +14,9 @@ import { CharacterFormComponent } from 'src/app/components/character-form/charac
 import { CharacterImportComponent } from 'src/app/components/character-import/character-import.component';
 import { CharacterExportComponent } from 'src/app/components/character-export/character-export.component';
 import { CharactersSheetService } from 'src/app/services/characters-sheet.service';
+import { PlaceFormComponent } from 'src/app/components/place-form/place-form.component';
+import { Place } from 'src/models/place';
+import { PlacesService } from 'src/app/services/places.service';
 
 @Component({
   selector: 'app-world-index',
@@ -32,11 +35,15 @@ export class WorldIndexComponent {
   filter: string = '';
   filters : Filter[]
 
-  filteredList: (Spell | Character)[] = [];
+  filteredList: IndexElement[] = [];
 
   ////    CONSTRUCTOR    ////
 
-  constructor(private modalService: ModalService, private charactersService: CharactersSheetService) {
+  constructor(
+    private modalService: ModalService, 
+    private charactersService: CharactersSheetService,
+    private placesService: PlacesService
+  ) {
     this.filters = [];
 
     for (let type of Object.values(IndexElementType)) {
@@ -48,8 +55,12 @@ export class WorldIndexComponent {
 
   // CREATION MODAL
 
-  openCreationModal() {
+  openCharacterCreationModal() {
     this.modalService.open(CharacterFormComponent, {});
+  }
+
+  openPlaceCreationModal() {
+    this.modalService.open(PlaceFormComponent, {});
   }
 
   openImportModal() {
@@ -74,6 +85,8 @@ export class WorldIndexComponent {
         return this.formatSpellSubtext(element as Spell);
       case IndexElementType.Character:
         return this.formatCharacterSubtext(element as Character);
+      case IndexElementType.Place:
+        return this.formatPlaceSubtext(element as Place);
       default:
         return '';
     }
@@ -97,6 +110,10 @@ export class WorldIndexComponent {
     return `${classBySex(character.class, character.sex)} ${raceBySex(character.race, character.sex)} (niveau ${character.level})`;
   }
 
+  formatPlaceSubtext(place: Place): string {
+    return '';
+  }
+
   // OPEN
 
   open(element: IndexElement) {
@@ -106,6 +123,8 @@ export class WorldIndexComponent {
         break;
       case IndexElementType.Character:
         this.openCharacter(element as Character);
+        break;
+      case IndexElementType.Place:
         break;
     }
   }
@@ -133,7 +152,7 @@ export class WorldIndexComponent {
   ////    GETTERS    ////
 
   get completeList() : (IndexElement)[] {
-    let list : (Spell | Character)[] = [];
+    let list: IndexElement[] = [];
 
     if (!this.filters) return list; 
 
@@ -144,6 +163,9 @@ export class WorldIndexComponent {
 
     if (this.filters.find(f => f.name === IndexElementType.Character && f.active))
       list = list.concat(this.charactersService.getCharacters());
+
+    if (this.filters.find(f => f.name === IndexElementType.Place && f.active))
+      list = list.concat(this.placesService.getPlaces());
 
     // Filter by name
 

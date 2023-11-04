@@ -196,6 +196,7 @@ button {
   mix-blend-mode: exclusion;
 }
 
+
 ////   MODAL    ////
 
 [modal] {
@@ -251,6 +252,73 @@ li.mli {
     margin-left: -0.25rem;
   }
 }
+
+
+////    FORMS    ////
+
+div[placeholder] {
+  position: relative;
+
+  &::before {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+
+    border: 2px solid transparent;
+
+    padding: 0.25rem 0.25rem;
+    padding-left: 0.5rem;
+    content: attr(placeholder);
+    color: #9A9A9A;
+  }
+
+  &.visible {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+[placeholder]:empty::before {
+  content: attr(placeholder);
+  color: #9A9A9A; 
+}
+
+[contenteditable] {
+  position: relative;
+  cursor: text;
+
+  &::after {
+    content: '';
+    
+    position: absolute;
+    z-index: 0;
+    top: -0.25rem;
+    left: -0.25rem;
+    
+    height: calc(100% + 0.5rem);
+    width: calc(100% + 0.5rem);
+
+    border-radius: 3px;
+
+    transition: background 0.12s ease-in-out;
+  }
+
+  &:hover::after {
+    background: rgba(0,0,0,0.04);
+  }
+
+  &:is(:focus, :active, :focus-within) {
+    outline: none;
+
+    &::after {
+      background: rgba(0,0,0,0.08);
+    }
+  }
+}
+
+
+////    MEDIA QUERIES    ////
 
 @media (max-width: 1440px) {
   :root {

@@ -18,6 +18,7 @@ import { CharacterSheetComponent } from './components/character-sheet/character-
 import { CharacterFormComponent } from './components/character-form/character-form.component';
 import { CharacterExportComponent } from './components/character-export/character-export.component';
 import { CharacterImportComponent } from './components/character-import/character-import.component';
+import { PlaceFormComponent } from './components/place-form/place-form.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { CharacterImportComponent } from './components/character-import/characte
     CharacterFormComponent,
     CharacterExportComponent,
     CharacterImportComponent,
+    PlaceFormComponent,
   ],
   imports: [
     BrowserModule,
