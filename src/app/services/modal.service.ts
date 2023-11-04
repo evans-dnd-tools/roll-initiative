@@ -20,7 +20,14 @@ export class ModalService {
     this.modalComponent = rootViewRef.createComponent(ModalWrapperComponent).instance;
   }
 
-  open(component: any, input: any) {
+  async open(component: any, input: any) {
+
+    if (this.modalComponent.isOpen) {
+      this.modalComponent.saveAndClose();
+
+      await new Promise(resolve => setTimeout(resolve, 120));
+    }
+
     this.modalComponent.content.clear();
 
     const createdComponent = this.modalComponent.content.createComponent(component);

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { IndexElementType } from 'src/models/enums/index-element-type';
 
 @Injectable({
   providedIn: 'root'
@@ -24,9 +25,7 @@ export class MarkdownService {
       else html += `<p>${line}</p>\n`;
     }
 
-    html = this.replaceSpellReferences(html);
-    html = this.replaceCharacterReferences(html);
-    html = this.replacePlaceReferences(html);
+    html = this.replaceReferences(html);
 
     html = html
       .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
@@ -36,21 +35,12 @@ export class MarkdownService {
     return html;
   }
 
-  private replaceCharacterReferences(markdown: string): string {
-    return markdown.replace(/<\@character:(.*?)>/g, (match, name) => {
-      return `<span class='index-elem-ref' data-name='${name}'>@${name}</span>`;
-    });
-  }
+  private replaceReferences(markdown: string): string {
+    const indexElementTypes = Object.values(IndexElementType).join("|"); 
+    const regex = new RegExp(`<\\@(${indexElementTypes}):(.*?)>`, "g");
 
-  private replacePlaceReferences(markdown: string): string {
-    return markdown.replace(/<\@place:(.*?)>/g, (match, name) => {
-      return `<span class='index-elem-ref' data-name='${name}'>@${name}</span>`;
-    });
-  }
-
-  private replaceSpellReferences(markdown: string): string {
-    return markdown.replace(/<\@spell:(.*?)>/g, (match, name) => {
-      return `<span class='index-elem-ref' data-name='${name}'>@${name}</span>`;
+    return markdown.replace(regex, (match, type, name) => {
+      return `<span class='index-elem-ref' data-type="${type}" data-name='${name}'>@${name}</span>`;
     });
   }
 }
