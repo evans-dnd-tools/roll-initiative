@@ -1,0 +1,21 @@
+.place__name {
+  font-family: 'Mrs Eaves';
+  font-weight: normal;
+  font-size: 28px;
+  letter-spacing: -0.8px;
+  color: var(--special-text);
+}
+
+.place__type {
+  font-family: 'Bookmania';
+  font-style: italic;
+  font-size: 17px;
+  letter-spacing: -0.44px;
+  color: var(--special-text);
+
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--gold-accent);
+
+  margin-top: -6px;
+  margin-bottom: 1rem;
+}

@@ -17,6 +17,7 @@ import { CharactersSheetService } from 'src/app/services/characters-sheet.servic
 import { PlaceFormComponent } from 'src/app/components/place-form/place-form.component';
 import { Place } from 'src/models/place';
 import { PlacesService } from 'src/app/services/places.service';
+import { PlaceComponent } from 'src/app/components/place/place.component';
 
 @Component({
   selector: 'app-world-index',
@@ -111,7 +112,7 @@ export class WorldIndexComponent {
   }
 
   formatPlaceSubtext(place: Place): string {
-    return '';
+    return place.placeType;
   }
 
   // OPEN
@@ -125,6 +126,7 @@ export class WorldIndexComponent {
         this.openCharacter(element as Character);
         break;
       case IndexElementType.Place:
+        this.openPlace(element as Place);
         break;
     }
   }
@@ -139,14 +141,9 @@ export class WorldIndexComponent {
     this.modalService.open(CharacterSheetComponent, input);
   }
 
-  ////    SPECIAL CAST    ////
-  
-  asSpell(item: any) : Spell {
-    return item as Spell;
-  }
-
-  isSpell(item: IndexElement) : boolean {
-    return item.type === IndexElementType.Spell;
+  openPlace(place: Place) {
+    const input = {place}
+    this.modalService.open(PlaceComponent, input);
   }
 
   ////    GETTERS    ////

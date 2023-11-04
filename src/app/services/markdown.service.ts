@@ -10,7 +10,6 @@ export class MarkdownService {
     
     let html = "";
 
-    // for each line of the markdown
     for (const line of markdown.split("\n")) {
       if (line.match(/^\s*$/)) html += "<br />\n";
       else if (line.match(/^\s*---\s*$/g)) html += "<hr class='mhr'/>\n";
@@ -25,11 +24,33 @@ export class MarkdownService {
       else html += `<p>${line}</p>\n`;
     }
 
+    html = this.replaceSpellReferences(html);
+    html = this.replaceCharacterReferences(html);
+    html = this.replacePlaceReferences(html);
+
     html = html
       .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
       .replace(/\*(.*?)\*/g, "<em>$1</em>")
       .replace(/\[(.*?)\]\((.*?)\)/g, "<a href='$2'>$1</a>")
 
     return html;
+  }
+
+  private replaceCharacterReferences(markdown: string): string {
+    return markdown.replace(/<\@character:(.*?)>/g, (match, name) => {
+      return `<span class='index-elem-ref' data-name='${name}'>@${name}</span>`;
+    });
+  }
+
+  private replacePlaceReferences(markdown: string): string {
+    return markdown.replace(/<\@place:(.*?)>/g, (match, name) => {
+      return `<span class='index-elem-ref' data-name='${name}'>@${name}</span>`;
+    });
+  }
+
+  private replaceSpellReferences(markdown: string): string {
+    return markdown.replace(/<\@spell:(.*?)>/g, (match, name) => {
+      return `<span class='index-elem-ref' data-name='${name}'>@${name}</span>`;
+    });
   }
 }

@@ -104,6 +104,16 @@ h2 {
   font-size: 2.25rem;
 }
 
+hr {
+  height: 2px;
+  width: 100%;
+
+  border: none;
+  background: var(--gold-accent);
+
+  margin-bottom: 0.5rem;
+}
+
 button {
   cursor: pointer;
 
@@ -250,6 +260,37 @@ li.mli {
   padding-left: 0.5rem;
   & span {
     margin-left: -0.25rem;
+  }
+}
+
+.index-elem-ref {
+  cursor: pointer;
+  position: relative;
+  color: #0088ff;
+
+  padding-inline: 0.1875rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    translate: -50% -50%;
+
+    height: calc(100% + 0.25rem);
+    width: 100%;
+
+    border-radius: 6px;
+
+    background: #0088ff;
+    opacity: 0.12;
+
+    transition: opacity 0.12s ease-in-out;
+  }
+
+  &:hover::after {
+    opacity: 0.18;
   }
 }
 

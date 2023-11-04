@@ -19,6 +19,9 @@ import { CharacterFormComponent } from './components/character-form/character-fo
 import { CharacterExportComponent } from './components/character-export/character-export.component';
 import { CharacterImportComponent } from './components/character-import/character-import.component';
 import { PlaceFormComponent } from './components/place-form/place-form.component';
+import { PlaceComponent } from './components/place/place.component';
+import { DescriptionComponent } from './components/description/description.component';
+import { MarkdownPipe } from './pipes/markdown.pipe';
 
 
 @NgModule({
@@ -39,6 +42,9 @@ import { PlaceFormComponent } from './components/place-form/place-form.component
     CharacterExportComponent,
     CharacterImportComponent,
     PlaceFormComponent,
+    PlaceComponent,
+    DescriptionComponent,
+    MarkdownPipe,
   ],
   imports: [
     BrowserModule,
