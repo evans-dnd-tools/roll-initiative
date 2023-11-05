@@ -55,6 +55,35 @@ export class DescriptionComponent implements AfterViewInit {
 
   ////    EVENTS    ////
 
+  // on click on the formatted description, focus the textarea
+  // and try to put the cursor at the same position
+  // (using a label always put the cursor at the end of the textarea)
+  focusTextArea() {
+    const selection = window.getSelection();
+
+    const text = selection.anchorNode.textContent;
+    const textAfter = text.substring(selection.focusOffset);
+    
+    const selectionElement = selection.anchorNode.parentElement;
+    const descriptionHtmlChildren = this.descriptionHtml.nativeElement.children;
+
+    let lines = 0;
+    for(lines; lines < descriptionHtmlChildren.length; lines++)
+      if (descriptionHtmlChildren[lines] === selectionElement || descriptionHtmlChildren[lines].contains(selectionElement))
+        break;
+
+    const description = (this.descriptionText.nativeElement as HTMLTextAreaElement).value;
+
+    const linesBefore = description.split('\n').slice(0, lines);
+    const linesBeforeText = linesBefore.join('\n');
+
+    const start = description.indexOf(text, linesBeforeText.length);
+    const position = description.indexOf(textAfter, start);
+
+    this.descriptionText.nativeElement.setSelectionRange(position, position);
+    this.descriptionText.nativeElement.focus();
+  }
+
   onScroll(event: Event) {
     const target = event.target as HTMLElement;
     const descriptionHtml = this.descriptionHtml.nativeElement as HTMLElement;

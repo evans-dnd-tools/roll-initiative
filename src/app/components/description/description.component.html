@@ -1,20 +1,20 @@
 <ng-container *ngIf="!editable">
-  <div class="description-html" [innerHTML]="value | markdown"></div>
+  <div class="markdown-to-html" [innerHTML]="value | markdown"></div>
 </ng-container>
 
 <ng-container *ngIf="editable">
-  <label>
+  <div class="wrapper">
     <div 
-      class="description-html" 
+      class="markdown-to-html" 
       [innerHTML]="value | markdown"
       (scroll)="onScroll($event)"
+      (click)="focusTextArea()"
       #descriptionHtml
     ></div>
     <textarea 
       placeholder="Description" 
       [(ngModel)]="valueModel"
-      (scroll)="onScroll($event)"
       #descriptionText
     ></textarea>
-  </label>
+  </div>
 </ng-container>

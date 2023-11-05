@@ -1,4 +1,4 @@
-.description-html {
+.markdown-to-html {
   width: 60dvw;
   max-height: min(28rem, 64dvh);
   overflow: hidden auto;
@@ -8,13 +8,11 @@
   margin-bottom: -2px;
 }
 
-label {
+.wrapper {
   position: relative;
   cursor: text;
 
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  display: block;
 
   height: 20rem;
   width: 60dvw;
@@ -48,7 +46,7 @@ label {
     }
   }
 
-  & > .description-html {
+  & > .markdown-to-html {
     position: absolute;
     height: 100%;
     overflow: auto;
@@ -72,7 +70,7 @@ label {
   }
 
   &:focus-within, &:has(textarea:placeholder-shown) {
-    & > .description-html {
+    & > .markdown-to-html {
       opacity: 0;
       pointer-events: none;
     }

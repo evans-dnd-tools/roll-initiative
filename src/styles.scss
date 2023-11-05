@@ -263,6 +263,10 @@ li.mli {
   }
 }
 
+.markdown-to-html p {
+  white-space: pre-wrap;
+}
+
 .index-elem-ref {
   cursor: pointer;
   position: relative;
