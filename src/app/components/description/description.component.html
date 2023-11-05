@@ -11,10 +11,23 @@
       (click)="focusTextArea()"
       #descriptionHtml
     ></div>
+    <!-- <textarea 
+    placeholder="Description" 
+    [(ngModel)]="valueModel"
+    #descriptionText
+    (input)="onInput($event)"
+    (keydown)="onKeyDown($event)"
+    (blur)="onBlur()"
+  ></textarea> -->
     <textarea 
       placeholder="Description" 
       [(ngModel)]="valueModel"
       #descriptionText
     ></textarea>
+    <!-- <div 
+      class="ref-autocomplete" 
+      [class.show]="showRefAutocomplete"
+      #refAutocomplete
+    ></div> -->
   </div>
 </ng-container>

@@ -33,6 +33,10 @@ export class DescriptionComponent implements AfterViewInit {
   @ViewChild('descriptionHtml') descriptionHtml: ElementRef;
   @ViewChild('descriptionText') descriptionText: ElementRef;
 
+  // Ref autocomplete
+  // @ViewChild('refAutocomplete') refAutocomplete: ElementRef;
+  // showRefAutocomplete: boolean = false;
+
   ////    LIFECYCLE    ////
 
   constructor(
@@ -94,6 +98,45 @@ export class DescriptionComponent implements AfterViewInit {
     else if (target === descriptionText)
       descriptionHtml.scrollTop = descriptionText.scrollTop;
   }
+
+  // onInput(event: Event) {
+  //   console.log(event);
+  //   if ((event as InputEvent).data !== "@") return;
+
+  //   this.showRefAutocomplete = true;
+
+  //   const input = event.target as HTMLTextAreaElement;
+  //   const div = document.createElement('div');
+
+  //   const style = window.getComputedStyle(input);
+  //   for (const property of style)
+  //     div.style.setProperty(property, style.getPropertyValue(property));
+    
+  //   div.textContent = input.value.substring(0, input.selectionStart);
+  //   const span = document.createElement('span');
+
+  //   div.insertBefore(span, null);
+  //   document.body.insertBefore(div, null);
+
+  //   const spanPos = span.getBoundingClientRect(); 
+
+  //   div.remove();
+
+  //   this.refAutocomplete.nativeElement.style.left = spanPos.x - 14 + "px";
+  //   this.refAutocomplete.nativeElement.style.top = spanPos.y + 24 + "px";
+  // }
+
+  // onKeyDown(event: KeyboardEvent) {
+  //   if ((event.key === "Enter" || event.key === "Escape") && this.showRefAutocomplete) {
+  //     this.showRefAutocomplete = false;
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //   }
+  // }
+
+  // onBlur() {
+  //   this.showRefAutocomplete = false;
+  // }
 
   ////    METHODS    ////
 
