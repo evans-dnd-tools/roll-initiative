@@ -52,7 +52,22 @@ export class WorldIndexComponent {
     for (let type of Object.values(IndexElementType)) {
       this.filters.push({ name: type, active: true });
     }
-   }
+
+    const savedCharacters = JSON.parse(localStorage.getItem('index:characters'));
+    if (savedCharacters) this.charactersService.importCharacters(savedCharacters);
+
+    const savedPlaces = JSON.parse(localStorage.getItem('index:places'));
+    if (savedPlaces) this.placesService.importPlaces(savedPlaces);
+  }
+
+  @HostListener('window:unload')
+  unloadHandler() {    
+    const savedCharacters = this.charactersService.getCharacters();
+    localStorage.setItem('index:characters', JSON.stringify(savedCharacters));
+
+    const savedPlaces = this.placesService.getPlaces();
+    localStorage.setItem('index:places', JSON.stringify(savedPlaces));
+  }
 
   ////    METHODS    ////
 

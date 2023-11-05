@@ -12,6 +12,10 @@ export class PlacesService {
     this.places.push(place);
   }
 
+  importPlaces(places: Place[]) {
+    this.places.push(...places);
+  }
+
   getPlaces() {
     return this.places;
   }

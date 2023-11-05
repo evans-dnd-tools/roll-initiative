@@ -232,6 +232,11 @@ button {
 
 ////    MARKDOWN STYLES    ////
 
+.markdown-to-html p {
+  white-space: pre-wrap;
+  line-break: anywhere;
+}
+
 .mh1, .mh2, .mh3 {
   font-family: 'Mrs Eaves';
   font-weight: normal;
@@ -261,10 +266,6 @@ li.mli {
   & span {
     margin-left: -0.25rem;
   }
-}
-
-.markdown-to-html p {
-  white-space: pre-wrap;
 }
 
 .index-elem-ref {
