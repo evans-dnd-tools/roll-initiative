@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, Renderer2 } from '@angular/core';
 import { IndexElementType } from 'src/models/enums/index-element-type';
 import { SpellCardComponent } from '../spell-card/spell-card.component';
 import { CharacterSheetComponent } from '../character-sheet/character-sheet.component';
@@ -18,7 +18,15 @@ export class DescriptionComponent implements AfterViewInit {
   ////    INPUTS    ////
 
   @Input()
-  description: string = '';
+  value: string = '';
+
+  @Input()
+  editable: boolean = false;
+
+  ////    OUTPUTS    ////
+
+  @Output()
+  valueChange = new EventEmitter<string>();
 
   ////    LIFECYCLE    ////
 
@@ -81,5 +89,16 @@ export class DescriptionComponent implements AfterViewInit {
 
     const input = {place}
     this.modalService.open(PlaceComponent, input);
+  }
+
+  ////    GETTERS & SETTERS    ////
+
+  get valueModel() {
+    return this.value;
+  }
+
+  set valueModel(value: string) {
+    this.value = value;
+    this.valueChange.emit(value);
   }
 }

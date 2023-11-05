@@ -40,7 +40,7 @@ export class MarkdownService {
     const regex = new RegExp(`<\\@(${indexElementTypes}):(.*?)>`, "g");
 
     return markdown.replace(regex, (match, type, name) => {
-      return `<span class='index-elem-ref' data-type="${type}" data-name='${name}'>@${name}</span>`;
+      return `<span class='index-elem-ref' data-type="${type}" data-name='${name}'>${name}</span>`;
     });
   }
 }

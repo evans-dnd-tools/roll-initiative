@@ -1,1 +1,13 @@
-<div [innerHTML]="description | markdown"></div>
+<ng-container *ngIf="!editable">
+  <div class="description-html" [innerHTML]="value | markdown"></div>
+</ng-container>
+
+<ng-container *ngIf="editable">
+  <label>
+    <div class="description-html" [innerHTML]="value | markdown"></div>
+    <textarea 
+      placeholder="Description" 
+      [(ngModel)]="valueModel"
+    ></textarea>
+  </label>
+</ng-container>

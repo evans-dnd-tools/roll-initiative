@@ -125,14 +125,10 @@
     </div>
   </div>
   
-  <label class="character__description">
-    <div class="description-html" [innerHTML]="description"></div>
-    <textarea 
-      placeholder="Description" 
-      [(ngModel)]="character.description"
-      (blur)="updateDescription()"
-    ></textarea>
-  </label>
+  <description 
+    [(value)]="character.description"
+    [editable]="true"
+  ></description>
   
   <div class="buttons">
     <button class="add-button" (click)="createCharacter()">Créer</button>

@@ -18,14 +18,10 @@
     </select>
   </div>
 
-  <label class="place__description">
-    <div class="description-html" [innerHTML]="description"></div>
-    <textarea 
-      placeholder="Description" 
-      [(ngModel)]="place.description"
-      (blur)="updateDescription()"
-    ></textarea>
-  </label>
+  <description 
+    [(value)]="place.description"
+    [editable]="true"
+  ></description>
   
   <div class="buttons">
     <button class="add-button" (click)="submit()">Créer</button>

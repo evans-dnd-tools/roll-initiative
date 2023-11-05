@@ -1,3 +1,77 @@
-div {
+.description-html {
   width: 60dvw;
+}
+
+label {
+  position: relative;
+  cursor: text;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  height: 20rem;
+  width: 60dvw;
+
+  &::after {
+    content: '';
+    
+    position: absolute;
+    z-index: 0;
+    top: -0.25rem;
+    left: -0.25rem;
+    
+    height: calc(100% + 0.5rem);
+    width: calc(100% + 0.5rem);
+
+    border-radius: 3px;
+
+    transition: background 0.12s ease-in-out;
+  }
+
+  &:hover::after {
+    background: rgba(0,0,0,0.04);
+  }
+
+  &:is(:focus, :active, :focus-within) {
+    outline: none;
+
+    &::after {
+      background: rgba(0,0,0,0.08);
+    }
+  }
+
+  & > .description-html {
+    overflow: auto;
+  }
+  
+  & > textarea {
+    resize: none;
+    border: none;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+
+    font-family: 'Roboto Condensed';
+    font-size: 16px;
+  }
+
+  &:focus-within, &:has(textarea:placeholder-shown) {
+    & > .description-html {
+      display: none;
+    }
+
+    & > textarea {
+      height: 100%;
+      width: 100%;
+
+      padding: 1px;
+
+      overflow: auto;
+    }
+  }
+
+  &::after {
+    position: absolute;
+  }
 }
