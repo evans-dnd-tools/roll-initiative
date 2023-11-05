@@ -1,3 +1,7 @@
+div[modal] {
+  background: #E6E6E6;
+}
+
 .place__name {
   font-family: 'Mrs Eaves';
   font-weight: normal;
@@ -6,16 +10,34 @@
   color: var(--special-text);
 }
 
+.place__header {
+  background: rgba(172, 143, 70, 0.4);
+  padding: 0.75rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.25rem;
+
+  text-align: center;
+  color: var(--special-text);
+  line-height: 0.8;
+
+  border-bottom: 2px solid var(--gold-accent);
+}
+
 .place__type {
   font-family: 'Bookmania';
   font-style: italic;
   font-size: 17px;
   letter-spacing: -0.44px;
   color: var(--special-text);
+}
 
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--gold-accent);
+.place__body {
+  flex: 1;
+  padding: 0.75rem;
 
-  margin-top: -6px;
-  margin-bottom: 1rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
 }

@@ -1,3 +1,22 @@
+.character__header {
+  background: rgba(172, 143, 70, 0.4);
+  padding: 0.75rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.25rem;
+
+  text-align: center;
+  color: var(--special-text);
+  line-height: 0.8;
+
+  border-bottom: 2px solid var(--gold-accent);
+
+  margin-bottom: 0.75rem;
+}
+
 .character__name {
   font-family: 'Mrs Eaves';
   font-weight: normal;
@@ -12,12 +31,6 @@
   font-size: 17px;
   letter-spacing: -0.44px;
   color: var(--special-text);
-
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--gold-accent);
-
-  margin-top: -6px;
-  margin-bottom: 1rem;
 }
 
 .character__armor {
