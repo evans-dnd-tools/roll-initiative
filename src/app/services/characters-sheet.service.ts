@@ -22,7 +22,7 @@ export class CharactersSheetService {
       armorClass: 12,
       hitPoints: 21,
       speed: 9,
-      description: '# Title\n\n Test description <@character:Ralph Hadley>',
+      description: '# Description\n\n Test description <@Personnages:Ralph Hadley>',
       stats: [15, 10, 12, 7, 10, 6]
     })
   ];

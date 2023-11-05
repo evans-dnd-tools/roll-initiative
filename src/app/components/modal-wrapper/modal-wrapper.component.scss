@@ -26,6 +26,10 @@
     pointer-events: none;
     opacity: 0;
 
+    & ::ng-deep * {
+      pointer-events: none !important;
+    }
+
     & > * {
       translate: 0 0.25rem;
       scale: 0.96;

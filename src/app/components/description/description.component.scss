@@ -2,6 +2,10 @@
   width: 60dvw;
   max-height: min(28rem, 64dvh);
   overflow: hidden auto;
+
+  // fix for weird overflow + max-height bug
+  padding-bottom: 2px;
+  margin-bottom: -2px;
 }
 
 label {
