@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, Renderer2, ViewChild } from '@angular/core';
 import { IndexElementType } from 'src/models/enums/index-element-type';
 import { SpellCardComponent } from '../spell-card/spell-card.component';
 import { CharacterSheetComponent } from '../character-sheet/character-sheet.component';
@@ -28,6 +28,11 @@ export class DescriptionComponent implements AfterViewInit {
   @Output()
   valueChange = new EventEmitter<string>();
 
+  ////    ATTRIBUTES    ////
+
+  @ViewChild('descriptionHtml') descriptionHtml: ElementRef;
+  @ViewChild('descriptionText') descriptionText: ElementRef;
+
   ////    LIFECYCLE    ////
 
   constructor(
@@ -48,6 +53,19 @@ export class DescriptionComponent implements AfterViewInit {
     }
   }
 
+  ////    EVENTS    ////
+
+  onScroll(event: Event) {
+    const target = event.target as HTMLElement;
+    const descriptionHtml = this.descriptionHtml.nativeElement as HTMLElement;
+    const descriptionText = this.descriptionText.nativeElement as HTMLElement;
+
+    if (target === descriptionHtml)
+      descriptionText.scrollTop = descriptionHtml.scrollTop;
+    else if (target === descriptionText)
+      descriptionHtml.scrollTop = descriptionText.scrollTop;
+  }
+
   ////    METHODS    ////
 
   openReference(type: IndexElementType, name: string) {
@@ -65,7 +83,6 @@ export class DescriptionComponent implements AfterViewInit {
   }
 
   openSpell(name: string) {
-
     const spell = SPELLS.find(s => s.name === name);
     if (!spell) return;
 
@@ -74,7 +91,6 @@ export class DescriptionComponent implements AfterViewInit {
   }
 
   openCharacter(name: string) {
-
     const character = this.charactersService.getCharacters().find(c => c.name === name);
     if (!character) return;
 
@@ -83,7 +99,6 @@ export class DescriptionComponent implements AfterViewInit {
   }
 
   openPlace(name: string) {
-
     const place = this.placesService.getPlaces().find(p => p.name === name);
     if (!place) return;
 
