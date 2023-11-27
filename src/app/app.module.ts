@@ -22,6 +22,7 @@ import { PlaceFormComponent } from './components/place-form/place-form.component
 import { PlaceComponent } from './components/place/place.component';
 import { DescriptionComponent } from './components/description/description.component';
 import { MarkdownPipe } from './pipes/markdown.pipe';
+import { SpectateComponent } from './pages/spectate/spectate.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { MarkdownPipe } from './pipes/markdown.pipe';
     PlaceComponent,
     DescriptionComponent,
     MarkdownPipe,
+    SpectateComponent,
   ],
   imports: [
     BrowserModule,

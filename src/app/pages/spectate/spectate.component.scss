@@ -1,0 +1,19 @@
+.board {
+  display: block;
+  padding: 2rem 0 8rem;
+}
+
+.no-characters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100dvh;
+  width: 100dvw;
+
+  font-size: 2.75rem;
+  font-family: 'Tiamat SC', serif;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-weight: normal;
+}

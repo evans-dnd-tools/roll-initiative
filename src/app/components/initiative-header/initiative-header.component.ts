@@ -8,9 +8,19 @@ import { CharactersInitiativeService } from 'src/app/services/characters-initiat
 })
 export class InitiativeHeaderComponent {
 
+  ////    ATTRIBUTES    ////
+
   showOptions: boolean = false;
 
+  ////    LIFE CYCLE    ////
+
   constructor(public characters: CharactersInitiativeService) {}
+
+  ////    EVENT HANDLERS    ////
+
+  openSpectatorWindow() {
+    window.open('/spectate', '_blank', 'popup=1');
+  }
 
   toggleCombat() {
     if (this.characters.inCombat)

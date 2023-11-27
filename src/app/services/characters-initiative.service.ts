@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { HostListener, Injectable } from '@angular/core';
 import { TrackerCharacter } from 'src/models/tracker-character';
 import { OptionsService } from './options.service';
 
@@ -14,6 +14,11 @@ export class CharactersInitiativeService {
   round : number = 0;
 
   currentlyPlaying : TrackerCharacter[] = [];
+
+  // REAL-TIME
+
+  charactersChangedSinceLastTurn : boolean = false;
+  isSpectator : boolean = false;
 
   ////    LIFE CYCLE    ////
 
@@ -32,6 +37,8 @@ export class CharactersInitiativeService {
     };
 
     this.list = [...this.list, character];
+
+    this.charactersChangedSinceLastTurn = true;
   }
 
   delete(character: TrackerCharacter) {
@@ -46,6 +53,8 @@ export class CharactersInitiativeService {
       if (this.currentlyPlaying.length === 0)
         this.findPlayingCharacters(character.position);
     }
+
+    this.charactersChangedSinceLastTurn = true;
   }
 
   rollForInitiative() {
@@ -57,10 +66,14 @@ export class CharactersInitiativeService {
 
     for (const character of sortedCharacters)
       character.position = sortedCharacters.indexOf(character);
+
+    this.charactersChangedSinceLastTurn = true;
   }
 
   startCombat() {
     this.nextRound();
+
+    localStorage.setItem('realtime:characters', JSON.stringify(this.list));
   }
 
   nextRound() {
@@ -77,6 +90,11 @@ export class CharactersInitiativeService {
         maxPosition = character.position;
 
     this.findPlayingCharacters(maxPosition + 1);
+
+    if (this.charactersChangedSinceLastTurn)
+      localStorage.setItem('realtime:characters', JSON.stringify(this.list));
+
+    this.charactersChangedSinceLastTurn = false;
   }
 
   findPlayingCharacters(position: number) {
@@ -100,18 +118,34 @@ export class CharactersInitiativeService {
 
       position++;
     }
+
+    localStorage.setItem('realtime:playing', JSON.stringify(this.currentlyPlaying));
   }
 
 
   endCombat() {
     this.round = 0;
+
+    localStorage.removeItem('realtime:playing');
+    localStorage.removeItem('realtime:characters');
   }
 
-  isPlaying(character: TrackerCharacter) {
-    return this.currentlyPlaying.includes(character);
+  isPlaying(character: TrackerCharacter): boolean {
+    if (!this.currentlyPlaying) return false;
+    return this.currentlyPlaying.some(c => this.compareCharacters(c, character));    
+  }
+
+  compareCharacters(a: TrackerCharacter, b: TrackerCharacter): boolean {
+    return a.name === b.name && a.ally === b.ally && a.position === b.position;
   }
 
   get inCombat() {
     return this.round > 0;
+  }
+
+  @HostListener('window:unload')
+  onUnload() {
+    localStorage.removeItem('realtime:playing');
+    localStorage.removeItem('realtime:characters');
   }
 }

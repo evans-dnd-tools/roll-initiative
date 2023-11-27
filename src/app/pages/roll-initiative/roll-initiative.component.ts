@@ -10,6 +10,8 @@ import { DEFAULT_CHARACTER_LIST_SIZE } from 'src/models/constants';
 })
 export class RollInitiativeComponent {
 
+  ////    LIFE CYCLE    ////
+
   constructor(public characters: CharactersInitiativeService, public options: OptionsService) {
     const characterList = JSON.parse(localStorage.getItem('characters'));
 
@@ -25,6 +27,8 @@ export class RollInitiativeComponent {
       this.characters.addCharacter();
   }
 
+  ////    EVENT HANDLERS    ////
+
   @HostListener('window:keydown.control.enter', ['$event'])
   onKeydownHandler(event: KeyboardEvent) {
     event.preventDefault();
@@ -32,8 +36,8 @@ export class RollInitiativeComponent {
     else this.characters.nextTurn();
   }
 
-  @HostListener('window:unload', ['$event'])
-  unloadHandler(event: Event) {    
+  @HostListener('window:unload')
+  unloadHandler() {    
     if(this.options.saveTeam) {
       const savedCharacters = this.characters.list.filter(character => character.ally);
       localStorage.setItem('characters', JSON.stringify(savedCharacters));

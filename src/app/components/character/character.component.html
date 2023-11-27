@@ -4,11 +4,11 @@
   <div class="bar"></div>
   <div class="bar"></div>
 </div>
-<button type="button" class="team-color" [class.ally]="character.ally" (click)="swapTeam()"></button>
+<button [disabled]="characters.isSpectator" type="button" class="team-color" [class.ally]="character.ally" (click)="swapTeam()"></button>
 <div class="row">
   <div class="row-left">
-    <input type="number" placeholder="000" [(ngModel)]="character.bonus" />
-    <input type="text" placeholder="Nom du personnage" [(ngModel)]="character.name" class="name-input" />
+    <input *ngIf="!characters.inCombat" type="number" placeholder="000" [(ngModel)]="character.bonus" />
+    <input [disabled]="characters.isSpectator" type="text" placeholder="Nom du personnage" [(ngModel)]="character.name" class="name-input" />
     <input *ngIf="!characters.inCombat" type="number" placeholder="000" [(ngModel)]="character.roll" />
     <button *ngIf="!characters.inCombat" type="button" class="row-button" (click)="toggleLock()" [class.open]="!character.lockedRoll">
         <svg 
@@ -38,6 +38,11 @@
     </button>
   </div>
   <div>
-    <button type="button" class="row-button" (click)="deleteCharacter()">🞬</button>
+    <button 
+      type="button" 
+      class="row-button" 
+      (click)="deleteCharacter()"
+      *ngIf="!characters.isSpectator"
+    >🞬</button>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnChanges } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, ViewChild } from '@angular/core';
 import { CharactersInitiativeService } from 'src/app/services/characters-initiative.service';
 import { TrackerCharacter } from 'src/models/tracker-character';
 import { CHARACTER_SHEET_PADDING, CHARACTER_SHEET_SIZE } from 'src/models/constants';
@@ -15,16 +15,14 @@ export class BoardComponent implements OnChanges {
   @Input()
   characters: TrackerCharacter[] = [];
 
-  private hostElement: HTMLElement;
+  listHeight: string = '';
 
   ////    LIFE CYCLE    ////
 
-  constructor(elementRef: ElementRef, public charactersService: CharactersInitiativeService) {
-    this.hostElement = elementRef.nativeElement;
-  }
+  constructor(public charactersService: CharactersInitiativeService) {}
 
   ngOnChanges() {
-    this.hostElement.style.height = `${this.characters.length * CHARACTER_SHEET_SIZE - CHARACTER_SHEET_PADDING}px`;
+    this.listHeight = `${this.characters.length * CHARACTER_SHEET_SIZE - CHARACTER_SHEET_PADDING}px`;
   }
 
   ////    FUNCTIONS    ////

@@ -1,7 +1,18 @@
-<character 
-  *ngFor="let character of characters" 
-  [character]="character"
-  [position]="character.position"
-  [class.playing]="charactersService.inCombat && charactersService.isPlaying(character)"
-  [class.waiting]="charactersService.inCombat && !charactersService.isPlaying(character)"
-></character>
+<div class="board">
+  <div class="header">
+    <div class="team-header">team</div>
+    <div *ngIf="!charactersService.inCombat" class="bonus-header">mod</div>
+    <div class="name-header">nom du personnage</div>
+    <div *ngIf="!charactersService.inCombat" class="roll-header">jet</div>
+  </div>
+
+  <div class="character-list" [style.height]="listHeight">
+    <character 
+      *ngFor="let character of characters" 
+      [character]="character"
+      [position]="character.position"
+      [class.playing]="charactersService.inCombat && charactersService.isPlaying(character)"
+      [class.waiting]="charactersService.inCombat && !charactersService.isPlaying(character)"
+    ></character>
+  </div>
+</div>

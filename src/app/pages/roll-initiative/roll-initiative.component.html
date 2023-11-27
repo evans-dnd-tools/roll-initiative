@@ -1,11 +1,2 @@
 <initiative-header></initiative-header>
-
-<div class="board">
-  <div class="header">
-    <div class="team-header">team</div>
-    <div class="bonus-header">mod</div>
-    <div class="name-header">nom du personnage</div>
-    <div *ngIf="!characters.inCombat" class="roll-header">jet</div>
-  </div>
-  <board [characters]="characters.list"></board>
-</div>
+<board [characters]="characters.list"></board>
