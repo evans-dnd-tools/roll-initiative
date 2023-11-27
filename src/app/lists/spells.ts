@@ -1717,7 +1717,7 @@ export  const DETECTION_DES_PIEGES: Spell = {
 export  const DETECTION_DU_MAL_ET_DU_BIEN: Spell = {
   type: IndexElementType.Spell,
   id: "detection-du-mal-et-du-bien",
-  name: "Detection du mal et du bien",
+  name: "Détection du mal et du bien",
   level: 1,
   school: SpellSchool.Divination,
   castingTime: "1 action",
