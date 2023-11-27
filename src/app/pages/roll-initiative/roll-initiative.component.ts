@@ -25,6 +25,13 @@ export class RollInitiativeComponent {
       this.characters.addCharacter();
   }
 
+  @HostListener('window:keydown.control.enter', ['$event'])
+  onKeydownHandler(event: KeyboardEvent) {
+    event.preventDefault();
+    if (!this.characters.inCombat) this.characters.startCombat();
+    else this.characters.nextTurn();
+  }
+
   @HostListener('window:unload', ['$event'])
   unloadHandler(event: Event) {    
     if(this.options.saveTeam) {

@@ -69,6 +69,8 @@ export class CharactersInitiativeService {
   }
 
   nextTurn() {
+    if (!this.inCombat) return;
+
     let maxPosition = 0;
     for (const character of this.currentlyPlaying)
       if (character.position > maxPosition)
@@ -85,7 +87,7 @@ export class CharactersInitiativeService {
       return;
     }
 
-    if (this.options.groupTurnByTeam) return;
+    if (!this.options.groupTurnByTeam) return;
 
     const ally = this.currentlyPlaying[0].ally;
     

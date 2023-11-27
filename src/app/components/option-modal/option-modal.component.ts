@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, HostListener, Input, OnChanges, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, Output } from '@angular/core';
 import { OptionsService } from 'src/app/services/options.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { OptionsService } from 'src/app/services/options.service';
   templateUrl: './option-modal.component.html',
   styleUrls: ['./option-modal.component.scss']
 })
-export class OptionModalComponent implements OnChanges {
+export class OptionModalComponent {
 
   ////    ATTRIBUTES    ////
 
@@ -27,14 +27,7 @@ export class OptionModalComponent implements OnChanges {
 
   constructor(elementRef: ElementRef, public options: OptionsService) {
     this.hostElement = elementRef.nativeElement;
-  }
-
-  ngOnChanges() {
-    if (!this.open)
-      this.hostElement.classList.add('hidden');
-    else
-      this.hostElement.classList.remove('hidden');
-  }
+  }  
 
   ////    FUNCTIONS    ////
 
@@ -53,5 +46,10 @@ export class OptionModalComponent implements OnChanges {
   saveAndClose() {
     this.options.save(this.saveOptions, this.saveTeam, this.groupTurnByTeam);
     this.close.emit();
+  }
+
+  @HostBinding('class.hidden')
+  get hidden() {
+    return !this.open;
   }
 }
