@@ -1,4 +1,5 @@
 import { Component, ViewContainerRef } from '@angular/core';
+import { CharactersInitiativeService } from './services/characters-initiative.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component, ViewContainerRef } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public viewContainerRef: ViewContainerRef) { }
+  constructor(
+    public viewContainerRef: ViewContainerRef, 
+    public characters: CharactersInitiativeService
+  ) {}
 }

@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { CharactersInitiativeService } from 'src/app/services/characters-initiative.service';
 
 @Component({
@@ -8,7 +9,12 @@ import { CharactersInitiativeService } from 'src/app/services/characters-initiat
 })
 export class SpectateComponent {
 
-  constructor(public characters: CharactersInitiativeService) {}
+  constructor(
+    public characters: CharactersInitiativeService,
+    private titleService: Title
+  ) {
+    this.titleService.setTitle('Spectate Fight');
+  }
 
   ngOnInit(): void {
     this.initCharacters();
@@ -17,16 +23,13 @@ export class SpectateComponent {
   initCharacters() {
     this.characters.list = JSON.parse(localStorage.getItem('realtime:characters'));
     this.characters.currentlyPlaying = JSON.parse(localStorage.getItem('realtime:playing'));
+    this.characters.round = parseInt(localStorage.getItem('realtime:round'));
 
     this.characters.isSpectator = true;
-    this.characters.round = this.characters.list && this.characters.list.length > 0 ? 1 : 0;
   }
   
   @HostListener('window:storage', ['$event'])
   onStorageChange(event: StorageEvent) {
-
-    console.log("yeppers");
-
     if (!event.key.startsWith('realtime:')) return;
 
     const key = event.key.split(':')[1];
@@ -37,8 +40,9 @@ export class SpectateComponent {
       case 'playing':
         this.characters.currentlyPlaying = JSON.parse(event.newValue);
         break;
+      case 'round':
+        this.characters.round = parseInt(event.newValue);
+        break;
     }
-
-    this.characters.round = this.characters.list && this.characters.list.length > 0 ? 1 : 0;
   }
 }

@@ -79,6 +79,8 @@ export class CharactersInitiativeService {
   nextRound() {
     this.round++;
     this.findPlayingCharacters(0);
+
+    localStorage.setItem('realtime:round', this.round.toString());
   }
 
   nextTurn() {
@@ -125,10 +127,11 @@ export class CharactersInitiativeService {
 
   endCombat() {
     this.round = 0;
-
+    
     localStorage.removeItem('realtime:playing');
     localStorage.removeItem('realtime:characters');
-  }
+    localStorage.removeItem('realtime:round');
+    }
 
   isPlaying(character: TrackerCharacter): boolean {
     if (!this.currentlyPlaying) return false;
@@ -141,11 +144,5 @@ export class CharactersInitiativeService {
 
   get inCombat() {
     return this.round > 0;
-  }
-
-  @HostListener('window:unload')
-  onUnload() {
-    localStorage.removeItem('realtime:playing');
-    localStorage.removeItem('realtime:characters');
   }
 }

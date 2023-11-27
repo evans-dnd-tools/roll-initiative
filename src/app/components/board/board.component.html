@@ -1,9 +1,15 @@
 <div class="board">
   <div class="header">
-    <div class="team-header">team</div>
-    <div *ngIf="!charactersService.inCombat" class="bonus-header">mod</div>
-    <div class="name-header">nom du personnage</div>
-    <div *ngIf="!charactersService.inCombat" class="roll-header">jet</div>
+    <div class="left-header">
+      <div class="team-header">team</div>
+      <div *ngIf="!charactersService.inCombat" class="bonus-header">mod</div>
+      <div class="name-header">nom du personnage</div>
+      <div *ngIf="!charactersService.inCombat" class="roll-header">jet</div>
+    </div>
+
+    <div class="right-header" *ngIf="charactersService.inCombat">
+      Round : {{ charactersService.round }}
+    </div>
   </div>
 
   <div class="character-list" [style.height]="listHeight">

@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { CharactersInitiativeService } from 'src/app/services/characters-initiative.service';
 import { OptionsService } from 'src/app/services/options.service';
 import { DEFAULT_CHARACTER_LIST_SIZE } from 'src/models/constants';
@@ -12,7 +13,13 @@ export class RollInitiativeComponent {
 
   ////    LIFE CYCLE    ////
 
-  constructor(public characters: CharactersInitiativeService, public options: OptionsService) {
+  constructor(
+    public characters: CharactersInitiativeService, 
+    public options: OptionsService,
+    private titleService: Title
+  ) {
+    this.titleService.setTitle('Initiative Tracker');
+
     const characterList = JSON.parse(localStorage.getItem('characters'));
 
     if (characterList && characterList.length > 0)
@@ -42,5 +49,9 @@ export class RollInitiativeComponent {
       const savedCharacters = this.characters.list.filter(character => character.ally);
       localStorage.setItem('characters', JSON.stringify(savedCharacters));
     }
+
+    localStorage.removeItem('realtime:playing');
+    localStorage.removeItem('realtime:characters');
+    localStorage.removeItem('realtime:round');
   }
 }

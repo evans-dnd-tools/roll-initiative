@@ -1,12 +1,20 @@
 .header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 
   font-weight: bold;
   text-transform: uppercase;
   font-size: 15px;
 
+  padding-right: 0.5rem;
+
   margin-bottom: 0.75rem;
+}
+
+.left-header {
+  display: flex;
+  align-items: center;
 }
 
 .team-header {

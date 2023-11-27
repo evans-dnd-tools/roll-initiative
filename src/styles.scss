@@ -47,6 +47,8 @@
   --text: #181212;
   --subtext: #666666;
   --special-text: #581208;
+
+  --header: #282424;
 }
 
 * {
@@ -69,7 +71,7 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   color: var(--text);
 
-  background: #FFFCF8;
+  background: #EEECE8;
 
   overflow-x: hidden;
 
@@ -184,9 +186,9 @@ button {
 #marble-background {
   z-index: -2;
   background-image: url('./assets/images/MARBLE_IMG.png');
-  opacity: 0.7;
+  opacity: 0.4;
 
-  filter: blur(2px);
+  filter: saturate(0) blur(2px);
 }
 
 #parchment-background {

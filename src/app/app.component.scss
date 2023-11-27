@@ -1,0 +1,29 @@
+.header {
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  height: calc(16rem + 60px);
+
+  padding: 16rem var(--padding) 0;
+  margin-top: -16rem;
+  
+  background: var(--header);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 2rem;
+
+  & > a {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+}

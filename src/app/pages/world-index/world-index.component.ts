@@ -18,6 +18,7 @@ import { PlaceFormComponent } from 'src/app/components/place-form/place-form.com
 import { Place } from 'src/models/place';
 import { PlacesService } from 'src/app/services/places.service';
 import { PlaceComponent } from 'src/app/components/place/place.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-world-index',
@@ -45,8 +46,11 @@ export class WorldIndexComponent {
   constructor(
     private modalService: ModalService, 
     private charactersService: CharactersSheetService,
-    private placesService: PlacesService
+    private placesService: PlacesService,
+    private titleService: Title
   ) {
+    this.titleService.setTitle('World Index');
+
     this.filters = [];
 
     for (let type of Object.values(IndexElementType)) {

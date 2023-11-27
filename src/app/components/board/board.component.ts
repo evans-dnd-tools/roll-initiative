@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnChanges, ViewChild } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { CharactersInitiativeService } from 'src/app/services/characters-initiative.service';
 import { TrackerCharacter } from 'src/models/tracker-character';
 import { CHARACTER_SHEET_PADDING, CHARACTER_SHEET_SIZE } from 'src/models/constants';

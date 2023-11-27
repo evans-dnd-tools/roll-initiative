@@ -11,8 +11,8 @@ export class HeaderComponent {
 
   fixed: boolean = false;
 
-  @HostListener('document:scroll', ['$event'])
-  scrollEvent(event: Event) {
-    this.fixed = window.scrollY > 148;
+  @HostListener('document:scroll')
+  scrollEvent() {
+    this.fixed = window.scrollY > 202;
   }
 }

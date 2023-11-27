@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'world-index', component: WorldIndexComponent },
   { path: 'spectate', component: SpectateComponent },
   { path: '', redirectTo: '/world-index', pathMatch: 'full' },
+  { path: '**', redirectTo: '/world-index', pathMatch: 'full' },
 ];
 
 @NgModule({
