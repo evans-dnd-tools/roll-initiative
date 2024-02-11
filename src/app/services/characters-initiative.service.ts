@@ -31,6 +31,9 @@ export class CharactersInitiativeService {
       name: '',
       bonus: null,
       roll: null,
+      currentHP: null,
+      maxHP: null,
+      armorClass: null,
       ally: false,
       lockedRoll: false,
       position: this.list.length
