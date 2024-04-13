@@ -56,7 +56,12 @@
 
 <div class="list">
   <ng-container *ngFor="let element of completeList">
-      <div class="list-element" (click)="open(element)">
+      <div 
+        class="list-element" 
+        (click)="open(element)"
+        (keydown.enter)="open(element)"
+        tabindex="0"
+      >
         <div 
           class="bookmark"
           [class.spell]="element.type === IndexElementType.Spell"
