@@ -6,6 +6,7 @@ export interface Spell extends IndexElement {
   name: string;
   level: number;
   school: SpellSchool;
+  isRitual: boolean;
   castingTime: string;
   range: string;
   components: string;

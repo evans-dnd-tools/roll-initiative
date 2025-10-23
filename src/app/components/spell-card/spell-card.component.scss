@@ -21,6 +21,8 @@
 
   overflow: hidden;
 
+  background: #EEECE8;
+
   box-shadow: 0 4px 32px 1px rgba(0,0,0,0.3);
 
   transition: transform 0.2s ease-out, 
@@ -130,26 +132,5 @@
     th + th, td + td {
       padding-left: 0.75rem;
     }
-  }
-}
-
-.marble {
-  position: absolute;
-  z-index: -1;
-  top: -1501px;
-  left: -623px;
-  width: 4096px;
-  height: 2731px;
-
-  background: #FFF;
-
-  &:before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.6;
-    background: url('../../../assets/images/MARBLE_IMG.png'), lightgray 50% / cover no-repeat;
   }
 }

@@ -29,8 +29,8 @@ export class WorldIndexComponent {
 
   ////    READONLY    ////
 
-  spells = spellsJson as Spell[];
-  IndexElementType = IndexElementType;
+  readonly SPELLS = spellsJson as Spell[];
+  readonly IndexElementType = IndexElementType;
 
   ////    VARIABLES    ////
 
@@ -190,7 +190,7 @@ export class WorldIndexComponent {
     // Filter by type
 
     if (this.filters.find(f => f.name === IndexElementType.Spell && f.active))
-      list = list.concat(this.spells);
+      list = list.concat(this.SPELLS);
 
     if (this.filters.find(f => f.name === IndexElementType.Character && f.active))
       list = list.concat(this.charactersService.getCharacters());

@@ -6,7 +6,9 @@ import { PlaceComponent } from '../place/place.component';
 import { CharactersSheetService } from 'src/app/services/characters-sheet.service';
 import { PlacesService } from 'src/app/services/places.service';
 import { ModalService } from 'src/app/services/modal.service';
-import { SPELLS } from 'src/app/lists/spells';
+import spellsJson from 'src/app/lists/spells.json';
+import { Spell } from 'src/models/spell';
+
 
 @Component({
   selector: 'description',
@@ -14,6 +16,9 @@ import { SPELLS } from 'src/app/lists/spells';
   styleUrls: ['./description.component.scss']
 })
 export class DescriptionComponent implements AfterViewInit {
+  ////    READONLY    ////
+
+  readonly SPELLS = spellsJson as Spell[];
 
   ////    INPUTS    ////
 
@@ -155,7 +160,7 @@ export class DescriptionComponent implements AfterViewInit {
   }
 
   openSpell(name: string) {
-    const spell = SPELLS.find(s => s.name === name);
+    const spell = this.SPELLS.find(s => s.name === name);
     if (!spell) return;
 
     const input = {spell}

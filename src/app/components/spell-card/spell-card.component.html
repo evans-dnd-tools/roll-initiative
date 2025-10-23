@@ -6,14 +6,13 @@
   [class.anim]="anim" 
   #card
 >
-  <div class="marble"></div>
   <div class="spell__header">
     <h4 class="spell__title">{{ spell.name }}</h4>
     <span class="spell__level-school">Sort {{ formatSchool(spell.school) + (spell.level === 0 ? " mineur" : " de niveau " + spell.level) }}</span>
   </div>
   <div class="spell__body">
     <div class="spell__meta">
-      <div class="spell__time"><b>Temps d'incantation :</b> {{ spell.castingTime }}</div>
+      <div class="spell__time"><b>Temps d'incantation :</b> {{ spell.castingTime }} {{ spell.isRitual ? "(rituel)" : "" }}</div>
       <div class="spell__range"><b>Portée :</b> {{ spell.range }}</div>
       <div class="spell__components"><b>Composantes :</b> {{ spell.components }}</div>
       <div class="spell__duration"><b>Durée :</b> {{ spell.duration }}</div>

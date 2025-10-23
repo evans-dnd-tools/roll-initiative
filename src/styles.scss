@@ -169,7 +169,7 @@ button {
   }
 }
 
-#marble-background, #parchment-background, #dust-foreground {
+#parchment-bg {
   pointer-events: none;
 
   position: fixed;
@@ -181,27 +181,33 @@ button {
 
   background-size: cover;
   background-position: center;
-}
 
-#marble-background {
-  z-index: -2;
-  background-image: url('./assets/images/MARBLE_IMG.png');
-  opacity: 0.4;
-
-  filter: saturate(0) blur(2px);
-}
-
-#parchment-background {
   z-index: 10000000;
   background-image: url('./assets/images/PARCHMENT_IMG.png');
   mix-blend-mode: multiply;
 }
 
-#dust-foreground {
-  z-index: 10000000;
-  background-image: url('./assets/images/DUST_IMG.jpg');
-  opacity: 0.025;
-  mix-blend-mode: exclusion;
+#artwork-bg {
+  pointer-events: none;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: 100vw;
+
+  background-size: cover;
+  background-position: center;
+
+  z-index: -1;
+  background-image: url('./assets/images/artwork.webp');
+
+  mask-image: url('./assets/images/aqua.webp');
+  mask-repeat: repeat-x;
+  mask-position: 50% -20dvh;
+  mask-size: 80dvh;
+  mask-composite: subtract;
 }
 
 
