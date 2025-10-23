@@ -113,6 +113,7 @@ export class CharacterFormComponent {
   }
 
   createCharacter() {
+    this.character.save()
     this.charactersService.addCharacter(this.character);
 
     setTimeout(() => {

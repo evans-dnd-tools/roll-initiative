@@ -1,6 +1,7 @@
 import { Sex } from "./sex";
 
 export enum Class {
+  None = "Aucune",
   Barbarian = "Barbare",
   Bard = "Barde",
   Cleric = "Clerc",
@@ -16,6 +17,10 @@ export enum Class {
 }
 
 const ClassBySex = new Map<Class, Map<Sex, string>>([
+  [Class.None, new Map<Sex, string>([
+    [Sex.Male, "Aucune classe"],
+    [Sex.Female, "Aucune classe"],
+  ])],
   [Class.Barbarian, new Map<Sex, string>([
     [Sex.Male, "Barbare"],
     [Sex.Female, "Barbare"],

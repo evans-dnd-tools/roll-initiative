@@ -1,12 +1,11 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { SPELLS } from 'src/app/lists/spells';
 import { Spell } from 'src/models/spell';
 import { ModalService } from '../../services/modal.service';
 import { SpellCardComponent } from 'src/app/components/spell-card/spell-card.component';
 import { Character } from 'src/models/character';
 import { IndexElement } from 'src/models/index-element';
 import { IndexElementType } from 'src/models/enums/index-element-type';
-import { classBySex } from 'src/models/enums/class';
+import { Class, classBySex } from 'src/models/enums/class';
 import { raceBySex } from 'src/models/enums/race';
 import { CharacterSheetComponent } from 'src/app/components/character-sheet/character-sheet.component';
 import { Filter } from 'src/models/filter';
@@ -19,6 +18,7 @@ import { Place } from 'src/models/place';
 import { PlacesService } from 'src/app/services/places.service';
 import { PlaceComponent } from 'src/app/components/place/place.component';
 import { Title } from '@angular/platform-browser';
+import spellsJson from 'src/app/lists/spells.json';
 
 @Component({
   selector: 'app-world-index',
@@ -29,7 +29,7 @@ export class WorldIndexComponent {
 
   ////    READONLY    ////
 
-  spells = SPELLS
+  spells = spellsJson as Spell[];
   IndexElementType = IndexElementType;
 
   ////    VARIABLES    ////
@@ -137,7 +137,8 @@ export class WorldIndexComponent {
   }
 
   formatCharacterSubtext(character: Character): string {
-    return `${classBySex(character.class, character.sex)} ${raceBySex(character.race, character.sex)} (niveau ${character.level})`;
+    const charClass = character.class === Class.None ? "" : classBySex(character.class, character.sex);
+    return `${charClass} ${raceBySex(character.race, character.sex)} (niveau ${character.level})`;
   }
 
   formatPlaceSubtext(place: Place): string {
@@ -173,6 +174,10 @@ export class WorldIndexComponent {
   openPlace(place: Place) {
     const input = {place}
     this.modalService.open(PlaceComponent, input);
+  }
+
+  openContextMenu(event: Event, element: IndexElement) {
+    event.preventDefault();
   }
 
   ////    GETTERS    ////

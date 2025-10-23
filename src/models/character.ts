@@ -39,6 +39,14 @@ export class Character implements IndexElement {
     Object.assign(this, init);
   }
 
+  public save() {
+    if (!this.sex) this.sex = Sex.Other
+    if (!this.race) this.race = Race.Unknown
+    if (!this.class) this.class = Class.None
+    if (!this.level) this.level = 0
+    if (!this.speed) this.speed = 9 
+  }
+
   get name(): string {
     return `${this.firstName} ${this.lastName}`;
   }

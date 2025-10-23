@@ -12,14 +12,16 @@ export enum Race {
   Dragonborn = "Drakéide",  
   Gnome = "Gnome",
   Tiefling = "Tieffelin",
-
+  
   // Common races
-  // Aasimar,
+  Aasimar = "Aasimar",
+  Kobold = "Kobold",
   // Bugbear,
   // Goblin,
   // Kenku,
-  // Kobold,
   // Tabaxi,
+
+  Unknown = "Inconnu"
 }
 
 const RaceBySex = new Map<Race, Map<Sex, string>>([
@@ -59,6 +61,18 @@ const RaceBySex = new Map<Race, Map<Sex, string>>([
     [Sex.Male, "Tieffelin"],
     [Sex.Female, "Tieffeline"]
   ])],
+  [Race.Aasimar, new Map<Sex, string>([
+      [Sex.Male, "Aasimar"],
+      [Sex.Female, "Aasimar"],
+    ])],
+  [Race.Kobold, new Map<Sex, string>([
+    [Sex.Male, "Kobold"],
+    [Sex.Female, "Kobold"],
+  ])],
+  [Race.Unknown, new Map<Sex, string>([
+      [Sex.Male, "Race inconnu"],
+      [Sex.Female, "Race inconnue"],
+    ])]
 ]);
 
 export function raceBySex(race: Race, sex: Sex) {

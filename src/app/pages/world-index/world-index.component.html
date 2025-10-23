@@ -55,10 +55,12 @@
 </div>
 
 <div class="list">
+  <!-- move to own component -->
   <ng-container *ngFor="let element of completeList">
       <div 
         class="list-element" 
         (click)="open(element)"
+        (contextmenu)="openContextMenu($event, element)"
         (keydown.enter)="open(element)"
         tabindex="0"
       >
