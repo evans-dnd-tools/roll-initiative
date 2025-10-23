@@ -7,8 +7,10 @@
   text-transform: uppercase;
   font-size: 15px;
 
-  padding-right: 0.5rem;
+  color: white;
+  text-shadow: 0 0 3px rgba(0,0,0,0.6);
 
+  padding-right: 0.5rem;
   margin-bottom: 0.75rem;
 }
 
@@ -18,27 +20,27 @@
 }
 
 .team-header {
-  padding-left: 24px; 
+  margin-left: 24px; 
 }
 
 .bonus-header {
-  padding-left: 232px;
+  margin-left: 232px;
 }
 
 .name-header {
-  padding-left: 42px;
+  margin-left: 42px;
 }
 
 .hp-header {
-  padding-left: 162px;
+  margin-left: 162px;
 }
 
 .ac-header {
-  padding-left: 42px;
+  margin-left: 42px;
 }
 
 .roll-header {
-  padding-left: 36px;
+  margin-left: 36px;
 }
 
 .board {

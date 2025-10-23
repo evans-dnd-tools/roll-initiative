@@ -11,4 +11,8 @@ export class AppComponent {
     public viewContainerRef: ViewContainerRef, 
     public characters: CharactersInitiativeService
   ) {}
+
+  get maskOffset(): number {
+    return -window.scrollY;
+  }
 }

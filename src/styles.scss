@@ -190,22 +190,22 @@ button {
 #artwork-bg {
   pointer-events: none;
 
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: -1;
 
   height: 100vh;
   width: 100vw;
 
+  background-image: url('./assets/images/jedd-chevrier-neverwinter.webp');
   background-size: cover;
-  background-position: center;
+  background-position: center calc(50% + var(--scroll-offset, 0px)/6);
 
-  z-index: -1;
-  background-image: url('./assets/images/artwork.webp');
 
   mask-image: url('./assets/images/aqua.webp');
   mask-repeat: repeat-x;
-  mask-position: 50% -20dvh;
+  mask-position: 50% calc(-15dvh + var(--scroll-offset, 0px)/4);
   mask-size: 80dvh;
   mask-composite: subtract;
 }

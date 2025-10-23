@@ -1,7 +1,7 @@
 <index-header [(filters)]="filters"></index-header>
 
 <div class="list-header">
-  <input class="searchbar" type="text" placeholder="Rechercher un sort, personnage..." [(ngModel)]="filter" #searchbar />
+  <input class="searchbar" type="text" placeholder="Rechercher..." [(ngModel)]="filter" #searchbar />
   <div class="right-side">
     <div class="menu-dropdown">
       <button 
@@ -62,13 +62,13 @@
         (click)="open(element)"
         (contextmenu)="openContextMenu($event, element)"
         (keydown.enter)="open(element)"
+        [class.spell]="element.type === IndexElementType.Spell"
+        [class.character]="element.type === IndexElementType.Character"
+        [class.place]="element.type === IndexElementType.Place"
         tabindex="0"
       >
         <div 
           class="bookmark"
-          [class.spell]="element.type === IndexElementType.Spell"
-          [class.character]="element.type === IndexElementType.Character"
-          [class.place]="element.type === IndexElementType.Place"
         ></div>
         <div class="elem-title">
           {{ element.name }}

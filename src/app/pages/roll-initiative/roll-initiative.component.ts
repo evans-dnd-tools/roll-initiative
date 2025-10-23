@@ -18,7 +18,7 @@ export class RollInitiativeComponent {
     public options: OptionsService,
     private titleService: Title
   ) {
-    this.titleService.setTitle('Initiative Tracker');
+    this.titleService.setTitle('Traqueur d\'initiative');
 
     const characterList = JSON.parse(localStorage.getItem('characters'));
 

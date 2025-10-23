@@ -28,7 +28,7 @@ export class DragAndDropService {
 
   grab(event: MouseEvent, characterComponent: CharacterComponent) {
 
-    this.board = document.querySelector('board');
+    this.board = document.querySelector('.character-list');
     this.characterComponent = characterComponent;
 
     this.lastPosition = this.characterComponent.position;
@@ -43,12 +43,12 @@ export class DragAndDropService {
   }
 
   move(event: MouseEvent) {
+    const cursorPosition = event.clientY - this.board.offsetTop + window.scrollY;
+
     const maxPosition = this.board.offsetHeight - CHARACTER_SHEET_SIZE + CHARACTER_SHEET_PADDING;
-    const newPosition = Math.min(maxPosition, Math.max(0, event.clientY - this.board.offsetTop - this.grabOffset + window.scrollY));
+    const newPosition = Math.min(maxPosition, Math.max(0, cursorPosition - this.grabOffset));
 
     this.characterComponent.hostElement.style.translate = `0 ${newPosition}px`;
-
-    const cursorPosition = event.clientY - this.board.offsetTop + window.scrollY;
 
     const listPosition = Math.min(this.characters.list.length -1, Math.max(0, Math.floor(cursorPosition / CHARACTER_SHEET_SIZE)));
 

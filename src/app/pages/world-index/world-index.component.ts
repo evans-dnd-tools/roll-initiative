@@ -49,7 +49,7 @@ export class WorldIndexComponent {
     private placesService: PlacesService,
     private titleService: Title
   ) {
-    this.titleService.setTitle('World Index');
+    this.titleService.setTitle('Index du monde');
 
     this.filters = [];
 

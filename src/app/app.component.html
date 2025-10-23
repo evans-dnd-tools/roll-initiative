@@ -1,7 +1,10 @@
+<div id="artwork-bg" [style.--scroll-offset.px]="maskOffset"></div>
+
 <div class="header" *ngIf="!characters.isSpectator">
   <nav>
-    <a routerLink="/world-index">World Index</a>
-    <a routerLink="/roll-initiative">Initiative Tracker</a>
+    <a routerLink="/character-sheets">Feuilles de personnage</a>
+    <a routerLink="/world-index">Index du monde</a>
+    <a routerLink="/roll-initiative">Traqueur d'initiative</a>
   </nav>
 </div>
 <router-outlet></router-outlet>
