@@ -13,7 +13,7 @@ export enum Class {
   Rogue = "Roublard",
   Sorcerer = "Ensorceleur",
   Warlock = "Occultiste",
-  Wizard = "Mage",
+  Wizard = "Magicien",
 }
 
 const ClassBySex = new Map<Class, Map<Sex, string>>([
@@ -66,8 +66,8 @@ const ClassBySex = new Map<Class, Map<Sex, string>>([
     [Sex.Female, "Occultiste"],
   ])],
   [Class.Wizard, new Map<Sex, string>([
-    [Sex.Male, "Mage"],
-    [Sex.Female, "Mage"],
+    [Sex.Male, "Magicien"],
+    [Sex.Female, "Magicienne"],
   ])],
 ]);
 

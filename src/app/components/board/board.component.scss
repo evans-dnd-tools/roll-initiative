@@ -20,23 +20,27 @@
 }
 
 .team-header {
-  margin-left: 24px; 
-}
-
-.bonus-header {
-  margin-left: 232px;
+  margin-left: 22px;
+  width: 64px;
 }
 
 .name-header {
-  margin-left: 42px;
+  margin-left: 1.75rem;
+  width: 260px;
 }
 
 .hp-header {
-  margin-left: 162px;
+  margin-left: 2.25rem;
+  width: 30px;
 }
 
 .ac-header {
-  margin-left: 42px;
+  margin-left: 2rem;
+  width: 30px;
+}
+
+.bonus-header {
+  margin-left: 248px;
 }
 
 .roll-header {
