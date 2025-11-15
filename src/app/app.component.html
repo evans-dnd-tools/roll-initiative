@@ -1,4 +1,5 @@
-<div id="artwork-bg" [style.--scroll-offset.px]="maskOffset"></div>
+<div id="artwork-bg" class="world-index" [style.--scroll-offset.px]="maskOffset" [style.opacity]="showBackground('world-index')"></div>
+<!-- <div id="artwork-bg" class="roll-initiative" [style.--scroll-offset.px]="maskOffset" [style.opacity]="showBackground('roll-initiative')"></div> -->
 
 <div class="header" *ngIf="!characters.isSpectator">
   <nav>

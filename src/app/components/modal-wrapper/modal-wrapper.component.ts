@@ -51,8 +51,13 @@ export class ModalWrapperComponent implements OnInit {
   }
 
   updateContent() {
-    if (!this.isOpen) this.hostElement.classList.add('hidden');
-    else this.hostElement.classList.remove('hidden');
+    if (!this.isOpen) {
+      this.hostElement.classList.add('hidden');
+      document.body.style.overflow = '';
+    } else {
+      this.hostElement.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   ////    GETTERS & SETTERS    ////

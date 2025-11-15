@@ -1,4 +1,5 @@
 import { Component, ViewContainerRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { CharactersInitiativeService } from './services/characters-initiative.service';
 
 @Component({
@@ -9,8 +10,13 @@ import { CharactersInitiativeService } from './services/characters-initiative.se
 export class AppComponent {
   constructor(
     public viewContainerRef: ViewContainerRef, 
-    public characters: CharactersInitiativeService
+    public characters: CharactersInitiativeService,
+    private router: Router
   ) {}
+
+  showBackground(route: string): number {
+    return this.router.url === `/${route}` ? 1 : 0;
+  }
 
   get maskOffset(): number {
     return -window.scrollY;

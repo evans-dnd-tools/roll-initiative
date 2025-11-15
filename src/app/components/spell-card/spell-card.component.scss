@@ -106,6 +106,7 @@
 
   & ::ng-deep table {
     width: 100%;
+    max-width: 100%;
     border-collapse: collapse;
     
     margin: 1rem 0;
@@ -121,10 +122,6 @@
       text-align: left;
     }
 
-    td:first-child {
-      white-space: nowrap;
-    }
-
     th, td {
       padding: 0.25rem;
     }
@@ -132,5 +129,9 @@
     th + th, td + td {
       padding-left: 0.75rem;
     }
+  }
+
+  & ::ng-deep ul {
+    padding-left: 1rem;
   }
 }
