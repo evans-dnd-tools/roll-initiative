@@ -1,7 +1,9 @@
-<index-header [(filters)]="filters"></index-header>
+<index-header 
+  [(activeType)]="activeType"
+  [(filter)]="filter"
+></index-header>
 
 <div class="list-header">
-  <input class="searchbar" type="text" placeholder="Rechercher..." [(ngModel)]="filter" #searchbar />
   <div class="right-side">
     <div class="menu-dropdown">
       <button 

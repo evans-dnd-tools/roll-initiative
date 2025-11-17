@@ -1,0 +1,49 @@
+:host {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 3px;
+
+  height: 50px;
+  width: fit-content;
+
+  background: var(--primary-300);
+}
+
+button {
+  cursor: pointer;
+  
+  height: 100%;
+  padding: 0 1.5rem;
+
+  border: none;
+  border-radius: 2px;
+
+  background: none;
+  color: white;
+
+  transition: 0.12s ease-in-out;
+  transition-property: background, color;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:not([disabled]) {
+    &:is(:hover, :focus-visible) {
+      background: rgba(0, 0, 0, 0.08);
+    }
+
+    &.checked {
+      background: var(--primary-200);
+
+      &:is(:focus-visible, :hover) {
+        background: var(--primary-200);
+      }
+    }
+  }
+
+  &[disabled] {
+    color: var(--text);
+  }
+}

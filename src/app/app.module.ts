@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BoardComponent } from './components/board/board.component';
@@ -23,6 +24,9 @@ import { PlaceComponent } from './components/place/place.component';
 import { DescriptionComponent } from './components/description/description.component';
 import { MarkdownPipe } from './pipes/markdown.pipe';
 import { SpectateComponent } from './pages/spectate/spectate.component';
+import { CharacterSheetsComponent } from './pages/character-sheets/character-sheets.component';
+import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
+import { ToggleGroupComponent } from './components/toggle-group/toggle-group.component';
 
 
 @NgModule({
@@ -47,11 +51,15 @@ import { SpectateComponent } from './pages/spectate/spectate.component';
     DescriptionComponent,
     MarkdownPipe,
     SpectateComponent,
+    CharacterSheetsComponent,
+    SvgIconComponent,
+    ToggleGroupComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

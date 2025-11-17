@@ -8,6 +8,11 @@ export class PlacesService {
 
   private places: Place[] = [];
 
+  constructor() {
+    const savedPlaces = JSON.parse(localStorage.getItem('index:places'));
+    if (savedPlaces) this.importPlaces(savedPlaces);
+  }
+
   addPlace(place: Place) {
     this.places.push(place);
   }

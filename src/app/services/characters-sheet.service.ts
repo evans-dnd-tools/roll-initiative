@@ -8,6 +8,11 @@ export class CharactersSheetService {
 
   private characters : Character[] = [];
 
+  constructor() {
+    const savedCharacters = JSON.parse(localStorage.getItem('index:characters'));
+    if (savedCharacters) this.importCharacters(savedCharacters);
+  }
+
   addCharacter(character: Character) {
     this.characters.push(character);
   }

@@ -8,7 +8,6 @@ import { IndexElementType } from 'src/models/enums/index-element-type';
 import { Class, classBySex } from 'src/models/enums/class';
 import { raceBySex } from 'src/models/enums/race';
 import { CharacterSheetComponent } from 'src/app/components/character-sheet/character-sheet.component';
-import { Filter } from 'src/models/filter';
 import { CharacterFormComponent } from 'src/app/components/character-form/character-form.component';
 import { CharacterImportComponent } from 'src/app/components/character-import/character-import.component';
 import { CharacterExportComponent } from 'src/app/components/character-export/character-export.component';
@@ -30,13 +29,14 @@ export class WorldIndexComponent {
   ////    READONLY    ////
 
   readonly SPELLS = spellsJson as Spell[];
+
+  readonly TYPE_ALL = 'Tous';
   readonly IndexElementType = IndexElementType;
 
   ////    VARIABLES    ////
 
   filter: string = '';
-  filters : Filter[]
-
+  activeType: string = this.TYPE_ALL;
   filteredList: IndexElement[] = [];
 
   @ViewChild('searchbar') searchBar: ElementRef;
@@ -50,22 +50,11 @@ export class WorldIndexComponent {
     private titleService: Title
   ) {
     this.titleService.setTitle('Index du monde');
-
-    this.filters = [];
-
-    for (let type of Object.values(IndexElementType)) {
-      this.filters.push({ name: type, active: true });
-    }
-
-    const savedCharacters = JSON.parse(localStorage.getItem('index:characters'));
-    if (savedCharacters) this.charactersService.importCharacters(savedCharacters);
-
-    const savedPlaces = JSON.parse(localStorage.getItem('index:places'));
-    if (savedPlaces) this.placesService.importPlaces(savedPlaces);
   }
 
+  // There is a bug currently that duplicates elements
   @HostListener('window:unload')
-  unloadHandler() {    
+  unloadHandler() {
     const savedCharacters = this.charactersService.getCharacters();
     localStorage.setItem('index:characters', JSON.stringify(savedCharacters));
 
@@ -99,12 +88,6 @@ export class WorldIndexComponent {
 
   openExportModal() {
     this.modalService.open(CharacterExportComponent, {});
-  }
-
-  // FILTER
-
-  onFilterChange(filters: Filter[]) {
-    this.filters = filters;
   }
 
   // FORMAT SUB-TEXT
@@ -182,21 +165,29 @@ export class WorldIndexComponent {
 
   ////    GETTERS    ////
 
-  get completeList() : (IndexElement)[] {
+  get completeList() : IndexElement[] {
     let list: IndexElement[] = [];
 
-    if (!this.filters) return list; 
+    if (!this.activeType) return list; 
 
     // Filter by type
 
-    if (this.filters.find(f => f.name === IndexElementType.Spell && f.active))
-      list = list.concat(this.SPELLS);
-
-    if (this.filters.find(f => f.name === IndexElementType.Character && f.active))
-      list = list.concat(this.charactersService.getCharacters());
-
-    if (this.filters.find(f => f.name === IndexElementType.Place && f.active))
-      list = list.concat(this.placesService.getPlaces());
+    switch (this.activeType) {
+      case this.IndexElementType.Spell:
+        list = list.concat(this.SPELLS);
+        break;
+      case this.IndexElementType.Character:
+        list = list.concat(this.charactersService.getCharacters());
+        break;
+      case this.IndexElementType.Place:
+        list = list.concat(this.placesService.getPlaces());
+        break;
+      default:
+        list = list.concat(this.SPELLS);
+        list = list.concat(this.charactersService.getCharacters());
+        list = list.concat(this.placesService.getPlaces());
+        break;
+    }
 
     // Filter by name
 

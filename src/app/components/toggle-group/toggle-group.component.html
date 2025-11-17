@@ -1,0 +1,8 @@
+<button
+  [class.checked]="isSelected(option)"
+  (click)="data = valueFromElement(option)"
+  [disabled]="disabled"
+  *ngFor="let option of options"
+>
+  <div>{{ labelFromElement(option) }}</div>
+</button>

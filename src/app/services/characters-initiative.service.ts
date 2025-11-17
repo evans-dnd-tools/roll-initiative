@@ -1,4 +1,4 @@
-import { HostListener, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { TrackerCharacter } from 'src/models/tracker-character';
 import { OptionsService } from './options.service';
 
@@ -58,6 +58,13 @@ export class CharactersInitiativeService {
     }
 
     this.charactersChangedSinceLastTurn = true;
+  }
+
+  // Unused for now
+  refreshCharacterPositions() {
+    this.list.sort((a, b) => {
+      return a.position - b.position;
+    });
   }
 
   rollForInitiative() {
@@ -126,7 +133,6 @@ export class CharactersInitiativeService {
 
     localStorage.setItem('realtime:playing', JSON.stringify(this.currentlyPlaying));
   }
-
 
   endCombat() {
     this.round = 0;

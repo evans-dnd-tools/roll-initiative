@@ -4,10 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { RollInitiativeComponent } from './pages/roll-initiative/roll-initiative.component';
 import { WorldIndexComponent } from './pages/world-index/world-index.component';
 import { SpectateComponent } from './pages/spectate/spectate.component';
+import { CharacterSheetsComponent } from './pages/character-sheets/character-sheets.component';
 
 const routes: Routes = [
   { path: 'roll-initiative', component: RollInitiativeComponent },
   { path: 'world-index', component: WorldIndexComponent },
+  { path: 'character-sheets', component: CharacterSheetsComponent },
   { path: 'spectate', component: SpectateComponent },
   { path: '', redirectTo: '/world-index', pathMatch: 'full' },
   { path: '**', redirectTo: '/world-index', pathMatch: 'full' },

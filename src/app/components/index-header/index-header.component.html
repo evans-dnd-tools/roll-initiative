@@ -1,12 +1,10 @@
 <header pageTitle="Index du monde">
-  <div class="filters">
-    <label class="pill">
-      <input type="checkbox" (change)="toggleAll()" [ngModel]="allActive" />
-      <span>Tous</span>
-    </label>
-    <label class="pill" *ngFor="let filter of filters">
-      <input type="checkbox" (change)="onFilterChange()" [(ngModel)]="filter.active" />
-      <span>{{ filter.name }}</span>
-    </label>
-  </div>
+  <app-toggle-group 
+    [options]="types" 
+    [(ngModel)]="activeType"
+    [labelFromElement]="self"
+    [valueFromElement]="self"
+  />
+
+  <input class="searchbar" type="text" placeholder="Rechercher..." [(ngModel)]="filter" #searchbar />
 </header>

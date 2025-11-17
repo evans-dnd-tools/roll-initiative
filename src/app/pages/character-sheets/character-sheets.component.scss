@@ -1,0 +1,47 @@
+.content {
+  padding: 0 var(--padding);
+}
+
+.ornate {
+  position: relative;
+  
+  width: min-content;
+  padding: 1rem 1.5rem 1.5rem;
+  
+  background: white;
+
+  border: 3px solid var(--gold-accent);
+
+  clip-path: polygon(
+    0 0, 
+    100% 0, 
+    100% calc(100% - .8rem), 
+    calc(100% - .8rem) 100%, 
+    .8rem 100%, 
+    0 calc(100% - .8rem)
+  );
+  
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    
+    bottom: -3px;
+    
+    height: 0.6rem;
+    width: 0.6rem;
+    
+    border-top: 3px solid var(--gold-accent);
+  }
+  
+  &::after {
+    left: -3px;   
+    border-radius: 0 0.75rem 0 0;
+    border-right: 3px solid var(--gold-accent);
+  }
+  
+  &::before {
+    right: -3px;
+    border-radius: 0.75rem 0 0 0;
+    border-left: 3px solid var(--gold-accent);
+  }
+}

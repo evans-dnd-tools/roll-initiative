@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Filter } from 'src/models/filter';
+import { IndexElementType } from 'src/models/enums/index-element-type';
 
 @Component({
   selector: 'index-header',
@@ -8,28 +8,54 @@ import { Filter } from 'src/models/filter';
 })
 export class IndexHeaderComponent {
 
-  @Input()
-  filters: Filter[];
+  //#region ------ READ-ONLY ------
+
+  readonly IndexElementType = IndexElementType;
+
+  //#endregion
+
+  //#region ------ PROPERTIES ------
+
+  // @Input() in setter
+  private _activeType: string;
 
   @Output()
-  filtersChange: EventEmitter<Filter[]> = new EventEmitter<Filter[]>();
+  activeTypeChange: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() {}
+  // @Input() in setter
+  private _filter: string;
 
-  toggleAll() {
-    if (this.allActive) this.filters.forEach(f => f.active = false);
-    else this.filters.forEach(f => f.active = true);
+  @Output()
+  filterChange: EventEmitter<string> = new EventEmitter<string>();
 
-    this.onFilterChange();
+  types: string[];
+  self = (o: any) => o;
+
+  //#endregion
+
+  //#region ------ CONSTRUCTOR ------
+
+  constructor() {
+    this.types = Object.values(this.IndexElementType);
+    this.types.unshift('Tous');
   }
 
-  onFilterChange() {
-    this.filtersChange.emit(this.filters);
+  //#endregion
+
+  get activeType(): string {
+    return this._activeType;
   }
 
-  ////    SPECIAL GETTERS    ////
+  @Input() set activeType(value: string) {
+    this._activeType = value;
+    this.activeTypeChange.emit(value);
+  }
 
-  get allActive() {
-    return this.filters.every(f => f.active);
+  get filter(): string {
+    return this._filter;
+  }
+  @Input() set filter(value: string) {
+    this._filter = value;
+    this.filterChange.emit(value);
   }
 }
