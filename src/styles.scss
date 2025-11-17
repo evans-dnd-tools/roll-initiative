@@ -44,6 +44,8 @@
 
   --padding: 22rem;
 
+  --background: #EEECE8;
+
   --text: #181212;
   --subtext: #767688;
   --special-text: #581208;
@@ -53,7 +55,7 @@
 
 ::selection, ::-moz-selection {
   background-color: var(--primary-200); 
-  color: white;
+  color: var(--background);
 }
 
 * {
@@ -76,7 +78,7 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   color: var(--text);
 
-  background: #EEECE8;
+  background: var(--background);
 
   overflow-x: hidden;
 
@@ -170,7 +172,7 @@ button {
     height: 28px;
     width: 28px;
 
-    fill: white;
+    fill: currentColor;
   }
 }
 

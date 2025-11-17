@@ -1,3 +1,4 @@
+import { Class } from "./enums/class";
 import { SpellSchool } from "./enums/spell-school";
 import { IndexElement } from "./index-element";
 
@@ -12,4 +13,5 @@ export interface Spell extends IndexElement {
   components: string;
   duration: string;
   description: string;
+  classes: Class[];
 }

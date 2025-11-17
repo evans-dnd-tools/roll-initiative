@@ -16,7 +16,7 @@
   {
     "type": "Sorts",
     "id": "agrandissement-rapetissement",
-    "name": "Agrandissement/Rapetissement",
+    "name": "Agrandissement / Rapetissement",
     "level": 2,
     "school": "Transmutation",
     "isRitual": false,
@@ -478,7 +478,7 @@
   {
     "type": "Sorts",
     "id": "aversion-attirance",
-    "name": "Aversion/Attirance",
+    "name": "Aversion / Attirance",
     "level": 8,
     "school": "Enchantement",
     "isRitual": false,
@@ -744,7 +744,7 @@
   {
     "type": "Sorts",
     "id": "cecite-surdite",
-    "name": "Cécité/Surdité",
+    "name": "Cécité / Surdité",
     "level": 2,
     "school": "Nécromancie",
     "isRitual": false,
@@ -3424,7 +3424,7 @@
     "isRitual": false,
     "castingTime": "1 action",
     "range": "personnelle (rayon de 1,50 mètre)",
-    "components": "V, M (une arme de corps à corps valant au moins 1 pa)",
+    "components": "S, M (une arme de corps à corps valant au moins 1 pa)",
     "duration": "instantanée",
     "description": "<p>Vous brandissez l'arme utilisée pour l'incantation du sort et effectuez une attaque au corps à corps avec cette arme contre une créature à 1,50 mètre ou moins de vous. Si vous touchez, la cible subit les effets normaux de l'attaque et une flamme verdâtre jaillit de cette cible pour aller frapper une autre créature de votre choix que vous pouvez voir et qui se trouve dans un rayon de 1,50 mètre autour de la première créature. Cette seconde créature subit des dégâts de feu d'un montant égal au modificateur de votre caractéristique d'incantation. Les dégâts de ce sort augmentent suivant votre niveau. Au niveau 5, l'attaque de corps à corps inflige 1d8 dégâts de feu supplémentaires à la première cible, et les dégâts de feu subis par la seconde cible atteignent 1d8 + le modificateur de votre caractéristique d'incantation. Les deux jets de dégâts augmentent chacun de 1d8 supplémentaire aux niveaux 11 (2d8 et 2d8) et 17 (3d8 et 3d8).</p>",
     "classes": ["Ensorceleur", "Magicien", "Occultiste"]

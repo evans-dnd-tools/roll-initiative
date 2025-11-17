@@ -21,7 +21,7 @@
 
   overflow: hidden;
 
-  background: #EEECE8;
+  background: var(--background);
 
   box-shadow: 0 4px 32px 1px rgba(0,0,0,0.3);
 
@@ -38,7 +38,7 @@
 
 .spell__header {
   background: rgba(172, 143, 70, 0.4);
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1rem;
   
   display: flex;
   flex-direction: column;
@@ -74,9 +74,13 @@
   flex: 1;
   padding: 0.5rem 0.75rem;
 
+  display: flex;
+  flex-direction: column;
+
   font-size: 14px;
   font-family: 'Bookmania' !important;
-  line-height: 1.35;
+
+  line-height: 1.4;
 
   overflow: hidden auto;
 
@@ -98,11 +102,8 @@
 }
 
 .spell__description {
-  &:after {
-    content: '';
-    display: block;
-    height: 0.5rem;
-  }
+
+  flex-grow: 1;
 
   & ::ng-deep table {
     width: 100%;
