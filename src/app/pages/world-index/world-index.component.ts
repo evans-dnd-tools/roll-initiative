@@ -16,9 +16,10 @@ import { Title } from '@angular/platform-browser';
 import spellsJson from 'src/app/lists/spells.json';
 
 @Component({
-  selector: 'app-world-index',
-  templateUrl: './world-index.component.html',
-  styleUrls: ['./world-index.component.scss']
+    selector: 'app-world-index',
+    templateUrl: './world-index.component.html',
+    styleUrls: ['./world-index.component.scss'],
+    standalone: false
 })
 export class WorldIndexComponent {
 

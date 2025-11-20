@@ -2,9 +2,10 @@ import { Component, ElementRef, HostListener, Injector, OnInit, ViewChild, ViewC
 import { ModalService } from '../../services/modal.service';
 
 @Component({
-  selector: 'modal-wrapper',
-  templateUrl: './modal-wrapper.component.html',
-  styleUrls: ['./modal-wrapper.component.scss']
+    selector: 'modal-wrapper',
+    templateUrl: './modal-wrapper.component.html',
+    styleUrls: ['./modal-wrapper.component.scss'],
+    standalone: false
 })
 export class ModalWrapperComponent implements OnInit {
 

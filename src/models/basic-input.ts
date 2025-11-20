@@ -2,7 +2,8 @@ import { Component, Injector, OnInit } from "@angular/core"
 import { ControlValueAccessor, FormControl, FormControlDirective, FormControlName, FormGroupDirective, NgControl, NgModel, Validators } from "@angular/forms"
 
 @Component({
-  template: '',
+    template: '',
+    standalone: false
 })
 export abstract class BasicInput<T = any> implements ControlValueAccessor, OnInit {
   //#region ------ PROPERTIES ------

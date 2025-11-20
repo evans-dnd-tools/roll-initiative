@@ -5,9 +5,10 @@ import { OptionsService } from 'src/app/services/options.service';
 import { DEFAULT_TRACKER_LIST_SIZE } from 'src/models/constants';
 
 @Component({
-  selector: 'app-roll-initiative',
-  templateUrl: './roll-initiative.component.html',
-  styleUrls: ['./roll-initiative.component.scss']
+    selector: 'app-roll-initiative',
+    templateUrl: './roll-initiative.component.html',
+    styleUrls: ['./roll-initiative.component.scss'],
+    standalone: false
 })
 export class RollInitiativeComponent {
 

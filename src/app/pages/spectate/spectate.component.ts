@@ -3,9 +3,10 @@ import { Title } from '@angular/platform-browser';
 import { InitiativeService } from 'src/app/services/initiative.service';
 
 @Component({
-  selector: 'app-spectate',
-  templateUrl: './spectate.component.html',
-  styleUrls: ['./spectate.component.scss']
+    selector: 'app-spectate',
+    templateUrl: './spectate.component.html',
+    styleUrls: ['./spectate.component.scss'],
+    standalone: false
 })
 export class SpectateComponent {
 

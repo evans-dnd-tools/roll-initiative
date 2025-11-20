@@ -11,9 +11,10 @@ import { Sex } from 'src/models/enums/sex';
 const NUMBER_REGEX = /^\d+$/;
 
 @Component({
-  selector: 'app-statblock-form',
-  templateUrl: './statblock-form.component.html',
-  styleUrls: ['./statblock-form.component.scss']
+    selector: 'app-statblock-form',
+    templateUrl: './statblock-form.component.html',
+    styleUrls: ['./statblock-form.component.scss'],
+    standalone: false
 })
 export class StatblockFormComponent {
 

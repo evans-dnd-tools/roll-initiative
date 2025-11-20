@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BoardComponent } from './components/board/board.component';
@@ -28,36 +28,37 @@ import { ToggleGroupComponent } from './components/toggle-group/toggle-group.com
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BoardComponent,
-    TrackerCharacterComponent,
-    HeaderComponent,
-    OptionModalComponent,
-    RollInitiativeComponent,
-    WorldIndexComponent,
-    InitiativeHeaderComponent,
-    IndexHeaderComponent,
-    SpellCardComponent,
-    ModalWrapperComponent,
-    StatBlockComponent,
-    StatblockFormComponent,
-    PlaceFormComponent,
-    PlaceComponent,
-    DescriptionComponent,
-    MarkdownPipe,
-    SpectateComponent,
-    CharacterSheetsComponent,
-    SvgIconComponent,
-    ToggleGroupComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        BoardComponent,
+        TrackerCharacterComponent,
+        HeaderComponent,
+        OptionModalComponent,
+        RollInitiativeComponent,
+        WorldIndexComponent,
+        InitiativeHeaderComponent,
+        IndexHeaderComponent,
+        SpellCardComponent,
+        ModalWrapperComponent,
+        StatBlockComponent,
+        StatblockFormComponent,
+        PlaceFormComponent,
+        PlaceComponent,
+        DescriptionComponent,
+        MarkdownPipe,
+        SpectateComponent,
+        CharacterSheetsComponent,
+        SvgIconComponent,
+        ToggleGroupComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        AppRoutingModule
+    ],
+    providers: [
+        provideHttpClient(withInterceptorsFromDi())
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

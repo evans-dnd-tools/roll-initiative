@@ -11,9 +11,10 @@ import { Spell } from 'src/models/spell';
 
 
 @Component({
-  selector: 'description',
-  templateUrl: './description.component.html',
-  styleUrls: ['./description.component.scss']
+    selector: 'description',
+    templateUrl: './description.component.html',
+    styleUrls: ['./description.component.scss'],
+    standalone: false
 })
 export class DescriptionComponent implements AfterViewInit {
   ////    READONLY    ////

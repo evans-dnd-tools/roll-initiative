@@ -2,9 +2,10 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Spell } from 'src/models/spell';
 
 @Component({
-  selector: 'spell-card',
-  templateUrl: './spell-card.component.html',
-  styleUrls: ['./spell-card.component.scss']
+    selector: 'spell-card',
+    templateUrl: './spell-card.component.html',
+    styleUrls: ['./spell-card.component.scss'],
+    standalone: false
 })
 export class SpellCardComponent {
 

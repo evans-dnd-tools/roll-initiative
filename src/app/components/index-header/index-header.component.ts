@@ -5,9 +5,10 @@ import { StatblockFormComponent } from '../statblock-form/statblock-form.compone
 import { PlaceFormComponent } from '../place-form/place-form.component';
 
 @Component({
-  selector: 'index-header',
-  templateUrl: './index-header.component.html',
-  styleUrls: ['./index-header.component.scss']
+    selector: 'index-header',
+    templateUrl: './index-header.component.html',
+    styleUrls: ['./index-header.component.scss'],
+    standalone: false
 })
 export class IndexHeaderComponent {
 

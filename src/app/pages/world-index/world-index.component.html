@@ -1,4 +1,4 @@
-<index-header 
+<index-header
   [(activeType)]="activeType"
   [(filter)]="filter"
 ></index-header>
@@ -11,26 +11,26 @@
 
 <div class="list">
   <!-- move to own component -->
-  <ng-container *ngFor="let element of completeList">
-      <div 
-        class="list-element" 
-        (click)="open(element)"
-        (contextmenu)="openContextMenu($event, element)"
-        (keydown.enter)="open(element)"
-        [class.spell]="element.type === IndexElementType.Spell"
-        [class.statblock]="element.type === IndexElementType.StatBlock"
-        [class.place]="element.type === IndexElementType.Place"
-        tabindex="0"
+  @for (element of completeList; track element) {
+    <div
+      class="list-element"
+      (click)="open(element)"
+      (contextmenu)="openContextMenu($event, element)"
+      (keydown.enter)="open(element)"
+      [class.spell]="element.type === IndexElementType.Spell"
+      [class.statblock]="element.type === IndexElementType.StatBlock"
+      [class.place]="element.type === IndexElementType.Place"
+      tabindex="0"
       >
-        <div 
-          class="bookmark"
-        ></div>
-        <div class="elem-title">
-          {{ element.name }}
-        </div>
-        <div class="elem-subtext">
-          {{ formatSubtext(element) }}
-        </div>
+      <div
+        class="bookmark"
+      ></div>
+      <div class="elem-title">
+        {{ element.name }}
       </div>
-  </ng-container>
+      <div class="elem-subtext">
+        {{ formatSubtext(element) }}
+      </div>
+    </div>
+  }
 </div>

@@ -1,28 +1,28 @@
 <div modal>
-  <span 
-    class="place__name" 
-    placeholder="Nom du lieu" 
+  <span
+    class="place__name"
+    placeholder="Nom du lieu"
     [textContent]="place.name"
     (input)="updateName($event)"
     (beforeinput)="checkInput($event)"
     contenteditable
   ></span>
-  
+
   <hr />
 
   <div placeholder="Type de lieu" [class.visible]="place.placeType" class="place__type">
     <select [(ngModel)]="place.placeType">
-      <ng-container *ngFor="let type of PLACE_TYPES | keyvalue">
+      @for (type of PLACE_TYPES | keyvalue; track type) {
         <option [value]="type.value">{{ type.value }}</option>
-      </ng-container>
+      }
     </select>
   </div>
 
-  <description 
+  <description
     [(value)]="place.description"
     [editable]="true"
   ></description>
-  
+
   <div class="buttons">
     <button class="add-button" (click)="submit()">Créer</button>
   </div>

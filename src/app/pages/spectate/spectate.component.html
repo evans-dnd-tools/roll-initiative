@@ -1,7 +1,11 @@
-<ng-container *ngIf="initiative.inCombat">
+@if (initiative.inCombat) {
   <board class="board" [characters]="initiative.list"></board>
-</ng-container>
-<ng-container *ngIf="!initiative.inCombat">
+}
+@if (!initiative.inCombat) {
   <div class="no-characters">
     <span>Aucun combat n'est en cours.</span>
   </div>
+}
+<div class="no-characters">
+  <span>Aucun combat n'est en cours.</span>
+</div>

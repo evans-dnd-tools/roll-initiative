@@ -5,9 +5,10 @@ import { raceBySex } from 'src/models/enums/race';
 import { Stat } from 'src/models/enums/stat';
 
 @Component({
-  selector: 'stat-block',
-  templateUrl: './stat-block.component.html',
-  styleUrls: ['./stat-block.component.scss']
+    selector: 'stat-block',
+    templateUrl: './stat-block.component.html',
+    styleUrls: ['./stat-block.component.scss'],
+    standalone: false
 })
 export class StatBlockComponent {
 

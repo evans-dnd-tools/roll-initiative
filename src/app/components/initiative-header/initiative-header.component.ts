@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { InitiativeService } from 'src/app/services/initiative.service';
 
 @Component({
-  selector: 'initiative-header',
-  templateUrl: './initiative-header.component.html',
-  styleUrls: ['./initiative-header.component.scss']
+    selector: 'initiative-header',
+    templateUrl: './initiative-header.component.html',
+    styleUrls: ['./initiative-header.component.scss'],
+    standalone: false
 })
 export class InitiativeHeaderComponent {
 

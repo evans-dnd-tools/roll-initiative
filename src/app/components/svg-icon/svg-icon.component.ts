@@ -3,9 +3,10 @@ import { SafeHtml } from '@angular/platform-browser';
 import { SvgIconService } from '../../services/svg-icon.service';
 
 @Component({
-  selector: 'app-svg-icon',
-  template: ``,
-  styleUrls: ['./svg-icon.component.scss']
+    selector: 'app-svg-icon',
+    template: ``,
+    styleUrls: ['./svg-icon.component.scss'],
+    standalone: false
 })
 export class SvgIconComponent implements OnInit {
   

@@ -3,7 +3,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { MarkdownService } from 'src/app/services/markdown.service';
 
 @Pipe({
-  name: 'markdown'
+    name: 'markdown',
+    standalone: false
 })
 export class MarkdownPipe implements PipeTransform {
 

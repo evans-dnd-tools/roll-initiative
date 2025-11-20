@@ -1,25 +1,35 @@
 <header pageTitle="Traqueur d'initiative">
   <div class="left-buttons">
     <button type="button" class="icon-text-button" (click)="toggleCombat()">
-      <svg *ngIf="!initiative.inCombat" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M304.087-178.5v-609L783.218-483 304.087-178.5Z"/></svg>
-      <svg *ngIf="initiative.inCombat" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M226.37-226.37v-507.5h507.5v507.5h-507.5Z"/></svg>
+      @if (!initiative.inCombat) {
+        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M304.087-178.5v-609L783.218-483 304.087-178.5Z"/></svg>
+      }
+      @if (initiative.inCombat) {
+        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M226.37-226.37v-507.5h507.5v507.5h-507.5Z"/></svg>
+      }
       <span>{{ initiative.inCombat ? "Stopper le combat" : "Démarrer le combat" }}</span>
     </button>
-    <button *ngIf="initiative.inCombat" type="button" (click)="initiative.nextTurn()">Tour suivant</button>
+    @if (initiative.inCombat) {
+      <button type="button" (click)="initiative.nextTurn()">Tour suivant</button>
+    }
   </div>
   <div class="right-buttons">
     <button type="button" (click)="initiative.addCharacter()">Ajouter un personnage</button>
-    <button *ngIf="!initiative.inCombat" type="button" (click)="initiative.rollForInitiative()">Jet d'initiative</button>
+    @if (!initiative.inCombat) {
+      <button type="button" (click)="initiative.rollForInitiative()">Jet d'initiative</button>
+    }
     <button type="button" class="icon-button" (click)="openSpectatorWindow()">
       <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
         <path d="M480.16-321.587q74.405 0 126.329-52.084 51.924-52.084 51.924-126.489t-52.084-126.329q-52.084-51.924-126.489-51.924t-126.329 52.084q-51.924 52.084-51.924 126.489t52.084 126.329q52.084 51.924 126.489 51.924Zm-.457-69.478q-44.929 0-76.784-32.151-31.854-32.151-31.854-77.081 0-44.929 32.151-76.784 32.151-31.854 77.081-31.854 44.929 0 76.784 32.151 31.854 32.151 31.854 77.081 0 44.929-32.151 76.784-32.151 31.854-77.081 31.854ZM480-183.804q-151.761 0-275.261-87.479Q81.239-358.761 21.761-500q59.478-141.239 182.978-228.717 123.5-87.479 275.261-87.479 151.761 0 275.261 87.479Q878.761-641.239 938.239-500q-59.478 141.239-182.978 228.717-123.5 87.479-275.261 87.479Z"/>
       </svg>
     </button>
-    <button *ngIf="!initiative.inCombat" type="button" class="icon-button" (click)="showOptions = true">
-      <svg class="cog" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
-        <path d="m377-64-21-130q-16-6-35.5-17T287-233l-122 55L61-364l109-81q-1-7-1.5-18t-.5-19q0-7 .5-17.5T170-518L61-598l104-185 120 55q14-11 34-22.5t37-17.5l21-129h207l20 129q17 6 37.5 17.5T675-728l121-55 104 185-111 79q1 9 2 20t1 19q0 8-1 18.5t-1 18.5l109 79-104 186-122-55q-14 11-33 22.5T605-194L584-64H377Zm102-273q60 0 102-42t42-102q0-60-42-102t-102-42q-60 0-102 42t-42 102q0 60 42 102t102 42Z"/>
-      </svg>
-    </button>
+    @if (!initiative.inCombat) {
+      <button type="button" class="icon-button" (click)="showOptions = true">
+        <svg class="cog" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
+          <path d="m377-64-21-130q-16-6-35.5-17T287-233l-122 55L61-364l109-81q-1-7-1.5-18t-.5-19q0-7 .5-17.5T170-518L61-598l104-185 120 55q14-11 34-22.5t37-17.5l21-129h207l20 129q17 6 37.5 17.5T675-728l121-55 104 185-111 79q1 9 2 20t1 19q0 8-1 18.5t-1 18.5l109 79-104 186-122-55q-14 11-33 22.5T605-194L584-64H377Zm102-273q60 0 102-42t42-102q0-60-42-102t-102-42q-60 0-102 42t-42 102q0 60 42 102t102 42Z"/>
+        </svg>
+      </button>
+    }
   </div>
 </header>
 

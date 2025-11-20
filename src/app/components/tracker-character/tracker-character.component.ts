@@ -5,9 +5,10 @@ import { TrackerCharacter } from 'src/models/tracker-character';
 import { CHARACTER_SHEET_SIZE } from 'src/models/constants';
 
 @Component({
-  selector: 'tracker-character',
-  templateUrl: './tracker-character.component.html',
-  styleUrls: ['./tracker-character.component.scss']
+    selector: 'tracker-character',
+    templateUrl: './tracker-character.component.html',
+    styleUrls: ['./tracker-character.component.scss'],
+    standalone: false
 })
 export class TrackerCharacterComponent implements OnChanges {
 

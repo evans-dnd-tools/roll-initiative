@@ -2,9 +2,10 @@ import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, 
 import { OptionsService } from 'src/app/services/options.service';
 
 @Component({
-  selector: 'option-modal',
-  templateUrl: './option-modal.component.html',
-  styleUrls: ['./option-modal.component.scss']
+    selector: 'option-modal',
+    templateUrl: './option-modal.component.html',
+    styleUrls: ['./option-modal.component.scss'],
+    standalone: false
 })
 export class OptionModalComponent {
 

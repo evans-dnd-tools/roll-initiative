@@ -7,9 +7,10 @@ import { PlaceType } from 'src/models/enums/place-type';
 import { Place } from 'src/models/place';
 
 @Component({
-  selector: 'app-place-form',
-  templateUrl: './place-form.component.html',
-  styleUrls: ['./place-form.component.scss']
+    selector: 'app-place-form',
+    templateUrl: './place-form.component.html',
+    styleUrls: ['./place-form.component.scss'],
+    standalone: false
 })
 export class PlaceFormComponent {
 
