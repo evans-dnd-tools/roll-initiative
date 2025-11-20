@@ -3,7 +3,7 @@
     <span 
       class="character__first-name" 
       placeholder="Prénom" 
-      [textContent]="character.firstName" 
+      [textContent]="statblock.firstName" 
       (input)="updateFirstName($event)"
       (beforeinput)="checkInput($event)"
       contenteditable
@@ -11,33 +11,33 @@
     <span 
       class="character__last-name" 
       placeholder="Nom" 
-      [textContent]="character.lastName" 
+      [textContent]="statblock.lastName" 
       (input)="updateLastName($event)"
       (beforeinput)="checkInput($event)"
       contenteditable
       ></span>
   </div>
   <div class="character__subtext">
-    <div placeholder="Sexe" [class.visible]="character.sex">
-      <select [(ngModel)]="character.sex">
+    <div placeholder="Sexe" [class.visible]="statblock.sex">
+      <select [(ngModel)]="statblock.sex">
         <ng-container *ngFor="let sex of SEX | keyvalue">
           <option [value]="sex.value">{{ sex.value }}</option>
         </ng-container>
       </select>
     </div>
   
-    <div placeholder="Race" [class.visible]="character.race">
-      <select [(ngModel)]="character.race">
+    <div placeholder="Race" [class.visible]="statblock.race">
+      <select [(ngModel)]="statblock.race">
         <ng-container *ngFor="let race of RACES | keyvalue">
-          <option [value]="race.value">{{ raceBySex(race.value, character.sex) }}</option>
+          <option [value]="race.value">{{ raceBySex(race.value, statblock.sex) }}</option>
         </ng-container>
       </select>
     </div>
   
-    <div placeholder="Classe" [class.visible]="character.class">
-      <select [(ngModel)]="character.class">
+    <div placeholder="Classe" [class.visible]="statblock.class">
+      <select [(ngModel)]="statblock.class">
         <ng-container *ngFor="let class of CLASSES | keyvalue">
-          <option [value]="class.value">{{ classBySex(class.value, character.sex) }}</option>
+          <option [value]="class.value">{{ classBySex(class.value, statblock.sex) }}</option>
         </ng-container>
       </select>
     </div>
@@ -48,7 +48,7 @@
       <b>Niveau : </b>
       <span
         placeholder="0" 
-        [textContent]="character.level" 
+        [textContent]="statblock.level" 
         (input)="updateLevel($event)"
         (beforeinput)="checkNumberInput($event)"
         contenteditable
@@ -58,7 +58,7 @@
       <b>Taille : </b>
       <span
         placeholder="0" 
-        [textContent]="character.height" 
+        [textContent]="statblock.height" 
         (input)="updateHeight($event)"
         (beforeinput)="checkNumberInput($event)"
         contenteditable
@@ -69,7 +69,7 @@
       <b>Alignement : </b>
       <span
         placeholder="Loyal Bon" 
-        [textContent]="character.alignment" 
+        [textContent]="statblock.alignment" 
         (input)="updateAlignment($event)"
         (beforeinput)="checkInput($event)"
         contenteditable
@@ -82,7 +82,7 @@
       <b>Classe d'armure : </b>
       <span
         placeholder="0" 
-        [textContent]="character.armorClass" 
+        [textContent]="statblock.armorClass" 
         (input)="updateArmorClass($event)"
         (beforeinput)="checkNumberInput($event)"
         contenteditable
@@ -92,7 +92,7 @@
       <b>Points de vie : </b>
       <span
         placeholder="0" 
-        [textContent]="character.hitPoints" 
+        [textContent]="statblock.hitPoints" 
         (input)="updateHitPoints($event)"
         (beforeinput)="checkNumberInput($event)"
         contenteditable
@@ -102,7 +102,7 @@
       <b>Vitesse : </b>
       <span
         placeholder="0" 
-        [textContent]="character.speed" 
+        [textContent]="statblock.speed" 
         (input)="updateSpeed($event)"
         (beforeinput)="checkNumberInput($event)"
         contenteditable
@@ -112,13 +112,13 @@
   </div>
   
   <div class="character__stats">
-    <div class="character__stat" *ngFor="let stat of character.stats; index as i; trackBy: trackBy">
+    <div class="character__stat" *ngFor="let stat of statblock.stats; index as i; trackBy: trackBy">
       <div class="character__stat-name">{{ statNames[i] }}</div>
       <div class="character__stat-modifier">{{ statModifier(stat) }}</div>
       <div class="character__stat-value">
         <input 
           placeholder="0"
-          [(ngModel)]="character.stats[i]"
+          [(ngModel)]="statblock.stats[i]"
           (beforeinput)="checkNumberInput($event)"
         />
       </div>
@@ -126,7 +126,7 @@
   </div>
   
   <description 
-    [(value)]="character.description"
+    [(value)]="statblock.description"
     [editable]="true"
   ></description>
   

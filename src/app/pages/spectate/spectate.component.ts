@@ -1,6 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { CharactersInitiativeService } from 'src/app/services/characters-initiative.service';
+import { InitiativeService } from 'src/app/services/initiative.service';
 
 @Component({
   selector: 'app-spectate',
@@ -10,7 +10,7 @@ import { CharactersInitiativeService } from 'src/app/services/characters-initiat
 export class SpectateComponent {
 
   constructor(
-    public characters: CharactersInitiativeService,
+    public initiative: InitiativeService,
     private titleService: Title
   ) {
     this.titleService.setTitle('Spectate Fight');
@@ -21,11 +21,11 @@ export class SpectateComponent {
   }
 
   initCharacters() {
-    this.characters.list = JSON.parse(localStorage.getItem('realtime:characters'));
-    this.characters.currentlyPlaying = JSON.parse(localStorage.getItem('realtime:playing'));
-    this.characters.round = parseInt(localStorage.getItem('realtime:round'));
+    this.initiative.list = JSON.parse(localStorage.getItem('realtime:characters'));
+    this.initiative.currentlyPlaying = JSON.parse(localStorage.getItem('realtime:playing'));
+    this.initiative.round = parseInt(localStorage.getItem('realtime:round'));
 
-    this.characters.isSpectator = true;
+    this.initiative.isSpectator = true;
   }
   
   @HostListener('window:storage', ['$event'])
@@ -35,13 +35,13 @@ export class SpectateComponent {
     const key = event.key.split(':')[1];
     switch (key) {
       case 'characters':
-        this.characters.list = JSON.parse(event.newValue);
+        this.initiative.list = JSON.parse(event.newValue);
         break;
       case 'playing':
-        this.characters.currentlyPlaying = JSON.parse(event.newValue);
+        this.initiative.currentlyPlaying = JSON.parse(event.newValue);
         break;
       case 'round':
-        this.characters.round = parseInt(event.newValue);
+        this.initiative.round = parseInt(event.newValue);
         break;
     }
   }

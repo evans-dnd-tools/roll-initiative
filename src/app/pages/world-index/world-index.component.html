@@ -3,57 +3,10 @@
   [(filter)]="filter"
 ></index-header>
 
-<div class="list-header">
-  <div class="right-side">
-    <div class="menu-dropdown">
-      <button 
-        type="button"
-        class="icon-button"
-      >
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          width="48"
-          height="48" 
-          viewBox="0 -960 960 960"
-        >
-          <path 
-            d="M480-320.456 215.217-585.239l80.022-79.783L480-480.261l184.761-184.761 80.022 79.783L480-320.456Z"
-          />
-        </svg>
-      </button>
-
-      <div class="menu-dropdown-content">
-        <button 
-          type="button"
-          class="menu-dropdown-item"
-          (click)="openCharacterCreationModal()"
-        >
-          Créer un personnage
-        </button>
-        <button 
-          type="button"
-          class="menu-dropdown-item"
-          (click)="openPlaceCreationModal()"
-        >
-          Créer un lieu
-        </button>
-        <button 
-          type="button"
-          class="menu-dropdown-item"
-          (click)="openImportModal()"
-        >
-          Importer des personnages
-        </button>
-        <button 
-          type="button"
-          class="menu-dropdown-item"
-          (click)="openExportModal()"
-        >
-          Exporter des personnages
-        </button>
-      </div>
-    </div>
-  </div>  
+<div class="test">
+  <div class="ornament"></div>
+  <button>Recherche avancée </button>
+  <div class="ornament"></div>
 </div>
 
 <div class="list">
@@ -65,7 +18,7 @@
         (contextmenu)="openContextMenu($event, element)"
         (keydown.enter)="open(element)"
         [class.spell]="element.type === IndexElementType.Spell"
-        [class.character]="element.type === IndexElementType.Character"
+        [class.statblock]="element.type === IndexElementType.StatBlock"
         [class.place]="element.type === IndexElementType.Place"
         tabindex="0"
       >

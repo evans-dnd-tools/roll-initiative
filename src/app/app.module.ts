@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BoardComponent } from './components/board/board.component';
-import { CharacterComponent } from './components/character/character.component';
+import { TrackerCharacterComponent } from './components/tracker-character/tracker-character.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { OptionModalComponent } from './components/option-modal/option-modal.component';
@@ -15,10 +15,8 @@ import { InitiativeHeaderComponent } from './components/initiative-header/initia
 import { IndexHeaderComponent } from './components/index-header/index-header.component';
 import { SpellCardComponent } from './components/spell-card/spell-card.component';
 import { ModalWrapperComponent } from './components/modal-wrapper/modal-wrapper.component';
-import { CharacterSheetComponent } from './components/character-sheet/character-sheet.component';
-import { CharacterFormComponent } from './components/character-form/character-form.component';
-import { CharacterExportComponent } from './components/character-export/character-export.component';
-import { CharacterImportComponent } from './components/character-import/character-import.component';
+import { StatBlockComponent } from './components/stat-block/stat-block.component';
+import { StatblockFormComponent } from './components/statblock-form/statblock-form.component';
 import { PlaceFormComponent } from './components/place-form/place-form.component';
 import { PlaceComponent } from './components/place/place.component';
 import { DescriptionComponent } from './components/description/description.component';
@@ -33,7 +31,7 @@ import { ToggleGroupComponent } from './components/toggle-group/toggle-group.com
   declarations: [
     AppComponent,
     BoardComponent,
-    CharacterComponent,
+    TrackerCharacterComponent,
     HeaderComponent,
     OptionModalComponent,
     RollInitiativeComponent,
@@ -42,10 +40,8 @@ import { ToggleGroupComponent } from './components/toggle-group/toggle-group.com
     IndexHeaderComponent,
     SpellCardComponent,
     ModalWrapperComponent,
-    CharacterSheetComponent,
-    CharacterFormComponent,
-    CharacterExportComponent,
-    CharacterImportComponent,
+    StatBlockComponent,
+    StatblockFormComponent,
     PlaceFormComponent,
     PlaceComponent,
     DescriptionComponent,

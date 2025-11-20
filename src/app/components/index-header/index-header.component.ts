@@ -1,5 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ModalService } from 'src/app/services/modal.service';
 import { IndexElementType } from 'src/models/enums/index-element-type';
+import { StatblockFormComponent } from '../statblock-form/statblock-form.component';
+import { PlaceFormComponent } from '../place-form/place-form.component';
 
 @Component({
   selector: 'index-header',
@@ -35,10 +38,27 @@ export class IndexHeaderComponent {
 
   //#region ------ CONSTRUCTOR ------
 
-  constructor() {
+  constructor(private modalService: ModalService) {
     this.types = Object.values(this.IndexElementType);
     this.types.unshift('Tous');
   }
+
+  //#endregion
+
+  //#region ------ METHODS ------
+
+  // CREATION MODAL
+
+  openStatBlockCreationModal() {
+    this.modalService.open(StatblockFormComponent, {});
+  }
+
+  openPlaceCreationModal() {
+    this.modalService.open(PlaceFormComponent, {});
+  }
+
+  openImportModal() {}
+  openExportModal() {}
 
   //#endregion
 

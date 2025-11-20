@@ -1,8 +1,8 @@
 import { Component, HostListener } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { CharactersInitiativeService } from 'src/app/services/characters-initiative.service';
+import { InitiativeService } from 'src/app/services/initiative.service';
 import { OptionsService } from 'src/app/services/options.service';
-import { DEFAULT_CHARACTER_LIST_SIZE } from 'src/models/constants';
+import { DEFAULT_TRACKER_LIST_SIZE } from 'src/models/constants';
 
 @Component({
   selector: 'app-roll-initiative',
@@ -14,7 +14,7 @@ export class RollInitiativeComponent {
   ////    LIFE CYCLE    ////
 
   constructor(
-    public characters: CharactersInitiativeService, 
+    public initiative: InitiativeService, 
     public options: OptionsService,
     private titleService: Title
   ) {
@@ -23,15 +23,15 @@ export class RollInitiativeComponent {
     const characterList = JSON.parse(localStorage.getItem('characters'));
 
     if (characterList && characterList.length > 0)
-      this.characters.list = characterList;
+      this.initiative.list = characterList;
 
-    for (let i = 0; i < this.characters.list.length; i++) {
-      this.characters.list[i].position = i;
-      this.characters.list[i].roll = null;
+    for (let i = 0; i < this.initiative.list.length; i++) {
+      this.initiative.list[i].position = i;
+      this.initiative.list[i].roll = null;
     }
 
-    while(this.characters.list.length < DEFAULT_CHARACTER_LIST_SIZE)
-      this.characters.addCharacter();
+    while(this.initiative.list.length < DEFAULT_TRACKER_LIST_SIZE)
+      this.initiative.addCharacter();
   }
 
   ////    EVENT HANDLERS    ////
@@ -39,14 +39,14 @@ export class RollInitiativeComponent {
   @HostListener('window:keydown.control.enter', ['$event'])
   onKeydownHandler(event: KeyboardEvent) {
     event.preventDefault();
-    if (!this.characters.inCombat) this.characters.startCombat();
-    else this.characters.nextTurn();
+    if (!this.initiative.inCombat) this.initiative.startCombat();
+    else this.initiative.nextTurn();
   }
 
   @HostListener('window:unload')
   unloadHandler() {    
     if(this.options.saveTeam) {
-      const savedCharacters = this.characters.list.filter(character => character.ally);
+      const savedCharacters = this.initiative.list.filter(character => character.ally);
       localStorage.setItem('characters', JSON.stringify(savedCharacters));
     }
 

@@ -2,17 +2,13 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Spell } from 'src/models/spell';
 import { ModalService } from '../../services/modal.service';
 import { SpellCardComponent } from 'src/app/components/spell-card/spell-card.component';
-import { Character } from 'src/models/character';
+import { StatBlock } from 'src/models/stat-block';
 import { IndexElement } from 'src/models/index-element';
 import { IndexElementType } from 'src/models/enums/index-element-type';
 import { Class, classBySex } from 'src/models/enums/class';
 import { raceBySex } from 'src/models/enums/race';
-import { CharacterSheetComponent } from 'src/app/components/character-sheet/character-sheet.component';
-import { CharacterFormComponent } from 'src/app/components/character-form/character-form.component';
-import { CharacterImportComponent } from 'src/app/components/character-import/character-import.component';
-import { CharacterExportComponent } from 'src/app/components/character-export/character-export.component';
-import { CharactersSheetService } from 'src/app/services/characters-sheet.service';
-import { PlaceFormComponent } from 'src/app/components/place-form/place-form.component';
+import { StatBlockComponent } from 'src/app/components/stat-block/stat-block.component';
+import { StatBlockService } from 'src/app/services/stat-block.service';
 import { Place } from 'src/models/place';
 import { PlacesService } from 'src/app/services/places.service';
 import { PlaceComponent } from 'src/app/components/place/place.component';
@@ -45,7 +41,7 @@ export class WorldIndexComponent {
 
   constructor(
     private modalService: ModalService, 
-    private charactersService: CharactersSheetService,
+    private statblocksService: StatBlockService,
     private placesService: PlacesService,
     private titleService: Title
   ) {
@@ -55,7 +51,7 @@ export class WorldIndexComponent {
   // There is a bug currently that duplicates elements
   @HostListener('window:unload')
   unloadHandler() {
-    const savedCharacters = this.charactersService.getCharacters();
+    const savedCharacters = this.statblocksService.getStatBlocks();
     localStorage.setItem('index:characters', JSON.stringify(savedCharacters));
 
     const savedPlaces = this.placesService.getPlaces();
@@ -72,32 +68,14 @@ export class WorldIndexComponent {
     this.searchBar.nativeElement.focus();
   }
 
-  // CREATION MODAL
-
-  openCharacterCreationModal() {
-    this.modalService.open(CharacterFormComponent, {});
-  }
-
-  openPlaceCreationModal() {
-    this.modalService.open(PlaceFormComponent, {});
-  }
-
-  openImportModal() {
-    this.modalService.open(CharacterImportComponent, {});
-  }
-
-  openExportModal() {
-    this.modalService.open(CharacterExportComponent, {});
-  }
-
   // FORMAT SUB-TEXT
 
   formatSubtext(element: IndexElement): string {
     switch(element.type) {
       case IndexElementType.Spell:
         return this.formatSpellSubtext(element as Spell);
-      case IndexElementType.Character:
-        return this.formatCharacterSubtext(element as Character);
+      case IndexElementType.StatBlock:
+        return this.formatCharacterSubtext(element as StatBlock);
       case IndexElementType.Place:
         return this.formatPlaceSubtext(element as Place);
       default:
@@ -119,7 +97,7 @@ export class WorldIndexComponent {
     return value;
   }
 
-  formatCharacterSubtext(character: Character): string {
+  formatCharacterSubtext(character: StatBlock): string {
     const charClass = character.class === Class.None ? "" : classBySex(character.class, character.sex);
     return `${charClass} ${raceBySex(character.race, character.sex)} (niveau ${character.level})`;
   }
@@ -135,8 +113,8 @@ export class WorldIndexComponent {
       case IndexElementType.Spell:
         this.openSpell(element as Spell);
         break;
-      case IndexElementType.Character:
-        this.openCharacter(element as Character);
+      case IndexElementType.StatBlock:
+        this.openCharacter(element as StatBlock);
         break;
       case IndexElementType.Place:
         this.openPlace(element as Place);
@@ -149,9 +127,9 @@ export class WorldIndexComponent {
     this.modalService.open(SpellCardComponent, input);
   }
 
-  openCharacter(character: Character) {
+  openCharacter(character: StatBlock) {
     const input = {character}
-    this.modalService.open(CharacterSheetComponent, input);
+    this.modalService.open(StatBlockComponent, input);
   }
 
   openPlace(place: Place) {
@@ -176,15 +154,15 @@ export class WorldIndexComponent {
       case this.IndexElementType.Spell:
         list = list.concat(this.SPELLS);
         break;
-      case this.IndexElementType.Character:
-        list = list.concat(this.charactersService.getCharacters());
+      case this.IndexElementType.StatBlock:
+        list = list.concat(this.statblocksService.getStatBlocks());
         break;
       case this.IndexElementType.Place:
         list = list.concat(this.placesService.getPlaces());
         break;
       default:
         list = list.concat(this.SPELLS);
-        list = list.concat(this.charactersService.getCharacters());
+        list = list.concat(this.statblocksService.getStatBlocks());
         list = list.concat(this.placesService.getPlaces());
         break;
     }

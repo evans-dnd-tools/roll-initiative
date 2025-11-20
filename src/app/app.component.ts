@@ -1,6 +1,6 @@
 import { Component, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { CharactersInitiativeService } from './services/characters-initiative.service';
+import { InitiativeService } from './services/initiative.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ import { CharactersInitiativeService } from './services/characters-initiative.se
 export class AppComponent {
   constructor(
     public viewContainerRef: ViewContainerRef, 
-    public characters: CharactersInitiativeService,
+    public initiative: InitiativeService,
     private router: Router
   ) {}
 

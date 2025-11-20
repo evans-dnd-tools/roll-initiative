@@ -1,11 +1,27 @@
-.list-header {
+.test {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  
+  width: 100%;
+  padding: 0 var(--padding) 4rem;
+  overflow: hidden;
 
-  padding: 0 var(--padding);
-  margin-bottom: 4rem;
+  & button {
+    background: none;
+
+    border: 2px solid var(--gold-accent);
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+
+    background: linear-gradient(to top, var(--primary-300), transparent); 
+  }
+
+  .ornament {
+    display: block;
+    flex: 1 1 auto;
+    height: 2px;
+    background: var(--gold-accent);
+  }
 }
 
 .list {
@@ -36,8 +52,8 @@
     --main-color: var(--spell);
   }
 
-  &.character {
-    --main-color: var(--character);
+  &.statblock {
+    --main-color: var(--statblock);
   }
 
   &.place {
@@ -73,81 +89,5 @@
   &:focus-visible {
     outline: 3px solid var(--main-color);
     outline-offset: 3px;
-  }
-}
-
-
-.menu-dropdown {
-  position: relative;
-
-  & * {
-    &:focus {
-      outline: none;
-    }
-  }
-
-  & .menu-dropdown-content {
-    pointer-events: none;
-    position: absolute;
-    top: calc(100% + 0.5rem);
-    right: 0;
-    z-index: 100;
-
-    background: white;
-
-    border-radius: 3px;
-
-    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
-
-    opacity: 0;
-
-    translate: 0 -0.25rem;
-  
-    transition: all 0.1s ease-in-out;
-  }
-
-  &:focus-within {
-    & .menu-dropdown-content {
-      pointer-events: auto;
-      translate: none;
-      opacity: 1;
-    }
-  }
-}
-
-.menu-dropdown-item {
-  position: relative;
-
-  height: auto;
-  width: 100%;
-
-  padding: 0.5rem 1rem;
-
-  background: none;
-  border-radius: 0;
-
-  text-align: left;
-  font-weight: bold;
-  color: var(--text);
-
-  transition: all 0.12s ease-in-out;
-
-  &:is(:active, :hover, :focus-visible) {
-    color: var(--primary-300);
-  }
-
-  &:not(:first-child)::before {
-    content: '';
-
-    position: absolute;
-    top: 0;
-    left: 50%;
-    translate: -50%;
-
-    height: 1px;
-    width: 80%;
-    opacity: 0.4;
-
-    background: var(--subtext);
   }
 }

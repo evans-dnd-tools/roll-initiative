@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subscription, fromEvent } from 'rxjs';
 import { CHARACTER_SHEET_PADDING, CHARACTER_SHEET_SIZE } from 'src/models/constants';
-import { CharacterComponent } from '../components/character/character.component';
-import { CharactersInitiativeService } from './characters-initiative.service';
+import { TrackerCharacterComponent } from '../components/tracker-character/tracker-character.component';
+import { InitiativeService } from './initiative.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class DragAndDropService {
   moveSubscription: Subscription;
 
   board: HTMLElement;
-  characterComponent: CharacterComponent;
+  characterComponent: TrackerCharacterComponent;
 
   lastPosition: number;
 
@@ -22,11 +22,11 @@ export class DragAndDropService {
 
   ////    LIFE CYCLE    ////
 
-  constructor(private characters: CharactersInitiativeService) { }
+  constructor(private initiative: InitiativeService) { }
 
   ////    FUNCTIONS    ////
 
-  grab(event: MouseEvent, characterComponent: CharacterComponent) {
+  grab(event: MouseEvent, characterComponent: TrackerCharacterComponent) {
 
     this.board = document.querySelector('.character-list');
     this.characterComponent = characterComponent;
@@ -50,7 +50,7 @@ export class DragAndDropService {
 
     this.characterComponent.hostElement.style.translate = `0 ${newPosition}px`;
 
-    const listPosition = Math.min(this.characters.list.length -1, Math.max(0, Math.floor(cursorPosition / CHARACTER_SHEET_SIZE)));
+    const listPosition = Math.min(this.initiative.list.length -1, Math.max(0, Math.floor(cursorPosition / CHARACTER_SHEET_SIZE)));
 
     if (listPosition !== this.lastPosition) {
       this.updateListPosition(listPosition);
@@ -59,7 +59,7 @@ export class DragAndDropService {
   }
 
   private updateListPosition(newPosition: number) {
-    for (const character of this.characters.list) {
+    for (const character of this.initiative.list) {
       if(character === this.characterComponent.character)
         continue;
 

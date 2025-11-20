@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { CharactersInitiativeService } from 'src/app/services/characters-initiative.service';
+import { InitiativeService } from 'src/app/services/initiative.service';
 import { TrackerCharacter } from 'src/models/tracker-character';
 import { CHARACTER_SHEET_PADDING, CHARACTER_SHEET_SIZE } from 'src/models/constants';
 
@@ -19,7 +19,7 @@ export class BoardComponent implements OnChanges {
 
   ////    LIFE CYCLE    ////
 
-  constructor(public charactersService: CharactersInitiativeService) {}
+  constructor(public initiativeService: InitiativeService) {}
 
   ngOnChanges() {
     this.listHeight = `${this.characters.length * CHARACTER_SHEET_SIZE - CHARACTER_SHEET_PADDING}px`;

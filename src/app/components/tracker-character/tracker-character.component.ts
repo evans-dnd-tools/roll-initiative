@@ -1,15 +1,15 @@
 import { Component, ElementRef, Input, OnChanges } from '@angular/core';
-import { CharactersInitiativeService } from 'src/app/services/characters-initiative.service';
+import { InitiativeService } from 'src/app/services/initiative.service';
 import { DragAndDropService } from 'src/app/services/drag-and-drop.service';
 import { TrackerCharacter } from 'src/models/tracker-character';
 import { CHARACTER_SHEET_SIZE } from 'src/models/constants';
 
 @Component({
-  selector: 'character',
-  templateUrl: './character.component.html',
-  styleUrls: ['./character.component.scss']
+  selector: 'tracker-character',
+  templateUrl: './tracker-character.component.html',
+  styleUrls: ['./tracker-character.component.scss']
 })
-export class CharacterComponent implements OnChanges {
+export class TrackerCharacterComponent implements OnChanges {
 
   ////    ATTRIBUTES    ////
 
@@ -26,7 +26,7 @@ export class CharacterComponent implements OnChanges {
   constructor(
     elementRef: ElementRef, 
     private dragAndDropService: DragAndDropService,
-    public characters: CharactersInitiativeService
+    public initiative: InitiativeService
   ) {
     this.hostElement = elementRef.nativeElement;
   }
@@ -50,6 +50,6 @@ export class CharacterComponent implements OnChanges {
   }
 
   deleteCharacter() {
-    this.characters.delete(this.character);
+    this.initiative.delete(this.character);
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CharactersInitiativeService } from 'src/app/services/characters-initiative.service';
+import { InitiativeService } from 'src/app/services/initiative.service';
 
 @Component({
   selector: 'initiative-header',
@@ -14,7 +14,7 @@ export class InitiativeHeaderComponent {
 
   ////    LIFE CYCLE    ////
 
-  constructor(public characters: CharactersInitiativeService) {}
+  constructor(public initiative: InitiativeService) {}
 
   ////    EVENT HANDLERS    ////
 
@@ -23,9 +23,9 @@ export class InitiativeHeaderComponent {
   }
 
   toggleCombat() {
-    if (this.characters.inCombat)
-      this.characters.endCombat();
+    if (this.initiative.inCombat)
+      this.initiative.endCombat();
     else
-      this.characters.startCombat();
+      this.initiative.startCombat();
   }
 }

@@ -1,5 +1,5 @@
 export enum IndexElementType {
     Spell = "Sorts",
-    Character = "Personnages",
+    StatBlock = "Profils",
     Place = "Lieux",
 }

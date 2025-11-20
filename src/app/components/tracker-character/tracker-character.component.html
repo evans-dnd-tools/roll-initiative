@@ -1,24 +1,24 @@
-<div class="handle" [class.disabled]="characters.inCombat" (mousedown)="grab($event)">
+<div class="handle" [class.disabled]="initiative.inCombat" (mousedown)="grab($event)">
   <div class="bar"></div>
   <div class="bar"></div>
   <div class="bar"></div>
   <div class="bar"></div>
 </div>
-<button [disabled]="characters.isSpectator" type="button" class="team-color" [class.ally]="character.ally" (click)="swapTeam()"></button>
+<button [disabled]="initiative.isSpectator" type="button" class="team-color" [class.ally]="character.ally" (click)="swapTeam()"></button>
 <div class="row">
   <div class="row-left">
-    <input [disabled]="characters.isSpectator" type="text" placeholder="Nom du personnage" [(ngModel)]="character.name" class="name-input" />
-    <input *ngIf="!characters.inCombat" type="number" placeholder="000" [(ngModel)]="character.maxHP" />
+    <input [disabled]="initiative.isSpectator" type="text" placeholder="Nom du personnage" [(ngModel)]="character.name" class="name-input" />
+    <input *ngIf="!initiative.inCombat" type="number" placeholder="000" [(ngModel)]="character.maxHP" />
     
-    <div class="current-hp" *ngIf="characters.inCombat && !characters.isSpectator">
+    <div class="current-hp" *ngIf="initiative.inCombat && !initiative.isSpectator">
       <input type="number" placeholder="000" [(ngModel)]="character.currentHP" />
       <div>/{{ character.maxHP }}</div>
     </div>
 
-    <input *ngIf="!characters.isSpectator" [disabled]="characters.inCombat" type="number" placeholder="000" [(ngModel)]="character.armorClass" class="ac-input" />
-    <input *ngIf="!characters.inCombat" type="number" placeholder="000" [(ngModel)]="character.bonus" />
-    <input *ngIf="!characters.inCombat" type="number" placeholder="000" [(ngModel)]="character.roll" />
-    <button *ngIf="!characters.inCombat" type="button" class="row-button" (click)="toggleLock()" [class.open]="!character.lockedRoll">
+    <input *ngIf="!initiative.isSpectator" [disabled]="initiative.inCombat" type="number" placeholder="000" [(ngModel)]="character.armorClass" class="ac-input" />
+    <input *ngIf="!initiative.inCombat" type="number" placeholder="000" [(ngModel)]="character.bonus" />
+    <input *ngIf="!initiative.inCombat" type="number" placeholder="000" [(ngModel)]="character.roll" />
+    <button *ngIf="!initiative.inCombat" type="button" class="row-button" (click)="toggleLock()" [class.open]="!character.lockedRoll">
       <ng-container *ngTemplateOutlet="lockIcon"></ng-container>
     </button>
   </div>
@@ -27,7 +27,7 @@
       type="button" 
       class="row-button del-button" 
       (click)="deleteCharacter()"
-      *ngIf="!characters.isSpectator"
+      *ngIf="!initiative.isSpectator"
     >🞬</button>
   </div>
 </div>

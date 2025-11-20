@@ -1,9 +1,9 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, Renderer2, ViewChild } from '@angular/core';
 import { IndexElementType } from 'src/models/enums/index-element-type';
 import { SpellCardComponent } from '../spell-card/spell-card.component';
-import { CharacterSheetComponent } from '../character-sheet/character-sheet.component';
+import { StatBlockComponent } from '../stat-block/stat-block.component';
 import { PlaceComponent } from '../place/place.component';
-import { CharactersSheetService } from 'src/app/services/characters-sheet.service';
+import { StatBlockService } from 'src/app/services/stat-block.service';
 import { PlacesService } from 'src/app/services/places.service';
 import { ModalService } from 'src/app/services/modal.service';
 import spellsJson from 'src/app/lists/spells.json';
@@ -47,7 +47,7 @@ export class DescriptionComponent implements AfterViewInit {
   constructor(
     private renderer: Renderer2, 
     private element: ElementRef,
-    private charactersService: CharactersSheetService,
+    private statblocksService: StatBlockService,
     private placesService: PlacesService,
     private modalService: ModalService
   ) {}
@@ -150,7 +150,7 @@ export class DescriptionComponent implements AfterViewInit {
       case IndexElementType.Spell:
         this.openSpell(name);
         break;
-      case IndexElementType.Character:
+      case IndexElementType.StatBlock:
         this.openCharacter(name);
         break;
       case IndexElementType.Place:
@@ -168,11 +168,11 @@ export class DescriptionComponent implements AfterViewInit {
   }
 
   openCharacter(name: string) {
-    const character = this.charactersService.getCharacters().find(c => c.name === name);
+    const character = this.statblocksService.getStatBlocks().find(c => c.name === name);
     if (!character) return;
 
     const input = {character}
-    this.modalService.open(CharacterSheetComponent, input);
+    this.modalService.open(StatBlockComponent, input);
   }
 
   openPlace(name: string) {

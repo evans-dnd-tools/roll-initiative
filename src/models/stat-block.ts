@@ -4,9 +4,9 @@ import { Race } from "./enums/race";
 import { Sex } from "./enums/sex";
 import { IndexElement } from "./index-element";
 
-export class Character implements IndexElement {
+export class StatBlock implements IndexElement {
 
-  type = IndexElementType.Character;
+  type = IndexElementType.StatBlock;
 
   firstName: string;
   lastName: string;
@@ -35,7 +35,7 @@ export class Character implements IndexElement {
     undefined
   ];
 
-  public constructor(init?:Partial<Character>) {
+  public constructor(init?:Partial<StatBlock>) {
     Object.assign(this, init);
   }
 

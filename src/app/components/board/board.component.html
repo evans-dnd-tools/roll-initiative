@@ -3,24 +3,24 @@
     <div class="left-header">
       <div class="team-header">team</div>
       <div class="name-header">nom du personnage</div>
-      <div *ngIf="!charactersService.isSpectator" class="hp-header">pv</div>
-      <div *ngIf="!charactersService.isSpectator" class="ac-header">ca</div>
-      <div *ngIf="!charactersService.inCombat" class="bonus-header">mod</div>
-      <div *ngIf="!charactersService.inCombat" class="roll-header">jet</div>
+      <div *ngIf="!initiativeService.isSpectator" class="hp-header">pv</div>
+      <div *ngIf="!initiativeService.isSpectator" class="ac-header">ca</div>
+      <div *ngIf="!initiativeService.inCombat" class="bonus-header">mod</div>
+      <div *ngIf="!initiativeService.inCombat" class="roll-header">jet</div>
     </div>
 
-    <div class="right-header" *ngIf="charactersService.inCombat">
-      Round : {{ charactersService.round }}
+    <div class="right-header" *ngIf="initiativeService.inCombat">
+      Round : {{ initiativeService.round }}
     </div>
   </div>
 
   <div class="character-list" [style.height]="listHeight">
-    <character 
+    <tracker-character 
       *ngFor="let character of characters" 
       [character]="character"
       [position]="character.position"
-      [class.playing]="charactersService.inCombat && charactersService.isPlaying(character)"
-      [class.waiting]="charactersService.inCombat && !charactersService.isPlaying(character)"
-    ></character>
+      [class.playing]="initiativeService.inCombat && initiativeService.isPlaying(character)"
+      [class.waiting]="initiativeService.inCombat && !initiativeService.isPlaying(character)"
+    ></tracker-character>
   </div>
 </div>

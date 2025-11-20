@@ -1,7 +1,7 @@
 <div id="artwork-bg" class="world-index" [style.--scroll-offset.px]="maskOffset" [style.opacity]="showBackground('world-index')"></div>
 <!-- <div id="artwork-bg" class="roll-initiative" [style.--scroll-offset.px]="maskOffset" [style.opacity]="showBackground('roll-initiative')"></div> -->
 
-<div class="header" *ngIf="!characters.isSpectator">
+<div class="header" *ngIf="!initiative.isSpectator">
   <nav>
     <a routerLink="/character-sheets">Feuilles de personnage</a>
     <a routerLink="/world-index">Index du monde</a>

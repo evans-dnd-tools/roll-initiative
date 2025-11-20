@@ -6,5 +6,42 @@
     [valueFromElement]="self"
   />
 
-  <input class="searchbar" type="text" placeholder="Rechercher..." [(ngModel)]="filter" #searchbar />
+  <div class="right-header">
+    <input class="searchbar" type="text" placeholder="Rechercher..." [(ngModel)]="filter" #searchbar />
+
+    <div class="menu-dropdown">
+      <button 
+        type="button"
+        class="icon-button"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          width="48"
+          height="48" 
+          viewBox="0 -960 960 960"
+        >
+          <path 
+            d="M480-320.456 215.217-585.239l80.022-79.783L480-480.261l184.761-184.761 80.022 79.783L480-320.456Z"
+          />
+        </svg>
+      </button>
+
+      <div class="menu-dropdown-content">
+        <button 
+          type="button"
+          class="menu-dropdown-item"
+          (click)="openStatBlockCreationModal()"
+        >
+          Créer un profil
+        </button>
+        <button 
+          type="button"
+          class="menu-dropdown-item"
+          (click)="openPlaceCreationModal()"
+        >
+          Créer un lieu
+        </button>
+      </div>
+    </div>
+  </div>
 </header>

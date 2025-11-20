@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { Character } from 'src/models/character';
+import { StatBlock } from 'src/models/stat-block';
 import { Stat } from 'src/models/enums/stat';
-import { MarkdownService } from './../../services/markdown.service';
-import { CharactersSheetService } from 'src/app/services/characters-sheet.service';
+import { MarkdownService } from '../../services/markdown.service';
+import { StatBlockService } from 'src/app/services/stat-block.service';
 import { ModalService } from 'src/app/services/modal.service';
 import { Class, classBySex } from 'src/models/enums/class';
 import { Race, raceBySex } from 'src/models/enums/race';
@@ -11,11 +11,11 @@ import { Sex } from 'src/models/enums/sex';
 const NUMBER_REGEX = /^\d+$/;
 
 @Component({
-  selector: 'app-character-form',
-  templateUrl: './character-form.component.html',
-  styleUrls: ['./character-form.component.scss']
+  selector: 'app-statblock-form',
+  templateUrl: './statblock-form.component.html',
+  styleUrls: ['./statblock-form.component.scss']
 })
-export class CharacterFormComponent {
+export class StatblockFormComponent {
 
   ////    READ-ONLY    ////
 
@@ -28,7 +28,7 @@ export class CharacterFormComponent {
 
   ////    ATTRIBUTES    ////
 
-  character = new Character();
+  statblock = new StatBlock();
 
   description : string = "";
 
@@ -36,7 +36,7 @@ export class CharacterFormComponent {
 
   constructor(
     private markdownService: MarkdownService, 
-    private charactersService: CharactersSheetService,
+    private charactersService: StatBlockService,
     private modalService: ModalService
   ) {
 
@@ -65,56 +65,56 @@ export class CharacterFormComponent {
   
   updateFirstName(event: Event) {
     const firstName = (event.target as HTMLElement).innerText;
-    this.character.firstName = firstName;
+    this.statblock.firstName = firstName;
   }
 
   updateLastName(event: Event) {
     const lastName = (event.target as HTMLElement).innerText;
-    this.character.lastName = lastName;
+    this.statblock.lastName = lastName;
   }
 
   updateLevel(event: Event) {
     const level = parseInt((event.target as HTMLElement).innerText);
-    this.character.level = isNaN(level) ? undefined : level;
+    this.statblock.level = isNaN(level) ? undefined : level;
   }
 
   updateHeight(event: Event) {
     const height = parseInt((event.target as HTMLElement).innerText);
-    this.character.height = isNaN(height) ? undefined : height;
+    this.statblock.height = isNaN(height) ? undefined : height;
   }
 
   updateAlignment(event: Event) {
     const alignment = (event.target as HTMLElement).innerText;
-    this.character.alignment = alignment;
+    this.statblock.alignment = alignment;
   }
 
   updateArmorClass(event: Event) {
     const armorClass = parseInt((event.target as HTMLElement).innerText);
-    this.character.armorClass = isNaN(armorClass) ? undefined : armorClass;
+    this.statblock.armorClass = isNaN(armorClass) ? undefined : armorClass;
   }
 
   updateHitPoints(event: Event) {
     const hitPoints = parseInt((event.target as HTMLElement).innerText);
-    this.character.hitPoints = isNaN(hitPoints) ? undefined : hitPoints;
+    this.statblock.hitPoints = isNaN(hitPoints) ? undefined : hitPoints;
   }
 
   updateSpeed(event: Event) {
     const speed = parseInt((event.target as HTMLElement).innerText);
-    this.character.speed = isNaN(speed) ? undefined : speed;
+    this.statblock.speed = isNaN(speed) ? undefined : speed;
   }
 
   updateStat(statPos: number, event: Event) {
     const stat = parseInt((event.target as HTMLElement).innerText);
-    this.character.stats[statPos] = isNaN(stat) ? undefined : stat;
+    this.statblock.stats[statPos] = isNaN(stat) ? undefined : stat;
   }
 
   updateDescription() {
-    this.description = this.markdownService.markdownToHtml(this.character.description);
+    this.description = this.markdownService.markdownToHtml(this.statblock.description);
   }
 
   createCharacter() {
-    this.character.save()
-    this.charactersService.addCharacter(this.character);
+    this.statblock.save()
+    this.charactersService.addStatBlock(this.statblock);
 
     setTimeout(() => {
       this.modalService.close();

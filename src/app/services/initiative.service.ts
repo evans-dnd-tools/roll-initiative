@@ -5,7 +5,7 @@ import { OptionsService } from './options.service';
 @Injectable({
   providedIn: 'root'
 })
-export class CharactersInitiativeService {
+export class InitiativeService {
 
   ////    ATTRIBUTES    ////
 
