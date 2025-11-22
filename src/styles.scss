@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
-
 @font-face {
   font-family: 'Tiamat SC';
   src: url('./assets/fonts/tiamat-sc-condensed-regular.otf');
@@ -25,6 +23,17 @@
   font-family: 'Bookmania';
   font-weight: bold;
   src: url('./assets/fonts/BookmaniaBold.otf');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('./assets/fonts/RobotoCondensed-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-weight: bold;
+  src: url('./assets/fonts/RobotoCondensed-Bold.ttf');
 }
 
 :root {
