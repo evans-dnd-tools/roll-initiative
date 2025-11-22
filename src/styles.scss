@@ -67,6 +67,11 @@
   color: var(--background);
 }
 
+::placeholder {
+  color: #909090;
+  opacity: 1;
+}
+
 * {
   margin: 0;
   padding: 0;

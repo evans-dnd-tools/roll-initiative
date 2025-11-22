@@ -25,6 +25,7 @@ import { SpectateComponent } from './pages/spectate/spectate.component';
 import { CharacterSheetsComponent } from './pages/character-sheets/character-sheets.component';
 import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
 import { ToggleGroupComponent } from './components/toggle-group/toggle-group.component';
+import { SelectModule } from './components/select/select.module';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { ToggleGroupComponent } from './components/toggle-group/toggle-group.com
     imports: [
         BrowserModule,
         FormsModule,
-        AppRoutingModule
+        AppRoutingModule,
+        SelectModule
     ],
     providers: [
         provideHttpClient(withInterceptorsFromDi())

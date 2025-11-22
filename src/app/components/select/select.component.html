@@ -1,0 +1,141 @@
+<div
+  role="combobox"
+  [attr.aria-expanded]="open"
+  [tabIndex]="disabled ? -1 : 0"
+  (click)="openList()"
+  (keydown)="onKeydown($event)"
+  (blur)="onBlur($event)"
+  class="select"
+  [class.open]="open"
+  [class.error]="!validValue"
+  [attr.disabled]="disabled"
+  cdkOverlayOrigin
+  #trigger="cdkOverlayOrigin"
+  #select
+>
+  <span 
+    class="values" 
+    [title]="selectedText"
+    [class.placeholder]="!hasValue"
+  >
+    {{ selectedText }}
+  </span>
+
+  <div class="right-icon">
+    @if (showClearButton) {
+      <button
+        class="clear-button"
+        type="button"
+        aria-label="Effacer la sélection"
+        (click)="clearSelection($event)"
+        (keydown.enter)="clearSelection($event)"
+        (keydown.space)="clearSelection($event)"
+      >
+        <svg viewBox="0 0 24 24" height="24px" width="24px" class="clear-icon">
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"
+          />
+        </svg>
+      </button>
+    } @else {
+      <svg 
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 -960 960 960"
+        width="24px"
+        height="24px"
+        focusable="false"
+        aria-hidden="true"
+        class="arrow"
+      >
+        <path 
+          d="M480-320.456 215.217-585.239l80.022-79.783L480-480.261l184.761-184.761 80.022 79.783L480-320.456Z"
+        />
+      </svg>
+    }
+  </div>
+</div>
+
+<!-- TEMPLATE FOR THE OPTION LIST ATTACHED TO SELECT -->
+
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="open"
+  cdkConnectedOverlayHasBackdrop
+  cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+  (backdropClick)="close($event)"
+  (detach)="close($event)"
+>
+  <div
+    class="options-overlay"
+    [style.height.px]="overlayHeight"
+    [style.width.px]="overlayWidth"
+    #overlay
+  >
+    @if (enableFilter) {
+      <div class="filter-wrapper" [style.height.px]="FILTER_INPUT_HEIGHT">
+        @if (multiple && selectAll) {
+          <div
+            class="checkbox"
+            (click)="toggleAll()"
+            (keydown.enter)="toggleAll()"
+            (keydown.space)="toggleAll()"
+            [class.checked]="allSelected"
+            tabindex="0"
+          ></div>
+        }
+        <input
+          [(ngModel)]="filter"
+          class="filter-input"
+          [placeholder]="placeholder"
+          (keydown)="onKeydown($event)"
+          #filterInput
+        />
+      </div>
+    }
+    @if (!listView?.length) {
+      <div class="no-result" [style.height.px]="OPTION_HEIGHT" [style.lineHeight.px]="OPTION_HEIGHT">
+        {{ noResultMessage }}
+      </div>
+    }
+    <div class="scroll-box" (scroll)="updateListView()" #scrollBox>
+      <ul
+        class="option-list"
+        [attr.aria-multiselectable]="multiple"
+        [ngStyle]="{ transform: 'translateY(' + virtualScrollPadding + 'px)' }"
+        tabindex="0"
+        (keydown)="onListKeydown($event)"
+        (focus)="onListFocus()"
+        (blur)="onBlur($event)"
+      >
+        @for (option of listView; track track(i, option); let i = $index) {
+          @if (!filter && separatorsIndex.includes(listOffset + i)) {
+            <li class="separator"></li>
+          }
+          <li
+            (click)="updateSelection(option)"
+            [style.height.px]="OPTION_HEIGHT"
+            [style.lineHeight.px]="OPTION_HEIGHT"
+            class="option"
+            [class.selected]="isSelected(option)"
+            [class.focused]="focusedOption === option"
+            [class.multiple]="multiple"
+            [title]="labelFromElement(option)"
+            [attr.aria-selected]="isSelected(option)"
+            aria-role="option"
+          >
+            @if (multiple) {
+              <div class="checkbox"></div>
+            }
+            <div>{{ labelFromElement(option) }}</div>
+            @if (!multiple && isSelected(option)) {
+              <div class="checkmark"></div>
+            }
+          </li>
+        }
+      </ul>
+      <div class="scroll-body" [style.height.px]="scrollBodyHeight"></div>
+    </div>
+  </div>
+</ng-template>
