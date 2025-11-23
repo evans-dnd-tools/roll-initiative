@@ -1,6 +1,6 @@
 export enum SpellSchool {
   Abjuration = 'Abjuration',
-  Conjuration = 'Conjuration',
+  Conjuration = 'Invocation',
   Divination = 'Divination',
   Enchantment = 'Enchantement',
   Evocation = 'Évocation',
