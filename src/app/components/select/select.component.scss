@@ -58,6 +58,7 @@ $error-color: var(--primary-300);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: var(--text);
 
   &.placeholder {
     user-select: none;
