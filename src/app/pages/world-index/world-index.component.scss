@@ -1,4 +1,60 @@
-.test {
+.advanced-search {
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.08s ease-in-out;
+  transition-property: opacity, visibility, transform;
+  transition-behavior: allow-discrete;
+
+  &.visible {
+    visibility: visible;
+
+    opacity: 1;
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
+}
+
+.advanced-search-filters {
+  z-index: 100;
+
+  display: none;
+  
+  gap: 1rem;
+  margin: 0 var(--padding);
+  padding: 1rem 2rem 2rem;
+
+  border-radius: 8px 8px 0 0;
+  border: 2px solid var(--gold-accent);
+  border-bottom: none;
+
+  background: var(--header);
+  color: white;
+
+  &.open {
+    display: flex;
+  }
+
+  & > div {
+    flex: 1 1 auto;
+  }
+}
+
+span.label {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin: 0 0.25rem;
+}
+
+app-select {
+  display: block;
+  width: 100%;
+}
+
+.advanced-search-button {
   display: flex;
   justify-content: center;
   
@@ -7,13 +63,33 @@
   overflow: hidden;
 
   & button {
-    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    height: 42px;
+    padding: 0 1.25rem 0 2rem;
 
     border: 2px solid var(--gold-accent);
     border-top: none;
     border-radius: 0 0 4px 4px;
 
-    background: linear-gradient(to top, var(--primary-300), transparent); 
+    background: linear-gradient(to top, var(--primary-300) 20%, transparent 100%); 
+  
+    &.open {
+      background: linear-gradient(to top, var(--primary-300) 20%, transparent 100%), var(--header);
+
+      & svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    & svg {
+      height: 24px;
+      width: 24px;
+      margin-bottom: 3px;
+    }
   }
 
   .ornament {

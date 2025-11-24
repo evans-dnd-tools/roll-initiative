@@ -3,10 +3,60 @@
   [(filter)]="filter"
 ></index-header>
 
-<div class="test">
-  <div class="ornament"></div>
-  <button>Recherche avancée </button>
-  <div class="ornament"></div>
+<div class="advanced-search" [class.visible]="activeType === IndexElementType.Spell">
+  <div class="advanced-search-filters" [class.open]="advancedSearchOpen">
+    <div>
+      <span class="label">Classe</span>
+      <app-select 
+        label="Choisir une classe"
+        [multiple]="true"
+        [enableFilter]="false"
+        [options]="CASTERS"
+        [(ngModel)]="selectedClasses"
+      />
+    </div>
+  
+    <div>
+      <span class="label">École</span>
+      <app-select 
+        label="Choisir une école"
+        [multiple]="true"
+        [enableFilter]="false"
+        [options]="SCHOOLS"
+        [(ngModel)]="selectedSchools"
+      />
+    </div>
+  
+    <div>
+      <span class="label">Niveau</span>
+      <app-select 
+        label="Choisir un niveau"
+        [multiple]="true"
+        [enableFilter]="false"
+        [options]="LEVELS"
+        [(ngModel)]="selectedLevels"
+        [labelFromElement]="formatLevel"
+      />
+    </div>
+  </div>
+  
+  <div class="advanced-search-button">
+    <div class="ornament"></div>
+    <button [class.open]="advancedSearchOpen" (click)="advancedSearchOpen = !advancedSearchOpen">
+      <span>Recherche avancée</span>
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width="48"
+        height="48" 
+        viewBox="0 -960 960 960"
+      >
+        <path 
+          d="M480-320.456 215.217-585.239l80.022-79.783L480-480.261l184.761-184.761 80.022 79.783L480-320.456Z"
+        />
+      </svg>
+    </button>
+    <div class="ornament"></div>
+  </div>
 </div>
 
 <div class="list">

@@ -14,6 +14,7 @@ import { PlacesService } from 'src/app/services/places.service';
 import { PlaceComponent } from 'src/app/components/place/place.component';
 import { Title } from '@angular/platform-browser';
 import spellsJson from 'src/app/lists/spells.json';
+import { SpellSchool } from 'src/models/enums/spell-school';
 
 @Component({
     selector: 'app-world-index',
@@ -25,15 +26,33 @@ export class WorldIndexComponent {
 
   ////    READONLY    ////
 
-  readonly SPELLS = spellsJson as Spell[];
-
   readonly TYPE_ALL = 'Tous';
   readonly IndexElementType = IndexElementType;
+  
+  readonly SPELLS = spellsJson as Spell[];
+  readonly SCHOOLS = Object.values(SpellSchool);
+  readonly LEVELS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  readonly CASTERS = [
+    Class.Bard,
+    Class.Cleric,
+    Class.Druid,
+    Class.Paladin,
+    Class.Ranger,
+    Class.Sorcerer,
+    Class.Warlock,
+    Class.Wizard
+  ];
 
   ////    VARIABLES    ////
 
   filter: string = '';
   activeType: string = this.TYPE_ALL;
+  selectedLevels: number[] = [];
+  selectedClasses: string[] = [];
+  selectedSchools: string[] = [];
+
+  advancedSearchOpen: boolean = false;
+
   filteredList: IndexElement[] = [];
 
   @ViewChild('searchbar') searchBar: ElementRef;
@@ -61,12 +80,16 @@ export class WorldIndexComponent {
 
   ////    METHODS    ////
 
-  // SEARCH SHORTCUT EVENT
+  // SEARCH & FILTERS
 
   @HostListener('window:keydown.control.f', ['$event'])
   onKeydownHandler(event: KeyboardEvent) {
     event.preventDefault();
     this.searchBar.nativeElement.focus();
+  }
+
+  formatLevel(level: number): string {
+    return level === 0 ? 'Sort mineur' : `Niveau ${level}`;
   }
 
   // FORMAT SUB-TEXT
@@ -174,6 +197,10 @@ export class WorldIndexComponent {
       return item.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().includes(this.filter.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase());
     });
 
+    if (this.activeType === IndexElementType.Spell) {
+      list = this.filterSpells(list);
+    }
+
     // Sort by name
 
     list.sort((a, b) => {
@@ -181,5 +208,53 @@ export class WorldIndexComponent {
     });
 
     return list;
+  }
+
+  private filterSpells(list: IndexElement[]): IndexElement[] {
+    return list.filter((item) => {
+      const spell = item as Spell;
+
+      // Filter by level
+      
+      let validLevel = false;
+      if (this.selectedLevels.length === 0) validLevel = true;
+
+      for (const level of this.selectedLevels) {
+        if (spell.level === level) {
+          validLevel = true;
+          break;
+        }
+      }
+          
+      if (!validLevel) return false;
+
+      // Filter by class
+
+      let validClass = false;
+      if (this.selectedClasses.length === 0) validClass = true;
+
+      for (const className of this.selectedClasses) {
+        if (spell.classes.includes(className as Class)) {
+          validClass = true;
+          break;
+        }
+      }
+
+      if (!validClass) return false;
+
+      // Filter by school
+      
+      let validSchool = false;
+      if (this.selectedSchools.length === 0) validSchool = true;
+
+      for (const school of this.selectedSchools) {
+        if (spell.school == school) {
+          validSchool = true;
+          break;
+        }
+      }
+
+      return validSchool;
+    });
   }
 }
